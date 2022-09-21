@@ -76,7 +76,7 @@
                                         <hr/>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <p class="text-inverse" style="margin-left: 180px">Thank you</p>
+                                                <p class="text-inverse" style="margin-left: 180px">Thank you.</p>
                                                 <p class="text-inverse" style="margin-left: 165px"><a href="/"><b>Back to website</b></a></p>
                                             </div>
                                         </div>

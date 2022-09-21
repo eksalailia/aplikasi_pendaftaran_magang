@@ -64,6 +64,13 @@
                                             <label class="float-label">Password</label>
                                         </div>
 
+                                    <div class="form-group form-primary">
+                                        <input type="email" name="email" class="form-control"
+                                        name="password_confirmation" required autocomplete="new-password">
+                                        <span class="form-bar"></span>
+                                        <label class="float-label">Konfirmasi Password</label>
+                                    </div>
+
                                         <div class="row m-t-30">
                                             <div class="col-md-12">
                                                 <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Registrasi</button>
@@ -72,7 +79,7 @@
                                         <hr/>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <p class="text-inverse" style="margin-left: 180px">Thank you</p>
+                                                <p class="text-inverse" style="margin-left: 180px">Thank you.</p>
                                                 <p class="text-inverse" style="margin-left: 173px"><a href="/login"><b>Back to login</b></a></p>
                                             </div>
                                         </div>

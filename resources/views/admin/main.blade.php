@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Mega Able bootstrap admin template by codedthemes </title>
+    <title>Dashboard</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -98,7 +98,7 @@
                                                                 <i class="fa fa-line-chart text-white f-16"></i>
                                                             </div>
                                                         </div>
-            
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -178,7 +178,7 @@
                                                 </div>
                                             </div>
                                             <!-- task, page, download counter  end -->
-    
+
                                             <!--  sale analytics start -->
                                             <div class="col-xl-8 col-md-12">
                                                 <div class="card">
@@ -234,7 +234,7 @@
                                                 </div>
                                             </div>
                                             <!--  sale analytics end -->
-    
+
                                             <!--  project and team member start -->
                                             <div class="col-xl-8 col-md-12">
                                                 <div class="card table-card">
@@ -491,7 +491,7 @@
     </div>
     <![endif]-->
     <!-- Warning Section Ends -->
-    
+
     <!-- Required Jquery -->
     <script type="text/javascript" src="backend/assets/js/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="backend/assets/js/jquery-ui/jquery-ui.min.js "></script>
