@@ -1,5 +1,14 @@
 @extends('auth.login.main')
-
+<script>
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
 @section('content')
 
 <div class="container"><br>
@@ -40,7 +49,7 @@
 
 
                                         <div class="form-group form-primary">
-                                            <input type="password" name="password" class="form-control
+                                            <input type="password" name="password" id="myInput" class="form-control 
                                             @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
@@ -55,13 +64,13 @@
                                             <div class="col-12">
                                                 <div class="checkbox-fade fade-in-primary d-">
                                                     <label>
-                                                        <input type="checkbox" value="">
+                                                    <input type="checkbox" onclick="myFunction()">
                                                         <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                        <span class="text-inverse">Remember me</span>
+                                                        <span class="text-inverse">Show Password</span>
                                                     </label>
                                                 </div>
                                                 <div class="forgot-phone text-right f-right">
-                                                    <a href="#" class="text-right f-w-600"> Lupa Password?</a>
+                                                    <a href="/password/reset" class="text-right f-w-600"> Lupa Password?</a>
                                                 </div>
                                             </div>
                                         </div>
