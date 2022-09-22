@@ -20,7 +20,7 @@
                                     <div class="card-block">
                                         <div class="row m-b-20">
                                             <div class="col-md-12">
-                                                <h3 class="text-center">Silahkan Login</h3>
+                                                <h3 class="text-center">Login</h3>
                                             </div>
                                         </div>
                                         @csrf
