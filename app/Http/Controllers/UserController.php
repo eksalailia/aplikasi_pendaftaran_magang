@@ -18,4 +18,7 @@ class UserController extends Controller
     public function contact(){
         return view('layouts.frontend.contact');
     }
+    public function team(){
+        return view('layouts.frontend.team');
+    }
 }
