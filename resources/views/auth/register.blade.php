@@ -25,17 +25,17 @@
 
 
                                         <div class="form-group form-primary">
-                                            <input type="text" name="username" class="form-control
-                                            @error('username') is-invalid
-                                            @enderror" name="username" value="{{ old('username') }}" required
-                                            autocomplete="username" autofocus>
-                                                @error('username')
+                                            <input type="text" name="name" class="form-control
+                                            @error('name') is-invalid
+                                            @enderror" name="name" value="{{ old('name') }}" required
+                                            autocomplete="name" autofocus>
+                                                @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                                 @enderror
                                             <span class="form-bar"></span>
-                                            <label class="float-label">Username</label>
+                                            <label class="float-label">Nama</label>
                                         </div>
 
                                         <div class="form-group form-primary">
@@ -53,7 +53,16 @@
                                         </div>
 
                                         <div class="form-group form-primary">
-                                            <input type="email" name="email" class="form-control
+                                        <select name="role" value="{{ old('role') }}" required
+                                            autocomplete="role" autofocus class="form-control" style="font-size: 14px;">
+                                            <option value="applicant" style="font-size: 14px;">Applicant</option>
+                                        </select>
+                                            <span class="form-bar"></span>
+                                            <!-- <label class="float-label">Role</label> -->
+                                        </div>
+
+                                        <div class="form-group form-primary">
+                                            <input type="password" name="password" class="form-control
                                             @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" >
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
@@ -65,8 +74,13 @@
                                         </div>
 
                                     <div class="form-group form-primary">
-                                        <input type="email" name="email" class="form-control"
+                                        <input type="password" name="password_confirmation" class="form-control"
                                         name="password_confirmation" required autocomplete="new-password">
+                                        @error('password_confirmation')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                         <span class="form-bar"></span>
                                         <label class="float-label">Konfirmasi Password</label>
                                     </div>
@@ -79,7 +93,6 @@
                                         <hr/>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <p class="text-inverse" style="margin-left: 180px">Thank you.</p>
                                                 <p class="text-inverse" style="margin-left: 173px"><a href="/login"><b>Back to login</b></a></p>
                                             </div>
                                         </div>

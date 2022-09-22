@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -41,4 +42,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // tambah fungsi ini di MODEL USER
+    public function post()
+    {
+    // disini kita katakan bahwa setiap user akan memiliki banyak post
+    // keterangan: itu PostModel sesuaikan dengan nama MODEL POST yang agan gunakan
+        return $this->hasMany('App\Models\User');
+    }
 }
