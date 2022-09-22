@@ -10,7 +10,7 @@
                                       <span id="more-details">John Doe<i class="fa fa-caret-down"></i></span>
                                   </div>
                               </div>
-        
+
                               <div class="main-menu-content">
                                   <ul>
                                       <li class="more-details">
@@ -30,11 +30,11 @@
                                   </div>
                               </form>
                           </div>
-                          <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Layout</div>
+                          {{-- <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Layout</div> --}}
                           <ul class="pcoded-item pcoded-left-item">
                               <li class="active">
-                                  <a href="index.html" class="waves-effect waves-dark">
-                                      <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                  <a href="/admin" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-home"></i><b></b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
@@ -116,7 +116,7 @@
                                               <span class="pcoded-mcaret"></span>
                                           </a>
                                       </li>
-                
+
                                   </ul>
                               </li>
                           </ul>
@@ -136,9 +136,9 @@
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>
-        
+
                           </ul>
-        
+
                           <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Chart &amp; Maps</div>
                           <ul class="pcoded-item pcoded-left-item">
                               <li>
@@ -185,9 +185,9 @@
                                       </li>
                                   </ul>
                               </li>
-        
+
                           </ul>
-        
+
                           <div class="pcoded-navigation-label" data-i18n="nav.category.other">Other</div>
                           <ul class="pcoded-item pcoded-left-item">
                               <li class="pcoded-hasmenu ">
@@ -227,7 +227,7 @@
                                               <span class="pcoded-mcaret"></span>
                                           </a>
                                       </li>
-                
+
                                   </ul>
                               </li>
                           </ul>

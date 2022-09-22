@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SIDAMA - Aplikasi Pendaftaran Magang</title>
+    <title>SIPENMA - Aplikasi Penerimaan Magang</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
