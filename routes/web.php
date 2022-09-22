@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('layouts.main');
-Route::get('/about', [\App\Http\Controllers\UserController::class, 'about'])->name('layouts.about');
-Route::get('/service', [\App\Http\Controllers\UserController::class, 'service'])->name('layouts.service');
-Route::get('/contact', [\App\Http\Controllers\UserController::class, 'contact'])->name('layouts.contact');
+Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('layouts.frontend.index');
+Route::get('/about', [\App\Http\Controllers\UserController::class, 'about'])->name('layouts.frontend.about');
+Route::get('/service', [\App\Http\Controllers\UserController::class, 'service'])->name('layouts.frontend.service');
+Route::get('/contact', [\App\Http\Controllers\UserController::class, 'contact'])->name('layouts.frontend.contact');
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.main');
 
 Auth::routes();

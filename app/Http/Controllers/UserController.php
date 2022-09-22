@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index(){
-        return view('layouts.main');
+        return view('layouts.frontend.index');
     }
     public function about(){
-        return view('layouts.about');
+        return view('layouts.frontend.about');
     }
     public function service(){
-        return view('layouts.service');
+        return view('layouts.frontend.service');
     }
     public function contact(){
-        return view('layouts.contact');
+        return view('layouts.frontend.contact');
     }
 }
