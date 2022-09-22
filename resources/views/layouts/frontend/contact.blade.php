@@ -31,20 +31,19 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
-            <h1 class="mb-5">Contact For Any Query</h1>
-        </div>
+            <h4 class="section-title bg-white text-center text-primary px-3">Contact Us</h4><br>
+            <h1 class="mb-5">Hubungi Kami untuk Info Lanjut</h1>
+        </div><br>
         <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <h5>Get In Touch</h5>
-                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                {{-- <h5>Get In Touch</h5> --}}
                 <div class="d-flex align-items-center mb-3">
                     <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
                         <i class="fa fa-map-marker-alt text-white"></i>
                     </div>
                     <div class="ms-3">
-                        <h5 class="text-primary">Office</h5>
-                        <p class="mb-0">123 Street, New York, USA</p>
+                        <h5 class="text-primary">Lokasi</h5>
+                        <p class="mb-0">Jl. Perintis Kemerdekaan No. 32 Kota Madiun, Jawa Timur 63117</p>
                     </div>
                 </div>
                 <div class="d-flex align-items-center mb-3">
@@ -52,8 +51,17 @@
                         <i class="fa fa-phone-alt text-white"></i>
                     </div>
                     <div class="ms-3">
-                        <h5 class="text-primary">Mobile</h5>
-                        <p class="mb-0">+012 345 67890</p>
+                        <h5 class="text-primary">Telepon</h5>
+                        <p class="mb-0">(0351) 467327</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                        <i class="bi bi-whatsapp flex-shrink-0 text-white"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-primary">WhatsApp</h5>
+                        <p class="mb-0">0811-3577-800</p>
                     </div>
                 </div>
                 <div class="d-flex align-items-center">
@@ -62,7 +70,7 @@
                     </div>
                     <div class="ms-3">
                         <h5 class="text-primary">Email</h5>
-                        <p class="mb-0">info@example.com</p>
+                        <p class="mb-0">kominfo@madiunkota.go.id</p>
                     </div>
                 </div>
             </div>
