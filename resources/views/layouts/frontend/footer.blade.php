@@ -3,10 +3,11 @@
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Quick Link</h4>
+                <h4 class="text-white mb-3">Menu</h4>
                 <a class="btn btn-link" href="/">Home</a>
-                <a class="btn btn-link" href="/about">About Us</a>
-                <a class="btn btn-link" href="/contact">Contact Us</a>
+                <a class="btn btn-link" href="/about">About</a>
+                <a class="btn btn-link" href="/contact">Contact</a>
+                <a class="btn btn-link" href="/pembimbing">Mentor</a>
                 {{-- <a class="btn btn-link" href="">Privacy Policy</a>
                 <a class="btn btn-link" href="">Terms & Condition</a>
                 <a class="btn btn-link" href="">FAQs & Help</a> --}}

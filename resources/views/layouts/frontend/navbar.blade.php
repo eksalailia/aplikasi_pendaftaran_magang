@@ -10,7 +10,7 @@
             <a href="/" class="nav-item nav-link active">Home</a>
             <a href="/about" class="nav-item nav-link">About</a>
             <a href="/contact" class="nav-item nav-link">Contact</a>
-            <a href="/pembimbing" class="nav-item nav-link">Pembimbing</a>
+            <a href="/pembimbing" class="nav-item nav-link">Mentor</a>
             {{-- <a href="courses.html" class="nav-item nav-link">Courses</a> --}}
             {{-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
