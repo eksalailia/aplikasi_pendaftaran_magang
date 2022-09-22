@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>SIPENMA</h2>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -10,16 +10,16 @@
             <a href="/" class="nav-item nav-link active">Home</a>
             <a href="/about" class="nav-item nav-link">About</a>
             <a href="/contact" class="nav-item nav-link">Contact</a>
-            <a href="/service" class="nav-item nav-link">Service</a>
-            <a href="courses.html" class="nav-item nav-link">Courses</a>
-            <div class="nav-item dropdown">
+            <a href="/pembimbing" class="nav-item nav-link">Mentor</a>
+            {{-- <a href="courses.html" class="nav-item nav-link">Courses</a> --}}
+            {{-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu fade-down m-0">
                     <a href="team.html" class="dropdown-item">Our Team</a>
                     <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                     <a href="404.html" class="dropdown-item">404 Page</a>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <a href="/login" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
     </div>

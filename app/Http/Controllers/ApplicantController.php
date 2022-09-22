@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class ApplicantController extends Controller
 {
     public function applicant(){
-        return view('applicant.index');
+        return view('applicant.main');
     }
 }

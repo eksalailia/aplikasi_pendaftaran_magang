@@ -22,6 +22,7 @@ Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('l
 Route::get('/about', [\App\Http\Controllers\UserController::class, 'about'])->name('layouts.frontend.about');
 Route::get('/service', [\App\Http\Controllers\UserController::class, 'service'])->name('layouts.frontend.service');
 Route::get('/contact', [\App\Http\Controllers\UserController::class, 'contact'])->name('layouts.frontend.contact');
+Route::get('/pembimbing', [\App\Http\Controllers\UserController::class, 'team'])->name('layouts.frontend.team');
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.main');
 Route::get('/reviewer', [\App\Http\Controllers\ReviewerController::class, 'reviewer'])->name('reviewer.main');
 Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'applicant'])->name('applicant.main');

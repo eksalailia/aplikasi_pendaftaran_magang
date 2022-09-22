@@ -3,10 +3,11 @@
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Quick Link</h4>
+                <h4 class="text-white mb-3">Menu</h4>
                 <a class="btn btn-link" href="/">Home</a>
-                <a class="btn btn-link" href="/about">About Us</a>
-                <a class="btn btn-link" href="/contact">Contact Us</a>
+                <a class="btn btn-link" href="/about">About</a>
+                <a class="btn btn-link" href="/contact">Contact</a>
+                <a class="btn btn-link" href="/pembimbing">Mentor</a>
                 {{-- <a class="btn btn-link" href="">Privacy Policy</a>
                 <a class="btn btn-link" href="">Terms & Condition</a>
                 <a class="btn btn-link" href="">FAQs & Help</a> --}}
@@ -51,9 +52,10 @@
             <div class="col-lg-5 col-md-6">
                 <div class="col-lg-12 col-md-12 footer-info">
                     <a href="/" class="logo d-flex align-items-center">
-                      <span>
-                        <img src="{{URL::asset('frontend2/img/logo4.png')}}" style="height: 70px;width:195px;max-height:100px">
-                      </span>
+                      {{-- <span> --}}
+                        {{-- <img src="{{URL::asset('frontend2/img/logo4.png')}}" style="height: 70px;width:195px;max-height:100px"> --}}
+                        <h2 class="text-white mb-8"><i class="fa fa-book me-3"></i>SIPENMA</h2>
+                      {{-- </span> --}}
                     </a><br>
                     <p>
                         Aplikasi ini dikembangkan untuk memudahkan instansi dalam mempublikasikan
@@ -72,14 +74,13 @@
                     <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                     <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button> --}}
                 </div>
-            </div>
-        </div>
+
 
     <div class="container">
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="margin-left:350px">
-                    &copy; <a class="border-bottom" href="#" >Your Site Name</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" >Aks' Website</a>, All Right Reserved.
                     Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
                 </div>
                 {{-- <div class="col-md-6 text-center text-md-end">
