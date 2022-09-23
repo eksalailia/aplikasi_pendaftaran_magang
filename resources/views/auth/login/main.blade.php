@@ -117,6 +117,8 @@
 <script type="text/javascript" src="bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
 <script type="text/javascript" src="bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
 <script type="text/javascript" src="{{ asset('backend/assets/js/common-pages.js')}}"></script>
+
+
 </body>
 
 </html>
