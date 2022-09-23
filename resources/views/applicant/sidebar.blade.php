@@ -33,13 +33,13 @@
                           {{-- <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Layout</div> --}}
                           <ul class="pcoded-item pcoded-left-item">
                               <li class="active">
-                                  <a href="/admin" class="waves-effect waves-dark">
+                                  <a href="/applicant" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-home"></i><b></b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>
-                              <li class="pcoded-hasmenu">
+                              {{-- <li class="pcoded-hasmenu">
                                   <a href="javascript:void(0)" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
                                       <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Components</span>
@@ -118,7 +118,7 @@
                                       </li>
 
                                   </ul>
-                              </li>
+                              </li> --}}
                           </ul>
                           <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Forms &amp; Tables</div>
                           <ul class="pcoded-item pcoded-left-item">
@@ -130,12 +130,19 @@
                                   </a>
                               </li>
                               <li>
-                                  <a href="bs-basic-table.html" class="waves-effect waves-dark">
+                                  <a href="/table" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.form-components.main">Basic Table</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>
+                              <li>
+                                <a href="/datadiri" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Upload Data Diri</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
 
                           </ul>
 

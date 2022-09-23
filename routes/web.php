@@ -26,7 +26,11 @@ Route::get('/pembimbing', [\App\Http\Controllers\UserController::class, 'team'])
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.main');
 Route::get('/reviewer', [\App\Http\Controllers\ReviewerController::class, 'reviewer'])->name('reviewer.main');
 Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'applicant'])->name('applicant.main');
+Route::get('/table', [\App\Http\Controllers\ApplicantController::class, 'table'])->name('applicant.table');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// applicant //
+Route::get('/datadiri', [\App\Http\Controllers\DataDiriController::class, 'datadiri_index'])->name('applicant.datadiri.index');
 

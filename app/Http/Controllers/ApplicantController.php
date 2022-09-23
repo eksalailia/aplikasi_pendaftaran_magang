@@ -9,4 +9,7 @@ class ApplicantController extends Controller
     public function applicant(){
         return view('applicant.main');
     }
+    public function table(){
+        return view('applicant.table');
+    }
 }

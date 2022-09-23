@@ -40,7 +40,7 @@
                     masyarakat dalam pelaksanaan program magang pada Kantor Diskominfo Kota Madiun.</p>
                 <p class="mb-4">Aplikasi ini dimaksudkan untuk membantu masyarakat dalam melaksanakan program magang
                     dari proses pendaftaran, seleksi, hingga pemberitahuan hasil seleksi.</p>
-                    <h5 class="mb-3">Berikut adalah bidang yang dapat dipilih sesuai jurusan :</h5>
+                    {{-- <h5 class="mb-3">Berikut adalah bidang yang dapat dipilih sesuai jurusan :</h5>
                 <div class="row gy-2 gx-4 mb-4">
                     <div class="col-sm-6">
                         <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Bidang Pengelolaan IKP</p>
@@ -62,7 +62,7 @@
                         <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
                     </div>
                 </div>
-                <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a> --}}
             </div>
         </div>
     </div>

@@ -32,7 +32,7 @@
                                 <p class="fs-5 text-white mb-4 pb-2">SIPENMA adalah Aplikasi Penerimaan Magang pada Kantor Diskominfo
                                     Kota Madiun berbasis website.</p>
                                 <a href="/about" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Registrasi Now</a>
+                                <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Register Now</a>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                     mengakses informasi tentang magang sekaligus untuk mendaftarkan diri pada program magang
                                     di Diskominfo Kota Madiun.</p>
                                 <a href="/about" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Registriasi Now</a>
+                                <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Register Now</a>
                             </div>
                         </div>
                     </div>

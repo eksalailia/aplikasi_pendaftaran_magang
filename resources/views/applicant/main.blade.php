@@ -17,7 +17,7 @@
       <meta name="keywords" content="bootstrap, bootstrap applicant template, applicant theme, applicant dashboard, dashboard template, applicant template, responsive" />
       <meta name="author" content="codedthemes" />
       <!-- Favicon icon -->
-      <link rel="icon" href="backend/assets/images/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="{{ asset ('backend/assets/images/book.png')}}" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
     <!-- waves.css -->
@@ -58,7 +58,7 @@
                                   <div class="col-md-4">
                                       <ul class="breadcrumb-title">
                                           <li class="breadcrumb-item">
-                                              <a href="index.html"> <i class="fa fa-home"></i> </a>
+                                              <a href="/applicant"> <i class="fa fa-home"></i> </a>
                                           </li>
                                           <li class="breadcrumb-item"><a href="#!">Dashboard</a>
                                           </li>
