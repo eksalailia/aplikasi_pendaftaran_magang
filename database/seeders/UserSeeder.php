@@ -32,6 +32,7 @@ class UserSeeder extends Seeder
             'role' => 'reviewer'
             ],
 
-        ]);  
+
+        ]);
     }
 }

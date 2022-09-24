@@ -138,14 +138,14 @@
                               </li>
                               <li>
                                 <a href="/datadiri" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                    <span class="pcoded-micon"><i class="ti-id-badge"></i><b>FC</b></span>
                                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Upload Data Diri</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/pendaftaran" class="waves-effect waves-dark">
-                                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                    <span class="pcoded-micon"><i class="ti-file"></i><b>FC</b></span>
                                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Pendaftaran</span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
