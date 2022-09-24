@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\ForgotPasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,11 +35,13 @@ Route::get('/reviewer', [\App\Http\Controllers\ReviewerController::class, 'revie
 Route::group(['middleware'=>['applicant','auth','PreventBackHistory']], function(){
 Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'applicant'])->name('applicant.main');
 Route::get('/datadiri', [\App\Http\Controllers\DataDiriController::class, 'datadiri_index'])->name('applicant.datadiri.index');
-Route::get('/pendaftaran', [\App\Http\Controllers\PendaftaranController::class, 'daftar'])->name('applicant.pendaftaran.index');
 });
 Route::get('/table', [\App\Http\Controllers\ApplicantController::class, 'table'])->name('applicant.table');
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/forget-password', [\App\Http\Controllers\ForgotPasswordController::class, 'getEmail']);
+Route::post('/forget-password', [\App\Http\Controllers\ForgotPasswordController::class, 'postEmail']);
 
-// applicant //
+Route::get('/reset-password/{token}', [\App\Http\Controllers\ResetPasswordController::class, 'getPassword']);
+Route::post('/reset-password', [\App\Http\Controllers\ResetPasswordController::class, 'updatePassword']);
+

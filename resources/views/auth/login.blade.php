@@ -70,7 +70,7 @@ function myFunction() {
                                                     </label>
                                                 </div>
                                                 <div class="forgot-phone text-right f-right">
-                                                    <a href="/password/reset" class="text-right f-w-600"> Lupa Password?</a>
+                                                    <a href="/forget-password" class="text-right f-w-600"> Lupa Password?</a>
                                                 </div>
                                             </div>
                                         </div>
