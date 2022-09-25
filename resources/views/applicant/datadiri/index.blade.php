@@ -77,172 +77,88 @@
             <div class="page-wrapper">
                 <!-- Page-body start -->
                 <div class="page-body">
-                    <!-- Basic table card start -->
-                    {{-- <div class="card">
-                        <div class="card-header">
-                            <h5>Basic Table</h5>
-                            <span>use class <code>table</code> inside table element</span>
-                            <div class="card-header-right">
-                                <ul class="list-unstyled card-option">
-                                    <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                    <li><i class="fa fa-window-maximize full-card"></i></li>
-                                    <li><i class="fa fa-minus minimize-card"></i></li>
-                                    <li><i class="fa fa-refresh reload-card"></i></li>
-                                    <li><i class="fa fa-trash close-card"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-block table-border-style">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div> --}}
-                    <!-- Basic table card end -->
-                    <!-- Inverse table card start -->
-                    {{-- <div class="card">
-                        <div class="card-header">
-                            <h5>Inverse Table</h5>
-                            <span>use class <code>table-inverse</code> inside table element</span>
-                            <div class="card-header-right">
-                                <ul class="list-unstyled card-option">
-                                    <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                    <li><i class="fa fa-window-maximize full-card"></i></li>
-                                    <li><i class="fa fa-minus minimize-card"></i></li>
-                                    <li><i class="fa fa-refresh reload-card"></i></li>
-                                    <li><i class="fa fa-trash close-card"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-block table-border-style">
-                            <div class="table-responsive">
-                                <table class="table table-inverse">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div> --}}
-                    <!-- Inverse table card end -->
-                    <!-- Hover table card start -->
+              
                     <div class="card">
                         <div class="card-header">
                             <h5>Upload Data Diri</h5>
-
-                            {{-- <span>use class <code>table-hover</code> inside table element</span> --}}
-                            <div class="card-header-right">
-                                <ul class="list-unstyled card-option">
-                                    <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                    <li><i class="fa fa-window-maximize full-card"></i></li>
-                                    <li><i class="fa fa-minus minimize-card"></i></li>
-                                    <li><i class="fa fa-refresh reload-card"></i></li>
-                                    <li><i class="fa fa-trash close-card"></i></li>
-                                </ul>
-                            </div>
+                <div class="card-body">
+                    <form action="{{ url('datadiri-update') }}" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                     <div class="row">
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Nama Lengkap</label>
+                                 <input type="text" class="form-control" placeholder="Nama Lengkap" name="name" value="{{ Auth::user()->name }}">
+                                 <span class="text-danger">@error('name'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Alamat</label>
+                                 <input type="text" class="form-control" placeholder="Alamat Lengkap" name="alamat" value="{{ Auth::user()->alamat }}">
+                                 <span class="text-danger">@error('alamat'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         </div>
+                         <div class="row">
+                         <div class="col-md-6">
+                             <div class="form-group">
+                                 <label for="">Jenis Kelamin</label>
+                                 <select class="form-control" name="jenis_kelamin" value="{{ Auth::user()->jenis_kelamin }}">
+                                     <option value="" selected>Pilih Jenis Kelamin</option>
+                                     <option value="Laki-laki" style="font-size: 14px;">Laki-laki</option>
+                                    <option value="Perempuan" style="font-size: 14px;">Perempuan</option>
+                                 </select>
+                                 <span class="text-danger">@error('jenis_kelamin'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Tempat Lahir</label>
+                                 <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" value="{{ Auth::user()->tempat_lahir }}">
+                                 <span class="text-danger">@error('tempat_lahir'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
                         </div>
+                        <div class="row">
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Tanggal Lahir</label>
+                                 <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir" value="{{ Auth::user()->tanggal_lahir }}">
+                                 <span class="text-danger">@error('tanggal_lahir'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">E-Mail</label>
+                                 <input type="text" class="form-control" placeholder="E-Mail" name="email" value="{{ Auth::user()->email }}">
+                                 <span class="text-danger">@error('email'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         </div>
+                         <div class="row">
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Nomor Telepon</label>
+                                 <input type="text" class="form-control" placeholder="Nomor Telepon" name="no_tlp" value="{{ Auth::user()->no_tlp }}">
+                                 <span class="text-danger">@error('no_tlp'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                                <label for="">Foto</label>
+                                <input type="file" class="form-control" required="" name="foto" value="{{ Auth::user()->foto }}"><br></br>
+                                <img src="{{ asset('backend/assets/uploads/profile/'.Auth::user()->foto) }}" class="w-75" alt="" style="height:400px; width:300px; margin-left:-200px;">
+                                 <span class="text-danger">@error('foto'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         </div>
 
-                        {{-- <form action="" method="" style="margin-top:20px">
-                        <div class="form-group col-3" style="">
-                            <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Search...">
-                            <button class="btn btn-secondary" type="submit"  style="font-size: 23px;margin-bottom:3px"><i class="fa fa-search"></i></button>
-                        </form> --}}
-                        <div class="card-block table-border-style">
-                            <div class="content">
-                                <div class="card card-info card-outline">
-                                        <div class="card-tools">
-                                            <a href="" class="btn btn-success" style="">Tambah Data <i class="fa fa-plus"></i></a>
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="table-responsive">
-
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            {{-- @foreach ($permohonan as $ph) --}}
-                                            <td>1</td>
-                                            <td>jj</td>
-                                            <td>jkkj</td>
-                                            <td>hjjh</td>
-                                            <td>
-                                                <form action="" method="">
-                                                    <a class="btn btn-info" href="">Show <i class="fa fa-eye"></i></a>
-                                                    <a href="" class="btn btn-success ">Edit <i class="fa fa-edit"></i></a>
-                                                    {{-- @csrf
-                                                    @method('DELETE') --}}
-                                                    <button type="submit" class="btn btn-danger">Delete <i class="fa fa-trash"></i></button>
-                                                </form>
-                                            </td>
-                                    </tr>
-                                    {{-- @endforeach --}}
-                                    </tbody>
-
-                                </table>
-                            </div>
+                         <div class="action-buttons d-flex justify-content-between bg-white pt-2 pb-2">
+                            <button type="submit" class="btn btn-md btn-primary">Submit</button>
+                         </div>
+                            
+                     </div>
                         </div>
                     </div>
                     <!-- Hover table card end -->
