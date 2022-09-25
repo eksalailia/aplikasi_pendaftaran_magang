@@ -96,7 +96,16 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Tahun Akademik</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control">
+                                                        <select name="select" class="form-control">
+                                                            <option value="opt1">Tahun</option>
+                                                            <option value="opt2">Type 2</option>
+                                                            <option value="opt3">Type 3</option>
+                                                            <option value="opt4">Type 4</option>
+                                                            <option value="opt5">Type 5</option>
+                                                            <option value="opt6">Type 6</option>
+                                                            <option value="opt7">Type 7</option>
+                                                            <option value="opt8">Type 8</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -108,7 +117,16 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Bidang Magang</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control">
+                                                        <select name="select" class="form-control">
+                                                            <option value="opt1">Bidang</option>
+                                                            <option value="opt2">Type 2</option>
+                                                            <option value="opt3">Type 3</option>
+                                                            <option value="opt4">Type 4</option>
+                                                            <option value="opt5">Type 5</option>
+                                                            <option value="opt6">Type 6</option>
+                                                            <option value="opt7">Type 7</option>
+                                                            <option value="opt8">Type 8</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -167,38 +185,54 @@
                                                 <form>
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Mahasiswa 1</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
-                                                        </div>
+                                                            <div class="col-sm-10">
+                                                                <input type="file" class="form-control">
+                                                            </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Mahasiswa 2</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
+                                                            <input type="file" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Mahasiswa 3</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
+                                                            <input type="file" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Mahasiswa 4</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
+                                                            <input type="file" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Mahasiswa 5</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
+                                                            <input type="file" class="form-control">
                                                         </div>
                                                     </div>
                                                 </form>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-success">Daftar</button>
+                                    </div>
+                                        <div class="card-block">
+                                            <div class="card text-white bg-secondary mb-3">
+                                                <h5 class="card-header">Upload Proposal Permohonan</h5>
+                                                <div class="card-body">
+                                                    <form>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Proposal</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="file" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-success">Daftar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
