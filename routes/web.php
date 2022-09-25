@@ -35,6 +35,7 @@ Route::get('/reviewer', [\App\Http\Controllers\ReviewerController::class, 'revie
 Route::group(['middleware'=>['applicant','auth','PreventBackHistory']], function(){
 Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'applicant'])->name('applicant.main');
 Route::get('/datadiri', [\App\Http\Controllers\DataDiriController::class, 'datadiri_index'])->name('applicant.datadiri.index');
+Route::post('/datadiri-update', [\App\Http\Controllers\DataDiriController::class, 'profileupdate'])->name('profileupdate');
 });
 Route::get('/table', [\App\Http\Controllers\ApplicantController::class, 'table'])->name('applicant.table');
 Auth::routes();

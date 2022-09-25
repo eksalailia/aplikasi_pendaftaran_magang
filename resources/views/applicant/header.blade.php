@@ -94,18 +94,18 @@
                                   </div>
                               </div>
                           </li>
-                          <li>
+                          <!-- <li>
                               <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
                                   <i class="ti-fullscreen"></i>
                               </a>
-                          </li>
+                          </li> -->
                       </ul>
                       <ul class="nav-right">
                           <li class="header-notification">
-                              <a href="#!" class="waves-effect waves-light">
+                              <!-- <a href="#!" class="waves-effect waves-light">
                                   <i class="ti-bell"></i>
                                   <span class="badge bg-c-red"></span>
-                              </a>
+                              </a> -->
                               <ul class="show-notification">
                                   <li>
                                       <h6>Notifications</h6>
