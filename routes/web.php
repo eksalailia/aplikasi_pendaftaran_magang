@@ -47,6 +47,7 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/mentor', [\App\Http\Controllers\MentorController::class, 'index'])->name('admin.mentor.index');
     Route::get('/create-mentor', [\App\Http\Controllers\MentorController::class, 'create'])->name('admin.mentor.create');
     Route::get('/show-mentor', [\App\Http\Controllers\MentorController::class, 'show'])->name('admin.mentor.show');
+    Route::get('/edit-mentor', [\App\Http\Controllers\MentorController::class, 'edit'])->name('admin.mentor.edit');
 });
 
 

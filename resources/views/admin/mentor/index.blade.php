@@ -129,7 +129,7 @@
                             <td>
                                 <form action="" method="">
                                     <a class="btn btn-info" href="{{ route('admin.mentor.show') }}">Show <i class="fa fa-eye"></i></a>
-                                    <a href="" class="btn btn-success ">Edit <i class="fa fa-edit"></i></a>
+                                    <a href="{{ route('admin.mentor.edit') }}" class="btn btn-success ">Edit <i class="fa fa-edit"></i></a>
                                     {{-- @csrf
                                     @method('DELETE') --}}
                                     <button type="submit" class="btn btn-danger">Delete <i class="fa fa-trash"></i></button>

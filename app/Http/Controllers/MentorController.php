@@ -15,4 +15,7 @@ class MentorController extends Controller
     public function show(){
         return view('admin.mentor.show');
     }
+    public function edit(){
+        return view('admin.mentor.edit');
+    }
 }

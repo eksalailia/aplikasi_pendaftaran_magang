@@ -12,7 +12,7 @@
 
                             <form class="md-float-material form-material" method="POST" action="{{ route('register') }}">
                                 <div class="text-center">
-                                    <img src="{{ asset('backend/assets/images/logo.png')}}" alt="logo.png">
+                                    {{-- <img src="{{ asset('backend/assets/images/logo.png')}}" alt="logo.png"> --}}
                                 </div>
                                 <div class="auth-box card">
                                     <div class="card-block">
@@ -20,7 +20,7 @@
                                             <div class="col-md-12">
                                                 <h3 class="text-center">Register</h3>
                                             </div>
-                                        </div>
+                                        </div><br><br>
                                         @csrf
 
 

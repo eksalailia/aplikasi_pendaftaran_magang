@@ -24,7 +24,7 @@ function myFunction() {
 
                             <form class="md-float-material form-material" method="POST" action="{{ route('login') }}">
                                 <div class="text-center">
-                                    <img src="{{ asset('backend/assets/images/logo.png')}}" alt="logo.png">
+                                    {{-- <img src="{{ asset('backend/assets/images/logo.png')}}" alt="logo.png" style="width: 200px"> --}}
                                 </div>
                                 <div class="auth-box card">
                                     <div class="card-block">
@@ -32,7 +32,7 @@ function myFunction() {
                                             <div class="col-md-12">
                                                 <h3 class="text-center">Login</h3>
                                             </div>
-                                        </div>
+                                        </div><br><br>
                                         @csrf
 
                                         <div class="form-group form-primary">
