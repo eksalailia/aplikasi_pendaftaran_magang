@@ -93,19 +93,19 @@
                 </ul>
             </div> --}}
         </div>
-        <form method="POST" action="" enctype="multipart/form-data"  >
+        <form method="POST" action="{{ route ('admin.mentor.create') }}" enctype="multipart/form-data"  >
             @csrf
                 <div class="form-group col-sm-12">
-                    <label>Nama Profil</label>
-                    <input type="text" id="nama_profil" name="nama_profil" class="form-control" >
+                    <label>Nama Mentor</label>
+                    <input type="text" id="nama" name="nama" class="form-control" >
                 </div>
                 <div class="form-group col-sm-12">
                     <label>Jabatan</label>
                     <input type="text" id="jabatan" name="jabatan" class="form-control" >
                 </div>
                 <div class="form-group col-sm-12">
-                    <label>Foto Profil</label>
-                    <input type="file" id="img_profil" name="img_profil" class="form-control">
+                    <label>Foto</label>
+                    <input type="file" id="img" name="img" class="form-control">
                 </div>
                 <div class="form-group col-sm-5">
                     <button type="submit" class="btn btn-success">Simpan</button>

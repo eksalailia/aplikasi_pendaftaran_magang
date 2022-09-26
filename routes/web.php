@@ -44,10 +44,14 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/datadiri-admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.datadiri.index');
     Route::get('/datadiri-show', [\App\Http\Controllers\AdminController::class, 'show'])->name('admin.datadiri.show');
 
-    Route::get('/mentor', [\App\Http\Controllers\MentorController::class, 'index'])->name('admin.mentor.index');
-    Route::get('/create-mentor', [\App\Http\Controllers\MentorController::class, 'create'])->name('admin.mentor.create');
-    Route::get('/show-mentor', [\App\Http\Controllers\MentorController::class, 'show'])->name('admin.mentor.show');
-    Route::get('/edit-mentor', [\App\Http\Controllers\MentorController::class, 'edit'])->name('admin.mentor.edit');
+    Route::get('/mentor', '\App\Http\Controllers\MentorController@index')->name('admin.mentor.index');
+    Route::get('/create-mentor', '\App\Http\Controllers\MentorController@create')->name('admin.mentor.create');
+    Route::get('/create-mentor', '\App\Http\Controllers\MentorController@store')->name('admin.mentor.create');
+    Route::get('/edit-mentor{id}', '\App\Http\Controllers\MentorController@edit')->name('admin.mentor.edit');
+    Route::get('/edit-mentor{id}', '\App\Http\Controllers\MentorController@update')->name('admin.mentor.edit');
+    Route::get('/show-mentor/{id}', '\App\Http\Controllers\MentorController@show')->name('admin.mentor.show');
+    Route::delete('/hapus-mentor/{mentor}', ['as' => 'admin.mentor.destroy', 'uses' => 'MentorController@destroy']);
+
 });
 
 

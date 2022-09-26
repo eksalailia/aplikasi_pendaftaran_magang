@@ -82,21 +82,20 @@
                             <div class="card-header">
                                 <h5>Daftar Mentor</h5>
                         </div><br><br>
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="{{route('admin.mentor.edit',$mentor->id)}}" method="post" enctype="multipart/form-data">
+                            {{csrf_field()}}
                         <div class="form-group col-sm-12">
-
-                            <label>Foto Profil</label>
-                            <img src="" style="width: 500px; height: 250px;">
-                            <input type="file" name="img_profil" class="form-control">
+                            <label>Foto Mentor</label>
+                            <img src="{{asset('img/'.$mentor->img)}}" style="width: 500px; height: 250px;">
+                            <input type="file" name="img" class="form-control">
                             </div>
                         <div class="form-group col-sm-12">
-
-                            <label>Nama Profil</label>
-                            <input type="text" id="nama_profil" name="nama_profil" class="form-control" required="" value="" >
+                            <label>Nama Mentor</label>
+                            <input type="text" id="nama" name="nama" class="form-control" required="" value="{{$mentor->nama}}" >
                         </div>
                         <div class="form-group col-sm-12">
                             <label>Jabatan</label>
-                            <input type="text" id="jabatan" name="jabatan" class="form-control" required="" value="" >
+                            <input type="text" id="jabatan" name="jabatan" class="form-control" required="" value="{{$mentor->jabatan}}" >
                             {{-- <input type="text" id="deskripsi" name="deskripsi" class="form-control" required="" value="{{$kegiatan->deskripsi}}" > --}}
                         </div>
                         <div class="form-group col-sm-12">

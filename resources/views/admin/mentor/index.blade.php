@@ -121,24 +121,23 @@
                     </thead>
                     <tbody>
                         <tr>
-                            {{-- @foreach ($permohonan as $ph) --}}
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
+                            @foreach ($mentor as $mt)
+                            <td>{{ $mt->id }}</td>
+                            <td>{{ $mt->nama }}</td>
+                            <td>{{ $mt->jabatan }}</td>
+                            <td><img alt="img" src="/img/{{ $mt->img }}" width="100px"></td>
                             <td>
-                                <form action="" method="">
+                                <form action="{{ route('admin.mentor.destroy',$mt->id) }}"  method="POST">
                                     <a class="btn btn-info" href="{{ route('admin.mentor.show') }}">Show <i class="fa fa-eye"></i></a>
                                     <a href="{{ route('admin.mentor.edit') }}" class="btn btn-success ">Edit <i class="fa fa-edit"></i></a>
-                                    {{-- @csrf
-                                    @method('DELETE') --}}
+                                    @csrf
+                                    @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete <i class="fa fa-trash"></i></button>
                                 </form>
                             </td>
-                    </tr>
-                    {{-- @endforeach --}}
+                        </tr>
+                        @endforeach
                     </tbody>
-
                 </table>
             </div>
         </div>
