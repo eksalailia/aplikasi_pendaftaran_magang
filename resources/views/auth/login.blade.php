@@ -1,4 +1,5 @@
 @extends('auth.login.main')
+
 <script>
 function myFunction() {
   var x = document.getElementById("myInput");
@@ -49,7 +50,7 @@ function myFunction() {
 
 
                                         <div class="form-group form-primary">
-                                            <input type="password" name="password" id="myInput" class="form-control 
+                                            <input type="password" name="password" id="myInput" class="form-control
                                             @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">

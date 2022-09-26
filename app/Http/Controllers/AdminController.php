@@ -8,7 +8,13 @@ use DB;
 class AdminController extends Controller
 {
     public function admin(){
-        // $data = DB::table('pegawai')->paginate(10);
         return view('admin.main');
     }
+    public function index(){
+        return view('admin.datadiri.index');
+    }
+    public function show(){
+        return view('admin.datadiri.show');
+    }
+
 }

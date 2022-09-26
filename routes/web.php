@@ -25,7 +25,7 @@ Route::get('/service', [\App\Http\Controllers\UserController::class, 'service'])
 Route::get('/contact', [\App\Http\Controllers\UserController::class, 'contact'])->name('layouts.frontend.contact');
 Route::get('/pembimbing', [\App\Http\Controllers\UserController::class, 'team'])->name('layouts.frontend.team');
 Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
-Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.main');
+// Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.main');
 });
 
 Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(){
@@ -36,9 +36,20 @@ Route::group(['middleware'=>['applicant','auth','PreventBackHistory']], function
 Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'applicant'])->name('applicant.main');
 Route::get('/datadiri', [\App\Http\Controllers\DataDiriController::class, 'datadiri_index'])->name('applicant.datadiri.index');
 Route::post('/datadiri-update', [\App\Http\Controllers\DataDiriController::class, 'profileupdate'])->name('profileupdate');
-
 Route::get('/pendaftaran', [\App\Http\Controllers\PendaftaranController::class, 'daftar'])->name('applicant.pendaftaran.index');
 });
+
+Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
+    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.main');
+    Route::get('/datadiri-admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.datadiri.index');
+    Route::get('/datadiri-show', [\App\Http\Controllers\AdminController::class, 'show'])->name('admin.datadiri.show');
+
+    Route::get('/mentor', [\App\Http\Controllers\MentorController::class, 'index'])->name('admin.mentor.index');
+    Route::get('/create-mentor', [\App\Http\Controllers\MentorController::class, 'create'])->name('admin.mentor.create');
+    Route::get('/show-mentor', [\App\Http\Controllers\MentorController::class, 'show'])->name('admin.mentor.show');
+});
+
+
 Route::get('/table', [\App\Http\Controllers\ApplicantController::class, 'table'])->name('applicant.table');
 Auth::routes();
 
