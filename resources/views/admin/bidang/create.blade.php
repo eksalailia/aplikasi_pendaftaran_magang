@@ -72,29 +72,50 @@
         </div>
     </div>
     <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+    <div class="card">
+        <div class="card-header">
+            <h5>Daftar Mentor</h5>
 
-<div class="container mt-5" >
-    <div class="row justify-content-center align-items-center" style="margin-right: 170px">
-        <div class="card" style="width: 50rem; margin-left: 150px">
-            <div class="card-header">
-                <h5 style="font-size: 18px; font-family: Arial, Helvetica; text-align:center"><b>Detail Bidang</h5></b>
-            </div>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" style="font-size: 16px;"><b>Nama Bidang : </b></li>
-                    <li class="list-group-item" style="font-size: 16px;"><b>Keterangan : </b></li>
+            {{-- <span>use class <code>table-hover</code> inside table element</span> --}}
+            {{-- <div class="card-header-right">
+                <ul class="list-unstyled card-option">
+                    <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                    <li><i class="fa fa-minus minimize-card"></i></li>
+                    <li><i class="fa fa-refresh reload-card"></i></li>
+                    <li><i class="fa fa-trash close-card"></i></li>
                 </ul>
-            </div>
-            <a class="btn btn-success mt-3" href="/bidang" style="font-size: 16px;">Kembali</a>
+            </div> --}}
+        </div>
+        <form method="POST" action="" enctype="multipart/form-data"  >
+            @csrf
+                <div class="form-group col-sm-12">
+                    <label>Nama Bidang</label>
+                    <input type="text" id="nama" name="nama" class="form-control" >
+                </div>
+                <div class="form-group col-sm-12">
+                    <label>Keterangan</label>
+                    <textarea class="form-control" id="exampleTextarea1" rows="4" ></textarea>
+                </div>
+                <div class="form-group col-sm-5">
+                    <button type="submit" class="btn btn-success">Simpan</button>
+                    <a href="/bidang" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
+</div>
 
 
-
-
-<!-- Required Jquery -->
+        <!-- Required Jquery -->
 <script type="text/javascript" src="backend/assets/js/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="backend/assets/js/jquery-ui/jquery-ui.min.js "></script>
 <script type="text/javascript" src="backend/assets/js/popper.js/popper.min.js"></script>

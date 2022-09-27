@@ -64,6 +64,14 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::delete('/hapus-mentor/{mentor}', '\App\Http\Controllers\MentorController@destroy')->name('admin.mentor.destroy');
     // Route::delete('/hapus-mentor/{mentor}', ['as' => 'admin.mentor.destroy', 'uses' => 'MentorController@destroy']);
 
+    Route::get('/bidang', '\App\Http\Controllers\BidangController@index')->name('admin.bidang.index');
+    Route::get('/create-bidang', '\App\Http\Controllers\BidangController@create')->name('admin.bidang.create');
+    // Route::post('/create-mentor', '\App\Http\Controllers\MentorController@store')->name('admin.mentor.create');
+    Route::get('/edit-bidang', '\App\Http\Controllers\BidangController@edit')->name('admin.bidang.edit');
+    // Route::post('/edit-mentor{id}', '\App\Http\Controllers\MentorController@update')->name('admin.mentor.edit');
+    Route::get('/show-bidang', '\App\Http\Controllers\BidangController@show')->name('admin.bidang.show');
+    // Route::delete('/hapus-mentor/{mentor}', '\App\Http\Controllers\MentorController@destroy')->name('admin.mentor.destroy');
+
 });
 
 
