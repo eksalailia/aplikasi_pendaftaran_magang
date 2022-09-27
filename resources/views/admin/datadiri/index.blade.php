@@ -105,7 +105,14 @@
                         <div class="card-tools">
                             <a href="" class="btn btn-success" style="">Tambah Data <i class="fa fa-plus"></i></a>
                         </div>
-                </div> --}}
+                </div> --}}<form class="col-mt-11">
+                    <div class="input-group ">
+                        <input type="text" class="form-control col-sm-2" placeholder="Search">
+                        <div class="input-group-btn">
+                          <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        </div>
+                      </div>
+                    </form>
             </div>
             <div class="table-responsive">
 
@@ -138,10 +145,10 @@
                             <td>9</td>
                             <td>
                                 <form action="" method="">
-                                    <a class="btn btn-info" href="{{ route('admin.datadiri.show') }}">Show <i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-info" href="{{ route('admin.datadiri.show') }}"><i class="fa fa-eye"></i></a>
                                     {{-- @csrf
                                     @method('DELETE') --}}
-                                    <button type="submit" class="btn btn-danger">Delete <i class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                 </form>
                             </td>
                     </tr>

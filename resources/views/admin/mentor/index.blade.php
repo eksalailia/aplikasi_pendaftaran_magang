@@ -36,6 +36,8 @@
         <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
       <!-- Style.css -->
       <link rel="stylesheet" type="text/css" href="backend/assets/css/style.css">
+
+
   </head>
 
   <body>
@@ -107,9 +109,16 @@
                         </div>
                 </div>
             </div>
+            <form class="col-mt-11">
+                <div class="input-group ">
+                  <input type="text" class="form-control col-sm-2" placeholder="Search">
+                  <div class="input-group-btn">
+                    <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </form>
             <div class="table-responsive">
-
-                <table class="table table-hover">
+                <table class="table table-hover table-striped table-bordered" id="#mentor">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -128,11 +137,11 @@
                             <td><img alt="img" src="/img/{{ $mt->img }}" width="100px"></td>
                             <td>
                                 <form action="{{ route('admin.mentor.destroy',$mt->id) }}"  method="POST">
-                                    <a class="btn btn-info" href="{{ route('admin.mentor.show',$mt->id) }}">Show <i class="fa fa-eye"></i></a>
-                                    <a href="{{ route('admin.mentor.edit',$mt->id) }}" class="btn btn-success ">Edit <i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-info" href="{{ route('admin.mentor.show',$mt->id) }}"><i class="fa fa-eye"></i></a>
+                                    <a href="{{ route('admin.mentor.edit',$mt->id) }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete <i class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -178,6 +187,10 @@
 <!-- custom js -->
 <script type="text/javascript" src="backend/assets/pages/dashboard/custom-dashboard.js"></script>
 <script type="text/javascript" src="backend/assets/js/script.js "></script>
+
+
+
+
 </body>
 
 </html>

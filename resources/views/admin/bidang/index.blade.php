@@ -36,6 +36,7 @@
         <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
       <!-- Style.css -->
       <link rel="stylesheet" type="text/css" href="backend/assets/css/style.css">
+
   </head>
 
   <body>
@@ -94,11 +95,6 @@
             </div>
         </div>
 
-        {{-- <form action="" method="" style="margin-top:20px">
-        <div class="form-group col-3" style="">
-            <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Search...">
-            <button class="btn btn-secondary" type="submit"  style="font-size: 23px;margin-bottom:3px"><i class="fa fa-search"></i></button>
-        </form> --}}
         <div class="card-block table-border-style">
             <div class="content">
                 <div class="card card-info card-outline">
@@ -106,10 +102,17 @@
                             <a href="{{ route('admin.bidang.create') }}" class="btn btn-success" style="">Tambah Data <i class="fa fa-plus"></i></a>
                         </div>
                 </div>
+                <form class="col-mt-11">
+                    <div class="input-group ">
+                      <input type="text" class="form-control col-sm-2" placeholder="Search">
+                      <div class="input-group-btn">
+                        <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </form>
             </div>
             <div class="table-responsive">
-
-                <table class="table table-hover">
+                <table class="table table-hover" >
                     <thead>
                         <tr>
                             <th>No.</th>
