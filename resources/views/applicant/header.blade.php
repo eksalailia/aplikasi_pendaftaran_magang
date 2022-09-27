@@ -24,7 +24,7 @@
                       <div class="circle"></div>
                   </div>
               </div>
-            
+
               <div class="spinner-layer spinner-yellow">
                   <div class="circle-clipper left">
                       <div class="circle"></div>
@@ -36,7 +36,7 @@
                       <div class="circle"></div>
                   </div>
               </div>
-            
+
               <div class="spinner-layer spinner-green">
                   <div class="circle-clipper left">
                       <div class="circle"></div>
@@ -73,13 +73,13 @@
                           </div>
                       </div>
                       <a href="index.html">
-                          <img class="img-fluid" src="backend/assets/images/logo.png" alt="Theme-Logo" />
+                          <img class="img-fluid" src="backend/assets/images/logo.png" alt="Theme-Logo" style="width: 150px; margin-left: 20px"/>
                       </a>
                       <a class="mobile-options waves-effect waves-light">
                           <i class="ti-more"></i>
                       </a>
                   </div>
-                
+
                   <div class="navbar-container container-fluid">
                       <ul class="nav-left">
                           <li>

@@ -37,6 +37,8 @@ Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'app
 Route::get('/datadiri', [\App\Http\Controllers\DataDiriController::class, 'datadiri_index'])->name('applicant.datadiri.index');
 Route::post('/datadiri-update', [\App\Http\Controllers\DataDiriController::class, 'profileupdate'])->name('profileupdate');
 Route::get('/pendaftaran', [\App\Http\Controllers\PendaftaranController::class, 'daftar'])->name('applicant.pendaftaran.index');
+
+Route::get('/kesan-applicant', [\App\Http\Controllers\KesanController::class, 'kesan'])->name('applicant.kesanpesan.index');
 });
 
 Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
