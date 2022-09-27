@@ -38,6 +38,14 @@ Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'app
 Route::get('/datadiri', [\App\Http\Controllers\DataDiriController::class, 'datadiri_index'])->name('applicant.datadiri.index');
 Route::post('/datadiri-update', [\App\Http\Controllers\DataDiriController::class, 'profileupdate'])->name('profileupdate');
 Route::get('/pendaftaran', [\App\Http\Controllers\PendaftaranController::class, 'daftar'])->name('applicant.pendaftaran.index');
+Route::get('pendaftaran-create-step-one', [\App\Http\Controllers\PendaftaranController::class, 'createStepOne'])->name('pendaftaran.create.step.one');
+Route::post('pendaftaran-create-step-one', [\App\Http\Controllers\PendaftaranController::class,'postCreateStepOne'])->name('pendaftaran.create.step.one.post');
+
+Route::get('pendaftaran-create-step-two', [\App\Http\Controllers\PendaftaranController::class, 'createStepTwo'])->name('pendaftaran.create.step.two');
+Route::post('pendaftaran-create-step-two', [\App\Http\Controllers\PendaftaranController::class, 'postCreateStepTwo'])->name('pendaftaran.create.step.two.post');
+
+Route::get('pendaftaran-create-step-three', [\App\Http\Controllers\PendaftaranController::class, 'createStepThree'])->name('pendaftaran.create.step.three');
+Route::post('pendaftaran-create-step-three', [\App\Http\Controllers\PendaftaranController::class, 'postCreateStepThree'])->name('pendaftaran.create.step.three.post');
 
 Route::get('/kesan-applicant', [\App\Http\Controllers\KesanController::class, 'kesan'])->name('applicant.kesanpesan.index');
 });
