@@ -129,11 +129,11 @@
                             <td>3</td>
                             <td>
                                 <form action=""  method="POST">
-                                    <a class="btn btn-info" href="{{ route('admin.bidang.show') }}">Show <i class="fa fa-eye"></i></a>
-                                    <a href="{{ route('admin.bidang.edit') }}" class="btn btn-success ">Edit <i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-info" href="{{ route('admin.bidang.show') }}"><i class="fa fa-eye"></i></a>
+                                    <a href="{{ route('admin.bidang.edit') }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
                                     {{-- @csrf
                                     @method('DELETE') --}}
-                                    <button type="submit" class="btn btn-danger">Delete <i class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                 </form>
                             </td>
                         </tr>
