@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\MentorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,9 +51,10 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/create-mentor', '\App\Http\Controllers\MentorController@create')->name('admin.mentor.create');
     Route::post('/create-mentor', '\App\Http\Controllers\MentorController@store')->name('admin.mentor.create');
     Route::get('/edit-mentor{id}', '\App\Http\Controllers\MentorController@edit')->name('admin.mentor.edit');
-    Route::get('/edit-mentor{id}', '\App\Http\Controllers\MentorController@update')->name('admin.mentor.edit');
-    Route::get('/show-mentor/{id}', '\App\Http\Controllers\MentorController@show')->name('admin.mentor.show');
-    Route::delete('/hapus-mentor/{mentor}', ['as' => 'admin.mentor.destroy', 'uses' => 'MentorController@destroy']);
+    Route::post('/edit-mentor{id}', '\App\Http\Controllers\MentorController@update')->name('admin.mentor.edit');
+    Route::get('/show-mentor{id}', '\App\Http\Controllers\MentorController@show')->name('admin.mentor.show');
+    Route::delete('/hapus-mentor/{mentor}', '\App\Http\Controllers\MentorController@destroy')->name('admin.mentor.destroy');
+    // Route::delete('/hapus-mentor/{mentor}', ['as' => 'admin.mentor.destroy', 'uses' => 'MentorController@destroy']);
 
 });
 

@@ -39,7 +39,7 @@ class MentorController extends Controller
         }
     }
 
-    public function edit(){
+    public function edit($id){
         $data = Mentor::all();
         $mentor = Mentor::find($id);
         return view('admin.mentor.edit',compact('data','mentor'));

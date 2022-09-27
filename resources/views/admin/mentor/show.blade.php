@@ -81,9 +81,9 @@
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" style="font-size: 16px;"><b>Nama Mentor : </b></li>
-                    <li class="list-group-item" style="font-size: 16px;"><b>Jabatan : </b></li>
-                    <li class="list-group-item" style="font-size: 16px;"><b>Foto : </b></li>
+                    <li class="list-group-item" style="font-size: 16px;"><b>Nama Mentor : </b>{{$mentor->nama}}</li>
+                    <li class="list-group-item" style="font-size: 16px;"><b>Jabatan : </b>{{$mentor->jabatan}}</li>
+                    <li class="list-group-item" style="font-size: 16px;"><b>Foto : </b><img src="/img/{{ $mentor->img }}" width="100px"></li>
                 </ul>
             </div>
             <a class="btn btn-success mt-3" href="/mentor" style="font-size: 16px;">Kembali</a>
