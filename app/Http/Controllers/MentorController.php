@@ -13,12 +13,12 @@ class MentorController extends Controller
             //fungsi eloquent menampilkan data menggunakan pagination
             $mentor = Mentor::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
         }
-        return view('admin.mentor.index', compact('mentor'));
+        return view('admin.dashboard.mentor.index', compact('mentor'));
 
     }
     public function create(){
         $data=Mentor::all();
-        return view('admin.mentor.create', compact('data'));
+        return view('admin.dashboard.mentor.create', compact('data'));
     }
     public function store(Request $request)
     {
@@ -33,16 +33,16 @@ class MentorController extends Controller
         $Mentor->img = $org;
         $Mentor->save();
         if ($Mentor) {
-            return redirect()->route('admin.mentor.index');
+            return redirect()->route('admin.dashboard.mentor.index');
         } else {
-            return redirect()->route('admin.mentor.index');
+            return redirect()->route('admin.dashboard.mentor.index');
         }
     }
 
     public function edit($id){
         $data = Mentor::all();
         $mentor = Mentor::find($id);
-        return view('admin.mentor.edit',compact('data','mentor'));
+        return view('admin.dashboard.mentor.edit',compact('data','mentor'));
     }
 
     public function update(Request $request, $id)
@@ -55,9 +55,9 @@ class MentorController extends Controller
             $mentor->save();
 
            if ($mentor) {
-                return redirect()->route('admin.mentor.index');
+                return redirect()->route('admin.dashboard.mentor.index');
             } else {
-                return redirect()->route('admin.mentor.index');
+                return redirect()->route('admin.dashboard.mentor.index');
             }
         } else {
             $file = $request->file('img');
@@ -71,9 +71,9 @@ class MentorController extends Controller
             $mentor->img = $org;
             $mentor->save();
             if ($mentor) {
-                return redirect()->route('admin.mentor.index');
+                return redirect()->route('admin.dashboard.mentor.index');
             } else {
-                return redirect()->route('admin.mentor.index');
+                return redirect()->route('admin.dashboard.mentor.index');
             }
         }
     }
@@ -81,12 +81,12 @@ class MentorController extends Controller
     public function show($id)
     {
         $mentor= Mentor::find($id);
-        return view('admin.mentor.show', compact('mentor'));
+        return view('admin.dashboard.mentor.show', compact('mentor'));
     }
     public function destroy($id) {
         // Alert::success('Profil Berhasi Dihapus','Sukses');
         Mentor::find($id)->delete();
-        return redirect()->route('admin.mentor.index')
+        return redirect()->route('admin.dashboard.mentor.index')
             ->with('success', 'Mentor Berhasil Dihapus!');
     }
 }

@@ -18,6 +18,28 @@ use App\Http\Controllers\MentorController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.dashboard.main');
+    Route::get('/datable', [\App\Http\Controllers\AdminController::class, 'datatable'])->name('admin.table.main');
+
+    Route::get('/mentor', '\App\Http\Controllers\MentorController@index')->name('admin.dashboard.mentor.index');
+    Route::get('/create-mentor', '\App\Http\Controllers\MentorController@create')->name('admin.dashboard.mentor.create');
+    Route::post('/create-mentor', '\App\Http\Controllers\MentorController@store')->name('admin.dashboard.mentor.create');
+    Route::get('/edit-mentor{id}', '\App\Http\Controllers\MentorController@edit')->name('admin.dashboard.mentor.edit');
+    Route::post('/edit-mentor{id}', '\App\Http\Controllers\MentorController@update')->name('admin.dashboard.mentor.edit');
+    Route::get('/show-mentor{id}', '\App\Http\Controllers\MentorController@show')->name('admin.dashboard.mentor.show');
+    Route::delete('/hapus-mentor/{mentor}', '\App\Http\Controllers\MentorController@destroy')->name('admin.dashboard.mentor.destroy');
+
+    Route::get('/bidang', '\App\Http\Controllers\BidangController@index')->name('admin.dashboard.bidang.index');
+    Route::get('/create-bidang', '\App\Http\Controllers\BidangController@create')->name('admin.dashboard.bidang.create');
+    Route::get('/edit-bidang', '\App\Http\Controllers\BidangController@edit')->name('admin.dashboard.bidang.edit');
+    Route::get('/show-bidang', '\App\Http\Controllers\BidangController@show')->name('admin.dashboard.bidang.show');
+
+    Route::get('/datadiri-admin', '\App\Http\Controllers\AdminController@index')->name('admin.dashboard.datadiri.index');
+    Route::get('/datadiri-show', '\App\Http\Controllers\AdminController@show')->name('admin.dashboard.datadiri.show');
+
+
+
 route::get('/registrasi',[\App\Http\Controllers\RegisterController::class,'registrasi'])->name('registrasi');
 route::post('/registerUser',[\App\Http\Controllers\RegisterController::class,'registerUser'])->name('registerUser');
 Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('layouts.frontend.index');
@@ -26,6 +48,8 @@ Route::get('/service', [\App\Http\Controllers\UserController::class, 'service'])
 Route::get('/contact', [\App\Http\Controllers\UserController::class, 'contact'])->name('layouts.frontend.contact');
 Route::get('/pembimbing', [\App\Http\Controllers\UserController::class, 'team'])->name('layouts.frontend.team');
 Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
+
+
 // Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.main');
 });
 
@@ -51,26 +75,25 @@ Route::get('/kesan-applicant', [\App\Http\Controllers\KesanController::class, 'k
 });
 
 Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
-    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.main');
-    Route::get('/datadiri-admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.datadiri.index');
-    Route::get('/datadiri-show', [\App\Http\Controllers\AdminController::class, 'show'])->name('admin.datadiri.show');
+    // Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.main');
+    // Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('admin.dashboard.main');
+    // Route::get('/datadiri-admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.datadiri.index');
+    // Route::get('/datadiri-show', [\App\Http\Controllers\AdminController::class, 'show'])->name('admin.datadiri.show');
 
-    Route::get('/mentor', '\App\Http\Controllers\MentorController@index')->name('admin.mentor.index');
-    Route::get('/create-mentor', '\App\Http\Controllers\MentorController@create')->name('admin.mentor.create');
-    Route::post('/create-mentor', '\App\Http\Controllers\MentorController@store')->name('admin.mentor.create');
-    Route::get('/edit-mentor{id}', '\App\Http\Controllers\MentorController@edit')->name('admin.mentor.edit');
-    Route::post('/edit-mentor{id}', '\App\Http\Controllers\MentorController@update')->name('admin.mentor.edit');
-    Route::get('/show-mentor{id}', '\App\Http\Controllers\MentorController@show')->name('admin.mentor.show');
-    Route::delete('/hapus-mentor/{mentor}', '\App\Http\Controllers\MentorController@destroy')->name('admin.mentor.destroy');
+    // Route::get('/mentor', '\App\Http\Controllers\MentorController@index')->name('admin.mentor.index');
+    // Route::get('/create-mentor', '\App\Http\Controllers\MentorController@create')->name('admin.mentor.create');
+    // Route::post('/create-mentor', '\App\Http\Controllers\MentorController@store')->name('admin.mentor.create');
+    // Route::get('/edit-mentor{id}', '\App\Http\Controllers\MentorController@edit')->name('admin.mentor.edit');
+    // Route::post('/edit-mentor{id}', '\App\Http\Controllers\MentorController@update')->name('admin.mentor.edit');
+    // Route::get('/show-mentor{id}', '\App\Http\Controllers\MentorController@show')->name('admin.mentor.show');
+    // Route::delete('/hapus-mentor/{mentor}', '\App\Http\Controllers\MentorController@destroy')->name('admin.mentor.destroy');
     // Route::delete('/hapus-mentor/{mentor}', ['as' => 'admin.mentor.destroy', 'uses' => 'MentorController@destroy']);
 
-    Route::get('/bidang', '\App\Http\Controllers\BidangController@index')->name('admin.bidang.index');
-    Route::get('/create-bidang', '\App\Http\Controllers\BidangController@create')->name('admin.bidang.create');
-    // Route::post('/create-mentor', '\App\Http\Controllers\MentorController@store')->name('admin.mentor.create');
-    Route::get('/edit-bidang', '\App\Http\Controllers\BidangController@edit')->name('admin.bidang.edit');
-    // Route::post('/edit-mentor{id}', '\App\Http\Controllers\MentorController@update')->name('admin.mentor.edit');
-    Route::get('/show-bidang', '\App\Http\Controllers\BidangController@show')->name('admin.bidang.show');
-    // Route::delete('/hapus-mentor/{mentor}', '\App\Http\Controllers\MentorController@destroy')->name('admin.mentor.destroy');
+    // Route::get('/bidang', '\App\Http\Controllers\BidangController@index')->name('admin.bidang.index');
+    // Route::get('/create-bidang', '\App\Http\Controllers\BidangController@create')->name('admin.bidang.create');
+    // Route::get('/edit-bidang', '\App\Http\Controllers\BidangController@edit')->name('admin.bidang.edit');
+    // Route::get('/show-bidang', '\App\Http\Controllers\BidangController@show')->name('admin.bidang.show');
+
 
 });
 
