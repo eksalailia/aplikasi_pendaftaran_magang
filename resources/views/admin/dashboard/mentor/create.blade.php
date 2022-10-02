@@ -25,13 +25,26 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
 </head>
+
 <body>
 
+@extends('admin.dashboard.konten')
 @extends('admin.table.appnew')
-@include('admin.dashboard.header')
-@include('admin.dashboard.sidebar')
-
 @section('content')
+
+
+	<div class="wrapper">
+
+			@include('admin.dashboard.header')
+			<!-- End Navbar -->
+
+
+		<!-- Sidebar -->
+
+		@include('admin.dashboard.sidebar')
+
+		<!-- End Sidebar -->
+
 
 <div class="main-panel">
     <div class="content">

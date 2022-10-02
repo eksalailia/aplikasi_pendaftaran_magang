@@ -25,19 +25,33 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
 </head>
+
 <body>
 
-@extends('admin.table.appnew')
-@include('admin.dashboard.header')
-@include('admin.dashboard.sidebar')
 @extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
+
+
+	<div class="wrapper">
+
+			@include('admin.dashboard.header')
+			<!-- End Navbar -->
+
+
+		<!-- Sidebar -->
+
+		@include('admin.dashboard.sidebar')
+
+		<!-- End Sidebar -->
+
+
 
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Mentor</h4>
+            <h4 class="page-title">Mentor</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/admin">
@@ -64,7 +78,7 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
-                                    <thead>
+                                <thead>
                                         <tr>
                                             <th>No.</th>
                                             <th>Nama Mentor</th>
@@ -73,6 +87,7 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
                                     {{-- <tfoot>
                                         <tr>
                                             <th>No.</th>
@@ -106,15 +121,39 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+
 
             </div>
         </div>
     </div>
-
-
+    <footer class="footer">
+        <div class="container-fluid">
+            <nav class="pull-left">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.themekita.com">
+                            ThemeKita
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Help
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Licenses
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright ml-auto">
+                2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+            </div>
+        </div>
+    </footer>
 </div>
+
 <!--   Core JS Files   -->
 <script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="backend2/assets/js/core/popper.min.js"></script>
@@ -156,6 +195,9 @@
 <!-- Atlantis DEMO methods, don't include it in your project! -->
 <script src="backend2/assets/js/setting-demo.js"></script>
 <script src="backend2/assets/js/demo.js"></script>
+
+
+
 <script>
     Circles.create({
         id:'circles-1',
