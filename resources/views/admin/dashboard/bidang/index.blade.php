@@ -80,7 +80,6 @@
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th>No.</th>
                                             <th>Nama Bidang</th>
                                             <th>Keterangan</th>
                                             <th>Action</th>
@@ -88,21 +87,20 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            {{-- @foreach ($mentor as $mt) --}}
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
+                                            @foreach ($Bidang as $bidang)
+                                            <td>{{ $bidang->nama }}</td>
+                                            <td>{{ $bidang->keterangan }}</td>
                                             <td>
                                                 <form action=""  method="POST">
-                                                    <a class="btn btn-info" href="{{ route('admin.dashboard.bidang.show') }}"><i class="fa fa-eye"></i></a>
-                                                    <a href="{{ route('admin.dashboard.bidang.edit') }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
+                                                    <a class="btn btn-info" href="{{ route('admin.dashboard.bidang.show', $bidang->id) }}"><i class="fa fa-eye"></i></a>
+                                                    <a href="{{ route('admin.dashboard.bidang.edit', $bidang->id) }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
                                                     {{-- @csrf
                                                     @method('DELETE') --}}
                                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
-                                        {{-- @endforeach --}}
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
