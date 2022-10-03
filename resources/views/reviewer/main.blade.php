@@ -1,483 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Dashboard - Reviewer</title>
-    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 10]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-      <!-- Meta -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="description" content="Mega Able Bootstrap reviewer template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-      <meta name="keywords" content="bootstrap, bootstrap reviewer template, reviewer theme, reviewer dashboard, dashboard template, reviewer template, responsive" />
-      <meta name="author" content="codedthemes" />
-      <!-- Favicon icon -->
-      <link rel="icon" href="{{ asset ('backend/assets/images/book.png')}}" type="image/x-icon">
-    <!-- Google font-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
-    <!-- waves.css -->
-    <link rel="stylesheet" href="backend/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
-      <!-- Required Fremwork -->
-      <link rel="stylesheet" type="text/css" href="backend/assets/css/bootstrap/css/bootstrap.min.css">
-      <!-- waves.css -->
-      <link rel="stylesheet" href="backend/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
-      <!-- themify icon -->
-      <link rel="stylesheet" type="text/css" href="backend/assets/icon/themify-icons/themify-icons.css">
-      <!-- Font Awesome -->
-      <link rel="stylesheet" type="text/css" href="backend/assets/icon/font-awesome/css/font-awesome.min.css">
-      <!-- scrollbar.css -->
-      <link rel="stylesheet" type="text/css" href="backend/assets/css/jquery.mCustomScrollbar.css">
-        <!-- am chart export.css -->
-        <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-      <!-- Style.css -->
-      <link rel="stylesheet" type="text/css" href="backend/assets/css/style.css">
-  </head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Dashboard - Reviewer</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
-  <body>
-  <!-- Pre-loader start -->
-@include('reviewer.header')
-@extends('reviewer.content')
+	<!-- Fonts and icons -->
+	<script src="backend2/assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['backend2/assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="backend2/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="backend2/assets/css/atlantis.min.css">
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="backend2/assets/css/demo.css">
+</head>
+
+<body>
+
+@extends('reviewer.appnew')
+@extends('reviewer.konten')
+@extends('admin.table.appnew')
 @section('content')
-@include('reviewer.sidebar')
-                  <div class="pcoded-content">
-                      <!-- Page-header start -->
-                      <div class="page-header">
-                          <div class="page-block">
-                              <div class="row align-items-center">
-                                  <div class="col-md-8">
-                                      <div class="page-header-title">
-                                          <h5 class="m-b-10">Dashboard</h5>
-                                          <p class="m-b-0">Welcome to Mega Able</p>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-4">
-                                      <ul class="breadcrumb-title">
-                                          <li class="breadcrumb-item">
-                                              <a href="/reviewer"> <i class="fa fa-home"></i> </a>
-                                          </li>
-                                          <li class="breadcrumb-item"><a href="#!">Dashboard</a>
-                                          </li>
-                                      </ul>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- Page-header end -->
-                        <div class="pcoded-inner-content">
-                            <!-- Main-body start -->
-                            <div class="main-body">
-                                <div class="page-wrapper">
-                                    <!-- Page-body start -->
-                                    <div class="page-body">
-                                        <div class="row">
-                                            <!-- task, page, download counter  start -->
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card">
-                                                    <div class="card-block">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-8">
-                                                                <h4 class="text-c-purple">$30200</h4>
-                                                                <h6 class="text-muted m-b-0">All Earnings</h6>
-                                                            </div>
-                                                            <div class="col-4 text-right">
-                                                                <i class="fa fa-bar-chart f-28"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer bg-c-purple">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-9">
-                                                                <p class="text-white m-b-0">% change</p>
-                                                            </div>
-                                                            <div class="col-3 text-right">
-                                                                <i class="fa fa-line-chart text-white f-16"></i>
-                                                            </div>
-                                                        </div>
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card">
-                                                    <div class="card-block">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-8">
-                                                                <h4 class="text-c-green">290+</h4>
-                                                                <h6 class="text-muted m-b-0">Page Views</h6>
-                                                            </div>
-                                                            <div class="col-4 text-right">
-                                                                <i class="fa fa-file-text-o f-28"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer bg-c-green">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-9">
-                                                                <p class="text-white m-b-0">% change</p>
-                                                            </div>
-                                                            <div class="col-3 text-right">
-                                                                <i class="fa fa-line-chart text-white f-16"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card">
-                                                    <div class="card-block">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-8">
-                                                                <h4 class="text-c-red">145</h4>
-                                                                <h6 class="text-muted m-b-0">Task Completed</h6>
-                                                            </div>
-                                                            <div class="col-4 text-right">
-                                                                <i class="fa fa-calendar-check-o f-28"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer bg-c-red">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-9">
-                                                                <p class="text-white m-b-0">% change</p>
-                                                            </div>
-                                                            <div class="col-3 text-right">
-                                                                <i class="fa fa-line-chart text-white f-16"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card">
-                                                    <div class="card-block">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-8">
-                                                                <h4 class="text-c-blue">500</h4>
-                                                                <h6 class="text-muted m-b-0">Downloads</h6>
-                                                            </div>
-                                                            <div class="col-4 text-right">
-                                                                <i class="fa fa-hand-o-down f-28"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer bg-c-blue">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-9">
-                                                                <p class="text-white m-b-0">% change</p>
-                                                            </div>
-                                                            <div class="col-3 text-right">
-                                                                <i class="fa fa-line-chart text-white f-16"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- task, page, download counter  end -->
 
-                                            <!--  sale analytics start -->
-                                            <div class="col-xl-8 col-md-12">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Sales Analytics</h5>
-                                                        <span class="text-muted">Get 15% Off on <a href="https://www.amcharts.com/" target="_blank">amCharts</a> licences. Use code "codedthemes" and get the discount.</span>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div id="sales-analytics" style="height: 400px;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-md-12">
-                                                <div class="card">
-                                                    <div class="card-block">
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <h4>$256.23</h4>
-                                                                <p class="text-muted">This Month</p>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <label class="label label-success">+20%</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-8">
-                                                                <canvas id="this-month" style="height: 150px;"></canvas>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card quater-card">
-                                                    <div class="card-block">
-                                                        <h6 class="text-muted m-b-15">This Quarter</h6>
-                                                        <h4>$3,9452.50</h4>
-                                                        <p class="text-muted">$3,9452.50</p>
-                                                        <h5>87</h5>
-                                                        <p class="text-muted">Online Revenue<span class="f-right">80%</span></p>
-                                                        <div class="progress"><div class="progress-bar bg-c-blue" style="width: 80%"></div></div>
-                                                        <h5 class="m-t-15">68</h5>
-                                                        <p class="text-muted">Offline Revenue<span class="f-right">50%</span></p>
-                                                        <div class="progress"><div class="progress-bar bg-c-green" style="width: 50%"></div></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--  sale analytics end -->
+	<div class="wrapper">
 
-                                            <!--  project and team member start -->
-                                            <div class="col-xl-8 col-md-12">
-                                                <div class="card table-card">
-                                                    <div class="card-header">
-                                                        <h5>Projects</h5>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover">
-                                                                <thead>
-                                                                <tr>
-                                                                    <th>
-                                                                        <div class="chk-option">
-                                                                            <div class="checkbox-fade fade-in-primary">
-                                                                                <label class="check-task">
-                                                                                    <input type="checkbox" value="">
-                                                                                    <span class="cr">
-                                                                                            <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                        </span>
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        Assigned</th>
-                                                                    <th>Name</th>
-                                                                    <th>Due Date</th>
-                                                                    <th class="text-right">Priority</th>
-                                                                </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="chk-option">
-                                                                            <div class="checkbox-fade fade-in-primary">
-                                                                                <label class="check-task">
-                                                                                    <input type="checkbox" value="">
-                                                                                    <span class="cr">
-                                                                                                <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                            </span>
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="d-inline-block align-middle">
-                                                                            <img src="backend/assets/images/avatar-4.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                                            <div class="d-inline-block">
-                                                                                <h6>John Deo</h6>
-                                                                                <p class="text-muted m-b-0">Graphics Designer</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>Able Pro</td>
-                                                                    <td>Jun, 26</td>
-                                                                    <td class="text-right"><label class="label label-danger">Low</label></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="chk-option">
-                                                                            <div class="checkbox-fade fade-in-primary">
-                                                                                <label class="check-task">
-                                                                                    <input type="checkbox" value="">
-                                                                                    <span class="cr">
-                                                                                                <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                            </span>
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="d-inline-block align-middle">
-                                                                            <img src="backend/assets/images/avatar-5.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                                            <div class="d-inline-block">
-                                                                                <h6>Jenifer Vintage</h6>
-                                                                                <p class="text-muted m-b-0">Web Designer</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>Mashable</td>
-                                                                    <td>March, 31</td>
-                                                                    <td class="text-right"><label class="label label-primary">high</label></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="chk-option">
-                                                                            <div class="checkbox-fade fade-in-primary">
-                                                                                <label class="check-task">
-                                                                                    <input type="checkbox" value="">
-                                                                                    <span class="cr">
-                                                                                                <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                            </span>
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="d-inline-block align-middle">
-                                                                            <img src="backend/assets/images/avatar-3.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                                            <div class="d-inline-block">
-                                                                                <h6>William Jem</h6>
-                                                                                <p class="text-muted m-b-0">Developer</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>Flatable</td>
-                                                                    <td>Aug, 02</td>
-                                                                    <td class="text-right"><label class="label label-success">medium</label></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="chk-option">
-                                                                            <div class="checkbox-fade fade-in-primary">
-                                                                                <label class="check-task">
-                                                                                    <input type="checkbox" value="">
-                                                                                    <span class="cr">
-                                                                                                <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                            </span>
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="d-inline-block align-middle">
-                                                                            <img src="backend/assets/images/avatar-2.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                                            <div class="d-inline-block">
-                                                                                <h6>David Jones</h6>
-                                                                                <p class="text-muted m-b-0">Developer</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>Guruable</td>
-                                                                    <td>Sep, 22</td>
-                                                                    <td class="text-right"><label class="label label-primary">high</label></td>
-                                                                </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <div class="text-right m-r-20">
-                                                                <a href="#!" class=" b-b-primary text-primary">View all Projects</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-md-12">
-                                                <div class="card ">
-                                                    <div class="card-header">
-                                                        <h5>Team Members</h5>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="align-middle m-b-30">
-                                                            <img src="backend/assets/images/avatar-2.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>David Jones</h6>
-                                                                <p class="text-muted m-b-0">Developer</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="align-middle m-b-30">
-                                                            <img src="backend/assets/images/avatar-1.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>David Jones</h6>
-                                                                <p class="text-muted m-b-0">Developer</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="align-middle m-b-30">
-                                                            <img src="backend/assets/images/avatar-3.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>David Jones</h6>
-                                                                <p class="text-muted m-b-0">Developer</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="align-middle m-b-30">
-                                                            <img src="backend/assets/images/avatar-4.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>David Jones</h6>
-                                                                <p class="text-muted m-b-0">Developer</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="align-middle m-b-10">
-                                                            <img src="backend/assets/images/avatar-5.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>David Jones</h6>
-                                                                <p class="text-muted m-b-0">Developer</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="text-center">
-                                                            <a href="#!" class="b-b-primary text-primary">View all Projects</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--  project and team member end -->
-                                        </div>
-                                    </div>
-                                    <!-- Page-body end -->
-                                </div>
-                                <div id="styleSelector"> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			@include('reviewer.header')
+			<!-- End Navbar -->
 
-    <!-- Required Jquery -->
-    <script type="text/javascript" src="backend/assets/js/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="backend/assets/js/jquery-ui/jquery-ui.min.js "></script>
-    <script type="text/javascript" src="backend/assets/js/popper.js/popper.min.js"></script>
-    <script type="text/javascript" src="backend/assets/js/bootstrap/js/bootstrap.min.js "></script>
-    <script type="text/javascript" src="backend/assets/pages/widget/excanvas.js "></script>
-    <!-- waves js -->
-    <script src="backend/assets/pages/waves/js/waves.min.js"></script>
-    <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="backend/assets/js/jquery-slimscroll/jquery.slimscroll.js "></script>
-    <!-- modernizr js -->
-    <script type="text/javascript" src="backend/assets/js/modernizr/modernizr.js "></script>
-    <!-- slimscroll js -->
-    <script type="text/javascript" src="backend/assets/js/SmoothScroll.js"></script>
-    <script src="backend/assets/js/jquery.mCustomScrollbar.concat.min.js "></script>
-    <!-- Chart js -->
-    <script type="text/javascript" src="backend/assets/js/chart.js/Chart.js"></script>
-    <!-- amchart js -->
-    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-    <script src="backend/assets/pages/widget/amchart/gauge.js"></script>
-    <script src="backend/assets/pages/widget/amchart/serial.js"></script>
-    <script src="backend/assets/pages/widget/amchart/light.js"></script>
-    <script src="backend/assets/pages/widget/amchart/pie.min.js"></script>
-    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-    <!-- menu js -->
-    <script src="backend/assets/js/pcoded.min.js"></script>
-    <script src="backend/assets/js/vertical-layout.min.js "></script>
-    <!-- custom js -->
-    <script type="text/javascript" src="backend/assets/pages/dashboard/custom-dashboard.js"></script>
-    <script type="text/javascript" src="backend/assets/js/script.js "></script>
-</body>
 
-</html>
+		<!-- Sidebar -->
+
+		@include('reviewer.sidebar')
+
+		<!-- End Sidebar -->
+
+
+
+		<div class="main-panel">
+			<div class="content">
+				<div class="panel-header bg-primary-gradient">
+					<div class="page-inner py-5">
+						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+							<div>
+								<h2 class="text-white pb-2 fw-bold">Dashboard</h2>
+								<h5 class="text-white op-7 mb-2">Free Bootstrap 4 Admin Dashboard</h5>
+							</div>
+							<div class="ml-md-auto py-2 py-md-0">
+								<a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
+								<a href="#" class="btn btn-secondary btn-round">Add Customer</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="page-inner mt--5">
+					<div class="row mt--2">
+						<div class="col-md-6">
+							<div class="card full-height">
+								<div class="card-body">
+									<div class="card-title">Overall statistics</div>
+									<div class="card-category">Daily information about statistics in system</div>
+									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
+										<div class="px-2 pb-2 pb-md-0 text-center">
+											<div id="circles-1"></div>
+											<h6 class="fw-bold mt-3 mb-0">New Users</h6>
+										</div>
+										<div class="px-2 pb-2 pb-md-0 text-center">
+											<div id="circles-2"></div>
+											<h6 class="fw-bold mt-3 mb-0">Sales</h6>
+										</div>
+										<div class="px-2 pb-2 pb-md-0 text-center">
+											<div id="circles-3"></div>
+											<h6 class="fw-bold mt-3 mb-0">Subscribers</h6>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="card full-height">
+								<div class="card-body">
+									<div class="card-title">Total income & spend statistics</div>
+									<div class="row py-3">
+										<div class="col-md-4 d-flex flex-column justify-content-around">
+											<div>
+												<h6 class="fw-bold text-uppercase text-success op-8">Total Income</h6>
+												<h3 class="fw-bold">$9.782</h3>
+											</div>
+											<div>
+												<h6 class="fw-bold text-uppercase text-danger op-8">Total Spend</h6>
+												<h3 class="fw-bold">$1,248</h3>
+											</div>
+										</div>
+										<div class="col-md-8">
+											<div id="chart-container">
+												<canvas id="totalIncomeChart"></canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-head-row">
+										<div class="card-title">User Statistics</div>
+										<div class="card-tools">
+											<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
+												<span class="btn-label">
+													<i class="fa fa-pencil"></i>
+												</span>
+												Export
+											</a>
+											<a href="#" class="btn btn-info btn-border btn-round btn-sm">
+												<span class="btn-label">
+													<i class="fa fa-print"></i>
+												</span>
+												Print
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="chart-container" style="min-height: 375px">
+										<canvas id="statisticsChart"></canvas>
+									</div>
+									<div id="myChartLegend"></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card card-primary">
+								<div class="card-header">
+									<div class="card-title">Daily Sales</div>
+									<div class="card-category">March 25 - April 02</div>
+								</div>
+								<div class="card-body pb-0">
+									<div class="mb-4 mt-2">
+										<h1>$4,578.58</h1>
+									</div>
+									<div class="pull-in">
+										<canvas id="dailySalesChart"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-body pb-0">
+									<div class="h1 fw-bold float-right text-warning">+7%</div>
+									<h2 class="mb-2">213</h2>
+									<p class="text-muted">Transactions</p>
+									<div class="pull-in sparkline-fix">
+										<div id="lineChart"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row row-card-no-pd">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-head-row card-tools-still-right">
+										<h4 class="card-title">Users Geolocation</h4>
+										<div class="card-tools">
+											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-angle-down"></span></button>
+											<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
+											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-times"></span></button>
+										</div>
+									</div>
+									<p class="card-category">
+									Map of the distribution of users around the world</p>
+								</div>
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="table-responsive table-hover table-sales">
+												<table class="table">
+													<tbody>
+														<tr>
+															<td>
+																<div class="flag">
+																	<img src="backend2/assets/img/flags/id.png" alt="indonesia">
+																</div>
+															</td>
+															<td>Indonesia</td>
+															<td class="text-right">
+																2.320
+															</td>
+															<td class="text-right">
+																42.18%
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div class="flag">
+																	<img src="backend2/assets/img/flags/us.png" alt="united states">
+																</div>
+															</td>
+															<td>USA</td>
+															<td class="text-right">
+																240
+															</td>
+															<td class="text-right">
+																4.36%
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div class="flag">
+																	<img src="backend2/assets/img/flags/au.png" alt="australia">
+																</div>
+															</td>
+															<td>Australia</td>
+															<td class="text-right">
+																119
+															</td>
+															<td class="text-right">
+																2.16%
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div class="flag">
+																	<img src="backend2/assets/img/flags/ru.png" alt="russia">
+																</div>
+															</td>
+															<td>Russia</td>
+															<td class="text-right">
+																1.081
+															</td>
+															<td class="text-right">
+																19.65%
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div class="flag">
+																	<img src="backend2/assets/img/flags/cn.png" alt="china">
+																</div>
+															</td>
+															<td>China</td>
+															<td class="text-right">
+																1.100
+															</td>
+															<td class="text-right">
+																20%
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div class="flag">
+																	<img src="backend2/assets/img/flags/br.png" alt="brazil">
+																</div>
+															</td>
+															<td>Brasil</td>
+															<td class="text-right">
+																640
+															</td>
+															<td class="text-right">
+																11.63%
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="mapcontainer">
+												<div id="map-example" class="vmap"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Top Products</div>
+								</div>
+								<div class="card-body pb-0">
+									<div class="d-flex">
+										<div class="avatar">
+											<img src="backend2/assets/img/logoproduct.svg" alt="..." class="avatar-img rounded-circle">
+										</div>
+										<div class="flex-1 pt-1 ml-2">
+											<h6 class="fw-bold mb-1">CSS</h6>
+											<small class="text-muted">Cascading Style Sheets</small>
+										</div>
+										<div class="d-flex ml-auto align-items-center">
+											<h3 class="text-info fw-bold">+$17</h3>
+										</div>
+									</div>
+									<div class="separator-dashed"></div>
+									<div class="d-flex">
+										<div class="avatar">
+											<img src="backend2/assets/img/logoproduct.svg" alt="..." class="avatar-img rounded-circle">
+										</div>
+										<div class="flex-1 pt-1 ml-2">
+											<h6 class="fw-bold mb-1">J.CO Donuts</h6>
+											<small class="text-muted">The Best Donuts</small>
+										</div>
+										<div class="d-flex ml-auto align-items-center">
+											<h3 class="text-info fw-bold">+$300</h3>
+										</div>
+									</div>
+									<div class="separator-dashed"></div>
+									<div class="d-flex">
+										<div class="avatar">
+											<img src="backend2/assets/img/logoproduct3.svg" alt="..." class="avatar-img rounded-circle">
+										</div>
+										<div class="flex-1 pt-1 ml-2">
+											<h6 class="fw-bold mb-1">Ready Pro</h6>
+											<small class="text-muted">Bootstrap 4 Admin Dashboard</small>
+										</div>
+										<div class="d-flex ml-auto align-items-center">
+											<h3 class="text-info fw-bold">+$350</h3>
+										</div>
+									</div>
+									<div class="separator-dashed"></div>
+									<div class="pull-in">
+										<canvas id="topProductsChart"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card">
+								<div class="card-body">
+									<div class="card-title fw-mediumbold">Suggested People</div>
+									<div class="card-list">
+										<div class="item-list">
+											<div class="avatar">
+												<img src="backend2/assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+											</div>
+											<div class="info-user ml-3">
+												<div class="username">Jimmy Denis</div>
+												<div class="status">Graphic Designer</div>
+											</div>
+											<button class="btn btn-icon btn-primary btn-round btn-xs">
+												<i class="fa fa-plus"></i>
+											</button>
+										</div>
+										<div class="item-list">
+											<div class="avatar">
+												<img src="backend2/assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle">
+											</div>
+											<div class="info-user ml-3">
+												<div class="username">Chad</div>
+												<div class="status">CEO Zeleaf</div>
+											</div>
+											<button class="btn btn-icon btn-primary btn-round btn-xs">
+												<i class="fa fa-plus"></i>
+											</button>
+										</div>
+										<div class="item-list">
+											<div class="avatar">
+												<img src="backend2/assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle">
+											</div>
+											<div class="info-user ml-3">
+												<div class="username">Talha</div>
+												<div class="status">Front End Designer</div>
+											</div>
+											<button class="btn btn-icon btn-primary btn-round btn-xs">
+												<i class="fa fa-plus"></i>
+											</button>
+										</div>
+										<div class="item-list">
+											<div class="avatar">
+												<img src="backend2/assets/img/mlane.jpg" alt="..." class="avatar-img rounded-circle">
+											</div>
+											<div class="info-user ml-3">
+												<div class="username">John Doe</div>
+												<div class="status">Back End Developer</div>
+											</div>
+											<button class="btn btn-icon btn-primary btn-round btn-xs">
+												<i class="fa fa-plus"></i>
+											</button>
+										</div>
+										<div class="item-list">
+											<div class="avatar">
+												<img src="backend2/assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle">
+											</div>
+											<div class="info-user ml-3">
+												<div class="username">Talha</div>
+												<div class="status">Front End Designer</div>
+											</div>
+											<button class="btn btn-icon btn-primary btn-round btn-xs">
+												<i class="fa fa-plus"></i>
+											</button>
+										</div>
+										<div class="item-list">
+											<div class="avatar">
+												<img src="backend2/assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+											</div>
+											<div class="info-user ml-3">
+												<div class="username">Jimmy Denis</div>
+												<div class="status">Graphic Designer</div>
+											</div>
+											<button class="btn btn-icon btn-primary btn-round btn-xs">
+												<i class="fa fa-plus"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card card-primary bg-primary-gradient">
+								<div class="card-body">
+									<h4 class="mt-3 b-b1 pb-2 mb-4 fw-bold">Active user right now</h4>
+									<h1 class="mb-4 fw-bold">17</h1>
+									<h4 class="mt-3 b-b1 pb-2 mb-5 fw-bold">Page view per minutes</h4>
+									<div id="activeUsersChart"></div>
+									<h4 class="mt-5 pb-3 mb-0 fw-bold">Top active pages</h4>
+									<ul class="list-unstyled">
+										<li class="d-flex justify-content-between pb-1 pt-1"><small>/product/readypro/index.html</small> <span>7</span></li>
+										<li class="d-flex justify-content-between pb-1 pt-1"><small>/product/atlantis/demo.html</small> <span>10</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="card full-height">
+								<div class="card-header">
+									<div class="card-title">Feed Activity</div>
+								</div>
+								<div class="card-body">
+									<ol class="activity-feed">
+										<li class="feed-item feed-item-secondary">
+											<time class="date" datetime="9-25">Sep 25</time>
+											<span class="text">Responded to need <a href="#">"Volunteer opportunity"</a></span>
+										</li>
+										<li class="feed-item feed-item-success">
+											<time class="date" datetime="9-24">Sep 24</time>
+											<span class="text">Added an interest <a href="#">"Volunteer Activities"</a></span>
+										</li>
+										<li class="feed-item feed-item-info">
+											<time class="date" datetime="9-23">Sep 23</time>
+											<span class="text">Joined the group <a href="single-group.php">"Boardsmanship Forum"</a></span>
+										</li>
+										<li class="feed-item feed-item-warning">
+											<time class="date" datetime="9-21">Sep 21</time>
+											<span class="text">Responded to need <a href="#">"In-Kind Opportunity"</a></span>
+										</li>
+										<li class="feed-item feed-item-danger">
+											<time class="date" datetime="9-18">Sep 18</time>
+											<span class="text">Created need <a href="#">"Volunteer Opportunity"</a></span>
+										</li>
+										<li class="feed-item">
+											<time class="date" datetime="9-17">Sep 17</time>
+											<span class="text">Attending the event <a href="single-event.php">"Some New Event"</a></span>
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="card full-height">
+								<div class="card-header">
+									<div class="card-head-row">
+										<div class="card-title">Support Tickets</div>
+										<div class="card-tools">
+											<ul class="nav nav-pills nav-secondary nav-pills-no-bd nav-sm" id="pills-tab" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link" id="pills-today" data-toggle="pill" href="#pills-today" role="tab" aria-selected="true">Today</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link active" id="pills-week" data-toggle="pill" href="#pills-week" role="tab" aria-selected="false">Week</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" id="pills-month" data-toggle="pill" href="#pills-month" role="tab" aria-selected="false">Month</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="d-flex">
+										<div class="avatar avatar-online">
+											<span class="avatar-title rounded-circle border border-white bg-info">J</span>
+										</div>
+										<div class="flex-1 ml-3 pt-1">
+											<h6 class="text-uppercase fw-bold mb-1">Joko Subianto <span class="text-warning pl-3">pending</span></h6>
+											<span class="text-muted">I am facing some trouble with my viewport. When i start my</span>
+										</div>
+										<div class="float-right pt-1">
+											<small class="text-muted">8:40 PM</small>
+										</div>
+									</div>
+									<div class="separator-dashed"></div>
+									<div class="d-flex">
+										<div class="avatar avatar-offline">
+											<span class="avatar-title rounded-circle border border-white bg-secondary">P</span>
+										</div>
+										<div class="flex-1 ml-3 pt-1">
+											<h6 class="text-uppercase fw-bold mb-1">Prabowo Widodo <span class="text-success pl-3">open</span></h6>
+											<span class="text-muted">I have some query regarding the license issue.</span>
+										</div>
+										<div class="float-right pt-1">
+											<small class="text-muted">1 Day Ago</small>
+										</div>
+									</div>
+									<div class="separator-dashed"></div>
+									<div class="d-flex">
+										<div class="avatar avatar-away">
+											<span class="avatar-title rounded-circle border border-white bg-danger">L</span>
+										</div>
+										<div class="flex-1 ml-3 pt-1">
+											<h6 class="text-uppercase fw-bold mb-1">Lee Chong Wei <span class="text-muted pl-3">closed</span></h6>
+											<span class="text-muted">Is there any update plan for RTL version near future?</span>
+										</div>
+										<div class="float-right pt-1">
+											<small class="text-muted">2 Days Ago</small>
+										</div>
+									</div>
+									<div class="separator-dashed"></div>
+									<div class="d-flex">
+										<div class="avatar avatar-offline">
+											<span class="avatar-title rounded-circle border border-white bg-secondary">P</span>
+										</div>
+										<div class="flex-1 ml-3 pt-1">
+											<h6 class="text-uppercase fw-bold mb-1">Peter Parker <span class="text-success pl-3">open</span></h6>
+											<span class="text-muted">I have some query regarding the license issue.</span>
+										</div>
+										<div class="float-right pt-1">
+											<small class="text-muted">2 Day Ago</small>
+										</div>
+									</div>
+									<div class="separator-dashed"></div>
+									<div class="d-flex">
+										<div class="avatar avatar-away">
+											<span class="avatar-title rounded-circle border border-white bg-danger">L</span>
+										</div>
+										<div class="flex-1 ml-3 pt-1">
+											<h6 class="text-uppercase fw-bold mb-1">Logan Paul <span class="text-muted pl-3">closed</span></h6>
+											<span class="text-muted">Is there any update plan for RTL version near future?</span>
+										</div>
+										<div class="float-right pt-1">
+											<small class="text-muted">2 Days Ago</small>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<nav class="pull-left">
+						<ul class="nav">
+							<li class="nav-item">
+								<a class="nav-link" href="https://www.themekita.com">
+									ThemeKita
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									Help
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									Licenses
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="copyright ml-auto">
+						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Custom template | don't include it in your project! -->
+		<div class="custom-template">
+			<div class="title">Settings</div>
+			<div class="custom-content">
+				<div class="switcher">
+					<div class="switch-block">
+						<h4>Logo Header</h4>
+						<div class="btnSwitch">
+							<button type="button" class="changeLogoHeaderColor" data-color="dark"></button>
+							<button type="button" class="selected changeLogoHeaderColor" data-color="blue"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="light-blue"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="green"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="red"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="white"></button>
+							<br/>
+							<button type="button" class="changeLogoHeaderColor" data-color="dark2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="light-blue2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="green2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="orange2"></button>
+							<button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
+						</div>
+					</div>
+					<div class="switch-block">
+						<h4>Navbar Header</h4>
+						<div class="btnSwitch">
+							<button type="button" class="changeTopBarColor" data-color="dark"></button>
+							<button type="button" class="changeTopBarColor" data-color="blue"></button>
+							<button type="button" class="changeTopBarColor" data-color="purple"></button>
+							<button type="button" class="changeTopBarColor" data-color="light-blue"></button>
+							<button type="button" class="changeTopBarColor" data-color="green"></button>
+							<button type="button" class="changeTopBarColor" data-color="orange"></button>
+							<button type="button" class="changeTopBarColor" data-color="red"></button>
+							<button type="button" class="changeTopBarColor" data-color="white"></button>
+							<br/>
+							<button type="button" class="changeTopBarColor" data-color="dark2"></button>
+							<button type="button" class="selected changeTopBarColor" data-color="blue2"></button>
+							<button type="button" class="changeTopBarColor" data-color="purple2"></button>
+							<button type="button" class="changeTopBarColor" data-color="light-blue2"></button>
+							<button type="button" class="changeTopBarColor" data-color="green2"></button>
+							<button type="button" class="changeTopBarColor" data-color="orange2"></button>
+							<button type="button" class="changeTopBarColor" data-color="red2"></button>
+						</div>
+					</div>
+					<div class="switch-block">
+						<h4>Sidebar</h4>
+						<div class="btnSwitch">
+							<button type="button" class="selected changeSideBarColor" data-color="white"></button>
+							<button type="button" class="changeSideBarColor" data-color="dark"></button>
+							<button type="button" class="changeSideBarColor" data-color="dark2"></button>
+						</div>
+					</div>
+					<div class="switch-block">
+						<h4>Background</h4>
+						<div class="btnSwitch">
+							<button type="button" class="changeBackgroundColor" data-color="bg2"></button>
+							<button type="button" class="changeBackgroundColor selected" data-color="bg1"></button>
+							<button type="button" class="changeBackgroundColor" data-color="bg3"></button>
+							<button type="button" class="changeBackgroundColor" data-color="dark"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="custom-toggle">
+				<i class="flaticon-settings"></i>
+			</div>
+		</div>
+		<!-- End Custom template -->
+	</div>
+
+@endsection

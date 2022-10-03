@@ -1,108 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Dashboard - Applicant</title>
-    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 10]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-      <!-- Meta -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="description" content="Mega Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-      <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
-      <meta name="author" content="codedthemes" />
-      <!-- Favicon icon -->
-      <link rel="icon" href="backend/assets/images/favicon.ico" type="image/x-icon">
-    <!-- Google font-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
-    <!-- waves.css -->
-    <link rel="stylesheet" href="backend/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
-      <!-- Required Fremwork -->
-      <link rel="stylesheet" type="text/css" href="backend/assets/css/bootstrap/css/bootstrap.min.css">
-      <!-- waves.css -->
-      <link rel="stylesheet" href="backend/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
-      <!-- themify icon -->
-      <link rel="stylesheet" type="text/css" href="backend/assets/icon/themify-icons/themify-icons.css">
-      <!-- Font Awesome -->
-      <link rel="stylesheet" type="text/css" href="backend/assets/icon/font-awesome/css/font-awesome.min.css">
-      <!-- scrollbar.css -->
-      <link rel="stylesheet" type="text/css" href="backend/assets/css/jquery.mCustomScrollbar.css">
-        <!-- am chart export.css -->
-        <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-      <!-- Style.css -->
-      <link rel="stylesheet" type="text/css" href="backend/assets/css/style.css">
-  </head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Dashboard - Reviewer</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
-      <!-- Required Jquery -->
-      <script type="text/javascript" src="backend/assets/js/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="backend/assets/js/jquery-ui/jquery-ui.min.js "></script>
-    <script type="text/javascript" src="backend/assets/js/popper.js/popper.min.js"></script>
-    <script type="text/javascript" src="backend/assets/js/bootstrap/js/bootstrap.min.js "></script>
-    <script type="text/javascript" src="backend/assets/pages/widget/excanvas.js "></script>
-    <!-- waves js -->
-    <script src="backend/assets/pages/waves/js/waves.min.js"></script>
-    <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="backend/assets/js/jquery-slimscroll/jquery.slimscroll.js "></script>
-    <!-- modernizr js -->
-    <script type="text/javascript" src="backend/assets/js/modernizr/modernizr.js "></script>
-    <!-- slimscroll js -->
-    <script type="text/javascript" src="backend/assets/js/SmoothScroll.js"></script>
-    <script src="backend/assets/js/jquery.mCustomScrollbar.concat.min.js "></script>
-    <!-- Chart js -->
-    <script type="text/javascript" src="backend/assets/js/chart.js/Chart.js"></script>
-    <!-- amchart js -->
-    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-    <script src="backend/assets/pages/widget/amchart/gauge.js"></script>
-    <script src="backend/assets/pages/widget/amchart/serial.js"></script>
-    <script src="backend/assets/pages/widget/amchart/light.js"></script>
-    <script src="backend/assets/pages/widget/amchart/pie.min.js"></script>
-    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-    <!-- menu js -->
-    <script src="backend/assets/js/pcoded.min.js"></script>
-    <script src="backend/assets/js/vertical-layout.min.js "></script>
-    <!-- custom js -->
-    <script type="text/javascript" src="backend/assets/pages/dashboard/custom-dashboard.js"></script>
-    <script type="text/javascript" src="backend/assets/js/script.js "></script>
+	<!-- Fonts and icons -->
+	<script src="backend2/assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['backend2/assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="backend2/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="backend2/assets/css/atlantis.min.css">
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="backend2/assets/css/demo.css">
+</head>
+<body>
+
+<!--   Core JS Files   -->
+<script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="backend2/assets/js/core/popper.min.js"></script>
+<script src="backend2/assets/js/core/bootstrap.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="backend2/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="backend2/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+<!-- jQuery Scrollbar -->
+<script src="backend2/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+
+<!-- Chart JS -->
+<script src="backend2/assets/js/plugin/chart.js/chart.min.js"></script>
+
+<!-- jQuery Sparkline -->
+<script src="backend2/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+<!-- Chart Circle -->
+<script src="backend2/assets/js/plugin/chart-circle/circles.min.js"></script>
+
+<!-- Datatables -->
+<script src="backend2/assets/js/plugin/datatables/datatables.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="backend2/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+<!-- jQuery Vector Maps -->
+<script src="backend2/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+<script src="backend2/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+<!-- Sweet Alert -->
+<script src="backend2/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+<!-- Atlantis JS -->
+<script src="backend2/assets/js/atlantis.min.js"></script>
+
+<!-- Atlantis DEMO methods, don't include it in your project! -->
+<script src="backend2/assets/js/setting-demo.js"></script>
+<script src="backend2/assets/js/demo.js"></script>
+<script>
+    Circles.create({
+        id:'circles-1',
+        radius:45,
+        value:60,
+        maxValue:100,
+        width:7,
+        text: 5,
+        colors:['#f1f1f1', '#FF9E27'],
+        duration:400,
+        wrpClass:'circles-wrp',
+        textClass:'circles-text',
+        styleWrapper:true,
+        styleText:true
+    })
+
+    Circles.create({
+        id:'circles-2',
+        radius:45,
+        value:70,
+        maxValue:100,
+        width:7,
+        text: 36,
+        colors:['#f1f1f1', '#2BB930'],
+        duration:400,
+        wrpClass:'circles-wrp',
+        textClass:'circles-text',
+        styleWrapper:true,
+        styleText:true
+    })
+
+    Circles.create({
+        id:'circles-3',
+        radius:45,
+        value:40,
+        maxValue:100,
+        width:7,
+        text: 12,
+        colors:['#f1f1f1', '#F25961'],
+        duration:400,
+        wrpClass:'circles-wrp',
+        textClass:'circles-text',
+        styleWrapper:true,
+        styleText:true
+    })
+
+    var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+
+    var mytotalIncomeChart = new Chart(totalIncomeChart, {
+        type: 'bar',
+        data: {
+            labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+            datasets : [{
+                label: "Total Income",
+                backgroundColor: '#ff9e27',
+                borderColor: 'rgb(23, 125, 255)',
+                data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+            }],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: false,
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        display: false //this will remove only the label
+                    },
+                    gridLines : {
+                        drawBorder: false,
+                        display : false
+                    }
+                }],
+                xAxes : [ {
+                    gridLines : {
+                        drawBorder: false,
+                        display : false
+                    }
+                }]
+            },
+        }
+    });
+
+    $('#lineChart').sparkline([105,103,123,100,95,105,115], {
+        type: 'line',
+        height: '70',
+        width: '100%',
+        lineWidth: '2',
+        lineColor: '#ffa534',
+        fillColor: 'rgba(255, 165, 52, .14)'
+    });
+</script>
 </body>
-
-</html>
-
-  <body>
-  <!-- Required Jquery -->
-  <script type="text/javascript" src="{{ asset ('backend/assets/js/jquery/jquery.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset ('backend/assets/js/jquery-ui/jquery-ui.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset ('backend/assets/js/popper.js/popper.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset ('backend/assets/js/bootstrap/js/bootstrap.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset ('backend/assets/pages/widget/excanvas.js')}}"></script>
-  <!-- waves js -->
-  <script src="{{ asset ('backend/assets/pages/waves/js/waves.min.js')}}"></script>
-  <!-- jquery slimscroll js -->
-  <script type="text/javascript" src="{{ asset ('backend/assets/js/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
-  <!-- modernizr js -->
-  <script type="text/javascript" src="{{ asset ('backend/assets/js/modernizr/modernizr.js')}}"></script>
-  <!-- slimscroll js -->
-  <script type="text/javascript" src="{{ asset ('backend/assets/js/SmoothScroll.js')}}"></script>
-  <script src="assets/js/jquery.mCustomScrollbar.concat.min.js "></script>
-  <!-- Chart js -->
-  <script type="text/javascript" src="{{ asset ('backend/assets/js/chart.js/Chart.js')}}"></script>
-  <!-- amchart js -->
-  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-  <script src="{{ asset ('backend/assets/pages/widget/amchart/gauge.js')}}"></script>
-  <script src="{{ asset ('backend/assets/pages/widget/amchart/serial.js')}}"></script>
-  <script src="{{ asset ('backend/assets/pages/widget/amchart/light.js')}}"></script>
-  <script src="{{ asset ('backend/assets/pages/widget/amchart/pie.min.js')}}"></script>
-  <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js')}}"></script>
-  <!-- menu js -->
-  <script src="{{ asset ('backend/assets/js/pcoded.min.js')}}"></script>
-  <script src="{{ asset ('backend/assets/js/vertical-layout.min.js')}}"></script>
-  <!-- custom js -->
-  <script type="text/javascript" src="{{ asset ('backend/assets/pages/dashboard/custom-dashboard.js')}}"></script>
-  <script type="text/javascript" src="{{ asset ('backend/assets/js/script.js')}}"></script>
-</body>
-
 </html>

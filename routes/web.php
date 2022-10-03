@@ -27,6 +27,8 @@ Route::get('/service', [\App\Http\Controllers\UserController::class, 'service'])
 Route::get('/contact', [\App\Http\Controllers\UserController::class, 'contact'])->name('layouts.frontend.contact');
 Route::get('/pembimbing', [\App\Http\Controllers\UserController::class, 'team'])->name('layouts.frontend.team');
 
+Route::get('/reviewer', [\App\Http\Controllers\ReviewerController::class, 'reviewer'])->name('reviewer.main');
+
 Route::group(['middleware'=>['applicant','auth','PreventBackHistory']], function(){
     Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'applicant'])->name('applicant.main');
     Route::get('/applicant-datadiri', [\App\Http\Controllers\DataDiriController::class, 'index'])->name('applicant.datadiri.index');
@@ -62,7 +64,7 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
 });
 
 Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(){
-Route::get('/reviewer', [\App\Http\Controllers\ReviewerController::class, 'reviewer'])->name('reviewer.main');
+// Route::get('/reviewer', [\App\Http\Controllers\ReviewerController::class, 'reviewer'])->name('reviewer.main');
 });
 
 
