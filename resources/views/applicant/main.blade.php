@@ -25,22 +25,28 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
 </head>
+
 <body>
 
 @extends('applicant.appnew')
 @extends('applicant.konten')
+@extends('admin.table.appnew')
 @section('content')
 
+
 	<div class="wrapper">
-		<div class="main-header">
-			<!-- Logo Header -->
+
 			@include('applicant.header')
 			<!-- End Navbar -->
-		</div>
+
 
 		<!-- Sidebar -->
+
 		@include('applicant.sidebar')
+
 		<!-- End Sidebar -->
+
+
 
 		<div class="main-panel">
 			<div class="content">
