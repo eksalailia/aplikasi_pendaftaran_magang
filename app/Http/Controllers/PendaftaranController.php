@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PendaftaranController extends Controller
 {
-    public function daftar(){
+    public function index(){
         return view('applicant.pendaftaran.index');
     }
 }

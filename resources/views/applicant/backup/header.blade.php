@@ -1,4 +1,3 @@
-
 <!-- Pre-loader start -->
 <div class="theme-loader">
       <div class="loader-track">
@@ -74,7 +73,7 @@
                           </div>
                       </div>
                       <a href="index.html">
-                          <img class="img-fluid" src="backend/assets/images/logo.png" alt="Theme-Logo" style="width: 150px; margin-left: 20px" />
+                          <img class="img-fluid" src="backend/assets/images/logo.png" alt="Theme-Logo" style="width: 150px; margin-left: 20px"/>
                       </a>
                       <a class="mobile-options waves-effect waves-light">
                           <i class="ti-more"></i>
@@ -95,18 +94,18 @@
                                   </div>
                               </div>
                           </li>
-                          <li>
+                          <!-- <li>
                               <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
                                   <i class="ti-fullscreen"></i>
                               </a>
-                          </li>
+                          </li> -->
                       </ul>
                       <ul class="nav-right">
                           <li class="header-notification">
-                              <a href="#!" class="waves-effect waves-light">
+                              <!-- <a href="#!" class="waves-effect waves-light">
                                   <i class="ti-bell"></i>
                                   <span class="badge bg-c-red"></span>
-                              </a>
+                              </a> -->
                               <ul class="show-notification">
                                   <li>
                                       <h6>Notifications</h6>
@@ -172,7 +171,7 @@
                                       </a>
                                   </li>
                                   <li class="waves-effect waves-light">
-                                  <a class="nav-link"href="#" data-toggle="modal" data-target="#logoutModal" >
+                                  <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal" >
                                           <i class="ti-layout-sidebar-left"></i> Logout
                                       </a>
                                   </li>
