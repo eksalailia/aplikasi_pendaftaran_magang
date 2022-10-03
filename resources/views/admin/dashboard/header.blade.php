@@ -270,12 +270,12 @@
         </div>
         <div class="modal-body">pilih tombol "Logout" dibawah ini</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="{{ route('logout') }}"
             onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
         </a>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>

@@ -65,7 +65,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="">
+                    <a href="/applicant-kesanpesan">
                         <i class="fas fa-comment"></i>
                         <p>Kesan & Pesan</p>
                         <span class="badge badge-success"></span>

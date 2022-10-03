@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class KesanController extends Controller
 {
-    public function kesan(){
-        return view('applicant.kesanpesan.index');
+    public function index(){
+        return view('applicant.kesan.index');
     }
 }
