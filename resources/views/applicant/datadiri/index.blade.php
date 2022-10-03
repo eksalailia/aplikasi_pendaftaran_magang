@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Dashboard - Applicant</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="backend2/assets/img/icon.ico" type="image/x-icon"/>
+	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
 	<script src="backend2/assets/js/plugin/webfont/webfont.min.js"></script>
@@ -25,22 +25,27 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
 </head>
+
 <body>
 
-@extends('applicant.appnew')
-@extends('applicant.konten')
+@extends('admin.dashboard.app')
+@extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
 
-<div class="wrapper">
-    <div class="main-header">
-        <!-- Logo Header -->
-        @include('applicant.header')
-        <!-- End Navbar -->
-    </div>
 
-    <!-- Sidebar -->
-    @include('applicant.sidebar')
-    <!-- End Sidebar -->
+	<div class="wrapper">
+
+			@include('admin.dashboard.header')
+			<!-- End Navbar -->
+
+
+		<!-- Sidebar -->
+
+		@include('admin.dashboard.sidebar')
+
+		<!-- End Sidebar -->
+
 
 <div class="main-panel">
     <div class="content">
@@ -177,7 +182,6 @@
             </div>
         </div>
     </footer>
-</div>
 </div>
 
 @endsection
