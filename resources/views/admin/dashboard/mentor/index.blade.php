@@ -89,7 +89,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <tbody>
                                         <tr>
                                             @foreach ($mentor as $mt)
                                             <td>{{ $mt->id }}</td>
