@@ -28,10 +28,7 @@
 
 <body>
 
-
-@extends('admin.dashboard.app')
 @extends('admin.dashboard.konten')
-@extends('admin.table.appnew')
 @section('content')
 
 
@@ -46,7 +43,6 @@
 		@include('admin.dashboard.sidebar')
 
 		<!-- End Sidebar -->
-
 
 
 <div class="main-panel">
