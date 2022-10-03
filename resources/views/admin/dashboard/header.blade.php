@@ -247,7 +247,8 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt"></i> Logout</a>
                             </li>
                         </div>
                     </ul>
@@ -272,10 +273,10 @@
         <div class="modal-footer">
           <a class="btn btn-primary" href="{{ route('logout') }}"
             onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                        document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i>
+                                         {{ __('Logout') }}
         </a>
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>

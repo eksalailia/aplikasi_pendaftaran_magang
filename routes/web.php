@@ -56,7 +56,8 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/hapus-bidang/{id}', '\App\Http\Controllers\BidangController@destroy')->name('admin.dashboard.bidang.destroy');
 
     Route::get('/datadiri-admin', '\App\Http\Controllers\AdminController@index')->name('admin.dashboard.datadiri.index');
-    
+    Route::get('/show-datadiri-admin', '\App\Http\Controllers\AdminController@show')->name('admin.dashboard.datadiri.show');
+
 
 });
 
