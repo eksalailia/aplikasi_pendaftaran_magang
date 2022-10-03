@@ -20,7 +20,7 @@ class BidangController extends Controller
 
     public function edit($id){
         $bidang = Bidang::find($id);
-        return view('admin.dashboard.bidang.edit');
+        return view('admin.dashboard.bidang.edit', compact('bidang'));
     }
 
     public function update(Request $request, $id)

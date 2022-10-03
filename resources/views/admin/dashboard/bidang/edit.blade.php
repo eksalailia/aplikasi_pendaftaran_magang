@@ -75,16 +75,15 @@
                         <div class="card-header">
                              <h4>Edit Bidang</h4>
                         </div>
-                        <form action="" method="post" >
-                            {{-- {{csrf_field()}} --}}
+                        <form action="{{route('admin.dashboard.bidang.edit',$bidang->id)}}" method="post" enctype="multipart/form-data" >
+                             {{csrf_field()}}
                         <div class="form-group col-sm-12">
                             <label>Nama Bidang</label>
-                            <input type="text" id="nama" name="nama" class="form-control" required="" value="" >
+                            <input type="text" id="nama" name="nama" class="form-control" required="" value="{{$bidang->nama}}" >
                         </div>
                         <div class="form-group col-sm-12">
                             <label>Keterangan</label>
-                            <textarea class="form-control" id="exampleTextarea1" rows="4" required="" value="" ></textarea>
-                            {{-- <input type="text" id="deskripsi" name="deskripsi" class="form-control" required="" value="{{$kegiatan->deskripsi}}" > --}}
+                            <textarea class="form-control" id="keterangan" rows="4" name="keterangan" class="form-control" required="">{{$bidang->keterangan}}</textarea>
                         </div>
                         <div class="form-group col-sm-12">
                         <input type="submit" value="Simpan" class="btn btn-success">&nbsp;

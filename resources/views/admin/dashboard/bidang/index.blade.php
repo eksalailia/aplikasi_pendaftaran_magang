@@ -94,9 +94,10 @@
                                                 <form action=""  method="POST">
                                                     <a class="btn btn-info" href="{{ route('admin.dashboard.bidang.show', $bidang->id) }}"><i class="fa fa-eye"></i></a>
                                                     <a href="{{ route('admin.dashboard.bidang.edit', $bidang->id) }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
-                                                    {{-- @csrf
-                                                    @method('DELETE') --}}
-                                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                    <!-- @csrf
+                                                    @method('DELETE') -->
+                                                    <a href="{{route('admin.dashboard.bidang.destroy',$bidang->id)}}" class="btn btn-warning btn-danger" onclick="return confirm('Apakah Anda yakin untuk menghapus data ini ?')" ><i class="fa fa-trash"></i></a>
+                                                    <!-- <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button> -->
                                                 </form>
                                             </td>
                                         </tr>
