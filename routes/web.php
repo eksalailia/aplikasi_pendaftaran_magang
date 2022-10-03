@@ -45,7 +45,7 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/edit-mentor{id}', '\App\Http\Controllers\MentorController@edit')->name('admin.dashboard.mentor.edit');
     Route::post('/edit-mentor{id}', '\App\Http\Controllers\MentorController@update')->name('admin.dashboard.mentor.edit');
     Route::get('/show-mentor{id}', '\App\Http\Controllers\MentorController@show')->name('admin.dashboard.mentor.show');
-    Route::get('/hapus-mentor/{mentor}', '\App\Http\Controllers\MentorController@destroy')->name('admin.dashboard.mentor.destroy');
+    Route::delete('/hapus-mentor/{mentor}', '\App\Http\Controllers\MentorController@destroy')->name('admin.dashboard.mentor.destroy');
 
     Route::get('/bidang', '\App\Http\Controllers\BidangController@index')->name('admin.dashboard.bidang.index');
     Route::get('/create-bidang', '\App\Http\Controllers\BidangController@create')->name('admin.dashboard.bidang.create');
@@ -53,7 +53,7 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/edit-bidang/{id}', '\App\Http\Controllers\BidangController@edit')->name('admin.dashboard.bidang.edit');
     Route::post('/edit-bidang/{id}', '\App\Http\Controllers\BidangController@update')->name('admin.dashboard.bidang.edit');
     Route::get('/show-bidang/{id}', '\App\Http\Controllers\BidangController@show')->name('admin.dashboard.bidang.show');
-    Route::get('/hapus-bidang/{id}', '\App\Http\Controllers\BidangController@destroy')->name('admin.dashboard.bidang.destroy');
+    Route::delete('/hapus-bidang/{id}', '\App\Http\Controllers\BidangController@destroy')->name('admin.dashboard.bidang.destroy');
 
     Route::get('/datadiri-admin', '\App\Http\Controllers\AdminController@index')->name('admin.dashboard.datadiri.index');
     Route::get('/show-datadiri-admin', '\App\Http\Controllers\AdminController@show')->name('admin.dashboard.datadiri.show');

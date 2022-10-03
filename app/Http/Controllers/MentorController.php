@@ -87,7 +87,7 @@ class MentorController extends Controller
         // Alert::success('Profil Berhasi Dihapus','Sukses');
         Mentor::find($id)->delete();
         return redirect()->route('admin.dashboard.mentor.index')
-            ->with('success', 'Mentor Berhasil Dihapus!');
+            ->with('Success', 'Mentor Berhasil Dihapus!');
     }
 }
 
