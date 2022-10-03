@@ -73,7 +73,7 @@
                 </div>
                 <div class="form-group col-sm-12">
                     <label>Keterangan</label>
-                    <textarea class="form-control" id="exampleTextarea1" rows="4" ></textarea>
+                    <textarea class="form-control" id="exampleTextarea1" rows="4" id="keterangan" name="keterangan" ></textarea>
                 </div>
                 <div class="form-group col-sm-5">
                     <button type="submit" class="btn btn-success">Simpan</button>

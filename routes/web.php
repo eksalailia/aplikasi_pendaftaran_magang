@@ -45,6 +45,7 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
 
     Route::get('/bidang', '\App\Http\Controllers\BidangController@index')->name('admin.dashboard.bidang.index');
     Route::get('/create-bidang', '\App\Http\Controllers\BidangController@create')->name('admin.dashboard.bidang.create');
+    Route::post('/create-bidang', '\App\Http\Controllers\BidangController@store')->name('admin.dashboard.bidang.create');
     Route::get('/edit-bidang', '\App\Http\Controllers\BidangController@edit')->name('admin.dashboard.bidang.edit');
     Route::get('/show-bidang', '\App\Http\Controllers\BidangController@show')->name('admin.dashboard.bidang.show');
 
