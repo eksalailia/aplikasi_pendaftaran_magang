@@ -28,21 +28,21 @@
 
 <body>
 
-@extends('admin.dashboard.app')
-@extends('admin.dashboard.konten')
+@extends('applicant.appnew')
+@extends('applicant.konten')
 @extends('admin.table.appnew')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('admin.dashboard.header')
+			@include('applicant.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('admin.dashboard.sidebar')
+		@include('applicant.sidebar')
 
 		<!-- End Sidebar -->
 
