@@ -172,7 +172,7 @@
                                       </a>
                                   </li>
                                   <li class="waves-effect waves-light">
-                                  <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal" >
+                                  <a class="nav-link"href="#" data-toggle="modal" data-target="#logoutModal" >
                                           <i class="ti-layout-sidebar-left"></i> Logout
                                       </a>
                                   </li>
