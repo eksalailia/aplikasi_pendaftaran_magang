@@ -29,6 +29,7 @@
 <body>
 
 @extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
 
 

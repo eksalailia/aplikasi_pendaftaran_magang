@@ -29,6 +29,7 @@
 <body>
 
 @extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
 
 
@@ -87,8 +88,11 @@
                             {{-- <input type="text" id="deskripsi" name="deskripsi" class="form-control" required="" value="{{$kegiatan->deskripsi}}" > --}}
                         </div>
                         <div class="form-group col-sm-12">
-                        <input type="submit" value="Simpan" class="btn btn-success">&nbsp;
-                        <a href="/mentor" class="btn btn-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check"></i> Simpan</button>
+                        {{-- <input type="submit" value="Simpan" class="btn btn-success">&nbsp; --}}
+                        <a href="/mentor" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Cancel</a>
                     </form>
                     </div>
                 </div>

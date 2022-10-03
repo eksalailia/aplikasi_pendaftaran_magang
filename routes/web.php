@@ -28,11 +28,11 @@ Route::get('/contact', [\App\Http\Controllers\UserController::class, 'contact'])
 Route::get('/pembimbing', [\App\Http\Controllers\UserController::class, 'team'])->name('layouts.frontend.team');
 
 Route::group(['middleware'=>['applicant','auth','PreventBackHistory']], function(){
-Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'applicant'])->name('applicant.main');
-Route::get('/applicant-datadiri', [\App\Http\Controllers\DataDiriController::class, 'index'])->name('applicant.datadiri.index');
-Route::get('/applicant-pendaftaran', [\App\Http\Controllers\PendaftaranController::class, 'index'])->name('applicant.pendaftaran.index');
-Route::get('/applicant-kesanpesan', [\App\Http\Controllers\KesanController::class, 'index'])->name('applicant.kesan.index');
-Route::post('/datadiri-update', [\App\Http\Controllers\DataDiriController::class, 'profileupdate'])->name('profileupdate');
+    Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'applicant'])->name('applicant.main');
+    Route::get('/applicant-datadiri', [\App\Http\Controllers\DataDiriController::class, 'index'])->name('applicant.datadiri.index');
+    Route::get('/applicant-pendaftaran', [\App\Http\Controllers\PendaftaranController::class, 'index'])->name('applicant.pendaftaran.index');
+    Route::get('/applicant-kesanpesan', [\App\Http\Controllers\KesanController::class, 'index'])->name('applicant.kesan.index');
+    Route::post('/datadiri-update', [\App\Http\Controllers\DataDiriController::class, 'profileupdate'])->name('profileupdate');
 });
 
 Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){

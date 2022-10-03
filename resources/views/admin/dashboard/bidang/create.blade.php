@@ -29,6 +29,7 @@
 <body>
 
 @extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
 
 
@@ -86,8 +87,10 @@
                     <textarea class="form-control" id="exampleTextarea1" rows="4" id="keterangan" name="keterangan" ></textarea>
                 </div>
                 <div class="form-group col-sm-5">
-                    <button type="submit" class="btn btn-success">Simpan</button>
-                    <a href="/bidang" class="btn btn-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-check"></i> Simpan</button>
+                    <a href="/bidang" class="btn btn-secondary">
+                        <i class="fas fa-reply"></i> Kembali</a>
                 </div>
             </form>
         </div>

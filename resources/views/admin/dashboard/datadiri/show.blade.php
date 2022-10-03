@@ -29,6 +29,7 @@
 <body>
 
 @extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
 
 
@@ -86,7 +87,7 @@
                                             <li class="list-group-item" style="font-size: 16px;"><b>Foto : </b></li>
                                         </ul>
                                     </div>
-                                    <a class="btn btn-success mt-3" href="/datadiri-admin" style="font-size: 16px;">Kembali</a>
+                                    <a class="btn btn-success mt-3" href="/datadiri-admin" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
                                 </div>
                             </div>
                         </div>

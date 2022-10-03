@@ -29,6 +29,7 @@
 <body>
 
 @extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
 
 
@@ -85,8 +86,10 @@
                     <input type="file" id="img" name="img" class="form-control">
                 </div>
                 <div class="form-group col-sm-5">
-                    <button type="submit" class="btn btn-success">Simpan</button>
-                    <a href="/mentor" class="btn btn-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-check"></i> Simpan</button>
+                    <a href="/mentor" class="btn btn-secondary">
+                        <i class="fas fa-reply"></i> Kembali</a>
                 </div>
             </form>
         </div>

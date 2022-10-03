@@ -29,6 +29,7 @@
 <body>
 
 @extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
 
 
@@ -84,8 +85,11 @@
                             <textarea class="form-control" id="keterangan" rows="4" name="keterangan" class="form-control" required="">{{$bidang->keterangan}}</textarea>
                         </div>
                         <div class="form-group col-sm-12">
-                        <input type="submit" value="Simpan" class="btn btn-success">&nbsp;
-                        <a href="/bidang" class="btn btn-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check"></i> Simpan</button>
+                        {{-- <input type="submit" value="Simpan" class="btn btn-success">&nbsp; --}}
+                        <a href="/bidang" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Cancel</a>
                     </form>
                     </div>
                 </div>
