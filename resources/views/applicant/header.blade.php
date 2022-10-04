@@ -1,7 +1,7 @@
 <div class="main-header">
     <!-- Logo Header -->
     <div class="logo-header" data-background-color="blue">
-        
+
     <a href="/applicant" class="logo">
         <img src="backend2/assets/img/logo.png" alt="navbar brand" class="navbar-brand" style="width: 170px">
     </a>
@@ -235,7 +235,7 @@
                                     <div class="avatar-lg"><img src="backend2/assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
                                     <div class="u-text">
                                         <h4>{{ Auth::user()->name }}</h4>
-                                        <p class="text-muted">{{ Auth::user()->email }}</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                        <p class="text-muted">{{ Auth::user()->email }}</p>
                                     </div>
                                 </div>
                             </li>
@@ -247,7 +247,8 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt"></i> Logout</a>
                             </li>
                         </div>
                     </ul>
@@ -272,10 +273,10 @@
         <div class="modal-footer">
           <a class="btn btn-primary" href="{{ route('logout') }}"
             onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                        document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i>
+                                         {{ __('Logout') }}
         </a>
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>

@@ -144,8 +144,12 @@
                          </div>
                          </div>
 
-                         <div class="action-buttons d-flex justify-content-between bg-white pt-2 pb-2">
-                            <button type="submit" class="btn btn-md btn-primary">Submit</button>
+                         {{-- <div class="action-buttons d-flex justify-content-between bg-white pt-2 pb-2"> --}}
+                        <div class="action-buttons justify-content-between bg-white pt-2 pb-2">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check"></i> Submit</button>
+                            <a href="/applicant" class="btn btn-secondary">
+                                <i class="fas fa-reply"></i> Kembali</a>
                          </div>
 
                      </div>

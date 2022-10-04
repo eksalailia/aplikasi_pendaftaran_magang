@@ -86,8 +86,11 @@
                                   <label for="exampleTextarea1">Kesan & Pesan</label>
                                   <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Tulis kesan & pesan..."></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button class="btn btn-secondary">Cancel</button>
+                                {{-- <button type="submit" class="btn btn-success"><i class="fas fa-checks"> Submit</button> --}}
+                                <button type="submit" class="btn btn-success">
+                                        <i class="fas fa-check"></i> Submit</button>
+                                <a href="/applicant" class="btn btn-secondary">
+                                    <i class="fas fa-reply"></i> Kembali</a>
                               </form>
                         </div>
                         {{-- <div class="card-action">

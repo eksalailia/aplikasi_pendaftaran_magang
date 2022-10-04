@@ -45,7 +45,7 @@
 		@include('applicant.sidebar')
 
 		<!-- End Sidebar -->
-        
+
     <div class="main-panel">
         <div class="content">
             <div class="page-inner">
@@ -74,12 +74,12 @@
                             <div class="col-md-12">
                             <div class="card">
                                 <div class="card-block">
-                                    <div class="card text-white bg-secondary mb-3">
+                                    <div class="card text-white bg-primary mb-3">
                                         <h5 class="card-header">Data Magang</h5>
                                         <div class="card-body">
                                             <form>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Tahun Akademik</label>
+                                                    <label class="col-sm-2 col-form-label text-white">Tahun Akademik</label>
                                                     <div class="col-sm-10">
                                                         <select name="select" class="form-control">
                                                             <option value="opt1">Tahun</option>
@@ -94,13 +94,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Jurusan</label>
+                                                    <label class="col-sm-2 col-form-label text-white">Jurusan</label>
                                                     <div class="col-sm-10">
                                                         <input type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Bidang Magang</label>
+                                                    <label class="col-sm-2 col-form-label text-white">Bidang Magang</label>
                                                     <div class="col-sm-10">
                                                         <select name="select" class="form-control">
                                                             <option value="opt1">Bidang</option>
@@ -115,7 +115,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Lama Magang</label>
+                                                    <label class="col-sm-2 col-form-label text-white">Lama Magang</label>
                                                     <div class="col-sm-10">
                                                         <input type="text" class="form-control">
                                                     </div>
@@ -125,36 +125,36 @@
                                     </div>
                                 </div>
                                     <div class="card-block">
-                                        <div class="card text-white bg-secondary mb-3">
+                                        <div class="card text-white bg-primary mb-3">
                                             <h5 class="card-header">Data Mahasiswa</h5>
                                             <div class="card-body">
                                                 <form>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Mahasiswa 1</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 1</label>
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Mahasiswa 2</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 2</label>
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Mahasiswa 3</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 3</label>
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Mahasiswa 4</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 4</label>
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Mahasiswa 5</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 5</label>
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control">
                                                         </div>
@@ -164,36 +164,36 @@
                                         </div>
                                     </div>
                                     <div class="card-block">
-                                        <div class="card text-white bg-secondary mb-3">
-                                            <h5 class="card-header">Upload Resume Mahasiswa</h5>
+                                        <div class="card text-white bg-primary mb-3">
+                                            <h5 class="card-header text-white">Upload Resume Mahasiswa</h5>
                                             <div class="card-body">
                                                 <form>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Mahasiswa 1</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 1</label>
                                                             <div class="col-sm-10">
                                                                 <input type="file" class="form-control">
                                                             </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Mahasiswa 2</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 2</label>
                                                         <div class="col-sm-10">
                                                             <input type="file" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Mahasiswa 3</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 3</label>
                                                         <div class="col-sm-10">
                                                             <input type="file" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Mahasiswa 4</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 4</label>
                                                         <div class="col-sm-10">
                                                             <input type="file" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Mahasiswa 5</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 5</label>
                                                         <div class="col-sm-10">
                                                             <input type="file" class="form-control">
                                                         </div>
@@ -203,12 +203,12 @@
                                         </div>
                                     </div>
                                         <div class="card-block">
-                                            <div class="card text-white bg-secondary mb-3">
+                                            <div class="card text-white bg-primary mb-3">
                                                 <h5 class="card-header">Upload Proposal Permohonan</h5>
                                                 <div class="card-body">
                                                     <form>
                                                         <div class="form-group row">
-                                                            <label class="col-sm-2 col-form-label">Proposal</label>
+                                                            <label class="col-sm-2 col-form-label text-white">Proposal</label>
                                                             <div class="col-sm-10">
                                                                 <input type="file" class="form-control">
                                                             </div>
@@ -216,7 +216,11 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-success">Daftar</button>
+                                            {{-- <button type="button" class="btn btn-success">Daftar</button> --}}
+                                            <button type="submit" class="btn btn-success">
+                                                <i class="fas fa-check"></i> Daftar</button>
+                                            <a href="/applicant" class="btn btn-secondary">
+                                                <i class="fas fa-reply"></i> Kembali</a>
                                         </div>
                                     </div>
                                 </div>
