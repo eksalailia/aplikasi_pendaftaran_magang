@@ -79,49 +79,40 @@
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th>No.</th>
                                             <th>Nama Lengkap</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Tanggal Lahir</th>
                                             <th>No. Telepon</th>
-                                            <th>Alamat</th>
-                                            <th>Tempat</th>
                                             <th>Email</th>
-                                            <th>Foto</th>
+                                            <th>Alamat</th>
+                                            <th>Asal Universitas</th>
+                                            <th>Jurusan</th>
+                                            <th>Semester</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    {{-- <tfoot>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Nama Mentor</th>
-                                            <th>Jabatan</th>
-                                            <th>Foto</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot> --}}
                                     <tbody>
                                         <tr>
-                                            {{-- @foreach ($permohonan as $ph) --}}
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                            <td>6</td>
-                                            <td>7</td>
-                                            <td>8</td>
-                                            <td>9</td>
+                                        @foreach ($Users as $data)
+                                            <td>{{ $data->name }}</td>
+                                            <td>{{ $data->jenis_kelamin }}</td>
+                                            <td>{{ $data->tanggal_lahir }}</td>
+                                            <td>{{ $data->no_tlp }}</td>
+                                            <td>{{ $data->email }}</td>
+                                            <td>{{ $data->alamat }}</td>
+                                            <td>{{ $data->univ }}</td>
+                                            <td>{{ $data->jurusan }}</td>
+                                            <td>{{ $data->semester }}</td>
                                             <td>
-                                                <form action="" method="">
-                                                    <a class="btn btn-info" href="{{ route('admin.dashboard.datadiri.show') }}"><i class="fa fa-eye"></i></a>
-                                                    {{-- @csrf
-                                                    @method('DELETE') --}}
+                                            <form action="{{ route('admin.dashboard.datadiri.destroy',$data->id) }}"  method="POST">
+                                                    <a class="btn btn-info" href="{{ route('admin.dashboard.datadiri.show',$data->id) }}"><i class="fa fa-eye"></i></a>
+                                                    @csrf
+                                                    @method('DELETE')
                                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
                                     </tr>
-                                    {{-- @endforeach --}}
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -270,7 +261,7 @@
             },
             scales: {
                 yAxes: [{
-                    ticks: {
+                    ticdata: {
                         display: false //this will remove only the label
                     },
                     gridLines : {

@@ -77,14 +77,15 @@
                                     </div>
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Nama Lengkap : </b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Jenis Kelamin : </b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Tanggal Lahir : </b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>No. Telepon : </b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Alamat : </b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Tempat : </b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Email : </b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Foto : </b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Nama Lengkap : {{$data->name}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Jenis Kelamin : {{$data->jenis_kelamin}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Tanggal Lahir : {{$data->tanggal_lahir}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>No. Telepon : {{$data->no_telp}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>E-Mail : {{$data->email}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Alamat : {{$data->alamat}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Asal Universitas : {{$data->univ}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan : {{$data->jurusan}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Semester : {{$data->semester}}</b></li>
                                         </ul>
                                     </div>
                                     <a class="btn btn-success mt-3" href="/datadiri-admin" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>

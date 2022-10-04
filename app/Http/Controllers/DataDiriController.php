@@ -11,7 +11,9 @@ use File;
 class DataDiriController extends Controller
 {
     public function index(){
-        return view('applicant.datadiri.index');
+        $Users = User::orderBy('created_at','ASC')
+        ->get();
+        return view('applicant.datadiri.index', compact('Users'));
     }
 
     public function profileupdate(Request $request) {
@@ -46,4 +48,23 @@ class DataDiriController extends Controller
             $user->update();
             return redirect()->back()->with('status', "Data Diri berhasil di update");
     }
+    public function show($id){
+        $data= Users::find($id);
+        return view('applicant.datadiri.show', compact('data'));
+    }
+
+    public function destroy($id)
+    {
+        $Users = User::find($id);
+        $Users->delete();
+        if ($Users) {
+            Session::flash('success','Sukses Delete Data');
+            return redirect()->route('applicant.datadiri.index');
+        } else {
+            Session::flash('success','Failed Delete Data');
+            return redirect()->route('applicant.datadiri.index');
+        }
+    }
+
 }
+
