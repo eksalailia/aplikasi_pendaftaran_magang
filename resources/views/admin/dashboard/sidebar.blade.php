@@ -72,6 +72,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/admin-kesanpesan">
+                        <i class="fas fa-comment-dots"></i>
+                        <p>Kesan & Pesan</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a data-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
                         <p>Base</p>

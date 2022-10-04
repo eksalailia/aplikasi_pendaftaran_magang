@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('kesanpesan', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $tabel->string('instansi');
+            $table->string('instansi');
             $table->text('isi');
             $table->timestamps();
         });

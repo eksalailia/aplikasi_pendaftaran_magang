@@ -79,82 +79,62 @@
                                         <div class="card-body">
                                             <form>
                                                 <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label text-white">Pemohon</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="user" name="user" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label text-white">Tahun Akademik</label>
                                                     <div class="col-sm-10">
-                                                        <select name="select" class="form-control">
-                                                            <option value="opt1">Tahun</option>
-                                                            <option value="opt2">Type 2</option>
-                                                            <option value="opt3">Type 3</option>
-                                                            <option value="opt4">Type 4</option>
-                                                            <option value="opt5">Type 5</option>
-                                                            <option value="opt6">Type 6</option>
-                                                            <option value="opt7">Type 7</option>
-                                                            <option value="opt8">Type 8</option>
-                                                        </select>
+                                                        <input type="text" class="form-control" id="tahun_akademik" name="tahun_akademik">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label text-white">Jurusan</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="jurusan" name="jurusan">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label text-white">Bidang Magang</label>
                                                     <div class="col-sm-10">
-                                                        <select name="select" class="form-control">
-                                                            <option value="opt1">Bidang</option>
-                                                            <option value="opt2">Type 2</option>
-                                                            <option value="opt3">Type 3</option>
-                                                            <option value="opt4">Type 4</option>
-                                                            <option value="opt5">Type 5</option>
-                                                            <option value="opt6">Type 6</option>
-                                                            <option value="opt7">Type 7</option>
-                                                            <option value="opt8">Type 8</option>
-                                                        </select>
+                                                        <input type="text" class="form-control" placeholder="Bidang" name="bidang_id" value="">
+                                                        <span class="text-danger">@error('bidang_id'){{ $message }}@enderror</span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label text-white">Lama Magang</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="durasi" name="durasi">
                                                     </div>
                                                 </div>
-                                            </form>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label text-white">Lama Magang</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="durasi" name="durasi">
+                                                    </div>
                                         </div>
                                     </div>
                                 </div>
                                     <div class="card-block">
                                         <div class="card text-white bg-primary mb-3">
-                                            <h5 class="card-header"><i class="fas fa-users"></i> <b>Data Mahasiswa</b></h5>
+                                            <h5 class="card-header"><i class="fas fa-users"></i> <b>Data Peserta</b></h5>
                                             <div class="card-body">
-                                                <form>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 1</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Peserta 1</label>
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 2</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Peserta 2</label>
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 3</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 4</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 5</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Peserta 3</label>
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control">
                                                         </div>
@@ -165,35 +145,22 @@
                                     </div>
                                     <div class="card-block">
                                         <div class="card text-white bg-primary mb-3">
-                                            <h5 class="card-header text-white"><i class="fas fa-address-card"></i> <b>Upload Resume Mahasiswa</b></h5>
+                                            <h5 class="card-header text-white"><i class="fas fa-address-card"></i> <b>Upload Resume Peserta</b></h5>
                                             <div class="card-body">
-                                                <form>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 1</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Peserta 1</label>
                                                             <div class="col-sm-10">
                                                                 <input type="file" class="form-control">
                                                             </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 2</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Peserta 2</label>
                                                         <div class="col-sm-10">
                                                             <input type="file" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 3</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="file" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 4</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="file" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 5</label>
+                                                        <label class="col-sm-2 col-form-label text-white">Peserta 3</label>
                                                         <div class="col-sm-10">
                                                             <input type="file" class="form-control">
                                                         </div>

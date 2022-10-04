@@ -62,6 +62,10 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/datadiri-admin', '\App\Http\Controllers\AdminController@index')->name('admin.dashboard.datadiri.index');
     Route::get('/show-datadiri-admin', '\App\Http\Controllers\AdminController@show')->name('admin.dashboard.datadiri.show');
 
+    Route::get('/admin-kesanpesan', '\App\Http\Controllers\KesanController@index')->name('admin.dashboard.kesan.index');
+    Route::get('/show-kesanpesan-admin/{id}', '\App\Http\Controllers\KesanController@show')->name('admin.dashboard.kesan.show');
+    Route::delete('/hapus-kesanpesan/{id}', '\App\Http\Controllers\KesanController@destroy')->name('admin.dashboard.kesan.destroy');
+
 
 });
 

@@ -138,7 +138,7 @@
                              <div class="form-group">
                                 <label for="">Foto</label>
                                 <input type="file" class="form-control" required="" name="foto" value="{{ Auth::user()->foto }}"><br></br>
-                                <img src="{{ asset('backend/assets/uploads/profile/'.Auth::user()->foto) }}" class="w-75" alt="" style="height:425px; width:354px; margin-left:-200px;">
+                                <img src="{{ asset('backend/assets/uploads/profile/'.Auth::user()->foto) }}" class="w-75" alt="" style="height:300px; width:100px; margin-left:-200px;">
                                  <span class="text-danger">@error('foto'){{ $message }}@enderror</span>
                              </div>
                          </div>
