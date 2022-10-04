@@ -61,7 +61,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/applicant-kesanpesan">Kesan & Pesan</a>
+                        <a href="/create-kesanpesan">Kesan & Pesan</a>
                     </li>
                 </ul>
             </div>
@@ -73,18 +73,19 @@
                         </div>
                         <div class="card-body">
 
-                            <form class="forms-sample">
+                        <form method="POST" action="" enctype="multipart/form-data" class="forms-sample">
+                            @csrf
                                 <div class="form-group">
-                                  <label for="exampleInputName1">Nama</label>
-                                  <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                                  <label for="nama">Nama</label>
+                                  <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputName1">Instansi</label>
-                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Instansi">
+                                    <label for="instansi">Instansi</label>
+                                    <input type="text" class="form-control" id="instansi" name="instansi" placeholder="Instansi">
                                   </div>
                                 <div class="form-group">
-                                  <label for="exampleTextarea1">Kesan & Pesan</label>
-                                  <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Tulis kesan & pesan..."></textarea>
+                                  <label for="isi">Kesan & Pesan</label>
+                                  <textarea class="form-control" id="isi" name="isi" rows="4" placeholder="Tulis kesan & pesan..."></textarea>
                                 </div>
                                 {{-- <button type="submit" class="btn btn-success"><i class="fas fa-checks"> Submit</button> --}}
                                 <button type="submit" class="btn btn-success">
