@@ -75,7 +75,7 @@
                             <div class="card">
                                 <div class="card-block">
                                     <div class="card text-white bg-primary mb-3">
-                                        <h5 class="card-header">Data Magang</h5>
+                                        <h5 class="card-header"><i class="fas fa-fax"></i> <b>Data Magang</b></h5>
                                         <div class="card-body">
                                             <form>
                                                 <div class="form-group row">
@@ -126,7 +126,7 @@
                                 </div>
                                     <div class="card-block">
                                         <div class="card text-white bg-primary mb-3">
-                                            <h5 class="card-header">Data Mahasiswa</h5>
+                                            <h5 class="card-header"><i class="fas fa-users"></i> <b>Data Mahasiswa</b></h5>
                                             <div class="card-body">
                                                 <form>
                                                     <div class="form-group row">
@@ -165,7 +165,7 @@
                                     </div>
                                     <div class="card-block">
                                         <div class="card text-white bg-primary mb-3">
-                                            <h5 class="card-header text-white">Upload Resume Mahasiswa</h5>
+                                            <h5 class="card-header text-white"><i class="fas fa-address-card"></i> <b>Upload Resume Mahasiswa</b></h5>
                                             <div class="card-body">
                                                 <form>
                                                     <div class="form-group row">
@@ -204,19 +204,18 @@
                                     </div>
                                         <div class="card-block">
                                             <div class="card text-white bg-primary mb-3">
-                                                <h5 class="card-header">Upload Proposal Permohonan</h5>
+                                                <h5 class="card-header text-white"><i class="fas fa-upload"></i> <b>Upload Proposal Permohonan</b></h5>
                                                 <div class="card-body">
                                                     <form>
                                                         <div class="form-group row">
                                                             <label class="col-sm-2 col-form-label text-white">Proposal</label>
-                                                            <div class="col-sm-10">
-                                                                <input type="file" class="form-control">
-                                                            </div>
+                                                                <div class="col-sm-10">
+                                                                    <input type="file" class="form-control">
+                                                                </div>
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
-                                            {{-- <button type="button" class="btn btn-success">Daftar</button> --}}
                                             <button type="submit" class="btn btn-success">
                                                 <i class="fas fa-check"></i> Daftar</button>
                                             <a href="/applicant" class="btn btn-secondary">
@@ -227,6 +226,10 @@
                             </div>
                         </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
 
 {{-- @include('applicant.footer') --}}
 
