@@ -234,8 +234,8 @@
                                 <div class="user-box">
                                     <div class="avatar-lg"><img src="backend2/assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
                                     <div class="u-text">
-                                        <h4>asfaer</h4>
-                                        <p class="text-muted">DGSrts@gmail.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                        <h4>{{ Auth::user()->name }}</h4>
+                                        <p class="text-muted">{{ Auth::user()->email }}</p>
                                     </div>
                                 </div>
                             </li>
@@ -259,8 +259,9 @@
     <!-- End Navbar -->
 </div>
 
+
  <!-- Logout Modal-->
- {{-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -273,15 +274,15 @@
         <div class="modal-footer">
           <a class="btn btn-primary" href="{{ route('logout') }}"
             onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                        document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i>
+                                         {{ __('Logout') }}
         </a>
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>
         </div>
       </div>
     </div>
-  </div> --}}
+  </div>
 

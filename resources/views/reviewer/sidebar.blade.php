@@ -8,8 +8,8 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
-                            Hizrian
-                            <span class="user-level">Administrator</span>
+                            {{ Auth::user()->name }}
+                            <span class="user-level">{{ Auth::user()->role }}</span>
                             <span class="caret"></span>
                         </span>
                     </a>
@@ -52,22 +52,8 @@
                 </li>
                 <li class="nav-item">
                     <a href="">
-                        <i class="fas fa-id-card"></i>
-                        <p>Upload Data Diri</p>
-                        <span class="badge badge-success"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="">
                         <i class="fas fa-file"></i>
                         <p>Pendaftaran</p>
-                        <span class="badge badge-success"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="">
-                        <i class="fas fa-comment"></i>
-                        <p>Kesan & Pesan</p>
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
