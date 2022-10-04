@@ -25,6 +25,10 @@ class DataDiriController extends Controller
             $user->tanggal_lahir= $request->input('tanggal_lahir');
             $user->no_tlp = $request->input('no_tlp');
             $user->alamat = $request->input('alamat');
+            $user->univ = $request->input('univ');
+            $user->nim = $request->input('nim');
+            $user->jurusan = $request->input('jurusan');
+            $user->semester = $request->input('semester');
 
             if($request->hasfile('foto')) {
 

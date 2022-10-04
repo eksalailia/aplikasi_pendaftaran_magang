@@ -129,6 +129,38 @@
                          <div class="row">
                          <div class="col-md-6">
                              <div class="form-group">
+                             <label for="">Asal Universitas</label>
+                                 <input type="text" class="form-control" placeholder="Universitas" name="univ" value="{{ Auth::user()->univ }}">
+                                 <span class="text-danger">@error('univ'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">NIM</label>
+                                 <input type="text" class="form-control" placeholder="NIM" name="nim" value="{{ Auth::user()->nim }}">
+                                 <span class="text-danger">@error('nim'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         </div>
+                         <div class="row">
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Jurusan</label>
+                                 <input type="text" class="form-control" placeholder="Jurusan" name="jurusan" value="{{ Auth::user()->jurusan }}">
+                                 <span class="text-danger">@error('jurusan'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Semester</label>
+                                 <input type="text" class="form-control" placeholder="Semester" name="semester" value="{{ Auth::user()->semester }}">
+                                 <span class="text-danger">@error('semester'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         </div>
+                         <div class="row">
+                         <div class="col-md-6">
+                             <div class="form-group">
                              <label for="">Nomor Telepon</label>
                                  <input type="text" class="form-control" placeholder="Nomor Telepon" name="no_tlp" value="{{ Auth::user()->no_tlp }}">
                                  <span class="text-danger">@error('no_tlp'){{ $message }}@enderror</span>
