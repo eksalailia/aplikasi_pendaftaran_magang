@@ -79,30 +79,28 @@
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
+                                            <th>No.</th>
                                             <th>Nama Lengkap</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>No. Telepon</th>
-                                            <th>Email</th>
-                                            <th>Alamat</th>
                                             <th>Asal Universitas</th>
                                             <th>Jurusan</th>
                                             <th>Semester</th>
+                                            <th>No. Telepon</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                         @foreach ($Users as $data)
+                                            <td>{{ $data->id }}</td>
                                             <td>{{ $data->name }}</td>
-                                            <td>{{ $data->jenis_kelamin }}</td>
-                                            <td>{{ $data->tanggal_lahir }}</td>
-                                            <td>{{ $data->no_tlp }}</td>
-                                            <td>{{ $data->email }}</td>
-                                            <td>{{ $data->alamat }}</td>
                                             <td>{{ $data->univ }}</td>
                                             <td>{{ $data->jurusan }}</td>
                                             <td>{{ $data->semester }}</td>
+                                            <td>{{ $data->no_tlp }}</td>
+                                            <td>
+                                                <span class="badge badge-pill badge-warning"><b>Tahap Review</b></span>
+                                            </td>
                                             <td>
                                             <form action="{{ route('reviewer.datadiri.destroy',$data->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('reviewer.datadiri.show',$data->id) }}"><i class="fa fa-eye"></i></a>

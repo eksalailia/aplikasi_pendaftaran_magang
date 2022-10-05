@@ -103,6 +103,7 @@
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
+                                            <th>No.</th>
                                             <th>Nama Lengkap</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Tanggal Lahir</th>
@@ -118,6 +119,7 @@
                                     <tbody>
                                         <tr>
                                         @foreach ($Users as $data)
+                                            <td>{{ $data->id }}</td>
                                             <td>{{ $data->name }}</td>
                                             <td>{{ $data->jenis_kelamin }}</td>
                                             <td>{{ $data->tanggal_lahir }}</td>

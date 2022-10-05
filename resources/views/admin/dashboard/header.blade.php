@@ -273,10 +273,10 @@
         <div class="modal-footer">
           <a class="btn btn-primary" href="{{ route('logout') }}"
             onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i>
-                                         {{ __('Logout') }}
+                        document.getElementById('logout-form').submit();"><i class="fas fa-check"></i>
+                                         {{ __('YA') }}
         </a>
-        <button class="btn btn-secondary" type="button" data-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
+        <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fas fa-times"></i> TIDAK</button>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>
