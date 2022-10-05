@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use File;
+use Session;
 
 class DataDiriController extends Controller
 {
@@ -46,7 +47,13 @@ class DataDiriController extends Controller
             }
 
             $user->update();
-            return redirect()->back()->with('status', "Data Diri berhasil di update");
+            if ($user) {
+                Session::flash('success','Sukses Update Data Diri');
+                    return redirect()->route('applicant.datadiri.index');
+                } else {
+                    Session::flash('failed','Failed Update Data');
+                    return redirect()->route('applicant.datadiri.index');
+                }
     }
     public function show($id){
         $data= Users::find($id);
