@@ -58,7 +58,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/applicant-pendaftaran">
+                    <a href="/create-pendaftaran">
                         <i class="fas fa-file-contract"></i>
                         <p>Pendaftaran</p>
                         <span class="badge badge-success"></span>

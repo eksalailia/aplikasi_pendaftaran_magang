@@ -80,7 +80,7 @@
                                             <li class="list-group-item" style="font-size: 16px;"><b>Nama Lengkap : {{$data->name}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Jenis Kelamin : {{$data->jenis_kelamin}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Tanggal Lahir : {{$data->tanggal_lahir}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>No. Telepon : {{$data->no_telp}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>No. Telepon : {{$data->no_tlp}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>E-Mail : {{$data->email}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Alamat : {{$data->alamat}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Asal Universitas : {{$data->univ}}</b></li>
