@@ -71,7 +71,14 @@
                             <div class="card-header">
                                 <div class="card-title">Pendaftaran Magang</div>
                             </div>
+                            <br></br>
+                                 @if(Session::has('success'))
+                                    <div class="btn btn-success" style="width:100%; height:50px">
+                                        <p>{{Session::get('success')}}</p>
+                                    </div>
+                                @endif
                             <div class="col-md-12">
+                                <br>
                             <div class="card">
                                 <div class="card-block">
                                     <div class="card text-white bg-primary mb-3">
@@ -92,7 +99,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Pemohon</label>
+                                                    <label class="col-sm-2 col-form-label text-white">Pemohon</label>
                                                     <div class="col-sm-10">
                                                         <select name="user" class="form-control" required="">
                                                             @foreach($user as $d)
@@ -102,7 +109,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Bidang Magang</label>
+                                                    <label class="col-sm-2 col-form-label text-white">Bidang Magang</label>
                                                     <div class="col-sm-10">
                                                         <select name="bidang" class="form-control" required="">
                                                             @foreach($data as $d)

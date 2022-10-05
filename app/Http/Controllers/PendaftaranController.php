@@ -47,10 +47,10 @@ class PendaftaranController extends Controller
         $pendaftaran->proposal = $props;
         $pendaftaran->save();
         if ($pendaftaran) {
-            Session::flash('success','Sukses Tambah Data');
+            Session::flash('success','Pendaftaran Berhasil');
             return redirect()->route('applicant.pendaftaran.create');
         } else {
-            Session::flash('success','Failed Tambah Data');
+            Session::flash('failed','Pendaftaran Gagal');
             return redirect()->route('applicant.pendaftaran.create');
         }
     }

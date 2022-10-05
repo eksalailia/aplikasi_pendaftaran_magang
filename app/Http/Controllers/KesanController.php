@@ -29,10 +29,10 @@ class KesanController extends Controller
         $kesanpesan->isi = $request->isi;
         $kesanpesan->save();
         if ($kesanpesan) {
-            Session::flash('success','Sukses Tambah Data');
+            Session::flash('success','Kesan & Pesan Anda Berhasil Terkirim');
             return redirect()->route('applicant.kesan.create');
         } else {
-            Session::flash('success','Failed Tambah Data');
+            Session::flash('success','Kesan & Pesan Gagal Terkirim');
             return redirect()->route('applicant.kesan.create');
         }
     }

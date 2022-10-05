@@ -51,7 +51,7 @@ class DataDiriController extends Controller
                 Session::flash('success','Sukses Update Data Diri');
                     return redirect()->route('applicant.datadiri.index');
                 } else {
-                    Session::flash('failed','Failed Update Data');
+                    Session::flash('failed','Failed Update Data Diri');
                     return redirect()->route('applicant.datadiri.index');
                 }
     }
@@ -65,10 +65,10 @@ class DataDiriController extends Controller
         $Users = User::find($id);
         $Users->delete();
         if ($Users) {
-            Session::flash('success','Sukses Delete Data');
+            Session::flash('success','Sukses Hapus Data Diri');
             return redirect()->route('applicant.datadiri.index');
         } else {
-            Session::flash('success','Failed Delete Data');
+            Session::flash('success','Failed Hapus Data Diri');
             return redirect()->route('applicant.datadiri.index');
         }
     }

@@ -65,8 +65,14 @@
                     </li>
                 </ul>
             </div>
+                    @if(Session::has('success'))
+                        <div class="btn btn-success" style="width:100%; height:50px">
+                            <p>{{Session::get('success')}}</p>
+                        </div>
+                    @endif
             <div class="row">
                 <div class="col-md-12">
+                    <br>
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">Kesan & Pesan</div>

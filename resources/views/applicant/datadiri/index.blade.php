@@ -72,12 +72,12 @@
                             <h5>Upload Data Diri</h5>
                 <div class="card-body">
                 <br></br>
-		@if(Session::has('success'))
-			<div class="btn btn-success" style="width:100%; height:50px">
-				<p>{{Session::get('success')}}</p>
-			</div>
-		@endif
-		<br></br>
+                    @if(Session::has('success'))
+                        <div class="btn btn-success" style="width:100%; height:50px">
+                            <p>{{Session::get('success')}}</p>
+                        </div>
+                    @endif
+                    <br></br>
                     <form action="{{ url('datadiri-update') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                      <div class="row">
