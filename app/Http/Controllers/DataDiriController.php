@@ -65,10 +65,10 @@ class DataDiriController extends Controller
         $Users = User::find($id);
         $Users->delete();
         if ($Users) {
-            Session::flash('success','Sukses Hapus Data Diri');
+            Session::flash('delete','Data Peserta Berhasil Dihapus');
             return redirect()->route('applicant.datadiri.index');
         } else {
-            Session::flash('success','Failed Hapus Data Diri');
+            Session::flash('failed','Failed Hapus Data Peserta');
             return redirect()->route('applicant.datadiri.index');
         }
     }

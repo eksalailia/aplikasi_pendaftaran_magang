@@ -73,7 +73,32 @@
                         <div class="card-header">
                             <h4 class="card-title">Daftar Bidang Magang</h4>
                         </div>
+                        <br></br>
+                                 @if(Session::has('success'))
+                                    <div class="btn btn-success" style="width:100%; height:50px">
+                                        <p>{{Session::get('success')}}</p>
+                                    </div>
+                                @endif
+
+                                @if(Session::has('delete'))
+                                    <div class="btn btn-warning" style="width:100%; height:50px">
+                                        <p>{{Session::get('delete')}}</p>
+                                    </div>
+                                @endif
+
+                                @if(Session::has('update'))
+                                    <div class="btn btn-info" style="width:100%; height:50px">
+                                        <p>{{Session::get('update')}}</p>
+                                    </div>
+                                @endif
+
+                                @if(Session::has('failed'))
+                                    <div class="btn btn-danger" style="width:100%; height:50px">
+                                        <p>{{Session::get('delete')}}</p>
+                                    </div>
+                                @endif
                         <div class="card-tools">
+                            <br>
                             <a href="{{ route('admin.dashboard.bidang.create') }}" class="btn btn-success" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
                         </div>
                         <div class="card-body">
@@ -92,12 +117,12 @@
                                             <td>{{ $bidang->nama }}</td>
                                             <td>{{ $bidang->keterangan }}</td>
                                             <td>
-                                                <form action=""  method="POST">
+                                            <form action="{{ route('admin.dashboard.bidang.destroy',$bidang->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('admin.dashboard.bidang.show', $bidang->id) }}"><i class="fa fa-eye"></i></a>
                                                     <a href="{{ route('admin.dashboard.bidang.edit', $bidang->id) }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
-                                                    <!-- @csrf
-                                                    @method('DELETE') -->
-                                                    <a href="{{route('admin.dashboard.bidang.destroy',$bidang->id)}}" class="btn btn-warning btn-danger" onclick="return confirm('Apakah Anda yakin untuk menghapus data ini ?')" ><i class="fa fa-trash"></i></a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-warning btn-danger" onclick="return confirm('Apakah Anda yakin untuk menghapus data ini ?')" ><i class="fa fa-trash"></i></button>
                                                     <!-- <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button> -->
                                                 </form>
                                             </td>

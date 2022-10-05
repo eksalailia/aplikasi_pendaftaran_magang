@@ -75,15 +75,15 @@
             @csrf
                 <div class="form-group col-sm-12">
                     <label>Nama Mentor</label>
-                    <input type="text" id="nama" name="nama" class="form-control" >
+                    <input type="text" id="nama" name="nama" class="form-control" required="" >
                 </div>
                 <div class="form-group col-sm-12">
                     <label>Jabatan</label>
-                    <input type="text" id="jabatan" name="jabatan" class="form-control" >
+                    <input type="text" id="jabatan" name="jabatan" class="form-control" required="" >
                 </div>
                 <div class="form-group col-sm-12">
                     <label>Foto</label>
-                    <input type="file" id="img" name="img" class="form-control">
+                    <input type="file" id="img" name="img" class="form-control" required="" >
                 </div>
                 <div class="form-group col-sm-5">
                     <button type="submit" class="btn btn-success">

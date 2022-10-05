@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Mentor;
 use Illuminate\Http\Request;
+use Session;
 
 class MentorController extends Controller
 {
@@ -33,8 +34,10 @@ class MentorController extends Controller
         $Mentor->img = $org;
         $Mentor->save();
         if ($Mentor) {
+            Session::flash('success','Data Mentor Berhasil Ditambahkan');
             return redirect()->route('admin.dashboard.mentor.index');
         } else {
+            Session::flash('failed','Data Mentor Gagal Ditambahkan');
             return redirect()->route('admin.dashboard.mentor.index');
         }
     }
@@ -55,8 +58,10 @@ class MentorController extends Controller
             $mentor->save();
 
            if ($mentor) {
+                Session::flash('update','Update Data Mentor Berhasil');
                 return redirect()->route('admin.dashboard.mentor.index');
             } else {
+                Session::flash('failed','Update Data Mentor Gagal');
                 return redirect()->route('admin.dashboard.mentor.index');
             }
         } else {
@@ -71,8 +76,10 @@ class MentorController extends Controller
             $mentor->img = $org;
             $mentor->save();
             if ($mentor) {
+                Session::flash('update','Update Data Mentor Berhasil');
                 return redirect()->route('admin.dashboard.mentor.index');
             } else {
+                Session::flash('failed','Update Data Mentor Gagal');
                 return redirect()->route('admin.dashboard.mentor.index');
             }
         }
@@ -86,8 +93,8 @@ class MentorController extends Controller
     public function destroy($id) {
         // Alert::success('Profil Berhasi Dihapus','Sukses');
         Mentor::find($id)->delete();
-        return redirect()->route('admin.dashboard.mentor.index')
-            ->with('Success', 'Mentor Berhasil Dihapus!');
+        Session::flash('delete','Data Mentor Berhasil Dihapus');
+        return redirect()->route('admin.dashboard.mentor.index');
     }
 }
 

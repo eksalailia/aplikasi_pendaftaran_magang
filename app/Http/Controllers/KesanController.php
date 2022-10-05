@@ -32,7 +32,7 @@ class KesanController extends Controller
             Session::flash('success','Kesan & Pesan Anda Berhasil Terkirim');
             return redirect()->route('applicant.kesan.create');
         } else {
-            Session::flash('success','Kesan & Pesan Gagal Terkirim');
+            Session::flash('failed','Kesan & Pesan Gagal Terkirim');
             return redirect()->route('applicant.kesan.create');
         }
     }
@@ -46,10 +46,10 @@ class KesanController extends Controller
         $kesanpesan = KesanPesan::find($id);
         $kesanpesan->delete();
         if ($kesanpesan) {
-            Session::flash('success','Sukses Delete Data');
+            Session::flash('delete','Data Kesan & Pesan Berhasil Dihapus');
             return redirect()->route('admin.dashboard.kesan.index');
         } else {
-            Session::flash('success','Failed Delete Data');
+            Session::flash('failed','Data Kesan & Pesan Gagal Dihapus');
             return redirect()->route('admin.dashboard.kesan.index');
         }
     }

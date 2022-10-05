@@ -31,10 +31,10 @@ class BidangController extends Controller
         $Bidang->save();
 
         if ($Bidang) {
-            Session::flash('success','Sukses Update Data');
+            Session::flash('update','Update Data Mentor Berhasil');
                 return redirect()->route('admin.dashboard.bidang.index');
         } else {
-                Session::flash('success','Failed Update Data');
+            Session::flash('update','Update Data Mentor Berhasil');
                 return redirect()->route('admin.dashboard.bidang.index');
             }
     }
@@ -45,10 +45,10 @@ class BidangController extends Controller
         $Bidang->keterangan = $request->keterangan;
         $Bidang->save();
         if ($Bidang) {
-            Session::flash('success','Sukses Tambah Data');
+            Session::flash('success','Data Bidang Berhasil Ditambahkan');
             return redirect()->route('admin.dashboard.bidang.index');
         } else {
-            Session::flash('success','Failed Tambah Data');
+            Session::flash('failed','Data Mentor Gagal Ditambahkan');
             return redirect()->route('admin.dashboard.bidang.index');
         }
     }
@@ -62,10 +62,10 @@ class BidangController extends Controller
         $Bidang = Bidang::find($id);
         $Bidang->delete();
         if ($Bidang) {
-            Session::flash('success','Sukses Delete Data');
+            Session::flash('delete','Data Mentor Berhasil Dihapus');
             return redirect()->route('admin.dashboard.bidang.index');
         } else {
-            Session::flash('success','Failed Delete Data');
+            Session::flash('failed','Data Mentor Gagal Dihapus');
             return redirect()->route('admin.dashboard.bidang.index');
         }
     }

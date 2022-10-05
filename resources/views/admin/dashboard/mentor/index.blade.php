@@ -71,10 +71,36 @@
                         <div class="card-header">
                             <h4 class="card-title">Daftar Pembimbing Magang</h4>
                         </div>
+                        <br></br>
+                                 @if(Session::has('success'))
+                                    <div class="btn btn-success" style="width:100%; height:50px">
+                                        <p>{{Session::get('success')}}</p>
+                                    </div>
+                                @endif
+
+                                @if(Session::has('delete'))
+                                    <div class="btn btn-warning" style="width:100%; height:50px">
+                                        <p>{{Session::get('delete')}}</p>
+                                    </div>
+                                @endif
+
+                                @if(Session::has('update'))
+                                    <div class="btn btn-info" style="width:100%; height:50px">
+                                        <p>{{Session::get('update')}}</p>
+                                    </div>
+                                @endif
+
+                                @if(Session::has('failed'))
+                                    <div class="btn btn-danger" style="width:100%; height:50px">
+                                        <p>{{Session::get('delete')}}</p>
+                                    </div>
+                                @endif
                         <div class="card-tools">
+                            <br>
                             <a href="{{ route('admin.dashboard.mentor.create') }}" class="btn btn-success" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
                         </div>
                         <div class="card-body">
+                            <br>
                             <div class="table-responsive">
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
                                 <thead>
@@ -99,7 +125,7 @@
                                                     <a href="{{ route('admin.dashboard.mentor.edit',$mt->id) }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin untuk menghapus data ini ?')" ><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
