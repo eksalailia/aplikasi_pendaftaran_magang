@@ -71,6 +71,9 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
 
 Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(){
     Route::get('/reviewer', [\App\Http\Controllers\ReviewerController::class, 'reviewer'])->name('reviewer.main');
+    Route::get('/datadiri-reviewer', '\App\Http\Controllers\ReviewerController@index')->name('reviewer.datadiri.index');
+    Route::get('/show-datadiri-reviewer/{id}', '\App\Http\Controllers\ReviewerController@show')->name('reviewer.datadiri.show');
+    Route::delete('/hapus-datadiri-reviewer/{id}', '\App\Http\Controllers\ReviewerController@destroy')->name('reviewer.datadiri.destroy');
 
 });
 

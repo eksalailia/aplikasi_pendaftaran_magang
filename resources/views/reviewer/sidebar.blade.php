@@ -58,6 +58,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/datadiri-reviewer">
+                        <i class="fas fa-id-card"></i>
+                        <p>Data Diri</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a data-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
                         <p>Base</p>
