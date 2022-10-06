@@ -105,7 +105,7 @@
                     tabindex="0"></iframe>
             </div>
             <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-            <form class="form-contact contact_form" action="{{route('layouts.frontend.store')}}" method="post" id="contactForm" novalidate="novalidate">
+            <form class="form-contact contact_form" action="{{route('layouts.frontend.message.store')}}" method="post" id="contactForm" novalidate="novalidate">
                             @csrf
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -116,13 +116,13 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" nama="email" required="" placeholder="E-Mail">
+                                <input type="email" class="form-control" id="email" name="email" required="" placeholder="E-Mail">
                                 <label for="email">E-Mail</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" naem="subject" required="" placeholder="Subject">
+                                <input type="text" class="form-control" id="subject" name="subject" required="" placeholder="Subject">
                                 <label for="subject">Subject</label>
                             </div>
                         </div>

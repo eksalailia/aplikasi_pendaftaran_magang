@@ -24,7 +24,9 @@ route::post('/registerUser',[\App\Http\Controllers\RegisterController::class,'re
 Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('layouts.frontend.index');
 Route::get('/about', [\App\Http\Controllers\UserController::class, 'about'])->name('layouts.frontend.about');
 Route::get('/service', [\App\Http\Controllers\UserController::class, 'service'])->name('layouts.frontend.service');
-Route::get('/contact', [\App\Http\Controllers\UserController::class, 'contact'])->name('layouts.frontend.contact');
+// Route::get('/contact', [\App\Http\Controllers\UserController::class, 'contact'])->name('layouts.frontend.contact');
+Route::get('/contact', [\App\Http\Controllers\MessageController::class, 'create'])->name('layouts.frontend.message.create');
+Route::post('/contactcreate', [\App\Http\Controllers\MessageController::class, 'store'])->name('layouts.frontend.message.store');
 Route::get('/pembimbing', [\App\Http\Controllers\UserController::class, 'team'])->name('layouts.frontend.team');
 
 
