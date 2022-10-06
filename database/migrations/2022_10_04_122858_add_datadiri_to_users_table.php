@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->varchar('univ')->nullable();
-            $table->char('nim')->nullable();
-            $table->varchar('jurusan')->nullable();
-            $table->integer('semester')->nullable();
+            $table->string('univ')->nullable();
+            $table->string('nim')->nullable();
+            $table->string('jurusan')->nullable();
+            $table->string('semester')->nullable();
         });
     }
 
