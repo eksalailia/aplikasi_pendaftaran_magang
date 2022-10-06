@@ -45,7 +45,6 @@
 
 		<!-- End Sidebar -->
 
-
         <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -61,7 +60,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/profileadmin-update">Update Profile</a>
+                        <a href="/profilereviewer-update">Update Profile</a>
                     </li>
                 </ul>
             </div>
@@ -96,7 +95,7 @@
                             <p>{{Session::get('delete')}}</p>
                         </div>
                     @endif
-                    <form action="{{ url('profileadmin-update') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('profilereviewer-update') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                      <div class="row">
                          <div class="col-md-6">
@@ -136,7 +135,7 @@
                         <div class="action-buttons justify-content-between bg-white pt-2 pb-2">
                             <button type="submit" class="btn btn-success">
                                 <i class="fas fa-check"></i> Submit</button>
-                            <a href="/admin" class="btn btn-secondary">
+                            <a href="/reviewer" class="btn btn-secondary">
                                 <i class="fas fa-reply"></i> Kembali</a>
                          </div>
                      </div>
