@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mentor;
+use App\Models\KesanPesan;
 
 class UserController extends Controller
 {
     public function index(){
-        return view('layouts.frontend.index');
+        $kesanpesan=kesanpesan::all();
+        return view('layouts.frontend.index', compact('kesanpesan'));
     }
     public function about(){
         return view('layouts.frontend.about');
@@ -19,6 +22,7 @@ class UserController extends Controller
         return view('layouts.frontend.contact');
     }
     public function team(){
-        return view('layouts.frontend.team');
+        $mentor=Mentor::all();
+        return view('layouts.frontend.team', compact('mentor'));
     }
 }
