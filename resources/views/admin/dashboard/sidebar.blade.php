@@ -78,6 +78,13 @@
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/admin-contact">
+                        <i class="fas fa-comment-dots"></i>
+                        <p>Aspirasi Peserta</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#base">

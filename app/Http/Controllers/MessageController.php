@@ -11,7 +11,7 @@ class MessageController extends Controller
     public function index(Request $request)
     {
         $message= Message::All();
-        return view('layouts.frontend.message.index', compact('message'));
+        return view('admin.dashboard.message.index', compact('message'));
     }
 
     public function create()
@@ -38,20 +38,19 @@ class MessageController extends Controller
     public function show($id)
     {
         $message = message::find($id);
-        return view('layouts.frontend.message.show', compact('message'));
+        return view('admin.dashboard.message.show', compact('message'));
     }
 
     public function destroy($id)
     {
         $message = message::find($id);
         $message->delete();
-        return redirect()->route('layouts.frontend.message.index');
         if ($message) {
             Session::flash('delete','Data Saran dan Kritik Anda Berhasil Dihapus');
-            return redirect()->route('layouts.frontend.message.index');
+            return redirect()->route('admin.dashboard.message.index');
         } else {
             Session::flash('failed','Data Saran dan Kritik Anda Gagal Dihapus');
-            return redirect()->route('layouts.frontend.message.index');
+            return redirect()->route('admin.dashboard.message.index');
         }
     }
 

@@ -70,6 +70,11 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/show-kesanpesan-admin/{id}', '\App\Http\Controllers\KesanController@show')->name('admin.dashboard.kesan.show');
     Route::delete('/hapus-kesanpesan/{id}', '\App\Http\Controllers\KesanController@destroy')->name('admin.dashboard.kesan.destroy');
 
+    Route::get('/admin-contact', '\App\Http\Controllers\MessageController@index')->name('admin.dashboard.message.index');
+    Route::get('/show-aspirasi/{id}', '\App\Http\Controllers\MessageController@show')->name('admin.dashboard.message.show');
+    Route::delete('/hapus-contact/{id}', '\App\Http\Controllers\MessageController@destroy')->name('admin.dashboard.message.destroy');
+
+
 
 });
 
