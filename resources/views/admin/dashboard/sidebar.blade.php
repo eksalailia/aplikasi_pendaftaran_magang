@@ -3,20 +3,20 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="backend2/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                    <img src="{{ asset('backend/assets/uploads/profile/'.Auth::user()->foto) }}" alt="..." class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
                             {{ Auth::user()->name }}
                             <span class="user-level">{{ Auth::user()->role }}</span>
-                            <span class="caret"></span>
+                            <!-- <span class="caret"></span> -->
                         </span>
                     </a>
                     <div class="clearfix"></div>
 
                     <div class="collapse in" id="collapseExample">
-                        <ul class="nav">
+                        <!-- <ul class="nav">
                             <li>
                                 <a href="#profile">
                                     <span class="link-collapse">My Profile</span>
@@ -32,7 +32,7 @@
                                     <span class="link-collapse">Settings</span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>

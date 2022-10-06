@@ -73,8 +73,9 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/admin-contact', '\App\Http\Controllers\MessageController@index')->name('admin.dashboard.message.index');
     Route::get('/show-aspirasi/{id}', '\App\Http\Controllers\MessageController@show')->name('admin.dashboard.message.show');
     Route::delete('/hapus-contact/{id}', '\App\Http\Controllers\MessageController@destroy')->name('admin.dashboard.message.destroy');
-
-
+    
+    Route::get('/profileadmin-index', '\App\Http\Controllers\ProfileAdminController@index')->name('admin.dashboard.profile.index');
+    Route::post('/profileadmin-update', '\App\Http\Controllers\ProfileAdminController@profileupdateadmin')->name('admin.profileupdate');
 
 });
 
@@ -85,23 +86,6 @@ Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(
     Route::delete('/hapus-datadiri-reviewer/{id}', '\App\Http\Controllers\ReviewerController@destroy')->name('reviewer.datadiri.destroy');
 
 });
-
-
-// Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'applicant'])->name('applicant.main');
-// Route::get('/datadiri', [\App\Http\Controllers\DataDiriController::class, 'datadiri_index'])->name('applicant.datadiri.index');
-// Route::post('/datadiri-update', [\App\Http\Controllers\DataDiriController::class, 'profileupdate'])->name('profileupdate');
-// Route::get('/pendaftaran', [\App\Http\Controllers\PendaftaranController::class, 'daftar'])->name('applicant.pendaftaran.index');
-// Route::get('pendaftaran-create-step-one', [\App\Http\Controllers\PendaftaranController::class, 'createStepOne'])->name('pendaftaran.create.step.one');
-// Route::post('pendaftaran-create-step-one', [\App\Http\Controllers\PendaftaranController::class,'postCreateStepOne'])->name('pendaftaran.create.step.one.post');
-
-// Route::get('pendaftaran-create-step-two', [\App\Http\Controllers\PendaftaranController::class, 'createStepTwo'])->name('pendaftaran.create.step.two');
-// Route::post('pendaftaran-create-step-two', [\App\Http\Controllers\PendaftaranController::class, 'postCreateStepTwo'])->name('pendaftaran.create.step.two.post');
-
-// Route::get('pendaftaran-create-step-three', [\App\Http\Controllers\PendaftaranController::class, 'createStepThree'])->name('pendaftaran.create.step.three');
-// Route::post('pendaftaran-create-step-three', [\App\Http\Controllers\PendaftaranController::class, 'postCreateStepThree'])->name('pendaftaran.create.step.three.post');
-
-// Route::get('/kesan-applicant', [\App\Http\Controllers\KesanController::class, 'kesan'])->name('applicant.kesanpesan.index');
-
 
 Route::get('/table', [\App\Http\Controllers\ApplicantController::class, 'table'])->name('applicant.table');
 Auth::routes();
