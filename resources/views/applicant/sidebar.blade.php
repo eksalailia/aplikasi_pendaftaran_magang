@@ -10,13 +10,13 @@
                         <span>
                             {{ Auth::user()->name }}
                             <span class="user-level">{{ Auth::user()->role }}</span>
-                            <span class="caret"></span>
+                            <!-- <span class="caret"></span> -->
                         </span>
                     </a>
                     <div class="clearfix"></div>
 
                     <div class="collapse in" id="collapseExample">
-                        <ul class="nav">
+                        <!-- <ul class="nav">
                             <li>
                                 <a href="#profile">
                                     <span class="link-collapse">My Profile</span>
@@ -32,7 +32,7 @@
                                     <span class="link-collapse">Settings</span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>

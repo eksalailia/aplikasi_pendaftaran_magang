@@ -68,34 +68,34 @@
             <div class="row">
                 <div class="col-md-12">
                 <div class="card">
-                        <div class="card-header">
-                            <h5>Upload Data Diri</h5>
-                <div class="card-body">
+                    <div class="card-header">
+                    <div class="card-title">Upload Data Diri</div>
+                <div>
+                    <hr>
                 <br></br>
-                                 @if(Session::has('success'))
-                                    <div class="btn btn-success" style="width:100%; height:50px">
-                                        <p>{{Session::get('success')}}</p>
-                                    </div>
-                                @endif
+                    @if(Session::has('success'))
+                        <div class="btn btn-success" style="width:100%; height:50px">
+                             <p>{{Session::get('success')}}</p>
+                        </div>
+                    @endif
 
-                                @if(Session::has('delete'))
-                                    <div class="btn btn-warning" style="width:100%; height:50px">
-                                        <p>{{Session::get('delete')}}</p>
-                                    </div>
-                                @endif
+                    @if(Session::has('delete'))
+                        <div class="btn btn-warning" style="width:100%; height:50px">
+                            <p>{{Session::get('delete')}}</p>
+                            </div>
+                    @endif
 
-                                @if(Session::has('update'))
-                                    <div class="btn btn-info" style="width:100%; height:50px">
-                                        <p>{{Session::get('update')}}</p>
-                                    </div>
-                                @endif
+                    @if(Session::has('update'))
+                        <div class="btn btn-info" style="width:100%; height:50px">
+                            <p>{{Session::get('update')}}</p>
+                        </div>
+                    @endif
 
-                                @if(Session::has('failed'))
-                                    <div class="btn btn-danger" style="width:100%; height:50px">
-                                        <p>{{Session::get('delete')}}</p>
-                                    </div>
-                                @endif
-                            <br></br>
+                    @if(Session::has('failed'))
+                        <div class="btn btn-danger" style="width:100%; height:50px">
+                            <p>{{Session::get('delete')}}</p>
+                        </div>
+                    @endif
                     <form action="{{ url('datadiri-update') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                      <div class="row">
