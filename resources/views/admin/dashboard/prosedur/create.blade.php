@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Dashboard - Admin</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
+	<link rel="icon" href="backend2/assets/foto/book.png" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
 	<script src="backend2/assets/js/plugin/webfont/webfont.min.js"></script>
@@ -48,7 +48,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Pengumuman</h4>
+                <h4 class="page-title">Prosedur Pengajuan PKL / Magang</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/admin">
@@ -59,7 +59,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/pengumuman">Pengumuman</a>
+                        <a href="/prosedur">Prosedur Pengajuan PKL / Magang</a>
                     </li>
                 </ul>
             </div>
@@ -68,36 +68,27 @@
                     <div class="card">
                         <div class="card-header">
 
-                             <h4>Tambah Pengumuman</h4>
-        </div>
-        <form method="POST" action="{{ route ('admin.dashboard.pengumuman.create') }}" enctype="multipart/form-data"  >
+                             <h4>Tambah Prosedur Pengajuan</h4>
+                    </div>
+        <form method="POST" action="{{ route ('admin.dashboard.prosedur.create') }}" enctype="multipart/form-data"  >
             @csrf
                 <div class="form-group col-sm-12">
                     <label>Judul</label>
                     <input type="text" id="judul" name="judul" class="form-control" required="" placeholder="Judul" >
                 </div>
                 <div class="form-group col-sm-12">
-                    <label>Tanggal</label>
-                    <input type="date" id="tanggal" name="tanggal" class="form-control" required="" placeholder="Tanggal" >
-                </div>
-                <div class="form-group col-sm-12">
                     <label for="isi">Isi</label>
                     <textarea class="form-control" placeholder="Isi" id="isi" name="isi" required="" style="height: 150px"></textarea>                
                 </div>
                 <div class="form-group col-sm-12">
-                    <label>Status</label>
-                    <select class="form-control" name="status">
-                      <option>status</option>
-                      <option>aktif</option>
-                      <option>non-aktif</option>
-                    </select>
-                  </div>
-                  </div>
+                    <label>Foto</label>
+                    <input type="file" id="foto" name="foto" class="form-control" required="" >
+                </div>
 
                 <div class="form-group col-sm-5">
                     <button type="submit" class="btn btn-success">
                         <i class="fas fa-check"></i> Simpan</button>
-                    <a href="/pengumuman" class="btn btn-secondary">
+                    <a href="/prosedur" class="btn btn-secondary">
                         <i class="fas fa-reply"></i> Kembali</a>
                 </div>
             </form>

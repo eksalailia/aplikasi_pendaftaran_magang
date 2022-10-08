@@ -29,6 +29,7 @@
 <body>
 
 @extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
 
 
@@ -44,11 +45,12 @@
 
 		<!-- End Sidebar -->
 
+
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Pengumuman</h4>
+            <h4 class="page-title">Prosedur Pengajuan PKL / Magang</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/admin">
@@ -59,7 +61,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/pengumuman">Pengumuman</a>
+                        <a href="/bidang">Prosedur Pengajuan PKL / Magang</a>
                     </li>
                 </ul>
             </div>
@@ -67,45 +69,104 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
+                            <h4 class="card-title">Daftar Prosedur Pengajuan</h4>
+                        </div>
+                        <br></br>
+                                 @if(Session::has('success'))
+                                    <div class="btn btn-success" style="width:100%; height:50px">
+                                        <p>{{Session::get('success')}}</p>
+                                    </div>
+                                @endif
 
-                             <h4>Tambah Pengumuman</h4>
-        </div>
-        <form method="POST" action="{{ route ('admin.dashboard.pengumuman.create') }}" enctype="multipart/form-data"  >
-            @csrf
-                <div class="form-group col-sm-12">
-                    <label>Judul</label>
-                    <input type="text" id="judul" name="judul" class="form-control" required="" placeholder="Judul" >
-                </div>
-                <div class="form-group col-sm-12">
-                    <label>Tanggal</label>
-                    <input type="date" id="tanggal" name="tanggal" class="form-control" required="" placeholder="Tanggal" >
-                </div>
-                <div class="form-group col-sm-12">
-                    <label for="isi">Isi</label>
-                    <textarea class="form-control" placeholder="Isi" id="isi" name="isi" required="" style="height: 150px"></textarea>                
-                </div>
-                <div class="form-group col-sm-12">
-                    <label>Status</label>
-                    <select class="form-control" name="status">
-                      <option>status</option>
-                      <option>aktif</option>
-                      <option>non-aktif</option>
-                    </select>
-                  </div>
-                  </div>
+                                @if(Session::has('delete'))
+                                    <div class="btn btn-warning" style="width:100%; height:50px">
+                                        <p>{{Session::get('delete')}}</p>
+                                    </div>
+                                @endif
 
-                <div class="form-group col-sm-5">
-                    <button type="submit" class="btn btn-success">
-                        <i class="fas fa-check"></i> Simpan</button>
-                    <a href="/pengumuman" class="btn btn-secondary">
-                        <i class="fas fa-reply"></i> Kembali</a>
+                                @if(Session::has('update'))
+                                    <div class="btn btn-info" style="width:100%; height:50px">
+                                        <p>{{Session::get('update')}}</p>
+                                    </div>
+                                @endif
+
+                                @if(Session::has('failed'))
+                                    <div class="btn btn-danger" style="width:100%; height:50px">
+                                        <p>{{Session::get('delete')}}</p>
+                                    </div>
+                                @endif
+                        <div class="card-tools">
+                            <br>
+                            <a href="{{ route('admin.dashboard.prosedur.create') }}" class="btn btn-primary btn-round" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
+                        </div>
+                        <div class="card-body">
+                            <br>
+                            <div class="table-responsive">
+                                <table id="basic-datatables" class="display table table-striped table-hover" >
+                                <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Judul</th>
+                                            <th>Isi</th>
+                                            <th>Foto</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            @foreach ($prosedur as $psd)
+                                            <td>{{ $psd->id }}</td>
+                                            <td>{{ $psd->judul }}</td>
+                                            <td>{{ $psd->isi }}</td>
+                                            <td><img alt="foto" src="/foto/{{ $psd->foto }}" width="100px"></td>
+                                            <td>
+                                                <form action="{{ route('admin.dashboard.prosedur.destroy',$psd->id) }}"  method="POST">
+                                                    <a class="btn btn-info" href="{{ route('admin.dashboard.prosedur.show',$psd->id) }}"><i class="fa fa-eye"></i></a>
+                                                    <a href="{{ route('admin.dashboard.prosedur.edit',$psd->id) }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin untuk menghapus data ini ?')" ><i class="fa fa-trash"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </form>
+
+
+            </div>
         </div>
     </div>
-</div>
-</div>
-</div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <nav class="pull-left">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.themekita.com">
+                            ThemeKita
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Help
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Licenses
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright ml-auto">
+                2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+            </div>
+        </div>
+    </footer>
 </div>
 
 <!--   Core JS Files   -->

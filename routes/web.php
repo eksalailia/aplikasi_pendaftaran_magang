@@ -62,6 +62,14 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/show-pengumuman{id}', '\App\Http\Controllers\PengumumanController@show')->name('admin.dashboard.pengumuman.show');
     Route::delete('/hapus-pengumuman/{pengumuman}', '\App\Http\Controllers\PengumumanController@destroy')->name('admin.dashboard.pengumuman.destroy');
 
+    Route::get('/prosedur', '\App\Http\Controllers\ProsedurController@index')->name('admin.dashboard.prosedur.index');
+    Route::get('/create-prosedur', '\App\Http\Controllers\ProsedurController@create')->name('admin.dashboard.prosedur.create');
+    Route::post('/create-prosedur', '\App\Http\Controllers\ProsedurController@store')->name('admin.dashboard.prosedur.create');
+    Route::get('/edit-prosedur{id}', '\App\Http\Controllers\ProsedurController@edit')->name('admin.dashboard.prosedur.edit');
+    Route::post('/edit-prosedur{id}', '\App\Http\Controllers\ProsedurController@update')->name('admin.dashboard.prosedur.edit');
+    Route::get('/show-prosedur{id}', '\App\Http\Controllers\ProsedurController@show')->name('admin.dashboard.prosedur.show');
+    Route::delete('/hapus-prosedur/{prosedur}', '\App\Http\Controllers\ProsedurController@destroy')->name('admin.dashboard.prosedur.destroy');
+
     Route::get('/bidang', '\App\Http\Controllers\BidangController@index')->name('admin.dashboard.bidang.index');
     Route::get('/create-bidang', '\App\Http\Controllers\BidangController@create')->name('admin.dashboard.bidang.create');
     Route::post('/create-bidang', '\App\Http\Controllers\BidangController@store')->name('admin.dashboard.bidang.create');

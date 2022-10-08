@@ -29,6 +29,7 @@
 <body>
 
 @extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
 
 
@@ -44,11 +45,12 @@
 
 		<!-- End Sidebar -->
 
+
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Pengumuman</h4>
+                <h4 class="page-title">Prosedur Pengajuan PKL / Magang</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="/admin">
@@ -59,7 +61,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/pengumuman">Pengumuman</a>
+                        <a href="/prosedur">Prosedur Pengajuan PKL / Magang</a>
                     </li>
                 </ul>
             </div>
@@ -67,45 +69,35 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-
-                             <h4>Tambah Pengumuman</h4>
-        </div>
-        <form method="POST" action="{{ route ('admin.dashboard.pengumuman.create') }}" enctype="multipart/form-data"  >
-            @csrf
-                <div class="form-group col-sm-12">
-                    <label>Judul</label>
-                    <input type="text" id="judul" name="judul" class="form-control" required="" placeholder="Judul" >
+                             <h4>Edit Prosedur Pengajuan</h4>
+                        </div>
+                        <form action="{{route('admin.dashboard.prosedur.edit',$prosedur->id)}}" method="post" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                        <div class="form-group col-sm-12">
+                            <label>Foto</label>
+                            <img src="{{asset('foto/'.$prosedur->foto)}}" style="width: 500px; height: 250px;">
+                            <input type="file" name="foto" class="form-control">
+                            </div>
+                        <div class="form-group col-sm-12">
+                            <label>Judul</label>
+                            <input type="text" id="judul" name="judul" class="form-control" required="" value="{{$prosedur->judul}}" >
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label>Isi</label>
+                            <textarea type="text" id="isi" name="isi" class="form-control" required="" > {{$prosedur->isi}} </textarea>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check"></i> Simpan</button>
+                        {{-- <input type="submit" value="Simpan" class="btn btn-success">&nbsp; --}}
+                        <a href="/prosedur" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Cancel</a>
+                    </form>
+                    </div>
                 </div>
-                <div class="form-group col-sm-12">
-                    <label>Tanggal</label>
-                    <input type="date" id="tanggal" name="tanggal" class="form-control" required="" placeholder="Tanggal" >
-                </div>
-                <div class="form-group col-sm-12">
-                    <label for="isi">Isi</label>
-                    <textarea class="form-control" placeholder="Isi" id="isi" name="isi" required="" style="height: 150px"></textarea>                
-                </div>
-                <div class="form-group col-sm-12">
-                    <label>Status</label>
-                    <select class="form-control" name="status">
-                      <option>status</option>
-                      <option>aktif</option>
-                      <option>non-aktif</option>
-                    </select>
-                  </div>
-                  </div>
-
-                <div class="form-group col-sm-5">
-                    <button type="submit" class="btn btn-success">
-                        <i class="fas fa-check"></i> Simpan</button>
-                    <a href="/pengumuman" class="btn btn-secondary">
-                        <i class="fas fa-reply"></i> Kembali</a>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
-</div>
-</div>
 </div>
 
 <!--   Core JS Files   -->
@@ -246,4 +238,5 @@
 </script>
 </body>
 </html>
+
 
