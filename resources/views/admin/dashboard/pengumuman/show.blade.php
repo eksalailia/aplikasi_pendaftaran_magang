@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard - Reviewer</title>
+	<title>Dashboard - Admin</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
@@ -28,30 +28,31 @@
 
 <body>
 
-@extends('reviewer.konten')
+@extends('admin.dashboard.konten')
 @extends('admin.table.appnew')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('reviewer.header')
+			@include('admin.dashboard.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('reviewer.sidebar')
+		@include('admin.dashboard.sidebar')
 
 		<!-- End Sidebar -->
+
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Data Diri</h4>
+                <h4 class="page-title">Pengumuman</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="/reviewer">
+                        <a href="/admin">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -59,7 +60,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/datadiri-reviewer">Data Diri</a>
+                        <a href="/pengumuman">Pengumuman</a>
                     </li>
                 </ul>
             </div>
@@ -67,32 +68,26 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                             <h4>Show Data Diri</h4>
+                             <h4>Show Pengumuman</h4>
                         </div>
                         <div class="container mt-5" >
                             <div class="row justify-content-center align-items-center" style="margin-right: 170px">
                                 <div class="card" style="width: 50rem; margin-left: 150px">
                                     <div class="card-header">
-                                        <h5 style="font-size: 18px; font-family: Arial, Helvetica; text-align:center"><b>Detail Data Diri</h5></b>
+                                        <h5 style="font-size: 18px; font-family: Arial, Helvetica; text-align:center"><b>Detail Pengumuman</h5></b>
                                     </div>
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Nama Lengkap : {{$data->name}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Jenis Kelamin : {{$data->jenis_kelamin}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Tanggal Lahir : {{$data->tanggal_lahir}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>No. Telepon : {{$data->no_tlp}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>E-Mail : {{$data->email}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Alamat : {{$data->alamat}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Asal Universitas : {{$data->univ}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan : {{$data->jurusan}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Semester : {{$data->semester}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Judul : </b>{{$pengumuman->judul}}</li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Tanggal : </b>{{$pengumuman->tanggal}}</li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Isi : </b>{{$pengumuman->isi}}</li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Status : </b>{{$pengumuman->status}}</li>
                                         </ul>
                                     </div>
-                                    <a class="btn btn-success mt-3" href="/datadiri-reviewer" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
+                                    <a class="btn btn-success mt-3" href="/pengumuman" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
                                 </div>
                             </div>
                         </div>
-
 
                     </div>
                 </div>
@@ -100,6 +95,7 @@
         </div>
     </div>
 </div>
+
 <!--   Core JS Files   -->
 <script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="backend2/assets/js/core/popper.min.js"></script>

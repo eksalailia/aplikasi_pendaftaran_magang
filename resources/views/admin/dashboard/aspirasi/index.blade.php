@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard - Reviewer</title>
+	<title>Dashboard - Admin</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
@@ -28,22 +28,24 @@
 
 <body>
 
-@extends('reviewer.konten')
-@extends('admin.table.appnew')
+@extends('admin.dashboard.konten')
+@extends('admin.table.apps')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('reviewer.header')
+			@include('admin.dashboard.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('reviewer.sidebar')
+		@include('admin.dashboard.sidebar')
 
 		<!-- End Sidebar -->
+
+
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -51,7 +53,7 @@
                 <h4 class="page-title">Data Diri</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="/reviewer">
+                        <a href="/admin">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -59,7 +61,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/datadiri-reviewer">Data Diri</a>
+                        <a href="/datadiri-admin">Data Diri</a>
                     </li>
                 </ul>
             </div>
@@ -67,39 +69,95 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                             <h4>Show Data Diri</h4>
+                            <h4 class="card-title">Daftar Data Diri</h4>
                         </div>
-                        <div class="container mt-5" >
-                            <div class="row justify-content-center align-items-center" style="margin-right: 170px">
-                                <div class="card" style="width: 50rem; margin-left: 150px">
-                                    <div class="card-header">
-                                        <h5 style="font-size: 18px; font-family: Arial, Helvetica; text-align:center"><b>Detail Data Diri</h5></b>
+                        <br></br>
+                                 @if(Session::has('success'))
+                                    <div class="btn btn-success" style="width:100%; height:50px">
+                                        <p>{{Session::get('success')}}</p>
                                     </div>
-                                    <div class="card-body">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Nama Lengkap : {{$data->name}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Jenis Kelamin : {{$data->jenis_kelamin}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Tanggal Lahir : {{$data->tanggal_lahir}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>No. Telepon : {{$data->no_tlp}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>E-Mail : {{$data->email}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Alamat : {{$data->alamat}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Asal Universitas : {{$data->univ}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan : {{$data->jurusan}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Semester : {{$data->semester}}</b></li>
-                                        </ul>
+                                @endif
+
+                                @if(Session::has('delete'))
+                                    <div class="btn btn-warning" style="width:100%; height:50px">
+                                        <p>{{Session::get('delete')}}</p>
                                     </div>
-                                    <a class="btn btn-success mt-3" href="/datadiri-reviewer" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
-                                </div>
+                                @endif
+
+                                @if(Session::has('update'))
+                                    <div class="btn btn-info" style="width:100%; height:50px">
+                                        <p>{{Session::get('update')}}</p>
+                                    </div>
+                                @endif
+
+                                @if(Session::has('failed'))
+                                    <div class="btn btn-danger" style="width:100%; height:50px">
+                                        <p>{{Session::get('delete')}}</p>
+                                    </div>
+                                @endif
+                        <div class="card-tools">
+                            {{-- <a href="{{ route('admin.dashboard.datadiri.create') }}" class="btn btn-success" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a> --}}
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="basic-datatables" class="display table table-striped table-hover" >
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Nama Lengkap</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>No. Telepon</th>
+                                            <th>Email</th>
+                                            <th>Alamat</th>
+                                            <th>Asal Universitas</th>
+                                            <th>Jurusan</th>
+                                            <th>Semester</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <nav class="pull-left">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.themekita.com">
+                            ThemeKita
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Help
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Licenses
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright ml-auto">
+                2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+            </div>
+        </div>
+    </footer>
 </div>
+
 <!--   Core JS Files   -->
 <script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="backend2/assets/js/core/popper.min.js"></script>
@@ -209,7 +267,7 @@
             },
             scales: {
                 yAxes: [{
-                    ticks: {
+                    ticdata: {
                         display: false //this will remove only the label
                     },
                     gridLines : {

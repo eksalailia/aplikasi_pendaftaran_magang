@@ -54,6 +54,14 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/show-mentor{id}', '\App\Http\Controllers\MentorController@show')->name('admin.dashboard.mentor.show');
     Route::delete('/hapus-mentor/{mentor}', '\App\Http\Controllers\MentorController@destroy')->name('admin.dashboard.mentor.destroy');
 
+    Route::get('/pengumuman', '\App\Http\Controllers\PengumumanController@index')->name('admin.dashboard.pengumuman.index');
+    Route::get('/create-pengumuman', '\App\Http\Controllers\PengumumanController@create')->name('admin.dashboard.pengumuman.create');
+    Route::post('/create-pengumuman', '\App\Http\Controllers\PengumumanController@store')->name('admin.dashboard.pengumuman.create');
+    Route::get('/edit-pengumuman{id}', '\App\Http\Controllers\PengumumanController@edit')->name('admin.dashboard.pengumuman.edit');
+    Route::post('/edit-pengumuman{id}', '\App\Http\Controllers\PengumumanController@update')->name('admin.dashboard.pengumuman.edit');
+    Route::get('/show-pengumuman{id}', '\App\Http\Controllers\PengumumanController@show')->name('admin.dashboard.pengumuman.show');
+    Route::delete('/hapus-pengumuman/{pengumuman}', '\App\Http\Controllers\PengumumanController@destroy')->name('admin.dashboard.pengumuman.destroy');
+
     Route::get('/bidang', '\App\Http\Controllers\BidangController@index')->name('admin.dashboard.bidang.index');
     Route::get('/create-bidang', '\App\Http\Controllers\BidangController@create')->name('admin.dashboard.bidang.create');
     Route::post('/create-bidang', '\App\Http\Controllers\BidangController@store')->name('admin.dashboard.bidang.create');
@@ -74,6 +82,8 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/show-aspirasi/{id}', '\App\Http\Controllers\MessageController@show')->name('admin.dashboard.message.show');
     Route::delete('/hapus-contact/{id}', '\App\Http\Controllers\MessageController@destroy')->name('admin.dashboard.message.destroy');
     
+    Route::get('/aspirasi', '\App\Http\Controllers\AspirasiController@index')->name('admin.dashboard.aspirasi.index');
+
     Route::get('/profileadmin-index', '\App\Http\Controllers\ProfileAdminController@index')->name('admin.dashboard.profile.index');
     Route::post('/profileadmin-update', '\App\Http\Controllers\ProfileAdminController@profileupdateadmin')->name('admin.profileupdate');
 

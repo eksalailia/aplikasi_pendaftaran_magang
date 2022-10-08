@@ -12,14 +12,14 @@
             <a href="/contact" class="nav-item nav-link">Contact</a>
             <a href="/pembimbing" class="nav-item nav-link">Mentor</a>
             {{-- <a href="courses.html" class="nav-item nav-link">Courses</a> --}}
-            {{-- <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
                 <div class="dropdown-menu fade-down m-0">
-                    <a href="team.html" class="dropdown-item">Our Team</a>
-                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    <a href="404.html" class="dropdown-item">404 Page</a>
+                    <a href="team.html" class="dropdown-item">Pengumuman</a>
+                    <a href="testimonial.html" class="dropdown-item">Syarat & Ketentuan Pengajuan</a>
+                    <a href="404.html" class="dropdown-item">Prosedur Pengajuan</a>
                 </div>
-            </div> --}}
+            </div>
         </div>
         <a href="/login" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
     </div>

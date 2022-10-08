@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard - Reviewer</title>
+	<title>Dashboard - Admin</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
@@ -28,30 +28,32 @@
 
 <body>
 
-@extends('reviewer.konten')
+@extends('admin.dashboard.konten')
 @extends('admin.table.appnew')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('reviewer.header')
+			@include('admin.dashboard.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('reviewer.sidebar')
+		@include('admin.dashboard.sidebar')
 
 		<!-- End Sidebar -->
+
+
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Data Diri</h4>
+                <h4 class="page-title">Pengumuman</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="/reviewer">
+                        <a href="/admin">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -59,7 +61,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/datadiri-reviewer">Data Diri</a>
+                        <a href="/pengumuman">Pengumuman</a>
                     </li>
                 </ul>
             </div>
@@ -67,39 +69,44 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                             <h4>Show Data Diri</h4>
+                             <h4>Edit Pengumuman</h4>
                         </div>
-                        <div class="container mt-5" >
-                            <div class="row justify-content-center align-items-center" style="margin-right: 170px">
-                                <div class="card" style="width: 50rem; margin-left: 150px">
-                                    <div class="card-header">
-                                        <h5 style="font-size: 18px; font-family: Arial, Helvetica; text-align:center"><b>Detail Data Diri</h5></b>
-                                    </div>
-                                    <div class="card-body">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Nama Lengkap : {{$data->name}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Jenis Kelamin : {{$data->jenis_kelamin}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Tanggal Lahir : {{$data->tanggal_lahir}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>No. Telepon : {{$data->no_tlp}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>E-Mail : {{$data->email}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Alamat : {{$data->alamat}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Asal Universitas : {{$data->univ}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan : {{$data->jurusan}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Semester : {{$data->semester}}</b></li>
-                                        </ul>
-                                    </div>
-                                    <a class="btn btn-success mt-3" href="/datadiri-reviewer" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
-                                </div>
-                            </div>
+                        <form action="{{route('admin.dashboard.pengumuman.edit',$pengumuman->id)}}" method="post" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                        <div class="form-group col-sm-12">
+                            <label>Judul</label>
+                            <input type="text" id="judul" name="judul" class="form-control" required="" value="{{$pengumuman->judul}}" >
                         </div>
-
-
+                        <div class="form-group col-sm-12">
+                            <label>Tanggal</label>
+                            <input type="date" id="tanggal" name="tanggal" class="form-control" required="" value="{{$pengumuman->tanggal}}" >
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label>Isi</label>
+                            <textarea type="text" id="isi" name="isi" class="form-control" required="">{{$pengumuman->isi}}</textarea>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label>Status Pengumuman</label>
+                            <select name="status" class="form-control" style="width:95%;">
+                                <option>{{$pengumuman->status}}</option>
+                                <option>aktif</option>
+                                <option>non-aktif</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check"></i> Simpan</button>
+                        {{-- <input type="submit" value="Simpan" class="btn btn-success">&nbsp; --}}
+                        <a href="/pengumuman" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Cancel</a>
+                    </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <!--   Core JS Files   -->
 <script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="backend2/assets/js/core/popper.min.js"></script>
