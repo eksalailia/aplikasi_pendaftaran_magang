@@ -28,20 +28,20 @@
 
 <body>
 
-@extends('admin.dashboard.konten')
+@extends('reviewer.konten')
 @extends('admin.table.appnew')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('admin.dashboard.header')
+			@include('reviewer.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('admin.dashboard.sidebar')
+		@include('reviewer.sidebar')
 
 		<!-- End Sidebar -->
 
@@ -50,10 +50,10 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-            <h4 class="page-title">Kesan & Pesan</h4>
+                <h4 class="page-title">Data Diri</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="/admin">
+                        <a href="/reviewer">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -61,7 +61,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/admin-kesanpesan">Kesan & Pesan</a>
+                        <a href="/pendaftaran-reviewer">Data Diri</a>
                     </li>
                 </ul>
             </div>
@@ -69,38 +69,62 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Kesan & Pesan</h4>
+                            <h4 class="card-title">Daftar Data Diri</h4>
                         </div>
-                        {{-- <div class="card-tools">
-                            <a href="{{ route('admin.dashboard.kesan.create') }}" class="btn btn-success" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
-                        </div> --}}
+                        <div class="card-tools">
+                            {{-- <a href="{{ route('reviewer.pendaftaran.create') }}" class="btn btn-success" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a> --}}
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
-                                <thead>
+                                    <thead>
                                         <tr>
-                                            <th>Nama</th>
-                                            <th>Instansi</th>
-                                            <th>Kesan & Pesan</th>
+                                            <th>Nama Pemohon</th>
+                                            <th>Divisi Tujuan</th>
+                                            <th>Jurusan</th>
+                                            <th>Tahun Akademik</th>
+                                            <th>Durasi PKL / Magang</th>
+                                            <th width="300px">Anggota PKL / Magang</th>
+                                            <th>Resume</th>
+                                            <th>Proposal</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            {{-- @foreach ($kesanpesan as $ks) --}}
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                        @foreach ($pendaftar as $data)
+                                            <td>{{ $data->user->name}}</td>
+                                            <td>{{ $data->bidang->nama }}</td>
+                                            <td>{{ $data->jurusan }}</td>
+                                            <td>{{ $data->tahun_akademik }}</td>
+                                            <td>{{ $data->durasi }}</td>
+                                            <td>{{ $data->peserta1}}, <br>
+                                                {{$data->peserta2}}, <br>
+                                                {{$data->peserta3 }}</td>
                                             <td>
-                                                <form action=""  method="POST">
-                                                    <a class="btn btn-info" href=""><i class="fa fa-eye"></i></a>
-                                                    {{-- @csrf
-                                                    @method('DELETE') --}}
+                                                <form>
+                                                <a class="btn btn-info" href="{{ route('reviewer.pendaftaran.showResume',$data->id) }}"><i class="fa fa-eye"></i></a>
+                                            </form>    
+                                            </td>
+                                            <td>
+                                                <form>
+                                                <a class="btn btn-warning" href="{{ route('reviewer.pendaftaran.showProposal',$data->id) }}"><i class="fa fa-eye"></i></a>
+                                            </form>    
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-pill badge-warning"><b>Tahap Review</b></span>
+                                            </td>
+                                            <td>
+                                            <form action="{{ route('reviewer.pendaftaran.destroy',$data->id) }}"  method="POST">
+                                                    <a class="btn btn-info" href="{{ route('reviewer.pendaftaran.show',$data->id) }}"><i class="fa fa-eye"></i></a>
+                                                    @csrf
+                                                    @method('DELETE')
                                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
-                                        </tr>
-                                        @endforeach
+                                    </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -249,7 +273,7 @@
             },
             scales: {
                 yAxes: [{
-                    ticks: {
+                    ticdata: {
                         display: false //this will remove only the label
                     },
                     gridLines : {
@@ -278,4 +302,5 @@
 </script>
 </body>
 </html>
+
 

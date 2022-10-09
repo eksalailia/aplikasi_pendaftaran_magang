@@ -61,7 +61,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/datadiri-reviewer">Data Diri</a>
+                        <a href="/pendaftaran-reviewer">Data Diri</a>
                     </li>
                 </ul>
             </div>
@@ -72,7 +72,7 @@
                             <h4 class="card-title">Daftar Data Diri</h4>
                         </div>
                         <div class="card-tools">
-                            {{-- <a href="{{ route('reviewer.datadiri.create') }}" class="btn btn-success" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a> --}}
+                            {{-- <a href="{{ route('reviewer.pendaftaran.create') }}" class="btn btn-success" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a> --}}
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -102,8 +102,8 @@
                                                 <span class="badge badge-pill badge-warning"><b>Tahap Review</b></span>
                                             </td>
                                             <td>
-                                            <form action="{{ route('reviewer.datadiri.destroy',$data->id) }}"  method="POST">
-                                                    <a class="btn btn-info" href="{{ route('reviewer.datadiri.show',$data->id) }}"><i class="fa fa-eye"></i></a>
+                                            <form action="{{ route('reviewer.pendaftaran.destroy',$data->id) }}"  method="POST">
+                                                    <a class="btn btn-info" href="{{ route('reviewer.pendaftaran.show',$data->id) }}"><i class="fa fa-eye"></i></a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>

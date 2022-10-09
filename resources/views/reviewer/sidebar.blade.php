@@ -51,14 +51,14 @@
                     {{-- <h4 class="text-section">Components</h4> --}}
                 </li>
                 <li class="nav-item">
-                    <a href="">
+                    <a href="/pendaftaran-review">
                         <i class="fas fa-file"></i>
-                        <p>Pendaftaran</p>
+                        <p>Review Pendaftar</p>
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/datadiri-reviewer">
+                    <a href="/profilereviewer-index">
                         <i class="fas fa-id-card"></i>
                         <p>Data Diri</p>
                         <span class="badge badge-success"></span>

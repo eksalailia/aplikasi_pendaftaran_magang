@@ -31,7 +31,7 @@ class PendaftaranController extends Controller
 
         $files = $request->file('proposal');
         $props = $files->getClientOriginalName();
-        $paths = 'resume';
+        $paths = 'proposal';
         $files->move($paths,$props);
         
         $pendaftaran = new pendaftaran;

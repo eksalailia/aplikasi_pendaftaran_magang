@@ -107,9 +107,11 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
 
 Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(){
     Route::get('/reviewer', [\App\Http\Controllers\ReviewerController::class, 'reviewer'])->name('reviewer.main');
-    Route::get('/datadiri-reviewer', '\App\Http\Controllers\ReviewerController@index')->name('reviewer.datadiri.index');
-    Route::get('/show-datadiri-reviewer/{id}', '\App\Http\Controllers\ReviewerController@show')->name('reviewer.datadiri.show');
-    Route::delete('/hapus-datadiri-reviewer/{id}', '\App\Http\Controllers\ReviewerController@destroy')->name('reviewer.datadiri.destroy');
+    Route::get('/pendaftaran-review', '\App\Http\Controllers\ReviewerController@index')->name('reviewer.pendaftaran.index');
+    Route::get('/showReview/{id}', '\App\Http\Controllers\ReviewerController@show')->name('reviewer.pendaftaran.show');
+    Route::get('/showResume/{id}', '\App\Http\Controllers\ReviewerController@showResume')->name('reviewer.pendaftaran.showResume');
+    Route::get('/showProposal/{id}', '\App\Http\Controllers\ReviewerController@showProposal')->name('reviewer.pendaftaran.showProposal');
+    Route::delete('/hapus-pendaftaran-review/{id}', '\App\Http\Controllers\ReviewerController@destroy')->name('reviewer.pendaftaran.destroy');
 
     Route::get('/profilereviewer-index', '\App\Http\Controllers\ProfileReviewerController@index')->name('reviewer.profile.index');
     Route::post('/profilereviewer-update', '\App\Http\Controllers\ProfileReviewerController@profileupdatereviewer')->name('reviewer.profileupdate');

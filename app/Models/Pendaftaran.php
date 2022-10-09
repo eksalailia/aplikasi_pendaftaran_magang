@@ -23,4 +23,14 @@ class Pendaftaran extends Model
         'resume',
         'proposal'
     ];
+
+    public function user()
+    {
+    	return $this->belongsTo('App\Models\User', 'user_id', 'id');
+    }
+
+    public function bidang()
+    {
+    	return $this->belongsTo('App\Models\Bidang', 'bidang_id', 'id');
+    }
 }

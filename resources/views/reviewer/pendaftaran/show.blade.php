@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard - Admin</title>
+	<title>Dashboard - Reviewer</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
@@ -28,31 +28,30 @@
 
 <body>
 
-@extends('admin.dashboard.konten')
+@extends('reviewer.konten')
 @extends('admin.table.appnew')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('admin.dashboard.header')
+			@include('reviewer.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('admin.dashboard.sidebar')
+		@include('reviewer.sidebar')
 
 		<!-- End Sidebar -->
-
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Kesan & Pesan</h4>
+                <h4 class="page-title">Data Diri</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="/admin">
+                        <a href="/reviewer">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -60,7 +59,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/admin-kesanpesan">Kesan & Pesan</a>
+                        <a href="/datadiri-reviewer">Data Diri</a>
                     </li>
                 </ul>
             </div>
@@ -68,25 +67,29 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                             <h4>Show Kesan & Pesan</h4>
+                             <h4>Show Data Diri</h4>
                         </div>
                         <div class="container mt-5" >
                             <div class="row justify-content-center align-items-center" style="margin-right: 170px">
                                 <div class="card" style="width: 50rem; margin-left: 150px">
                                     <div class="card-header">
-                                        <h5 style="font-size: 18px; font-family: Arial, Helvetica; text-align:center"><b>Detail Kesan & Pesan</h5></b>
+                                        <h5 style="font-size: 18px; font-family: Arial, Helvetica; text-align:center"><b>Detail Data Diri</h5></b>
                                     </div>
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Nama : </b>{{$data->nama}}</li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Instansi : </b>{{$data->instansi}}</li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Kesan & Pesan : </b>{{$data->isi}}</li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Nama Pemohon : {{$data->user->name}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Divisi Tujuan : {{$data->bidang->nama}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Tahun Akademik : {{$data->tahun_akademik}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan : {{$data->jurusan}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Durasi PKL / Magang : {{$data->durasi}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Anggota PKL / Magang : {{$data->peserta1}}, {{$data->peserta2}}, {{$data->peserta3}}</b></li>
                                         </ul>
                                     </div>
-                                    <a class="btn btn-success mt-3" href="/admin-kesanpesan" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
+                                    <a class="btn btn-success mt-3" href="/pendaftaran-review" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
                                 </div>
                             </div>
                         </div>
+
 
                     </div>
                 </div>
@@ -94,7 +97,6 @@
         </div>
     </div>
 </div>
-
 <!--   Core JS Files   -->
 <script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="backend2/assets/js/core/popper.min.js"></script>

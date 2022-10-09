@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Pendaftaran;
 use App\Models\User;
+use App\Models\Bidang;
 use Illuminate\Http\Request;
+use Session;
 
 class ReviewerController extends Controller
 {
@@ -10,26 +13,37 @@ class ReviewerController extends Controller
         return view('reviewer.main');
     }
     public function index(){
-        $Users = User::orderBy('created_at','ASC')
-        ->where('role', 'applicant')
+        $pendaftar = Pendaftaran::orderBy('created_at','ASC')
+        ->whereNotNull('resume')
+        ->whereNotNull('proposal')
         ->get();
-        return view('reviewer.datadiri.index', compact('Users'));
+        return view('reviewer.pendaftaran.index', compact('pendaftar'));
     }
     public function show($id){
-        $data= User::find($id);
-        return view('reviewer.datadiri.show', compact('data'));
+        $data= Pendaftaran::find($id);
+        return view('reviewer.pendaftaran.show', compact('data'));
+    }
+
+    public function showResume($id){
+        $data= Pendaftaran::find($id);
+        return view('reviewer.pendaftaran.showResume', compact('data'));
+    }
+
+    public function showProposal($id){
+        $data= Pendaftaran::find($id);
+        return view('reviewer.pendaftaran.showProposal', compact('data'));
     }
 
     public function destroy($id)
     {
-        $Users = User::find($id);
-        $Users->delete();
-        if ($Users) {
+        $pendaftar = Pendaftaran::find($id);
+        $pendaftar->delete();
+        if ($pendaftar) {
             Session::flash('success','Sukses Delete Data');
-            return redirect()->route('reviewer.datadiri.index');
+            return redirect()->route('reviewer.pendaftaran.index');
         } else {
             Session::flash('success','Failed Delete Data');
-            return redirect()->route('reviewer.datadiri.index');
+            return redirect()->route('reviewer.pendaftaran.index');
         }
     }
 }

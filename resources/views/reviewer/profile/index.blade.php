@@ -28,20 +28,20 @@
 
 <body>
 
-@extends('admin.dashboard.konten')
+@extends('reviewer.konten')
 @extends('admin.table.appnew')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('admin.dashboard.header')
+			@include('reviewer.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('admin.dashboard.sidebar')
+		@include('reviewer.sidebar')
 
 		<!-- End Sidebar -->
 
