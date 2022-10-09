@@ -34,6 +34,24 @@ class ReviewerController extends Controller
         return view('reviewer.pendaftaran.showProposal', compact('data'));
     }
 
+    public function status($id){
+        $data = Pendaftaran::find($id);
+
+        $status_now = $data->status;
+
+        if($status_now == 1) {
+            Pendaftaran::find($id)->update([
+                'status'=>0
+            ]);
+        }else{
+            Pendaftaran::find($id)->update([
+                'status'=>1
+            ]);
+        }
+        Session::flash('update','Update Data Status Pendaftaran Berhasil');
+        return redirect()->route('reviewer.pendaftaran.index');
+    }
+
     public function destroy($id)
     {
         $pendaftar = Pendaftaran::find($id);

@@ -115,6 +115,8 @@ Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(
 
     Route::get('/profilereviewer-index', '\App\Http\Controllers\ProfileReviewerController@index')->name('reviewer.profile.index');
     Route::post('/profilereviewer-update', '\App\Http\Controllers\ProfileReviewerController@profileupdatereviewer')->name('reviewer.profileupdate');
+
+    Route::get('/status-pendaftaran/{id}', '\App\Http\Controllers\ReviewerController@status')->name('reviewer.pendaftaran.status');
 });
 
 Route::get('/table', [\App\Http\Controllers\ApplicantController::class, 'table'])->name('applicant.table');

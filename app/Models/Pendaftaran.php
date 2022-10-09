@@ -21,7 +21,8 @@ class Pendaftaran extends Model
         'peserta2',
         'peserta3',
         'resume',
-        'proposal'
+        'proposal',
+        'status'
     ];
 
     public function user()

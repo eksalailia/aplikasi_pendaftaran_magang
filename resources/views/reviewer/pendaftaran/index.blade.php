@@ -74,11 +74,36 @@
                         <div class="card-tools">
                             {{-- <a href="{{ route('reviewer.pendaftaran.create') }}" class="btn btn-success" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a> --}}
                         </div>
+                        <br>
+                    @if(Session::has('success'))
+                        <div class="btn btn-success" style="width:100%; height:50px">
+                             <p>{{Session::get('success')}}</p>
+                        </div>
+                    @endif
+
+                    @if(Session::has('delete'))
+                        <div class="btn btn-warning" style="width:100%; height:50px">
+                            <p>{{Session::get('delete')}}</p>
+                            </div>
+                    @endif
+
+                    @if(Session::has('update'))
+                        <div class="btn btn-info" style="width:100%; height:50px">
+                            <p>{{Session::get('update')}}</p>
+                        </div>
+                    @endif
+
+                    @if(Session::has('failed'))
+                        <div class="btn btn-danger" style="width:100%; height:50px">
+                            <p>{{Session::get('delete')}}</p>
+                        </div>
+                    @endif
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
+                                            <th>Verifikasi</th>
                                             <th>Nama Pemohon</th>
                                             <th>Divisi Tujuan</th>
                                             <th>Jurusan</th>
@@ -94,6 +119,14 @@
                                     <tbody>
                                         <tr>
                                         @foreach ($pendaftar as $data)
+                                            <td>
+                                                @if($data->status == 1)
+                                                <a href="{{ route('reviewer.pendaftaran.status', $data->id) }}" class="btn btn-sm btn-danger"><b style="font-size: 13px">Not Acc
+                                                </a>
+                                                @else
+                                                <a href="{{ route('reviewer.pendaftaran.status', $data->id) }}" class="btn btn-sm btn-success"><b style="font-size: 13px">Acc
+                                                </a>
+                                                @endif
                                             <td>{{ $data->user->name}}</td>
                                             <td>{{ $data->bidang->nama }}</td>
                                             <td>{{ $data->jurusan }}</td>
@@ -113,8 +146,11 @@
                                             </form>    
                                             </td>
                                             <td>
-                                                <span class="badge badge-pill badge-warning"><b>Tahap Review</b></span>
+                                            <span class="badge badge-pill {{ ($data->status == 1) ? 'badge-success' : 'badge-danger' }}"><b style="font-size: 13px">{{ ($data->status == 1) ? 'Lolos' : 'Tidak Lolos' }}</span>
                                             </td>
+                                            <!-- <td>
+                                                <span class="badge badge-pill badge-warning"><b>Tahap Review</b></span>
+                                            </td> -->
                                             <td>
                                             <form action="{{ route('reviewer.pendaftaran.destroy',$data->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('reviewer.pendaftaran.show',$data->id) }}"><i class="fa fa-eye"></i></a>
