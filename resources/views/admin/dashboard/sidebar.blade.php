@@ -85,6 +85,27 @@
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/pengumuman">
+                        <i class="fas fa-comment-dots"></i>
+                        <p>Pengumuman</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/prosedur">
+                        <i class="fas fa-comment-dots"></i>
+                        <p>Prosedur Pengajuan</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/requirement">
+                        <i class="fas fa-comment-dots"></i>
+                        <p>Syarat & Ketentuan</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#base">

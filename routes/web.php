@@ -70,6 +70,14 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/show-prosedur{id}', '\App\Http\Controllers\ProsedurController@show')->name('admin.dashboard.prosedur.show');
     Route::delete('/hapus-prosedur/{prosedur}', '\App\Http\Controllers\ProsedurController@destroy')->name('admin.dashboard.prosedur.destroy');
 
+    Route::get('/requirement', '\App\Http\Controllers\RequirementController@index')->name('admin.dashboard.requirement.index');
+    Route::get('/create-requirement', '\App\Http\Controllers\RequirementController@create')->name('admin.dashboard.requirement.create');
+    Route::post('/create-requirement', '\App\Http\Controllers\RequirementController@store')->name('admin.dashboard.requirement.create');
+    Route::get('/edit-requirement{id}', '\App\Http\Controllers\RequirementController@edit')->name('admin.dashboard.requirement.edit');
+    Route::post('/edit-requirement{id}', '\App\Http\Controllers\RequirementController@update')->name('admin.dashboard.requirement.edit');
+    Route::get('/show-requirement{id}', '\App\Http\Controllers\RequirementController@show')->name('admin.dashboard.requirement.show');
+    Route::delete('/hapus-requirement/{requirement}', '\App\Http\Controllers\RequirementController@destroy')->name('admin.dashboard.requirement.destroy');
+
     Route::get('/bidang', '\App\Http\Controllers\BidangController@index')->name('admin.dashboard.bidang.index');
     Route::get('/create-bidang', '\App\Http\Controllers\BidangController@create')->name('admin.dashboard.bidang.create');
     Route::post('/create-bidang', '\App\Http\Controllers\BidangController@store')->name('admin.dashboard.bidang.create');
