@@ -103,7 +103,6 @@
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th>Verifikasi</th>
                                             <th>Nama Pemohon</th>
                                             <th>Divisi Tujuan</th>
                                             <th>Jurusan</th>
@@ -112,21 +111,14 @@
                                             <th width="300px">Anggota PKL / Magang</th>
                                             <th>Resume</th>
                                             <th>Proposal</th>
-                                            <th>Status</th>
+                                             <th>Status</th>
+                                             <th>Verifikasi</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                         @foreach ($pendaftar as $data)
-                                            <td>
-                                                @if($data->status == 1)
-                                                <a href="{{ route('reviewer.pendaftaran.status', $data->id) }}" class="btn btn-sm btn-danger"><b style="font-size: 13px">Not Acc
-                                                </a>
-                                                @else
-                                                <a href="{{ route('reviewer.pendaftaran.status', $data->id) }}" class="btn btn-sm btn-success"><b style="font-size: 13px">Acc
-                                                </a>
-                                                @endif
                                             <td>{{ $data->user->name}}</td>
                                             <td>{{ $data->bidang->nama }}</td>
                                             <td>{{ $data->jurusan }}</td>
@@ -145,12 +137,41 @@
                                                 <a class="btn btn-warning" href="{{ route('reviewer.pendaftaran.showProposal',$data->id) }}"><i class="fa fa-eye"></i></a>
                                             </form>    
                                             </td>
+                                            
+                                            @if($data->status == null)
                                             <td>
-                                            <span class="badge badge-pill {{ ($data->status == 1) ? 'badge-success' : 'badge-danger' }}"><b style="font-size: 13px">{{ ($data->status == 1) ? 'Lolos' : 'Tidak Lolos' }}</span>
+                                                <span class="badge badge-pill badge-warning"><b style="font-size:14px;">Menunggu Verifikasi</span>
                                             </td>
-                                            <!-- <td>
-                                                <span class="badge badge-pill badge-warning"><b>Tahap Review</b></span>
-                                            </td> -->
+
+                                            @elseif($data->status == 1)
+                                            <td>
+                                                <span class="badge badge-pill badge-success"><b style="font-size:14px;">Lolos</span>
+                                            </td>
+
+                                            @elseif($data->status == 2)
+                                            <td>
+                                                <span class="badge badge-pill badge-danger"><b style="font-size:14px;">Tidak Lolos</span>
+                                            </td>
+                                            @endif
+
+                                            @if($data->status == null)
+                                            <td>
+                                                <a href="{{ route('reviewer.pendaftaran.acc', $data->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Acc
+                                                </a>
+                                            </td>
+                                            
+                                            @elseif($data->status == 1)
+                                            <td>
+                                                <a href="{{ route('reviewer.pendaftaran.notacc', $data->id) }}" class="btn btn-xs btn-danger btn-flat"><i class="fa"></i><b style="font-size: 13px">Not Acc
+                                                </a>
+                                            </td>
+
+                                            @elseif($data->status == 2)
+                                            <td>
+                                                <a href="{{ route('reviewer.pendaftaran.acc', $data->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Acc
+                                                </a>
+                                            </td>
+                                            @endif
                                             <td>
                                             <form action="{{ route('reviewer.pendaftaran.destroy',$data->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('reviewer.pendaftaran.show',$data->id) }}"><i class="fa fa-eye"></i></a>
