@@ -12,7 +12,8 @@ use Session;
 class PendaftaranController extends Controller
 {
     public function index(){
-        return view('applicant.pendaftaran.index');
+        $pendaftaran = pendaftaran::all();
+        return view('applicant.pendaftaran.index', compact('pendaftaran'));
     }
 
     public function create(){

@@ -72,6 +72,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/status-pendaftaran">
+                        <i class="fas fa-comment-dots"></i>
+                        <p>Status Pendaftaran</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a data-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
                         <p>Base</p>

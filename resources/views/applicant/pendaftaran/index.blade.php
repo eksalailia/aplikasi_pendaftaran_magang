@@ -46,191 +46,137 @@
 
 		<!-- End Sidebar -->
 
-    <div class="main-panel">
-        <div class="content">
-            <div class="page-inner">
-                <div class="page-header">
-                    <h4 class="page-title">Pendaftaran</h4>
-                    <ul class="breadcrumbs">
-                        <li class="nav-home">
-                            <a href="#">
-                                <i class="flaticon-home"></i>
-                            </a>
-                        </li>
-                        <li class="separator">
-                            <i class="flaticon-right-arrow"></i>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/applicant-pendaftaran">Pendaftaran</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-title">Pendaftaran Magang</div>
-                            </div>
-                            <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-block">
-                                    <div class="card text-white bg-primary mb-3">
-                                        <h5 class="card-header"><i class="fas fa-fax"></i> <b>Data Magang</b></h5>
-                                        <div class="card-body">
-                                            <form>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label text-white">Tahun Akademik</label>
-                                                    <div class="col-sm-10">
-                                                        <select name="select" class="form-control">
-                                                            <option value="opt1">Tahun</option>
-                                                            <option value="opt2">Type 2</option>
-                                                            <option value="opt3">Type 3</option>
-                                                            <option value="opt4">Type 4</option>
-                                                            <option value="opt5">Type 5</option>
-                                                            <option value="opt6">Type 6</option>
-                                                            <option value="opt7">Type 7</option>
-                                                            <option value="opt8">Type 8</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label text-white">Jurusan</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label text-white">Bidang Magang</label>
-                                                    <div class="col-sm-10">
-                                                        <select name="select" class="form-control">
-                                                            <option value="opt1">Bidang</option>
-                                                            <option value="opt2">Type 2</option>
-                                                            <option value="opt3">Type 3</option>
-                                                            <option value="opt4">Type 4</option>
-                                                            <option value="opt5">Type 5</option>
-                                                            <option value="opt6">Type 6</option>
-                                                            <option value="opt7">Type 7</option>
-                                                            <option value="opt8">Type 8</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label text-white">Lama Magang</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
+        <div class="main-panel">
+    <div class="content">
+        <div class="page-inner">
+            <div class="page-header">
+            <h4 class="page-title">Status Pendaftaran</h4>
+                <ul class="breadcrumbs">
+                    <li class="nav-home">
+                        <a href="/admin">
+                            <i class="flaticon-home"></i>
+                        </a>
+                    </li>
+                    <li class="separator">
+                        <i class="flaticon-right-arrow"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/bidang">Status Pendaftaran</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Daftar Status Pendaftaran</h4>
+                        </div>
+                        <br></br>
+                                 @if(Session::has('success'))
+                                    <div class="btn btn-success" style="width:100%; height:50px">
+                                        <p>{{Session::get('success')}}</p>
                                     </div>
-                                </div>
-                                    <div class="card-block">
-                                        <div class="card text-white bg-primary mb-3">
-                                            <h5 class="card-header"><i class="fas fa-users"></i> <b>Data Mahasiswa</b></h5>
-                                            <div class="card-body">
-                                                <form>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 1</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 2</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 3</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 4</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 5</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
+                                @endif
+
+                                @if(Session::has('delete'))
+                                    <div class="btn btn-warning" style="width:100%; height:50px">
+                                        <p>{{Session::get('delete')}}</p>
                                     </div>
-                                    <div class="card-block">
-                                        <div class="card text-white bg-primary mb-3">
-                                            <h5 class="card-header text-white"><i class="fas fa-address-card"></i> <b>Upload Resume Mahasiswa</b></h5>
-                                            <div class="card-body">
-                                                <form>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 1</label>
-                                                            <div class="col-sm-10">
-                                                                <input type="file" class="form-control">
-                                                            </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 2</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="file" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 3</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="file" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 4</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="file" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label text-white">Mahasiswa 5</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="file" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
+                                @endif
+
+                                @if(Session::has('update'))
+                                    <div class="btn btn-info" style="width:100%; height:50px">
+                                        <p>{{Session::get('update')}}</p>
                                     </div>
-                                        <div class="card-block">
-                                            <div class="card text-white bg-primary mb-3">
-                                                <h5 class="card-header text-white"><i class="fas fa-upload"></i> <b>Upload Proposal Permohonan</b></h5>
-                                                <div class="card-body">
-                                                    <form>
-                                                        <div class="form-group row">
-                                                            <label class="col-sm-2 col-form-label text-white">Proposal</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="file" class="form-control">
-                                                                </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-success">
-                                                <i class="fas fa-check"></i> Daftar</button>
-                                            <a href="/applicant" class="btn btn-secondary">
-                                                <i class="fas fa-reply"></i> Kembali</a>
-                                        </div>
+                                @endif
+
+                                @if(Session::has('failed'))
+                                    <div class="btn btn-danger" style="width:100%; height:50px">
+                                        <p>{{Session::get('delete')}}</p>
                                     </div>
-                                </div>
+                                @endif
+                        <div class="card-body">
+                            <br>
+                            <div class="table-responsive">
+                                <table id="basic-pdtables" class="display table table-striped table-hover" >
+                                <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Nama Pemohon</th>
+                                            <th>Divisi Tujuan</th>
+                                            <th>Durasi PKL / Magang</th>
+                                            <th>Anggota PKL / Magang</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            @foreach ($pendaftaran as $pd)
+                                            <td>#</td>
+                                            <td>{{ $pd->user->name }}</td>
+                                            <td>{{ $pd->bidang->nama }}</td>
+                                            <td>{{ $pd->durasi }}</td>
+                                            <td>{{ $pd->peserta1 }}, <br>
+                                                {{ $pd->peserta2 }}, <br>
+                                                {{ $pd->peserta3 }}
+                                            </td>
+
+                                            @if($pd->status == null)
+                                            <td>
+                                                <span class="badge badge-pill badge-warning"><b style="font-size:14px;">Menunggu Verifikasi</span>
+                                            </td>
+
+                                            @elseif($pd->status == 1)
+                                            <td>
+                                                <span class="badge badge-pill badge-success"><b style="font-size:14px;">Lolos</span>
+                                            </td>
+
+                                            @elseif($pd->status == 2)
+                                            <td>
+                                                <span class="badge badge-pill badge-danger" style="margin-right: 100px"><b style="font-size:14px;">Tidak Lolos</span>
+                                            </td>
+
+                                            @endif
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+                    </div>
                 </div>
+
+
             </div>
         </div>
     </div>
-
-
-{{-- @include('applicant.footer') --}}
+    <footer class="footer">
+        <div class="container-fluid">
+            <nav class="pull-left">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.themekita.com">
+                            ThemeKita
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Help
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Licenses
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright ml-auto">
+                2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+            </div>
+        </div>
+    </footer>
+</div>
+</div>
 
 @endsection

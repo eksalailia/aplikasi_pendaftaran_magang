@@ -111,8 +111,7 @@
                                             <th width="300px">Anggota PKL / Magang</th>
                                             <th>Resume</th>
                                             <th>Proposal</th>
-                                             <th>Status</th>
-                                             <th>Verifikasi</th>
+                                            <th>Verifikasi</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -138,21 +137,6 @@
                                             </form>    
                                             </td>
                                             
-                                            @if($data->status == null)
-                                            <td>
-                                                <span class="badge badge-pill badge-warning"><b style="font-size:14px;">Menunggu Verifikasi</span>
-                                            </td>
-
-                                            @elseif($data->status == 1)
-                                            <td>
-                                                <span class="badge badge-pill badge-success"><b style="font-size:14px;">Lolos</span>
-                                            </td>
-
-                                            @elseif($data->status == 2)
-                                            <td>
-                                                <span class="badge badge-pill badge-danger"><b style="font-size:14px;">Tidak Lolos</span>
-                                            </td>
-                                            @endif
 
                                             @if($data->status == null)
                                             <td>
