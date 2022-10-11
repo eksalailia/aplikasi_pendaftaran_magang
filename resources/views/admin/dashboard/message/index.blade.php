@@ -24,12 +24,13 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
+    <link href="vendorss/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="vendorss/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
 @extends('admin.dashboard.konten')
-@extends('admin.table.appnew')
 @section('content')
 
 
@@ -99,14 +100,15 @@
                             <a href="{{ route('admin.dashboard.kesan.create') }}" class="btn btn-success" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
                         </div> --}}
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="basic-datatables" class="display table table-striped table-hover" >
-                                <thead>
+                        <div class="table-responsive p-3">
+                            <table class="table align-items-center table-flush table-hover" id="dataTableHover">
+                                <thead class="thead-light">
                                         <tr>
                                             <th>Nama</th>
                                             <th>E-Mail</th>
                                             <th>Subject</th>
                                             <th>Pesan</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -188,7 +190,8 @@
 <script src="backend2/assets/js/plugin/chart-circle/circles.min.js"></script>
 
 <!-- Datatables -->
-<script src="backend2/assets/js/plugin/datatables/datatables.min.js"></script>
+<script src="vendorss/datatables/jquery.dataTables.min.js"></script>
+<script src="vendorss/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Bootstrap Notify -->
 <script src="backend2/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
@@ -206,6 +209,14 @@
 <!-- Atlantis DEMO methods, don't include it in your project! -->
 <script src="backend2/assets/js/setting-demo.js"></script>
 <script src="backend2/assets/js/demo.js"></script>
+
+ <!-- Page level custom scripts -->
+  <script>
+    $(document).ready(function () {
+      $('#dataTable').DataTable(); // ID From dataTable 
+      $('#dataTableHover').DataTable(); // ID From dataTable with Hover
+    });
+  </script>
 
 <script>
     Circles.create({
