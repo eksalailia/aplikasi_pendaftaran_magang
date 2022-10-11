@@ -102,12 +102,13 @@
                         <div class="card-body">
                         <br>
                         <div class="table-responsive p-3">
-                            <table class="table align-items-center table-flush table-hover" id="dataTableHover1">
-                                <thead class="thead-light">
+                            <table class="table table-striped table-hover table-bordered" id="dataTableHover1">
+                                <thead>
                                         <tr>
                                             <th>Judul</th>
                                             <th>Tanggal</th>
                                             <th>Isi</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -117,6 +118,7 @@
                                             <td>{{ $pgm->judul }}</td>
                                             <td>{{ $pgm->tanggal }}</td>
                                             <td>{{ $pgm->isi }}</td>
+                                            <td>{{ $pgm->status }}</td>
                                             <td>
                                                 <form action="{{ route('admin.dashboard.pengumuman.destroy',$pgm->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('admin.dashboard.pengumuman.show',$pgm->id) }}"><i class="fa fa-eye"></i></a>
@@ -213,7 +215,7 @@
  <!-- Page level custom scripts -->
   <script>
     $(document).ready(function () {
-      $('#dataTable').DataTable(); // ID From dataTable 
+      $('#dataTable').DataTable(); // ID From dataTable
       $('#dataTableHover1').DataTable(); // ID From dataTable with Hover
     });
   </script>

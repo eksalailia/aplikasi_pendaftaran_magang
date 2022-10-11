@@ -103,8 +103,8 @@
                         <div class="card-body">
                             <br>
                             <div class="table-responsive">
-                            <table class="table align-items-center table-flush table-hover" id="dataTableHover">
-                                <thead class="thead-light">
+                            <table class="table table-striped table-hover table-bordered" id="dataTableHover">
+                                <thead>
                                 <tr>
                                             <th>No.</th>
                                             <th>Judul</th>
@@ -216,7 +216,7 @@
  <!-- Page level custom scripts -->
   <script>
     $(document).ready(function () {
-      $('#dataTable').DataTable(); // ID From dataTable 
+      $('#dataTable').DataTable(); // ID From dataTable
       $('#dataTableHover').DataTable(); // ID From dataTable with Hover
     });
   </script>
