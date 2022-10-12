@@ -15,9 +15,9 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
                 <div class="dropdown-menu fade-down m-0">
-                    <a href="team.html" class="dropdown-item">Pengumuman</a>
-                    <a href="testimonial.html" class="dropdown-item">Syarat & Ketentuan Pengajuan</a>
-                    <a href="404.html" class="dropdown-item">Prosedur Pengajuan</a>
+                    <a href="/pengumuman-user" class="dropdown-item">Pengumuman</a>
+                    <a href="/prosedur-user" class="dropdown-item">Prosedur Pengajuan</a>
+                    <a href="/requirement-user" class="dropdown-item">Syarat & Ketentuan Pengajuan</a>
                 </div>
             </div>
         </div>

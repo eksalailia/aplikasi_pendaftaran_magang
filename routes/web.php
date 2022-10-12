@@ -28,6 +28,9 @@ Route::get('/service', [\App\Http\Controllers\UserController::class, 'service'])
 Route::get('/contact', [\App\Http\Controllers\MessageController::class, 'create'])->name('layouts.frontend.message.create');
 Route::post('/contactcreate', [\App\Http\Controllers\MessageController::class, 'store'])->name('layouts.frontend.message.store');
 Route::get('/pembimbing', [\App\Http\Controllers\UserController::class, 'team'])->name('layouts.frontend.team');
+Route::get('/pengumuman-user', [\App\Http\Controllers\UserController::class, 'pengumuman'])->name('layouts.frontend.informasi.pengumuman');
+Route::get('/requirement-user', [\App\Http\Controllers\UserController::class, 'requirement'])->name('layouts.frontend.informasi.requirement');
+Route::get('/prosedur-user', [\App\Http\Controllers\UserController::class, 'prosedur'])->name('layouts.frontend.informasi.prosedur');
 
 
 Route::group(['middleware'=>['applicant','auth','PreventBackHistory']], function(){
@@ -97,7 +100,7 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/admin-contact', '\App\Http\Controllers\MessageController@index')->name('admin.dashboard.message.index');
     Route::get('/show-aspirasi/{id}', '\App\Http\Controllers\MessageController@show')->name('admin.dashboard.message.show');
     Route::delete('/hapus-contact/{id}', '\App\Http\Controllers\MessageController@destroy')->name('admin.dashboard.message.destroy');
-    
+
     Route::get('/aspirasi', '\App\Http\Controllers\AspirasiController@index')->name('admin.dashboard.aspirasi.index');
 
     Route::get('/profileadmin-index', '\App\Http\Controllers\ProfileAdminController@index')->name('admin.dashboard.profile.index');
