@@ -121,6 +121,9 @@ Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(
 
     Route::get('/status-acc/{id}', '\App\Http\Controllers\ReviewerController@acc')->name('reviewer.pendaftaran.acc');
     Route::get('/status-notacc/{id}', '\App\Http\Controllers\ReviewerController@notacc')->name('reviewer.pendaftaran.notacc');
+
+    Route::get('/formEmail', '\App\Http\Controllers\SendEmailController@index')->name('reviewer.sendemail.email');
+    Route::post('/send', '\App\Http\Controllers\SendEmailController@send')->name('reviewer.sendemail.send');
 });
 
 Route::get('/table', [\App\Http\Controllers\ApplicantController::class, 'table'])->name('applicant.table');

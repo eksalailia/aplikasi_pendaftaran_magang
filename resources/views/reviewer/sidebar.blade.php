@@ -65,6 +65,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/formEmail">
+                        <i class="fas fa-envelope"></i>
+                        <p>E-Mail Pemberitahuan</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
                     <a data-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
                         <p>Base</p>
@@ -292,10 +299,10 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li class="mx-4 mt-2">
+                </li> -->
+                <!-- <li class="mx-4 mt-2">
                     <a href="http://themekita.com/atlantis-bootstrap-dashboard.html" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-heart"></i> </span>Buy Pro</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
