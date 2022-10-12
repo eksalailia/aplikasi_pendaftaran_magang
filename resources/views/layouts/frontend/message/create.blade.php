@@ -129,7 +129,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                  <textarea class="ckeditor form-control valid" placeholder="Pesan" id="pesan" name="pesan" required="" style="height: 150px"></textarea>
+                                  <textarea class="ckeditor form-control valid" placeholder="Pesan" id="pesan" name="pesan" required="" ></textarea>
                             </div>
                         </div>
                         <div class="col-12">
