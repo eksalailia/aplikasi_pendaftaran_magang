@@ -66,14 +66,14 @@
                 </li>
                 <li class="nav-item">
                     <a href="/create-kesanpesan">
-                        <i class="fas fa-comment-dots"></i>
+                        <i class="fas fa-comments"></i>
                         <p>Kesan & Pesan</p>
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/status-pendaftaran">
-                        <i class="fas fa-comment-dots"></i>
+                        <i class="fas fa-bell"></i>
                         <p>Status Pendaftaran</p>
                         <span class="badge badge-success"></span>
                     </a>
