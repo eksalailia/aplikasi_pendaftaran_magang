@@ -11,11 +11,11 @@ use File;
 class AdminController extends Controller
 {
     public function admin(){
-        $jumlah_mentor = DB::table('mentor')->count(); 
+        $jumlah_mentor = DB::table('mentor')->count();
         $jumlah_bidang = DB::table('bidang')->count();
         $jumlah_kesanpesan = DB::table('kesanpesan')->count();
-        $jumlah_aspirasi = DB::table('mesage')->count();
-        return view('admin.dashboard.main', compact('jumlah_mentor', 'jumlah_bidang', 'jumlah_kesanpesan', 
+        $jumlah_aspirasi = DB::table('message')->count();
+        return view('admin.dashboard.main', compact('jumlah_mentor', 'jumlah_bidang', 'jumlah_kesanpesan',
                     'jumlah_aspirasi'));
     }
     public function index(){

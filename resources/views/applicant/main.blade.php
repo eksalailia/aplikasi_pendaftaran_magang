@@ -55,84 +55,68 @@
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 							<div>
 								<h2 class="text-white pb-2 fw-bold">Dashboard</h2>
-								<h5 class="text-white op-7 mb-2">Informasi Umum Terkait Halaman Admin</h5>
+								<h5 class="text-white op-7 mb-2">Informasi Umum Terkait Halaman Pendaftar</h5>
 							</div>
 						</div>
 					</div>
 				</div>
 				<br></br>
-			<div class="col-xl-3 col-lg-6">
-                <div class="card" style="background-color: #E9967A; margin-left:20px;">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="fas fa-solid fa-users fa-4x" style="margin-left: 58px;"></i></div>
-							<div class="stat-content dib">
-                                <div class="text-white" style="font-size: 20px; text-align:center">Menunggu Verifikasi</div>
-                                <div class="text-white" style="font-size: 20px; text-align:center">{{ $pendaftar_waiting }}</div>
+                <div class="container-fluid">
+                    <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-5">
+                        <div class="card border-left-success shadow h-100 py-2" style="background-color: #FD841F; ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-4">
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Menunggu Verifikasi</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pendaftar_waiting }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-solid fa-spinner fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5">
+                        <div class="card border-left-success shadow h-100 py-2" style="background-color: #4ece13; ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Lolos</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pendaftar_lolos }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-solid fa-check fa-2x text-gray-300"></i>
+                                    </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-3 col-md-6 mb-5">
+                    <div class="card border-left-success shadow h-100 py-2" style="background-color: #EC4646; ">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Tidak Lolos</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pendaftar_tidaklolos }}</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-solid fa-times fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
             </div>
 
-			<div class="col-xl-3 col-lg-6">
-                <div class="card" style="background-color: #E9967A; margin-left:20px;">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="fas fa-solid fa-users fa-4x" style="margin-left: 58px;"></i></div>
-							<div class="stat-content dib">
-                                <div class="text-white" style="font-size: 20px; text-align:center">Lolos</div>
-                                <div class="text-white" style="font-size: 20px; text-align:center">{{ $pendaftar_lolos }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-			<div class="col-xl-3 col-lg-6">
-                <div class="card" style="background-color: #E9967A; margin-left:20px;">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="fas fa-solid fa-users fa-4x" style="margin-left: 58px;"></i></div>
-							<div class="stat-content dib">
-                                <div class="text-white" style="font-size: 20px; text-align:center">Tidak Lolos</div>
-                                <div class="text-white" style="font-size: 20px; text-align:center">{{ $pendaftar_tidaklolos }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-				
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
-							<li class="nav-item">
-								<a class="nav-link" href="https://www.themekita.com">
-									ThemeKita
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Help
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Licenses
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="copyright ml-auto">
-						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
-					</div>
-				</div>
-			</footer>
+			@include('applicant.footer')
 		</div>
 
 		<!-- Custom template | don't include it in your project! -->
-		<div class="custom-template">
+		{{-- <div class="custom-template">
 			<div class="title">Settings</div>
 			<div class="custom-content">
 				<div class="switcher">
@@ -200,7 +184,7 @@
 			<div class="custom-toggle">
 				<i class="flaticon-settings"></i>
 			</div>
-		</div>
+		</div> --}}
 		<!-- End Custom template -->
 	</div>
 

@@ -196,9 +196,10 @@
                 </div>
             </div>
         </div>
+        @include('applicant.footer')
+
     </div>
 
 
-{{-- @include('applicant.footer') --}}
 
 @endsection

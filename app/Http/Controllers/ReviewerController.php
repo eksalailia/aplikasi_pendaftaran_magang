@@ -11,7 +11,7 @@ use Session;
 class ReviewerController extends Controller
 {
     public function reviewer(){
-        $jumlah_pendaftar = DB::table('pendaftaran')->count(); 
+        $jumlah_pendaftar = DB::table('pendaftaran')->count();
         $pendaftar_waiting = DB::table('pendaftaran')
         ->whereNull('status')
         ->count();
@@ -21,7 +21,8 @@ class ReviewerController extends Controller
         $pendaftar_tidaklolos = DB::table('pendaftaran')
         ->where('status', 2)
         ->count();
-        return view('reviewer.main', compact('jumlah_pendaftar', 'pendaftar_waiting', 'pendaftar_lolos', 'pendaftar_tidaklolos'));
+        $jumlah_review = DB::table('pendaftaran')->count();
+        return view('reviewer.main', compact('jumlah_pendaftar', 'pendaftar_waiting', 'pendaftar_lolos', 'pendaftar_tidaklolos', 'jumlah_review'));
     }
     public function index(){
         $pendaftar = Pendaftaran::orderBy('created_at','ASC')

@@ -52,6 +52,36 @@
                     {{-- <h4 class="text-section">Components</h4> --}}
                 </li>
                 <li class="nav-item">
+                    <a data-toggle="collapse" href="#forms">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Informasi</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="forms">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="/pengumuman">
+                                    <span>
+                                        <i class="fas fa-bullhorn"></i> Pengumuman</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/prosedur">
+                                    <span>
+                                        <i class="fas fa-file-alt"></i> Prosedur Pengajuan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/requirement">
+                                    <span>
+                                        <i class="fas fa-book-open"></i> Syarat & Ketentuan</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
                     <a href="/mentor">
                         <i class="fas fa-user"></i>
                         <p>Mentor</p>
@@ -87,35 +117,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a data-toggle="collapse" href="#forms">
-                        <i class="fas fa-info-circle"></i>
-                        <p>Informasi</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="forms">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="/pengumuman">
-                                    <span>
-                                        <i class="fas fa-bullhorn"></i> Pengumuman</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/prosedur">
-                                    <span>
-                                        <i class="fas fa-file-alt"></i> Prosedur Pengajuan</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/requirement">
-                                    <span>
-                                        <i class="fas fa-book-open"></i> Syarat & Ketentuan</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
 
                 {{-- <li class="nav-item">
                     <a data-toggle="collapse" href="#base">

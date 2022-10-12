@@ -131,21 +131,21 @@
                                             <td>
                                                 <form>
                                                 <a class="btn btn-info" href="{{ route('reviewer.pendaftaran.showResume',$data->id) }}"><i class="fa fa-eye"></i></a>
-                                            </form>    
+                                            </form>
                                             </td>
                                             <td>
                                                 <form>
                                                 <a class="btn btn-warning" href="{{ route('reviewer.pendaftaran.showProposal',$data->id) }}"><i class="fa fa-eye"></i></a>
-                                            </form>    
+                                            </form>
                                             </td>
-                                            
+
 
                                             @if($data->status == null)
                                             <td>
                                                 <a href="{{ route('reviewer.pendaftaran.acc', $data->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Acc
                                                 </a>
                                             </td>
-                                            
+
                                             @elseif($data->status == 1)
                                             <td>
                                                 <a href="{{ route('reviewer.pendaftaran.notacc', $data->id) }}" class="btn btn-xs btn-danger btn-flat"><i class="fa"></i><b style="font-size: 13px">Not Acc
@@ -179,32 +179,7 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <div class="container-fluid">
-            <nav class="pull-left">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.themekita.com">
-                            ThemeKita
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Help
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Licenses
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright ml-auto">
-                2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
-            </div>
-        </div>
-    </footer>
+    @include('reviewer.footer')
 </div>
 
 <!--   Core JS Files   -->

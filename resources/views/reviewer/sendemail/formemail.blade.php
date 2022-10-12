@@ -80,7 +80,7 @@
                 </div>
                 <div class="form-group col-sm-12">
                     <label for="notes">Notes</label>
-                    <textarea class="ckeditor form-control valid" placeholder="Notes" id="notes" name="notes" style="height: 150px"></textarea>                
+                    <textarea class="ckeditor form-control valid" placeholder="Notes" id="notes" name="notes" style="height: 150px"></textarea>
                 </div>
                 <div class="form-group col-sm-5">
                     <button type="submit" class="btn btn-success">
@@ -93,6 +93,7 @@
     </div>
 </div>
 </div>
+@include('reviewer.footer')
 </div>
 </div>
 
