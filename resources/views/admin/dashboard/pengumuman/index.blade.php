@@ -116,7 +116,13 @@
                                             <td>{{ $pgm->judul }}</td>
                                             <td>{{ $pgm->tanggal }}</td>
                                             <td>{{ $pgm->isi }}</td>
-                                            <td>{{ $pgm->status }}</td>
+                                            <td>
+                                                @if($pgm->status == "non-aktif")
+                                                    <span class="badge badge-pill badge-danger"><b style="font-size:14px;">non-aktif</span>
+                                                @elseif($pgm->status == "aktif")
+                                                    <span class="badge badge-pill badge-success"><b style="font-size:14px;">aktif</span>
+                                                @endif
+                                            </td>
                                             <td>
                                                 <form action="{{ route('admin.dashboard.pengumuman.destroy',$pgm->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('admin.dashboard.pengumuman.show',$pgm->id) }}"><i class="fa fa-eye"></i></a>
