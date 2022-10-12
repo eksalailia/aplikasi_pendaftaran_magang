@@ -11,7 +11,12 @@ use File;
 class AdminController extends Controller
 {
     public function admin(){
-        return view('admin.dashboard.main');
+        $jumlah_mentor = DB::table('mentor')->count(); 
+        $jumlah_bidang = DB::table('bidang')->count();
+        $jumlah_kesanpesan = DB::table('kesanpesan')->count();
+        $jumlah_aspirasi = DB::table('mesage')->count();
+        return view('admin.dashboard.main', compact('jumlah_mentor', 'jumlah_bidang', 'jumlah_kesanpesan', 
+                    'jumlah_aspirasi'));
     }
     public function index(){
         $Users = User::orderBy('created_at','ASC')

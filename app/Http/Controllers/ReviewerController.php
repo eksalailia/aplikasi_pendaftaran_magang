@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
 use App\Models\Pendaftaran;
 use App\Models\User;
 use App\Models\Bidang;
@@ -10,7 +11,17 @@ use Session;
 class ReviewerController extends Controller
 {
     public function reviewer(){
-        return view('reviewer.main');
+        $jumlah_pendaftar = DB::table('pendaftaran')->count(); 
+        $pendaftar_waiting = DB::table('pendaftaran')
+        ->whereNull('status')
+        ->count();
+        $pendaftar_lolos = DB::table('pendaftaran')
+        ->where('status', 1)
+        ->count();
+        $pendaftar_tidaklolos = DB::table('pendaftaran')
+        ->where('status', 2)
+        ->count();
+        return view('reviewer.main', compact('jumlah_pendaftar', 'pendaftar_waiting', 'pendaftar_lolos', 'pendaftar_tidaklolos'));
     }
     public function index(){
         $pendaftar = Pendaftaran::orderBy('created_at','ASC')
