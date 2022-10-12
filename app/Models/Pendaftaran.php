@@ -14,6 +14,7 @@ class Pendaftaran extends Model
     protected $fillable = [
         'user_id',
         'bidang_id',
+        'email',
         'tahun_akademik',
         'jurusan',
         'durasi',

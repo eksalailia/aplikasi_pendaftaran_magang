@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Pendaftaran;
 use App\Models\Bidang;
 use App\Models\User;
@@ -12,7 +13,7 @@ use Session;
 class PendaftaranController extends Controller
 {
     public function index(){
-        $pendaftaran = pendaftaran::all();
+        $pendaftaran = pendaftaran::with('user')->get();
         return view('applicant.pendaftaran.index', compact('pendaftaran'));
     }
 
@@ -38,6 +39,7 @@ class PendaftaranController extends Controller
         $pendaftaran = new pendaftaran;
         $pendaftaran->user_id = $request->user;
         $pendaftaran->bidang_id = $request->bidang;
+        $pendaftaran->email = $request->input('email');
         $pendaftaran->tahun_akademik = $request->input('tahun_akademik');
         $pendaftaran->jurusan = $request->input('jurusan');
         $pendaftaran->durasi = $request->input('durasi');

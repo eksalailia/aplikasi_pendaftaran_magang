@@ -5,6 +5,8 @@ use App\Models\Pendaftaran;
 use App\Models\User;
 use App\Models\Bidang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MailNotify;
 use Session;
 
 class ReviewerController extends Controller

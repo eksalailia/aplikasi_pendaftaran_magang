@@ -105,6 +105,7 @@
                                         <tr>
                                             <th>Nama Pemohon</th>
                                             <th>Divisi Tujuan</th>
+                                            <th>E-Mail</th>
                                             <th>Jurusan</th>
                                             <th>Tahun Akademik</th>
                                             <th>Durasi PKL / Magang</th>
@@ -120,6 +121,7 @@
                                         @foreach ($pendaftar as $data)
                                             <td>{{ $data->user->name}}</td>
                                             <td>{{ $data->bidang->nama }}</td>
+                                            <td>{{ $data->email }}</td>
                                             <td>{{ $data->jurusan }}</td>
                                             <td>{{ $data->tahun_akademik }}</td>
                                             <td>{{ $data->durasi }}</td>

@@ -112,6 +112,7 @@
                                     <tbody>
                                         <tr>
                                             @foreach ($pendaftaran as $pd)
+                                                @if ($pd->user->id == Auth::user()->id)
                                             <td>#</td>
                                             <td>{{ $pd->user->name }}</td>
                                             <td>{{ $pd->bidang->nama }}</td>
@@ -138,6 +139,7 @@
 
                                             @endif
                                         </tr>
+                                        @endif
                                         @endforeach
                                     </tbody>
                                 </table>

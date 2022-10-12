@@ -109,6 +109,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label text-white">E-Mail</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label text-white">Bidang Magang</label>
                                                     <div class="col-sm-10">
                                                         <select name="bidang" class="form-control" required="">
