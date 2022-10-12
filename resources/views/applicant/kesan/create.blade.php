@@ -24,6 +24,7 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -91,7 +92,7 @@
                                   </div>
                                 <div class="form-group">
                                   <label for="isi">Kesan & Pesan</label>
-                                  <textarea class="form-control" id="isi" name="isi" rows="4" placeholder="Tulis kesan & pesan..."></textarea>
+                                  <textarea class="ckeditor form-control valid" id="isi" name="isi" rows="4" placeholder="Tulis kesan & pesan..."></textarea>
                                 </div>
                                 {{-- <button type="submit" class="btn btn-success"><i class="fas fa-checks"> Submit</button> --}}
                                 <button type="submit" class="btn btn-success">
@@ -138,4 +139,11 @@
 </div>
 </div>
 
+<script src="//cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.ckeditor').ckeditor();
+});
+</script>
 @endsection

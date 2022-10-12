@@ -29,6 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('frontend2/css/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -48,6 +49,13 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('frontend2/js/main.js')}}"></script>
+    <script src="//cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.ckeditor').ckeditor();
+});
+</script>
 </body>
 
 </html>

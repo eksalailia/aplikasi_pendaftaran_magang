@@ -24,6 +24,7 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -79,7 +80,7 @@
                 </div>
                 <div class="form-group col-sm-12">
                     <label for="notes">Notes</label>
-                    <textarea class="form-control" placeholder="Notes" id="notes" name="notes" style="height: 150px"></textarea>                
+                    <textarea class="ckeditor form-control valid" placeholder="Notes" id="notes" name="notes" style="height: 150px"></textarea>                
                 </div>
                 <div class="form-group col-sm-5">
                     <button type="submit" class="btn btn-success">
@@ -136,6 +137,13 @@
 <!-- Atlantis DEMO methods, don't include it in your project! -->
 <script src="backend2/assets/js/setting-demo.js"></script>
 <script src="backend2/assets/js/demo.js"></script>
+<script src="//cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.ckeditor').ckeditor();
+});
+</script>
 
 <script>
     Circles.create({
