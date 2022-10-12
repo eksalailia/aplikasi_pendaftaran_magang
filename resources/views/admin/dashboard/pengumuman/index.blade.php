@@ -71,7 +71,6 @@
                         <div class="card-header">
                             <h4 class="card-title">Daftar Pengumuman</h4>
                         </div>
-                        <br></br>
                                  @if(Session::has('success'))
                                     <div class="btn btn-success" style="width:100%; height:50px">
                                         <p>{{Session::get('success')}}</p>
@@ -100,7 +99,6 @@
                             <a href="{{ route('admin.dashboard.pengumuman.create') }}" class="btn btn-primary btn-round" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
                         </div>
                         <div class="card-body">
-                        <br>
                         <div class="table-responsive p-3">
                             <table class="table table-striped table-hover table-bordered" id="dataTableHover1">
                                 <thead>

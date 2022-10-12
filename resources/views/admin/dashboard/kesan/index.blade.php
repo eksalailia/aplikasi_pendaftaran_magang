@@ -71,7 +71,6 @@
                         <div class="card-header">
                             <h4 class="card-title">Kesan & Pesan</h4>
                         </div>
-                        <br></br>
                                  @if(Session::has('success'))
                                     <div class="btn btn-success" style="width:100%; height:50px">
                                         <p>{{Session::get('success')}}</p>

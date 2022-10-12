@@ -1,3 +1,4 @@
+
 <div class="sidebar sidebar-style-2">
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
@@ -73,7 +74,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="/admin-kesanpesan">
-                        <i class="fas fa-comment-dots"></i>
+                        <i class="fas fa-comments"></i>
                         <p>Kesan & Pesan</p>
                         <span class="badge badge-success"></span>
                     </a>
@@ -85,29 +86,38 @@
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="/pengumuman">
-                        <i class="fas fa-comment-dots"></i>
-                        <p>Pengumuman</p>
-                        <span class="badge badge-success"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/prosedur">
-                        <i class="fas fa-comment-dots"></i>
-                        <p>Prosedur Pengajuan</p>
-                        <span class="badge badge-success"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/requirement">
-                        <i class="fas fa-comment-dots"></i>
-                        <p>Syarat & Ketentuan</p>
-                        <span class="badge badge-success"></span>
-                    </a>
-                </li>
 
                 <li class="nav-item">
+                    <a data-toggle="collapse" href="#forms">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Informasi</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="forms">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="/pengumuman">
+                                    <span>
+                                        <i class="fas fa-bullhorn"></i> Pengumuman</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/prosedur">
+                                    <span>
+                                        <i class="fas fa-file-alt"></i> Prosedur Pengajuan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/requirement">
+                                    <span>
+                                        <i class="fas fa-book-open"></i> Syarat & Ketentuan</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                {{-- <li class="nav-item">
                     <a data-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
                         <p>Base</p>
@@ -335,11 +345,12 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li class="mx-4 mt-2">
+                </li> --}}
+                {{-- <li class="mx-4 mt-2">
                     <a href="http://themekita.com/atlantis-bootstrap-dashboard.html" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-heart"></i> </span>Buy Pro</a>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>
 </div>
+
