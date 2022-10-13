@@ -117,7 +117,7 @@
                                             @foreach ($prosedur as $psd)
                                             <td>{{ $psd->id }}</td>
                                             <td>{{ $psd->judul }}</td>
-                                            <td>{{ $psd->isi }}</td>
+                                            <td>{!! $psd->isi !!}</td>
                                             <td><img alt="foto" src="/foto/{{ $psd->foto }}" width="100px"></td>
                                             <td>
                                                 <form action="{{ route('admin.dashboard.prosedur.destroy',$psd->id) }}"  method="POST">
