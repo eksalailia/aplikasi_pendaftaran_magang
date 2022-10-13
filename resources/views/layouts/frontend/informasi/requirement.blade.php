@@ -30,15 +30,14 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="img-fluid position-absolute w-100 h-100" src="{{ asset('frontend2/img/about.jpg')}}" alt="" style="object-fit: cover;">
+                    @foreach ($requirement as $rq)
+                    <img class="img-fluid position-absolute w-100 h-100" src="{{asset('foto/'.$rq->foto)}}" alt="" style="object-fit: cover;">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                 <h6 class="section-title bg-white text-start text-primary pe-3">Syarat dan Ketentuan</h6>
-                @foreach ($requirement as $rq)
                 <h1 class="mb-4">{{ $rq->judul }}</h1>
-                @foreach ($requirement as $rq)
-                <p class="mb-4">{{ $rq->isi }}</p>
+                <p class="mb-4">{!! $rq->isi !!}</p>
             </div>
             @endforeach
         </div>

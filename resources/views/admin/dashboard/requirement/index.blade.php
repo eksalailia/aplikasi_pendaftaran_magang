@@ -116,7 +116,7 @@
                                             @foreach ($requirement as $rq)
                                             <td>{{ $rq->id }}</td>
                                             <td>{{ $rq->judul }}</td>
-                                            <td>{{ $rq->isi }}</td>
+                                            <td>{!! $rq->isi !!}</td>
                                             <td><img alt="foto" src="/foto/{{ $rq->foto }}" width="100px"></td>
                                             <td>
                                                 <form action="{{ route('admin.dashboard.requirement.destroy',$rq->id) }}"  method="POST">
