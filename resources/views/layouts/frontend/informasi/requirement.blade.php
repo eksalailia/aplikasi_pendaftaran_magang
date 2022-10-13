@@ -35,6 +35,7 @@
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                 <h6 class="section-title bg-white text-start text-primary pe-3">Syarat dan Ketentuan</h6>
+                @foreach ($requirement as $rq)
                 <h1 class="mb-4">{{ $rq->judul }}</h1>
                 @foreach ($requirement as $rq)
                 <p class="mb-4">{{ $rq->isi }}</p>
