@@ -64,15 +64,60 @@
                 <div class="container-fluid">
                     <div class="row">
                     <div class="col-xl-3 col-md-6 mb-5">
+                        <div class="card border-left-success shadow h-100 py-2" style="background-color: #5F9DF7; ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-4">
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Jumlah Pendaftar</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jumlah_pendaftar }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-solid fa-users fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5">
                         <div class="card border-left-success shadow h-100 py-2" style="background-color: #FD841F; ">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-4">
-                                        <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Review Pendaftar</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jumlah_review }}</div>
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Menunggu Verifikasi</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pendaftar_waiting }}</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-solid fa-users fa-2x text-gray-300"></i>
+                                        <i class="fas fa-solid fa-spinner fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5">
+                        <div class="card border-left-success shadow h-100 py-2" style="background-color: #4ece13; ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-4">
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Pendaftar Lolos</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pendaftar_lolos }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-solid fa-check fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-5">
+                        <div class="card border-left-success shadow h-100 py-2" style="background-color: #EC4646; ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-4">
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Pendaftar Tidak Lolos</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pendaftar_tidaklolos }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-solid fa-times fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>

@@ -25,9 +25,7 @@
         <div class="container-fluid">
             <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                 <li class="nav-item">
-                    <div class="u-text">
-                    <h5 class="text-white">Hi, {{ Auth::user()->name }} !</h5>
-                    </div>
+                    <span class="text-white" style="font-size: 15px">Hi, {{ Auth::user()->name }} !</span>
                 </li>
 
                 <li class="nav-item dropdown hidden-caret">
