@@ -35,9 +35,8 @@
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                 <h6 class="section-title bg-white text-start text-primary pe-3">Prosedur Pengajuan</h6>
-                <h1 class="mb-4">SIPENMA Diskominfo Kota Madiun</h1>
-                @foreach ($prosedur as $pd)
                 <h1 class="mb-4">{{ $pd->judul }}</h1>
+                @foreach ($prosedur as $pd)
                 <p class="mb-4">{{ $pd->isi }}</p>
             </div>
             @endforeach
