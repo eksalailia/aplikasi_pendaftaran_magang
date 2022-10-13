@@ -30,11 +30,12 @@
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">Mentor</h6>
             <h1 class="mb-5">Pembimbing Magang</h1>
-        </div>
-        <div class="row g-4">
+        </div> 
+       
+        <div class="row g-4">  
+             @foreach ($mentor as $mt)
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item bg-light">
-                    @foreach ($mentor as $mt)
                     <div class="overflow-hidden">
                         <img class="img-fluid" src="{{asset('img/'.$mt->img)}}" alt="" style="width:200px; height:230px; margin-left:30px; margin-top:20px;">
                     </div>
@@ -50,8 +51,8 @@
                         <small>{{ $mt->jabatan }}</small>
                     </div>
                 </div>
-            </div>
-            @endforeach
+            </div>  
+          @endforeach
         </div>
     </div>
 </div>
