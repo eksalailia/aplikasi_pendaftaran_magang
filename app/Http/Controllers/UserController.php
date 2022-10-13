@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Mentor;
 use App\Models\Pengumuman;
+use App\Models\Requirement;
+use App\Models\Prosedur;
 use App\Models\KesanPesan;
 
 class UserController extends Controller
@@ -31,9 +33,11 @@ class UserController extends Controller
         return view('layouts.frontend.informasi.pengumuman', compact('pengumuman'));
     }
     public function requirement(){
-        return view('layouts.frontend.informasi.requirement');
+        $requirement=Requirement::all();
+        return view('layouts.frontend.informasi.requirement', compact('requirement'));
     }
     public function prosedur(){
-        return view('layouts.frontend.informasi.prosedur');
+        $prosedur=Prosedur::all();
+        return view('layouts.frontend.informasi.prosedur', compact('prosedur'));
     }
 }
