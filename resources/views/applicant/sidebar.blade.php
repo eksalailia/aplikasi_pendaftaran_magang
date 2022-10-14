@@ -78,13 +78,6 @@
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
-                 <li class="nav-item">
-                    <a href="/peserta-lolos">
-                        <i class="fas fa-bell"></i>
-                        <p>Daftar Peserta Lolos</p>
-                        <span class="badge badge-success"></span>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
