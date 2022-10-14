@@ -106,7 +106,7 @@
                                     </tbody>
                                 </table>
                                 <div class="float-left my-2 text-center">
-                                    <a class="btn btn-danger mt-3" href="{{route('admin.cetakpdf.cetakpendaftar')}}">Cetak PDF</a>
+                                    <a class="btn btn-danger mt-3 btn-round" href="{{route('admin.cetakpdf.cetakpendaftar')}}"><i class="fas fa-print"></i> Cetak PDF</a>
                                 </div>
                             </div>
                         </div>
