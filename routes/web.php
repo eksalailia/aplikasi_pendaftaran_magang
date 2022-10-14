@@ -106,6 +106,9 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/profileadmin-index', '\App\Http\Controllers\ProfileAdminController@index')->name('admin.dashboard.profile.index');
     Route::post('/profileadmin-update', '\App\Http\Controllers\ProfileAdminController@profileupdateadmin')->name('admin.profileupdate');
 
+    Route::get('peserta/cetak', '\App\Http\Controllers\AdminController@cetakpeserta')->name('admin.cetakpdf.cetakpendaftar');
+    Route::get('peserta-lolos', '\App\Http\Controllers\AdminController@daftarpeserta')->name('admin.cetakpdf.daftarpeserta');
+
 });
 
 Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(){

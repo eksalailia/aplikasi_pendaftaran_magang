@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use PDF;
 use App\Models\User;
 use App\Models\Pendaftaran;
 use File;
@@ -70,6 +71,23 @@ class AdminController extends Controller
             return redirect()->route('applicant.pendaftaran.index');
         }
     }
+
+    public function daftarpeserta() {
+        $pendaftaran = Pendaftaran::orderBy('created_at','ASC')
+        ->where('status', '1')
+        ->get();
+        return view('admin.dashboard.cetakpdf.daftarpeserta', compact('pendaftaran'));
+    }
+
+    public function cetakpeserta()
+    {
+    $pendaftaran = Pendaftaran::orderBy('created_at','ASC')
+                    ->where('status', 1)
+                    ->get();
+
+    $pdf = PDF::loadView('admin.dashboard.cetakpdf.cetakpendaftar', ['pendaftaran' => $pendaftaran]);
+    return $pdf->stream('Laporan-Data-Pendaftar-Lolos.pdf');
+}
 
 
 }
