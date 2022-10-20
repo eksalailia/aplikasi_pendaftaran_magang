@@ -66,7 +66,8 @@ class ReviewerController extends Controller
 
     public function acc($id){
         Pendaftaran::find($id)->update([
-            'status'=>1
+            'status'=>1,
+            'tgl_review'=> date("Y-m-d H:i:s")
         ]);
         Session::flash('update','Update Data Status Pendaftaran Berhasil');
         return redirect()->route('reviewer.pendaftaran.index');
@@ -74,7 +75,8 @@ class ReviewerController extends Controller
 
     public function notacc($id){
         Pendaftaran::find($id)->update([
-            'status'=>2
+            'status'=>2,
+            'tgl_review'=> date("Y-m-d H:i:s")
         ]);
         Session::flash('update','Update Data Status Pendaftaran Berhasil');
         return redirect()->route('reviewer.pendaftaran.index');

@@ -25,6 +25,7 @@ class Pendaftaran extends Model
         'peserta3',
         'resume',
         'tanggal',
+        'tgl_review',
         'proposal',
         'status'
     ];
