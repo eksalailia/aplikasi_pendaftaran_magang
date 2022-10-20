@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard - Reviewer</title>
+	<title>Dashboard - mentor</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
@@ -28,20 +28,20 @@
 
 <body>
 
-@extends('reviewer.konten')
+@extends('mentor.konten')
 @extends('admin.table.appnew')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('reviewer.header')
+			@include('mentor.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('reviewer.sidebar')
+		@include('mentor.sidebar')
 
 		<!-- End Sidebar -->
 
@@ -60,7 +60,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/profilereviewer-update">My Profile</a>
+                        <a href="/profilementor-update">My Profile</a>
                     </li>
                 </ul>
             </div>
@@ -95,7 +95,7 @@
                             <p>{{Session::get('delete')}}</p>
                         </div>
                     @endif
-                    <form action="{{ url('profilereviewer-update') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('profilementor-update') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                      <div class="row">
                          <div class="col-md-6">
@@ -108,8 +108,8 @@
                          <div class="col-md-6">
                              <div class="form-group">
                              <label for="">E-Mail</label>
-                                 <input type="text" class="form-control" required="" placeholder="E-Mail" name="email" value="{{ Auth::user()->email }}">
-                                 <span class="text-danger">@error('email'){{ $message }}@enderror</span>
+                                 <input type="text" class="form-control" required="" placeholder="E-Mail" name="email" value="">
+                                 <span class="text-danger">@error @enderror</span>
                              </div>
                          </div>
                          </div>
@@ -117,16 +117,16 @@
                          <div class="col-md-6">
                              <div class="form-group">
                              <label for="">Nomor Telepon</label>
-                                 <input type="text" class="form-control" required="" placeholder="Nomor Telepon" name="no_tlp" value="{{ Auth::user()->no_tlp }}">
-                                 <span class="text-danger">@error('no_tlp'){{ $message }}@enderror</span>
+                                 <input type="text" class="form-control" required="" placeholder="Nomor Telepon" name="no_tlp" value="">
+                                 <span class="text-danger">@error @enderror</span>
                              </div>
                          </div>
                          <div class="col-md-6">
                              <div class="form-group">
                                 <label for="">Foto</label>
-                                <input type="file" class="form-control" name="foto" value="{{ Auth::user()->foto }}"><br></br>
-                                <img src="{{ asset('backend/assets/uploads/profile/'.Auth::user()->foto) }}" class="w-75" alt="" style="height:300px; width:100px; margin-left:-200px;">
-                                 <span class="text-danger">@error('foto'){{ $message }}@enderror</span>
+                                <input type="file" class="form-control" name="foto" value=""><br></br>
+                                <img src="{{ asset('backend/assets/uploads/profile/'.)}}" class="w-75" alt="" style="height:300px; width:100px; margin-left:-200px;">
+                                 <span class="text-danger">@error @enderror</span>
                              </div>
                          </div>
                          </div>
@@ -135,7 +135,7 @@
                         <div class="action-buttons justify-content-between bg-white pt-2 pb-2">
                             <button type="submit" class="btn btn-success">
                                 <i class="fas fa-check"></i> Submit</button>
-                            <a href="/reviewer" class="btn btn-secondary">
+                            <a href="/mentor" class="btn btn-secondary">
                                 <i class="fas fa-reply"></i> Kembali</a>
                          </div>
                      </div>
@@ -144,7 +144,7 @@
                     </div>
                 </div>
             </div>
-            @include('reviewer.footer')
+            @include('mentor.footer')
         </div>
     </div>
 
