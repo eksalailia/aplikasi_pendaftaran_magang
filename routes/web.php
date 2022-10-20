@@ -118,6 +118,7 @@ Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(
     Route::get('/showResume/{id}', '\App\Http\Controllers\ReviewerController@showResume')->name('reviewer.pendaftaran.showResume');
     Route::get('/showProposal/{id}', '\App\Http\Controllers\ReviewerController@showProposal')->name('reviewer.pendaftaran.showProposal');
     Route::delete('/hapus-pendaftaran-review/{id}', '\App\Http\Controllers\ReviewerController@destroy')->name('reviewer.pendaftaran.destroy');
+    Route::get('pesertalolos', '\App\Http\Controllers\ReviewerController@pesertalolos')->name('reviewer.pendaftaran.pesertalolos');
 
     Route::get('/profilereviewer-index', '\App\Http\Controllers\ProfileReviewerController@index')->name('reviewer.profile.index');
     Route::post('/profilereviewer-update', '\App\Http\Controllers\ProfileReviewerController@profileupdatereviewer')->name('reviewer.profileupdate');
@@ -127,6 +128,7 @@ Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(
 
     Route::get('/formEmail', '\App\Http\Controllers\SendEmailController@index')->name('reviewer.sendemail.email');
     Route::post('/send', '\App\Http\Controllers\SendEmailController@send')->name('reviewer.sendemail.send');
+
 });
 
 Route::get('/table', [\App\Http\Controllers\ApplicantController::class, 'table'])->name('applicant.table');

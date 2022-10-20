@@ -82,6 +82,13 @@ class ReviewerController extends Controller
         return redirect()->route('reviewer.pendaftaran.index');
     }
 
+    public function pesertalolos() {
+        $pendaftaran = Pendaftaran::orderBy('created_at','ASC')
+        ->where('status', '1')
+        ->get();
+        return view('reviewer.pendaftaran.pesertalolos', compact('pendaftaran'));
+    }
+
 
 
     public function destroy($id)
