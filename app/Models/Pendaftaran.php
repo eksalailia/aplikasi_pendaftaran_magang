@@ -18,10 +18,13 @@ class Pendaftaran extends Model
         'tahun_akademik',
         'jurusan',
         'durasi',
+        'tgl_mulai',
+        'tgl_selesai',
         'peserta1',
         'peserta2',
         'peserta3',
         'resume',
+        'tanggal',
         'proposal',
         'status'
     ];

@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('resume');
             $table->string('proposal');
             $table->int('status');
+            $table->dateTime('tanggal');
             $table->timestamps();
         });
     }
