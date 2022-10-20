@@ -7,9 +7,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="/" class="nav-item nav-link active">Home</a>
-            <a href="/about" class="nav-item nav-link">About</a>
-            <a href="/contact" class="nav-item nav-link">Contact</a>
+            <a href="/" class="nav-item nav-link active">Beranda</a>
+            <a href="/about" class="nav-item nav-link">Tentang</a>
+            <a href="/contact" class="nav-item nav-link">Kontak</a>
             <a href="/pembimbing" class="nav-item nav-link">Mentor</a>
             {{-- <a href="courses.html" class="nav-item nav-link">Courses</a> --}}
             <div class="nav-item dropdown">

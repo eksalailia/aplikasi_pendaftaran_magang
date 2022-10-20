@@ -12,12 +12,12 @@
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-                <h1 class="display-3 text-white animated slideInDown">Contact Us</h1>
+                <h1 class="display-3 text-white animated slideInDown">Kontak</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="/">Beranda</a></li>
                         {{-- <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li> --}}
-                        <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Kontak</li>
                     </ol>
                 </nav>
             </div>
@@ -31,10 +31,9 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h4 class="section-title bg-white text-center text-primary px-3">Contact Us</h4><br>
+            <h4 class="section-title bg-white text-center text-primary px-3">Kontak</h4><br>
             <h1 class="mb-5">Hubungi Kami untuk Info Lanjut</h1>
-        </div><br>
-        <br></br>
+        </div>
             @if(Session::has('success'))
                 <div class="btn btn-success" style="width:100%; height:50px">
                     <p>{{Session::get('success')}}</p>
@@ -58,7 +57,7 @@
                     <p>{{Session::get('delete')}}</p>
                 </div>
             @endif
-            <br></br>
+            <br><br>
         <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 {{-- <h5>Get In Touch</h5> --}}

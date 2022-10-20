@@ -36,9 +36,9 @@
             @foreach ($pengumuman as $pgm)
                 <div class="testimonial-item text-center">
                     <h5 class="mb-0">{{ $pgm->judul }}</h5>
-                    <p>{{ $pgm->tanggal }}</p>
+                    <i class="fa fa-calendar"></i><span> {{ $pgm->tanggal }}</span>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0" style="height:73px">{{ $pgm->isi }}</p>
+                    <span class="mb-0" style="height:73px; text-align:justify">{!! $pgm->isi !!}</span>
                     </div>
                 </div>
                 @endforeach

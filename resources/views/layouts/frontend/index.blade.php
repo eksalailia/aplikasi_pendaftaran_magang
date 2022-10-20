@@ -29,7 +29,7 @@
                             <div class="col-sm-10 col-lg-8">
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Diskominfo Kota Madiun</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Selamat Datang di SIPENMA</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">SIPENMA adalah Aplikasi Penerimaan Magang pada Kantor Diskominfo
+                                <p class="fs-5 text-white mb-4 pb-2">SIPENMA adalah Aplikasi Penerimaan Magang di Diskominfo
                                     Kota Madiun berbasis website.</p>
                                 <a href="/about" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="/register" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Register Now</a>

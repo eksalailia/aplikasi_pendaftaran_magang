@@ -24,6 +24,8 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -83,7 +85,7 @@
                         </div>
                         <div class="form-group col-sm-12">
                             <label>Isi</label>
-                            <textarea type="text" id="isi" name="isi" class="form-control" required="">{{$pengumuman->isi}}</textarea>
+                            <textarea class="ckeditor form-control valid" id="isi" name="isi" required="" style="height: 150px">{{$pengumuman->isi}}</textarea>
                         </div>
                         <div class="form-group col-sm-12">
                             <label>Status Pengumuman</label>
@@ -148,6 +150,9 @@
 <!-- Atlantis DEMO methods, don't include it in your project! -->
 <script src="backend2/assets/js/setting-demo.js"></script>
 <script src="backend2/assets/js/demo.js"></script>
+
+<script src="//cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+<script type="text/javascript">
 
 <script>
     Circles.create({

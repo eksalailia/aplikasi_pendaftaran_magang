@@ -74,7 +74,7 @@
                 <li class="nav-item">
                     <a href="/formEmail">
                         <i class="fas fa-envelope"></i>
-                        <p>Daftar Peserta Lolos</p>
+                        <p>Daftar Peserta Diterima</p>
                         <span class="badge badge-success"></span>
                     </a>
                 </li>

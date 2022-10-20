@@ -116,7 +116,7 @@
                                             <td>{{ $msg->nama }}</td>
                                             <td>{{ $msg->email }}</td>
                                             <td>{{ $msg->subject }}</td>
-                                            <td>{{ $msg->pesan }}</td>
+                                            <td>{!! $msg->pesan !!}</td>
                                             <td>
                                                 <form action="{{ route('admin.dashboard.message.destroy',$msg->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('admin.dashboard.message.show',$msg->id) }}"><i class="fa fa-eye"></i></a>

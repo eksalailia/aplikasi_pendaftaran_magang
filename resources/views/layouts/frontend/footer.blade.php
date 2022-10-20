@@ -4,9 +4,9 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Menu</h4>
-                <a class="btn btn-link" href="/">Home</a>
-                <a class="btn btn-link" href="/about">About</a>
-                <a class="btn btn-link" href="/contact">Contact</a>
+                <a class="btn btn-link" href="/">Beranda</a>
+                <a class="btn btn-link" href="/about">Tentang</a>
+                <a class="btn btn-link" href="/contact">Kontak</a>
                 <a class="btn btn-link" href="/pembimbing">Mentor</a>
                 {{-- <a class="btn btn-link" href="">Privacy Policy</a>
                 <a class="btn btn-link" href="">Terms & Condition</a>
@@ -79,9 +79,9 @@
     <div class="container">
         <div class="copyright">
             <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="margin-left:350px">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="margin-left:440px">
                     &copy; <a class="border-bottom" >Aks' Website</a>, All Right Reserved.
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
+                    {{-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br> --}}
                 </div>
                 {{-- <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">

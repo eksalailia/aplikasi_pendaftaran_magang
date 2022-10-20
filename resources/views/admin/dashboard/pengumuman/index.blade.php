@@ -115,7 +115,7 @@
                                             @foreach ($pengumuman as $pgm)
                                             <td>{{ $pgm->judul }}</td>
                                             <td>{{ $pgm->tanggal }}</td>
-                                            <td>{{ $pgm->isi }}</td>
+                                            <td>{!! $pgm->isi !!}</td>
                                             <td>
                                                 @if($pgm->status == "non-aktif")
                                                     <span class="badge badge-pill badge-danger"><b style="font-size:14px;">non-aktif</span>

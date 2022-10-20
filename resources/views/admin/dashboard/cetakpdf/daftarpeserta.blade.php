@@ -61,7 +61,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/bidang">Daftar Peserta Lolos</a>
+                        <a href="/bidang">Daftar Peserta Diterima</a>
                     </li>
                 </ul>
             </div>
