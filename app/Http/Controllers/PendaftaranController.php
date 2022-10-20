@@ -9,6 +9,7 @@ use App\Models\Pendaftaran;
 use App\Models\Bidang;
 use App\Models\User;
 use Session;
+use Illuminate\Support\Facades\Validator;
 
 class PendaftaranController extends Controller
 {
@@ -25,6 +26,12 @@ class PendaftaranController extends Controller
     }
 
     public function store(Request $request) {
+        
+        $this->validate($request, [
+            'resume' => 'required|file|mimes:doc,pdf,docx|max:2000',
+            'proposal' => 'required|file|mimes:doc,pdf,docx|max:2000'
+        ]);
+
         
         $file = $request->file('resume');
         $org = $file->getClientOriginalName();
@@ -43,9 +50,12 @@ class PendaftaranController extends Controller
         $pendaftaran->tahun_akademik = $request->input('tahun_akademik');
         $pendaftaran->jurusan = $request->input('jurusan');
         $pendaftaran->durasi = $request->input('durasi');
+        $pendaftaran->tgl_mulai = $request->input('tgl_mulai');
+        $pendaftaran->tgl_selesai = $request->input('tgl_selesai');
         $pendaftaran->peserta1 = $request->input('peserta1');
         $pendaftaran->peserta2 = $request->input('peserta2');
         $pendaftaran->peserta3 = $request->input('peserta3');
+        $pendaftaran->tanggal = date("Y-m-d H:i:s");
         $pendaftaran->resume = $org;
         $pendaftaran->proposal = $props;
         $pendaftaran->save();
