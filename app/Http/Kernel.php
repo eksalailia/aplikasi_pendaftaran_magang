@@ -57,6 +57,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\Admin::class,
         'reviewer' => \App\Http\Middleware\Reviewer::class,
         'applicant' => \App\Http\Middleware\Applicant::class,
+        'mentor' => \App\Http\Middleware\Mentor::class,
         'PreventBackHistory' => \App\Http\Middleware\PreventBackHistory::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

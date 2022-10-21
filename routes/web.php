@@ -32,8 +32,9 @@ Route::get('/pengumuman-user', [\App\Http\Controllers\UserController::class, 'pe
 Route::get('/requirement-user', [\App\Http\Controllers\UserController::class, 'requirement'])->name('layouts.frontend.informasi.requirement');
 Route::get('/prosedur-user', [\App\Http\Controllers\UserController::class, 'prosedur'])->name('layouts.frontend.informasi.prosedur');
 
+Route::group(['middleware'=>['mentor','auth','PreventBackHistory']], function(){
 Route::get('/mentor-dashboard', [\App\Http\Controllers\PembimbingController::class, 'mentor'])->name('mentor.main');
-
+});
 
 Route::group(['middleware'=>['applicant','auth','PreventBackHistory']], function(){
     Route::get('/applicant', [\App\Http\Controllers\ApplicantController::class, 'applicant'])->name('applicant.main');

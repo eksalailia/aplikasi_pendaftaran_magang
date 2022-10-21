@@ -33,6 +33,9 @@ class LoginController extends Controller
           if( Auth()->user()->role == "administrator"){
               return redirect()->route('admin.dashboard.main');
           }
+          if( Auth()->user()->role == "mentor"){
+            return redirect()->route('mentor.main');
+        }
           if( Auth()->user()->role == "reviewer"){
             return redirect()->route('reviewer.main');
         }
@@ -63,6 +66,9 @@ class LoginController extends Controller
      
         if( Auth()->user()->role == "administrator"){
             return redirect()->route('admin.dashboard.main');
+        }
+        if( Auth()->user()->role == "mentor"){
+            return redirect()->route('mentor.main');
         }
         if( Auth()->user()->role == "reviewer"){
             return redirect()->route('reviewer.main');
