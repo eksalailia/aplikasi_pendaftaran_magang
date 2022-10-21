@@ -38,7 +38,7 @@
             </div>
             <ul class="nav nav-primary">
                 <li class="nav-item active">
-                    <a href="/mentor-dahsboard">
+                    <a href="/mentor-dashboard">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                         <span class="badge badge-success"></span>
