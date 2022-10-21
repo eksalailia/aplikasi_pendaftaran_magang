@@ -18,7 +18,7 @@ class MailSend extends Mailable
      *
      * @return void
      */
-    public function __construct($details)
+    public function __construct($details =[])
     {
         $this->details = $details;
     }
@@ -30,7 +30,14 @@ class MailSend extends Mailable
      */
     public function build()
     {
+        if ($this->details['surat']) {
         return $this->subject('Sistem Pendaftaran Magang | SIPENMA')
-        ->view('reviewer.sendemail.mailtemplate');
+        ->view('reviewer.sendemail.mailtemplate')
+        ->attach($this->details['surat']->getRealPath(), 
+        [
+            'as'   => $this->details['surat']->getClientOriginalName(),
+            'mime' => $this->details['surat']->getClientMimeType(), 
+        ]);
     }
+}
 }

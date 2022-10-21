@@ -82,6 +82,10 @@
                     <label for="notes">Notes</label>
                     <textarea class="ckeditor form-control valid" placeholder="Notes" id="notes" name="notes" style="height: 150px"></textarea>
                 </div>
+                <div class="form-group col-sm-12">
+                    <label for="notes">Surat</label>
+                    <input type="file" id="surat" name="surat"  class="form-control" placeholder="File Surat">
+                </div>
                 <div class="form-group col-sm-5">
                     <button type="submit" class="btn btn-success">
                         <i class="fas fa-check"></i> Kirim</button>

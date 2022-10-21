@@ -16,9 +16,11 @@ class SendEmailController extends Controller
 
     public function send(Request $request)
     {
+        $file = $request->file('surat');
         $details = [
             'pesan' => $request->pesan,
-            'notes' => $request->notes
+            'notes' => $request->notes,
+            'surat' => $file
         ];
 
         Mail::to($request->email)->send(new MailSend($details));

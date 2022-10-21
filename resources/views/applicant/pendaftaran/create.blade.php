@@ -197,7 +197,7 @@
                                                         <div class="form-group row">
                                                             <label class="col-sm-2 col-form-label text-white">Proposal</label>
                                                                 <div class="col-sm-10"> 
-                                                                    <input type="file" class="form-control  @error('proposal') is-invalid @enderror"" id="proposal" name="proposal" placeholder="Proposal" required="">
+                                                                    <input type="file" class="form-control  @error('proposal') is-invalid @enderror" id="proposal" name="proposal" placeholder="Proposal" required="">
                                                                     @error('proposal')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
