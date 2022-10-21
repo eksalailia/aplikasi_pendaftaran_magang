@@ -129,12 +129,12 @@
 
                                             @elseif($pd->status == 1)
                                             <td>
-                                                <span class="badge badge-pill badge-success"><b style="font-size:14px;">Lolos</span>
+                                                <span class="badge badge-pill badge-success"><b style="font-size:14px;">Diterima</span>
                                             </td>
 
                                             @elseif($pd->status == 2)
                                             <td>
-                                                <span class="badge badge-pill badge-danger" style="margin-right: 100px"><b style="font-size:14px;">Tidak Lolos</span>
+                                                <span class="badge badge-pill badge-danger" style="margin-right: 100px"><b style="font-size:14px;">Tidak Diterima</span>
                                             </td>
 
                                             @endif
