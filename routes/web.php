@@ -117,6 +117,9 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
 
     Route::get('cetak-laporanaktif', '\App\Http\Controllers\AdminController@formlaporanaktif')->name('admin.laporan.formaktif');
     Route::get('/cetak-laporan-pertanggal/{tglAwal}/{tglAkhir}', '\App\Http\Controllers\AdminController@laporanaktifPertanggal')->name('cetaklaporanaktif');
+
+    Route::get('cetak-laporannonaktif', '\App\Http\Controllers\AdminController@formlaporannonaktif')->name('admin.laporan.formnonaktif');
+    Route::get('/laporan-nonaktif-pertanggal/{tglAwal}/{tglAkhir}', '\App\Http\Controllers\AdminController@laporannonaktifPertanggal')->name('cetaklaporannonaktif');
 });
 
 Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(){

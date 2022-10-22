@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>CETAK LAPORAN PESERTA MAGANG DISKOMINFO MADIUN</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
+
+	<!-- Fonts and icons -->
+	<script src="backend2/assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['backend2/assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+</head>
+
+            <h1 style="text-align:center;">PESERTA NON-AKTIF PKL / MAGANG</h1>
+                    <h1 style="text-align:center;">DISKOMINFO KOTA MADIUN</h1><br>
+                            <table border="1" cellspacing="0" cellpadding="5">
+                                    <tr>
+                                            <th>No.</th>
+                                            <th>Nama Pemohon</th> 
+                                            <th>Anggota PKL / Magang</th>
+                                            <th>Divisi Tujuan</th>
+                                            <th>Durasi PKL / Magang</th>
+                                            <th>Tanggal Mulai</th>
+                                            <th>Tanggal Berakhir</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                         @php $i=1 @endphp
+                                         <tr>
+                                            @foreach ($laporannonaktif as $lpnon)
+                                            <td>{{ $i++ }}</td>
+                                            <td>{{ $lpnon->user->name }}</td>
+                                            <td>{{ $lpnon->peserta1 }}, <br>
+                                                {{ $lpnon->peserta2 }}, <br>
+                                                {{ $lpnon->peserta3 }}
+                                            </td>
+                                            <td>{{ $lpnon->bidang->nama }}</td>
+                                            <td>{{ $lpnon->durasi }}</td>
+                                            <td>{{ $lpnon->tgl_mulai }}</td>
+                                            <td>{{ $lpnon->tgl_selesai }}</td>
+                                           
+                                        </tr>
+                                        @endforeach
+                            </table>

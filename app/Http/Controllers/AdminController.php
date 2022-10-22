@@ -125,5 +125,20 @@ class AdminController extends Controller
         return $pdf->stream('Laporan-Data-Peserta-Aktif.pdf');
     }
 
+    public function formlaporannonaktif()
+    {
+        return view('admin.dashboard.laporan.FormNonAktif');
+    }
+
+    public function laporannonaktifPertanggal($tglAwal, $tglAkhir){
+        $laporannonaktif = Pendaftaran::orderBy('created_at','ASC')
+                            ->whereBetween('tgl_aktivasi', [$tglAwal, $tglAkhir])
+                            ->where('status', 1)
+                            ->where('status_aktivasi', 2)
+                            ->get();
+
+        $pdf = PDF::loadView('admin.dashboard.laporan.laporannonaktif', ['laporannonaktif' => $laporannonaktif]);
+        return $pdf->stream('Laporan-Data-Peserta-NonAktif.pdf');
+    }
 
 }

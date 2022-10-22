@@ -24,13 +24,12 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
-    <link href="vendorss/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link href="vendorss/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
 @extends('admin.dashboard.konten')
+@extends('admin.table.appnew')
 @section('content')
 
 
@@ -44,14 +43,17 @@
 
 		@include('admin.dashboard.sidebar')
 
+		<!-- End Sidebar -->
+
+
         <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-            <h4 class="page-title">Daftar Peserta Lolos</h4>
+            <h4 class="page-title">Cetak Laporan Peserta Magang / PKL</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="/admin">
+                        <a href="#">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -59,19 +61,18 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/bidang">Daftar Peserta Diterima</a>
+                        <a href="/profileadmin-update">Peserta Magang / PKL Non-Aktif</a>
                     </li>
                 </ul>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Daftar Status Pendaftaran</h4>
-                        </div>
-                        <div class="card-body">
-                            <br>
-                            <br>
+                <div class="card">
+                    <div class="card-header">
+                    <div class="card-title">Laporan Peserta Magang / PKL Status Non-Aktif</div>
+                <div>
+                    <hr>
+                <br>
                     @if(Session::has('success'))
                         <div class="btn btn-success" style="width:100%; height:50px">
                              <p>{{Session::get('success')}}</p>
@@ -95,101 +96,50 @@
                             <p>{{Session::get('delete')}}</p>
                         </div>
                     @endif
-                            <div class="table-responsive">
-                                <table id="dataTableHover1" class="display table table-striped table-hover" >
-                                <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Nama Pemohon</th>
-                                            <th>Divisi Tujuan</th>
-                                            <th>Durasi PKL / Magang</th>
-                                            <th>Anggota PKL / Magang</th>
-                                            <th>Status</th>
-                                            <th>Aktivasi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    @php $i=1 @endphp
-                                        <tr>
-                                            @foreach ($pendaftaran as $pd)
-                                            <td>{{ $i++ }}</td>
-                                            <td>{{ $pd->user->name }}</td>
-                                            <td>{{ $pd->bidang->nama }}</td>
-                                            <td>{{ $pd->durasi }}</td>
-                                            <td>{{ $pd->peserta1 }}, <br>
-                                                {{ $pd->peserta2 }}, <br>
-                                                {{ $pd->peserta3 }}
-                                            </td>
-                                            @if($pd->status == 1)
-                                            <td>
-                                                <span class="badge badge-pill badge-success"><b style="font-size:14px;">Lolos</span>
-                                            </td>
-                                            @endif
-
-                                             @if($pd->status_aktivasi == null)
-                                            <td>
-                                                <a href="{{ route('admin.aktivasi', $pd->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Aktivasi
-                                                </a>
-                                            </td>
-
-                                            @elseif($pd->status_aktivasi == 1)
-                                            <td>
-                                                <a href="{{ route('admin.notaktivasi', $pd->id) }}" class="btn btn-xs btn-danger btn-flat"><i class="fa"></i><b style="font-size: 13px">Aktif
-                                                </a>
-                                            </td>
-
-                                            @elseif($pd->status_aktivasi == 2)
-                                            <td>
-                                                <a href="{{ route('admin.aktivasi', $pd->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Tidak Aktif
-                                                </a>
-                                            </td>
-                                            @endif
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                                <!-- <div class="float-left my-2 text-center">
-                                    <a class="btn btn-danger mt-3 btn-round" href="{{route('admin.cetakpdf.cetakpendaftar')}}"><i class="fas fa-print"></i> Cetak PDF</a>
-                                </div> -->
-                            </div>
+                    <form action="{{ url('profileadmin-update') }}" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="row">
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Tanggal Awal</label>
+                                 <input type="date" class="form-control" required="" placeholder="Tanggal Awal" name="tglAwal" id="tglAwal">
+                                 <span class="text-danger">@error('name'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Tanggal Akhir</label>
+                                 <input type="date" class="form-control" required="" placeholder="Tanggal Akhir" name="tglAkhir" id="tglAkhir">
+                                 <span class="text-danger">@error('email'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         </div>
+                         <br><br>
+                        
+                        <div class="action-buttons justify-content-between bg-white pt-2 pb-2">
+                            <!-- <button type="submit" class="btn btn-success col-md-12">
+                                <i class="fas fa-check"></i> Cetak Laporan</button> -->
+                            <a href="" onclick="this.href='/laporan-nonaktif-pertanggal/'+ document.getElementById('tglAwal').value +
+                            '/'+ document.getElementById('tglAkhir').value " target="_blank"class="btn btn-success col-md-12">
+                                <i class="fas fa-print"></i> Cetak Laporan</a>
+                         </div>
+                     </div>
                         </div>
                     </div>
+                    </div>
+
                 </div>
-
+                </div>
+                     </div>
+                        </div>
+                    </div>
 
             </div>
+            @include('admin.dashboard.footer')
         </div>
-    </div>
-
-
-
-    <footer class="footer">
-        <div class="container-fluid">
-            <nav class="pull-left">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.themekita.com">
-                            ThemeKita
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Help
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Licenses
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright ml-auto">
-                2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
-            </div>
-        </div>
-    </footer>
+   </div>
 </div>
+
 
 <!--   Core JS Files   -->
 <script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
@@ -214,8 +164,7 @@
 <script src="backend2/assets/js/plugin/chart-circle/circles.min.js"></script>
 
 <!-- Datatables -->
-<script src="vendorss/datatables/jquery.dataTables.min.js"></script>
-<script src="vendorss/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="backend2/assets/js/plugin/datatables/datatables.min.js"></script>
 
 <!-- Bootstrap Notify -->
 <script src="backend2/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
@@ -233,14 +182,6 @@
 <!-- Atlantis DEMO methods, don't include it in your project! -->
 <script src="backend2/assets/js/setting-demo.js"></script>
 <script src="backend2/assets/js/demo.js"></script>
-
- <!-- Page level custom scripts -->
-  <script>
-    $(document).ready(function () {
-      $('#dataTable').DataTable(); // ID From dataTable
-      $('#dataTableHover1').DataTable(); // ID From dataTable with Hover
-    });
-  </script>
 
 <script>
     Circles.create({

@@ -138,7 +138,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/prosedur">
+                                <a href="/cetak-laporannonaktif">
                                     <span>
                                         <i class="fas fa-file-alt"></i> Peserta Magang / PKL Non-Aktif</span>
                                 </a>
