@@ -132,7 +132,7 @@
                     <div class="collapse" id="tables">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="/pengumuman">
+                                <a href="/cetak-laporanaktif">
                                     <span>
                                         <i class="fas fa-bullhorn"></i> Peserta Magang / PKL Aktif</span>
                                 </a>
