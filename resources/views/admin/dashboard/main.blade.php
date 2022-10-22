@@ -118,8 +118,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                </div>
-                                </div>
+                            </div>
+                        </div>
                                 <div class="row">  
                                     <div class="col-xl-6">
                                         <div class="card mb-4">
@@ -265,8 +265,7 @@
 		<!-- End Custom template -->
 	</div>
 
-
-    <!--   Core JS Files   -->
+<!--   Core JS Files   -->
 <script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="backend2/assets/js/core/popper.min.js"></script>
 <script src="backend2/assets/js/core/bootstrap.min.js"></script>

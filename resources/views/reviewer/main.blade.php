@@ -124,8 +124,74 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+				<div class="row">  
+                                    <div class="col-xl-6">
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                <i class="fas fa-chart-bar me-1"></i>
+                                                Jumlah Pendaftar Magang / PKL Diskominfo Per Bulan
+                                            </div>
+                                            <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                <i class="fas fa-chart-area me-1"></i>
+                                                Jumlah Pendaftar Magang / PKL Diskominfo Berstatus Aktif Per Bulan
+                                            </div>
+                                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pie Chart -->
+                                <div class="row">  
+                                    <div class="col-xl-6">
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                <i class="fas fa-chart-pie me-1"></i>
+                                                Status Pendaftaran Peserta Magang / PKL Diskominfo
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        @foreach($plabels as $label)
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle"></i> {{$label}}
+                                        </span>
+                                        @endforeach
+                                        </div>
+                                </div>
+                            </div>
+                                </div>
+                                <div class="col-xl-6">
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                <i class="fas fa-chart-pie me-1"></i>
+                                                Status Aktivasi Peserta Magang / PKL Diskominfo
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieCharts"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        @foreach($pplabels as $lbl)
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle"></i> {{$lbl}}
+                                        </span>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                <!-- /.container-fluid -->
+
 
 
 			@include('reviewer.footer')
@@ -204,4 +270,168 @@
 		<!-- End Custom template -->
 	</div>
 
-@endsection
+<!--   Core JS Files   -->
+<script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="backend2/assets/js/core/popper.min.js"></script>
+<script src="backend2/assets/js/core/bootstrap.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="backend2/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="backend2/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+<!-- jQuery Scrollbar -->
+<script src="backend2/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+
+<!-- Chart JS -->
+<script src="backend2/assets/js/plugin/chart.js/chart.min.js"></script>
+
+<!-- jQuery Sparkline -->
+<script src="backend2/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+<!-- Chart Circle -->
+<script src="backend2/assets/js/plugin/chart-circle/circles.min.js"></script>
+
+<!-- Datatables -->
+<script src="backend2/assets/js/plugin/datatables/datatables.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="backend2/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+<!-- jQuery Vector Maps -->
+<script src="backend2/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+<script src="backend2/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+<!-- Sweet Alert -->
+<script src="backend2/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+<!-- Atlantis JS -->
+<script src="backend2/assets/js/atlantis.min.js"></script>
+
+<!-- Atlantis DEMO methods, don't include it in your project! -->
+<script src="backend2/assets/js/setting-demo.js"></script>
+<script src="backend2/assets/js/demo.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	var _ydata=JSON.parse('{!! json_encode($months) !!}');
+	var _xdata=JSON.parse('{!! json_encode($monthCount) !!}');
+</script>
+<script type="text/javascript">
+	var __ydata=JSON.parse('{!! json_encode($bulan) !!}');
+	var __xdata=JSON.parse('{!! json_encode($monthsCount) !!}');
+</script>
+<script src="backend2/assets/demo/chart-area-demo.js"></script>
+<script src="backend2/assets/demo/chart-bar-demo.js"></script>
+
+<!-- Page level plugins -->
+<script src="backend2/vendor/chart.js/Chart.min.js"></script>
+
+<script type="text/javascript">
+    var _plabels={!! json_encode($plabels) !!};
+    var _pdata={!! json_encode($pdata) !!};
+</script>
+<script type="text/javascript">
+    var _pplabels={!! json_encode($pplabels) !!};
+    var _ppdata={!! json_encode($ppdata) !!};
+</script>
+<!-- Page level custom scripts -->
+<script src="backend2/js/demo/chart-pie-demo.js"></script>
+<script src="backend2/js/demo/charts-pie-demo.js"></script>
+
+<script>
+    Circles.create({
+        id:'circles-1',
+        radius:45,
+        value:60,
+        maxValue:100,
+        width:7,
+        text: 5,
+        colors:['#f1f1f1', '#FF9E27'],
+        duration:400,
+        wrpClass:'circles-wrp',
+        textClass:'circles-text',
+        styleWrapper:true,
+        styleText:true
+    })
+
+    Circles.create({
+        id:'circles-2',
+        radius:45,
+        value:70,
+        maxValue:100,
+        width:7,
+        text: 36,
+        colors:['#f1f1f1', '#2BB930'],
+        duration:400,
+        wrpClass:'circles-wrp',
+        textClass:'circles-text',
+        styleWrapper:true,
+        styleText:true
+    })
+
+    Circles.create({
+        id:'circles-3',
+        radius:45,
+        value:40,
+        maxValue:100,
+        width:7,
+        text: 12,
+        colors:['#f1f1f1', '#F25961'],
+        duration:400,
+        wrpClass:'circles-wrp',
+        textClass:'circles-text',
+        styleWrapper:true,
+        styleText:true
+    })
+
+    var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+
+    var mytotalIncomeChart = new Chart(totalIncomeChart, {
+        type: 'bar',
+        data: {
+            labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+            datasets : [{
+                label: "Total Income",
+                backgroundColor: '#ff9e27',
+                borderColor: 'rgb(23, 125, 255)',
+                data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+            }],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: false,
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        display: false //this will remove only the label
+                    },
+                    gridLines : {
+                        drawBorder: false,
+                        display : false
+                    }
+                }],
+                xAxes : [ {
+                    gridLines : {
+                        drawBorder: false,
+                        display : false
+                    }
+                }]
+            },
+        }
+    });
+
+    $('#lineChart').sparkline([105,103,123,100,95,105,115], {
+        type: 'line',
+        height: '70',
+        width: '100%',
+        lineWidth: '2',
+        lineColor: '#ffa534',
+        fillColor: 'rgba(255, 165, 52, .14)'
+    });
+</script>
+</body>
+</html>
+
