@@ -26,7 +26,9 @@ class Pendaftaran extends Model
         'tanggal',
         'tgl_review',
         'proposal',
-        'status'
+        'status',
+        'status_aktivasi',
+        'tgl_aktivasi'
     ];
 
     public function user()

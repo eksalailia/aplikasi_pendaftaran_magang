@@ -8,6 +8,7 @@ use PDF;
 use App\Models\User;
 use App\Models\Pendaftaran;
 use File;
+use Session;
 
 class AdminController extends Controller
 {
@@ -79,10 +80,29 @@ class AdminController extends Controller
         return view('admin.dashboard.cetakpdf.daftarpeserta', compact('pendaftaran'));
     }
 
+    public function aktivasi($id){
+        Pendaftaran::find($id)->update([
+            'status_aktivasi'=>1,
+            'tgl_aktivasi'=> date("Y-m-d H:i:s")
+        ]);
+        Session::flash('update','Update Data Status Aktivasi Pendaftaran Berhasil');
+        return redirect()->route('admin.cetakpdf.daftarpeserta');
+    }
+
+    public function notaktivasi($id){
+        Pendaftaran::find($id)->update([
+            'status_aktivasi'=>2,
+            'tgl_aktivasi'=> date("Y-m-d H:i:s")
+        ]);
+        Session::flash('update','Update Data Status Aktivasi Pendaftaran Berhasil');
+        return redirect()->route('admin.cetakpdf.daftarpeserta');
+    }
+
     public function cetakpeserta()
     {
     $pendaftaran = Pendaftaran::orderBy('created_at','ASC')
                     ->where('status', 1)
+                    ->where('status_aktivasi', 1)
                     ->get();
 
     $pdf = PDF::loadView('admin.dashboard.cetakpdf.cetakpendaftar', ['pendaftaran' => $pendaftaran]);

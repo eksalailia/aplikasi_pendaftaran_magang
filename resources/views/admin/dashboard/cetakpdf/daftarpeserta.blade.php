@@ -71,6 +71,30 @@
                         </div>
                         <div class="card-body">
                             <br>
+                            <br>
+                    @if(Session::has('success'))
+                        <div class="btn btn-success" style="width:100%; height:50px">
+                             <p>{{Session::get('success')}}</p>
+                        </div>
+                    @endif
+
+                    @if(Session::has('delete'))
+                        <div class="btn btn-warning" style="width:100%; height:50px">
+                            <p>{{Session::get('delete')}}</p>
+                            </div>
+                    @endif
+
+                    @if(Session::has('update'))
+                        <div class="btn btn-info" style="width:100%; height:50px">
+                            <p>{{Session::get('update')}}</p>
+                        </div>
+                    @endif
+
+                    @if(Session::has('failed'))
+                        <div class="btn btn-danger" style="width:100%; height:50px">
+                            <p>{{Session::get('delete')}}</p>
+                        </div>
+                    @endif
                             <div class="table-responsive">
                                 <table id="basic-pdtables" class="display table table-striped table-hover" >
                                 <thead>
@@ -81,6 +105,7 @@
                                             <th>Durasi PKL / Magang</th>
                                             <th>Anggota PKL / Magang</th>
                                             <th>Status</th>
+                                            <th>Aktivasi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -98,6 +123,25 @@
                                             @if($pd->status == 1)
                                             <td>
                                                 <span class="badge badge-pill badge-success"><b style="font-size:14px;">Lolos</span>
+                                            </td>
+                                            @endif
+
+                                             @if($pd->status_aktivasi == null)
+                                            <td>
+                                                <a href="{{ route('admin.aktivasi', $pd->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Aktivasi
+                                                </a>
+                                            </td>
+
+                                            @elseif($pd->status_aktivasi == 1)
+                                            <td>
+                                                <a href="{{ route('admin.notaktivasi', $pd->id) }}" class="btn btn-xs btn-danger btn-flat"><i class="fa"></i><b style="font-size: 13px">Aktif
+                                                </a>
+                                            </td>
+
+                                            @elseif($pd->status_aktivasi == 2)
+                                            <td>
+                                                <a href="{{ route('admin.aktivasi', $pd->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Tidak Aktif
+                                                </a>
                                             </td>
                                             @endif
                                         </tr>
@@ -169,8 +213,8 @@
 <!-- Chart Circle -->
 <script src="backend2/assets/js/plugin/chart-circle/circles.min.js"></script>
 
-<!-- Datatables -->
-<script src="backend2/assets/js/plugin/datatables/datatables.min.js"></script>
+<!-- pdtables -->
+<script src="backend2/assets/js/plugin/pdtables/pdtables.min.js"></script>
 
 <!-- Bootstrap Notify -->
 <script src="backend2/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
@@ -239,13 +283,13 @@
 
     var mytotalIncomeChart = new Chart(totalIncomeChart, {
         type: 'bar',
-        data: {
+        pd: {
             labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-            datasets : [{
+            pdsets : [{
                 label: "Total Income",
                 backgroundColor: '#ff9e27',
                 borderColor: 'rgb(23, 125, 255)',
-                data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+                pd: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
             }],
         },
         options: {
@@ -256,7 +300,7 @@
             },
             scales: {
                 yAxes: [{
-                    ticdata: {
+                    ticpd: {
                         display: false //this will remove only the label
                     },
                     gridLines : {
