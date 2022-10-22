@@ -107,7 +107,23 @@ class AdminController extends Controller
 
     $pdf = PDF::loadView('admin.dashboard.cetakpdf.cetakpendaftar', ['pendaftaran' => $pendaftaran]);
     return $pdf->stream('Laporan-Data-Pendaftar-Lolos.pdf');
-}
+    }
+
+    public function formlaporanaktif()
+    {
+        return view('admin.dashboard.laporan.FormLaporan');
+    }
+
+    public function laporanaktifPertanggal($tglAwal, $tglAkhir){
+        $laporanaktif = Pendaftaran::orderBy('created_at','ASC')
+                            ->whereBetween('tgl_aktivasi', [$tglAwal, $tglAkhir])
+                            ->where('status', 1)
+                            ->where('status_aktivasi', 1)
+                            ->get();
+
+        $pdf = PDF::loadView('admin.dashboard.laporan.laporanaktif', ['laporanaktif' => $laporanaktif]);
+        return $pdf->stream('Laporan-Data-Peserta-Aktif.pdf');
+    }
 
 
 }

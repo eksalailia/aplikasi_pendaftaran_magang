@@ -115,6 +115,8 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/status-aktivasi/{id}', '\App\Http\Controllers\AdminController@aktivasi')->name('admin.aktivasi');
     Route::get('/status-notaktivasi/{id}', '\App\Http\Controllers\AdminController@notaktivasi')->name('admin.notaktivasi');
 
+    Route::get('cetak-laporanaktif', '\App\Http\Controllers\AdminController@formlaporanaktif')->name('admin.laporan.formaktif');
+    Route::get('/cetak-laporan-pertanggal/{tglAwal}/{tglAkhir}', '\App\Http\Controllers\AdminController@laporanaktifPertanggal')->name('cetaklaporanaktif');
 });
 
 Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(){

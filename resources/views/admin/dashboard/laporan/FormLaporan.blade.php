@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard - Reviewer</title>
+	<title>Dashboard - Admin</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
@@ -28,31 +28,32 @@
 
 <body>
 
-@extends('reviewer.konten')
+@extends('admin.dashboard.konten')
 @extends('admin.table.appnew')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('reviewer.header')
+			@include('admin.dashboard.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('reviewer.sidebar')
+		@include('admin.dashboard.sidebar')
 
 		<!-- End Sidebar -->
+
 
         <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-            <h4 class="page-title">Daftar Peserta Lolos</h4>
+            <h4 class="page-title">Cetak Laporan Peserta Magang / PKL</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="/reviewer">
+                        <a href="#">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -60,65 +61,85 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/pesertalolos">Daftar Peserta Diterima</a>
+                        <a href="/profileadmin-update">Peserta Magang / PKL Aktif</a>
                     </li>
                 </ul>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Daftar Status Pendaftaran</h4>
+                <div class="card">
+                    <div class="card-header">
+                    <div class="card-title">Laporan Peserta Magang / PKL Status Aktif</div>
+                <div>
+                    <hr>
+                <br>
+                    @if(Session::has('success'))
+                        <div class="btn btn-success" style="width:100%; height:50px">
+                             <p>{{Session::get('success')}}</p>
                         </div>
-                        <div class="card-body">
-                            <br>
-                            <div class="table-responsive">
-                                <table id="basic-datatables" class="display table table-striped table-hover" >
-                                <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Nama Pemohon</th>
-                                            <th>Anggota PKL / Magang</th>
-                                            <th>Divisi Tujuan</th>
-                                            <th>Durasi PKL / Magang</th>
-                                            <th>Tanggal Mulai</th>
-                                            <th>Tanggal Berakhir</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    @php $i=1 @endphp
-                                        <tr>
-                                            @foreach ($pendaftaran as $pd)
-                                            <td>{{ $i++ }}</td>
-                                            <td>{{ $pd->user->name }}</td>
-                                            <td>{{ $pd->bidang->nama }}</td>
-                                            <td>{{ $pd->durasi }}</td>
-                                            <td>{{ $pd->peserta1 }}, <br>
-                                                {{ $pd->peserta2 }}, <br>
-                                                {{ $pd->peserta3 }}
-                                            </td>
-                                            <td>{{ $pd->tgl_mulai }}</td>
-                                            <td>{{ $pd->tgl_selesai }}</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                    @endif
+
+                    @if(Session::has('delete'))
+                        <div class="btn btn-warning" style="width:100%; height:50px">
+                            <p>{{Session::get('delete')}}</p>
                             </div>
+                    @endif
+
+                    @if(Session::has('update'))
+                        <div class="btn btn-info" style="width:100%; height:50px">
+                            <p>{{Session::get('update')}}</p>
+                        </div>
+                    @endif
+
+                    @if(Session::has('failed'))
+                        <div class="btn btn-danger" style="width:100%; height:50px">
+                            <p>{{Session::get('delete')}}</p>
+                        </div>
+                    @endif
+                    <form action="{{ url('profileadmin-update') }}" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="row">
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Tanggal Awal</label>
+                                 <input type="date" class="form-control" required="" placeholder="Tanggal Awal" name="tglAwal" id="tglAwal">
+                                 <span class="text-danger">@error('name'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Tanggal Akhir</label>
+                                 <input type="date" class="form-control" required="" placeholder="Tanggal Akhir" name="tglAkhir" id="tglAkhir">
+                                 <span class="text-danger">@error('email'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         </div>
+                         <br><br>
+                        
+                        <div class="action-buttons justify-content-between bg-white pt-2 pb-2">
+                            <!-- <button type="submit" class="btn btn-success col-md-12">
+                                <i class="fas fa-check"></i> Cetak Laporan</button> -->
+                            <a href="" onclick="this.href='/cetak-laporan-pertanggal/'+ document.getElementById('tglAwal').value +
+                            '/'+ document.getElementById('tglAkhir').value " target="_blank"class="btn btn-success col-md-12">
+                                <i class="fas fa-print"></i> Cetak Laporan</a>
+                         </div>
+                     </div>
                         </div>
                     </div>
+                    </div>
+
                 </div>
-
-
-            </div>
-        </div>
-    </div>
-
+                </div>
+                     </div>
+                        </div>
+                    </div>
 
             </div>
+            @include('admin.dashboard.footer')
         </div>
-    </div>
-    @include('reviewer.footer')
+   </div>
 </div>
+
 
 <!--   Core JS Files   -->
 <script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
@@ -229,7 +250,7 @@
             },
             scales: {
                 yAxes: [{
-                    ticdata: {
+                    ticmsg: {
                         display: false //this will remove only the label
                     },
                     gridLines : {
@@ -258,5 +279,4 @@
 </script>
 </body>
 </html>
-
 

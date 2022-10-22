@@ -24,12 +24,13 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
+    <link href="vendorss/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="vendorss/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
 @extends('admin.dashboard.konten')
-@extends('admin.table.apps')
 @section('content')
 
 
@@ -43,7 +44,6 @@
 
 		@include('admin.dashboard.sidebar')
 
-		<!-- End Sidebar -->
         <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -96,7 +96,7 @@
                         </div>
                     @endif
                             <div class="table-responsive">
-                                <table id="basic-pdtables" class="display table table-striped table-hover" >
+                                <table id="dataTableHover1" class="display table table-striped table-hover" >
                                 <thead>
                                         <tr>
                                             <th>No.</th>
@@ -213,8 +213,9 @@
 <!-- Chart Circle -->
 <script src="backend2/assets/js/plugin/chart-circle/circles.min.js"></script>
 
-<!-- pdtables -->
-<script src="backend2/assets/js/plugin/pdtables/pdtables.min.js"></script>
+<!-- Datatables -->
+<script src="vendorss/datatables/jquery.dataTables.min.js"></script>
+<script src="vendorss/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Bootstrap Notify -->
 <script src="backend2/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
@@ -232,6 +233,14 @@
 <!-- Atlantis DEMO methods, don't include it in your project! -->
 <script src="backend2/assets/js/setting-demo.js"></script>
 <script src="backend2/assets/js/demo.js"></script>
+
+ <!-- Page level custom scripts -->
+  <script>
+    $(document).ready(function () {
+      $('#dataTable').DataTable(); // ID From dataTable
+      $('#dataTableHover1').DataTable(); // ID From dataTable with Hover
+    });
+  </script>
 
 <script>
     Circles.create({
@@ -283,13 +292,13 @@
 
     var mytotalIncomeChart = new Chart(totalIncomeChart, {
         type: 'bar',
-        pd: {
+        data: {
             labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-            pdsets : [{
+            datasets : [{
                 label: "Total Income",
                 backgroundColor: '#ff9e27',
                 borderColor: 'rgb(23, 125, 255)',
-                pd: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+                data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
             }],
         },
         options: {
@@ -300,7 +309,7 @@
             },
             scales: {
                 yAxes: [{
-                    ticpd: {
+                    ticmsg: {
                         display: false //this will remove only the label
                     },
                     gridLines : {
@@ -329,5 +338,4 @@
 </script>
 </body>
 </html>
-
 
