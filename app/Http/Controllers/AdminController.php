@@ -9,6 +9,8 @@ use App\Models\User;
 use App\Models\Pendaftaran;
 use File;
 use Session;
+use Carbon\Carbon;
+
 
 class AdminController extends Controller
 {
@@ -17,8 +19,64 @@ class AdminController extends Controller
         $jumlah_bidang = DB::table('bidang')->count();
         $jumlah_kesanpesan = DB::table('kesanpesan')->count();
         $jumlah_aspirasi = DB::table('message')->count();
+
+        $data=Pendaftaran::select('id','created_at')->get()->groupBy(function($data){
+            return Carbon::parse($data->created_at)->format('M');
+        });
+
+        $months=[];
+        $monthCount=[];
+        foreach($data as $month => $values){
+            $months[]=$month;
+            $monthCount[]=count($values);
+        }
+
+        $peserta_status=Pendaftaran::selectRaw('count(id) as total_pendaftar, status')
+        ->groupBy('status')
+        ->get();
+        $plabels=[];
+        $pdata=[];
+        foreach($peserta_status as $ps){
+            if($ps->status == null)
+            $plabels[]="Menunggu Verifikasi";
+            elseif($ps->status == 1)
+            $plabels[]="Diterima";
+            elseif($ps->status == 2)
+            $plabels[]="Tidak Diterima";
+            $pdata[]=$ps->total_pendaftar;
+        }
+
+        $status_aktivasi=Pendaftaran::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        ->groupBy('status_aktivasi')
+        ->get();
+        $pplabels=[];
+        $ppdata=[];
+        foreach($status_aktivasi as $sa){
+            if($sa->status_aktivasi == null)
+            $pplabels[]="Menunggu Aktivasi";
+            elseif($sa->status_aktivasi == 1)
+            $pplabels[]="Aktif";
+            elseif($sa->status_aktivasi == 2)
+            $pplabels[]="Tidak Aktif";
+            $ppdata[]=$sa->total_aktivasi;
+        }
+
+        $datas=Pendaftaran::select('id','tgl_aktivasi')
+        ->whereNotNull('tgl_aktivasi')
+        ->get()->groupBy(function($datas){
+            return Carbon::parse($datas->tgl_aktivasi)->format('M');
+        });
+
+        $bulan=[];
+        $monthsCount=[];
+        foreach($datas as $bulans => $value){
+            $bulan[]=$bulans;
+            $monthsCount[]=count($value);
+        }
+
         return view('admin.dashboard.main', compact('jumlah_mentor', 'jumlah_bidang', 'jumlah_kesanpesan',
-                    'jumlah_aspirasi'));
+                    'jumlah_aspirasi', 'data', 'months', 'monthCount', 'datas', 'bulan', 'monthsCount', 'plabels', 'pdata',
+                    'pplabels', 'ppdata'));
     }
     public function index(){
         $Users = User::orderBy('created_at','ASC')
