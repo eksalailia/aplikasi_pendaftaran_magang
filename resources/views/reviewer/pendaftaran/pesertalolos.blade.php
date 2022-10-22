@@ -78,10 +78,11 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Nama Pemohon</th>
+                                            <th>Anggota PKL / Magang</th>
                                             <th>Divisi Tujuan</th>
                                             <th>Durasi PKL / Magang</th>
-                                            <th>Anggota PKL / Magang</th>
-                                            <th>Status</th>
+                                            <th>Tanggal Mulai</th>
+                                            <th>Tanggal Berakhir</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -96,11 +97,8 @@
                                                 {{ $pd->peserta2 }}, <br>
                                                 {{ $pd->peserta3 }}
                                             </td>
-                                            @if($pd->status == 1)
-                                            <td>
-                                                <span class="badge badge-pill badge-success"><b style="font-size:14px;">Diterima</span>
-                                            </td>
-                                            @endif
+                                            <td>{{ $pd->tgl_mulai }}</td>
+                                            <td>{{ $pd->tgl_selesai }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

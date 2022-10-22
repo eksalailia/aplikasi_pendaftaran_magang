@@ -85,6 +85,7 @@ class ReviewerController extends Controller
     public function pesertalolos() {
         $pendaftaran = Pendaftaran::orderBy('created_at','ASC')
         ->where('status', '1')
+        ->where('status_aktivasi', '1')
         ->get();
         return view('reviewer.pendaftaran.pesertalolos', compact('pendaftaran'));
     }
