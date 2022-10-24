@@ -25,6 +25,13 @@ return new class extends Migration
             $table->string("foto")->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('alamat')->nullable();
+            $table->string('univ')->nullable();
+            $table->string('nim')->nullable();
+            $table->string('jurusan')->nullable();
+            $table->string('semester')->nullable();
+            $table->string('nip')->nullable();
+            $table->string('jabatan')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
