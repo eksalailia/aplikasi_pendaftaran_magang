@@ -80,7 +80,7 @@ class AdminController extends Controller
     }
     public function index(){
         $Users = User::orderBy('created_at','ASC')
-        ->where('role', 'applicant')
+        ->where('role', 'pendaftar')
         ->get();
         return view('admin.dashboard.datadiri.index', compact('Users'));
 
@@ -108,7 +108,7 @@ class AdminController extends Controller
 
     public function index_daftar(){
         $pendaftaran = Pendaftaran::orderBy('created_at','ASC')
-        ->where('role', 'applicant')
+        ->where('role', 'pendaftar')
         ->get();
         return view('admin.dashboard.pendaftaran.index', compact('pendaftaran'));
 

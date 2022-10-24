@@ -55,7 +55,7 @@
                                         <div class="form-group form-primary">
                                         <select name="role" value="{{ old('role') }}" required
                                             autocomplete="role" autofocus class="form-control" style="font-size: 14px;">
-                                            <option value="applicant" style="font-size: 14px;">Pendaftar</option>
+                                            <option value="pendaftar" style="font-size: 14px;">Pendaftar</option>
                                         </select>
                                             <span class="form-bar"></span>
                                             <!-- <label class="float-label">Role</label> -->

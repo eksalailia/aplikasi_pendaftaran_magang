@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class Applicant
+class Pendaftar
 {
     /**
      * Handle an incoming request.
@@ -19,7 +19,7 @@ class Applicant
      */
     public function handle(Request $request, Closure $next)
     {
-        if( Auth::check() && Auth::user()->role == "applicant"){
+        if( Auth::check() && Auth::user()->role == "pendaftar"){
             return $next($request);
         }else{
             return redirect()->route('login');

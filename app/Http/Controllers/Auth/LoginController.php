@@ -39,7 +39,7 @@ class LoginController extends Controller
           if( Auth()->user()->role == "reviewer"){
             return redirect()->route('reviewer.main');
         }
-          elseif( Auth()->user()->role == "applicant"){
+          elseif( Auth()->user()->role == "pendaftar"){
               return redirect()->route('applicant.main');
           }
       }
@@ -73,7 +73,7 @@ class LoginController extends Controller
         if( Auth()->user()->role == "reviewer"){
             return redirect()->route('reviewer.main');
          }
-        elseif( Auth()->user()->role == "applicant"){
+        elseif( Auth()->user()->role == "pendaftar"){
             return redirect()->route('applicant.main');
         }
 

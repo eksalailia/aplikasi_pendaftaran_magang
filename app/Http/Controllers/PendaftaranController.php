@@ -21,7 +21,7 @@ class PendaftaranController extends Controller
     public function create(){
         $data=Bidang::all();
         $user=User::all()
-        ->where('role','applicant');
+        ->where('role','pendaftar');
         return view('applicant.pendaftaran.create', compact('user', 'data'));
     }
 
