@@ -122,6 +122,15 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
 
     Route::get('cetak-laporannonaktif', '\App\Http\Controllers\AdminController@formlaporannonaktif')->name('admin.laporan.formnonaktif');
     Route::get('/laporan-nonaktif-pertanggal/{tglAwal}/{tglAkhir}', '\App\Http\Controllers\AdminController@laporannonaktifPertanggal')->name('cetaklaporannonaktif');
+
+    Route::get('/mentoring', '\App\Http\Controllers\MentoringController@index')->name('admin.dashboard.mentoring.index');
+    Route::get('/create-mentoring', '\App\Http\Controllers\MentoringController@create')->name('admin.dashboard.mentoring.create');
+    Route::post('/create-mentoring', '\App\Http\Controllers\MentoringController@store')->name('admin.dashboard.mentoring.create');
+    Route::get('/show-mentoring/{id}', '\App\Http\Controllers\MentoringController@show')->name('admin.dashboard.mentoring.show');
+    Route::get('/edit-mentoring/{id}', '\App\Http\Controllers\MentoringController@edit')->name('admin.dashboard.mentoring.edit');
+    Route::post('/edit-mentoring/{id}', '\App\Http\Controllers\MentoringController@update')->name('admin.dashboard.mentoring.edit');
+    Route::delete('/hapus-mentoring/{id}', '\App\Http\Controllers\MentoringController@destroy')->name('admin.dashboard.mentoring.destroy');
+
 });
 
 Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(){
