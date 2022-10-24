@@ -51,7 +51,7 @@
                     {{-- <h4 class="text-section">Components</h4> --}}
                 </li>
                 <li class="nav-item">
-                    <a href="">
+                    <a href="{{route('mentor.profile.index')}}">
                         <i class="fas fa-id-card"></i>
                         <p>Data Diri</p>
                         <span class="badge badge-success"></span>

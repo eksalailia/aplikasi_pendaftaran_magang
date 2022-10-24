@@ -71,7 +71,7 @@
                     <div class="card-title">My Profile</div>
                 <div>
                     <hr>
-                <br>
+                    <br></br>
                     @if(Session::has('success'))
                         <div class="btn btn-success" style="width:100%; height:50px">
                              <p>{{Session::get('success')}}</p>
@@ -107,9 +107,25 @@
                          </div>
                          <div class="col-md-6">
                              <div class="form-group">
+                             <label for="">NIP</label>
+                                 <input type="text" class="form-control" required="" placeholder="NIP" name="nip" value="{{ Auth::user()->nip }}">
+                                 <span class="text-danger">@error('nip'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         </div>
+                         <div class="row">
+                         <div class="col-md-6">
+                             <div class="form-group">
+                             <label for="">Jabatan</label>
+                                 <input type="text" class="form-control" required="" placeholder="Jabatan" name="jabatan" value="{{ Auth::user()->jabatan }}">
+                                 <span class="text-danger">@error('jabatan'){{ $message }}@enderror</span>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
                              <label for="">E-Mail</label>
-                                 <input type="text" class="form-control" required="" placeholder="E-Mail" name="email" value="">
-                                 <span class="text-danger">@error @enderror</span>
+                                 <input type="email" class="form-control" required="" placeholder="E-Mail" name="email" value="{{ Auth::user()->email }}">
+                                 <span class="text-danger">@error('email'){{ $message }}@enderror</span>
                              </div>
                          </div>
                          </div>
@@ -117,20 +133,19 @@
                          <div class="col-md-6">
                              <div class="form-group">
                              <label for="">Nomor Telepon</label>
-                                 <input type="text" class="form-control" required="" placeholder="Nomor Telepon" name="no_tlp" value="">
-                                 <span class="text-danger">@error @enderror</span>
+                                 <input type="text" class="form-control" required="" placeholder="Nomor Telepon" name="no_tlp" value="{{ Auth::user()->no_tlp }}">
+                                 <span class="text-danger">@error('no_tlp'){{ $message }}@enderror</span>
                              </div>
                          </div>
                          <div class="col-md-6">
                              <div class="form-group">
                                 <label for="">Foto</label>
-                                <input type="file" class="form-control" name="foto" value=""><br></br>
-                                <img src="{{ asset('backend/assets/uploads/profile/'.)}}" class="w-75" alt="" style="height:300px; width:100px; margin-left:-200px;">
-                                 <span class="text-danger">@error @enderror</span>
+                                <input type="file" class="form-control" name="foto" value="{{ Auth::user()->foto }}"><br></br>
+                                <img src="{{ asset('backend/assets/uploads/profile/'.Auth::user()->foto) }}" class="w-75" alt="" style="height:300px; width:100px; margin-left:-200px;">
+                                 <span class="text-danger">@error('foto'){{ $message }}@enderror</span>
                              </div>
                          </div>
                          </div>
-
                          {{-- <div class="action-buttons d-flex justify-content-between bg-white pt-2 pb-2"> --}}
                         <div class="action-buttons justify-content-between bg-white pt-2 pb-2">
                             <button type="submit" class="btn btn-success">

@@ -34,6 +34,8 @@ Route::get('/prosedur-user', [\App\Http\Controllers\UserController::class, 'pros
 
 Route::group(['middleware'=>['mentor','auth','PreventBackHistory']], function(){
 Route::get('/mentor-dashboard', [\App\Http\Controllers\PembimbingController::class, 'mentor'])->name('mentor.main');
+Route::get('/mentor-profile', [\App\Http\Controllers\PembimbingController::class, 'profile'])->name('mentor.profile.index');
+Route::post('/profilementor-update', [\App\Http\Controllers\PembimbingController::class, 'profileupdatementor'])->name('mentor.profile.update');
 });
 
 Route::group(['middleware'=>['pendaftar','auth','PreventBackHistory']], function(){

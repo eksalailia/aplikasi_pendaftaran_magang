@@ -27,7 +27,13 @@ class User extends Authenticatable
         'tanggal_lahir',
         'no_tlp',
         'foto',
-        'alamat'
+        'alamat',
+        'univ',
+        'nim',
+        'jurusan',
+        'semester',
+        'nip',
+        'jabatan'
     ];
 
     /**
