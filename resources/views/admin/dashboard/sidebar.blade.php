@@ -80,6 +80,36 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a data-toggle="collapse" href="#tables">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Laporan</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="tables">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="/cetak-laporanaktif">
+                                    <span>
+                                        <i class="fas fa-bullhorn"></i> Peserta Magang / PKL Aktif</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/cetak-laporannonaktif">
+                                    <span>
+                                        <i class="fas fa-file-alt"></i> Peserta Magang / PKL Non-Aktif</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/requirement">
+                                    <span>
+                                        <i class="fas fa-book-open"></i> Peserta Magang / PKL Tidak Lolos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
 
                 <li class="nav-item">
                     <a href="/mentor">
@@ -122,35 +152,6 @@
                         <p>Daftar Peserta Diterima</p>
                         <span class="badge badge-success"></span>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a data-toggle="collapse" href="#tables">
-                        <i class="fas fa-info-circle"></i>
-                        <p>Laporan</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="tables">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="/cetak-laporanaktif">
-                                    <span>
-                                        <i class="fas fa-bullhorn"></i> Peserta Magang / PKL Aktif</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/cetak-laporannonaktif">
-                                    <span>
-                                        <i class="fas fa-file-alt"></i> Peserta Magang / PKL Non-Aktif</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/requirement">
-                                    <span>
-                                        <i class="fas fa-book-open"></i> Peserta Magang / PKL Tidak Lolos</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
 
 
