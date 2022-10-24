@@ -28,7 +28,7 @@
 
 <body>
 
-@extends('reviewer.appnew')
+{{-- @extends('reviewer.appnew') --}}
 @extends('reviewer.konten')
 @extends('admin.table.appnew')
 @section('content')
@@ -124,21 +124,21 @@
                         </div>
                     </div>
                 </div>
-				<div class="row">  
+				<div class="row">
                                     <div class="col-xl-6">
-                                        <div class="card mb-4">
+                                        <div class="card mb-4" style="background: #c2f3ff">
                                             <div class="card-header">
                                                 <i class="fas fa-chart-bar me-1"></i>
-                                                Jumlah Pendaftar Magang / PKL Diskominfo Per Bulan
+                                                 Jumlah Pendaftar Magang / PKL Diskominfo Per Bulan
                                             </div>
                                             <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
                                         </div>
                                     </div>
                                     <div class="col-xl-6">
-                                        <div class="card mb-4">
+                                        <div class="card mb-4" style="background: rgba(178, 255, 170, 0.667)">
                                             <div class="card-header">
                                                 <i class="fas fa-chart-area me-1"></i>
-                                                Jumlah Pendaftar Magang / PKL Diskominfo Berstatus Aktif Per Bulan
+                                                 Jumlah Pendaftar Magang / PKL Diskominfo Berstatus Aktif Per Bulan
                                             </div>
                                             <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
                                         </div>
@@ -146,9 +146,9 @@
                                 </div>
 
                                 <!-- Pie Chart -->
-                                <div class="row">  
+                                <div class="row">
                                     <div class="col-xl-6">
-                                        <div class="card mb-4">
+                                        <div class="card mb-4" style="background: rgba(210, 210, 210, 0.733)">
                                             <div class="card-header">
                                                 <i class="fas fa-chart-pie me-1"></i>
                                                 Status Pendaftaran Peserta Magang / PKL Diskominfo
@@ -169,7 +169,7 @@
                             </div>
                                 </div>
                                 <div class="col-xl-6">
-                                        <div class="card mb-4">
+                                        <div class="card mb-4" style="background: rgba(210, 210, 210, 0.733)"S>
                                             <div class="card-header">
                                                 <i class="fas fa-chart-pie me-1"></i>
                                                 Status Aktivasi Peserta Magang / PKL Diskominfo
@@ -311,20 +311,24 @@
 <!-- Atlantis DEMO methods, don't include it in your project! -->
 <script src="backend2/assets/js/setting-demo.js"></script>
 <script src="backend2/assets/js/demo.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 	var _ydata=JSON.parse('{!! json_encode($months) !!}');
 	var _xdata=JSON.parse('{!! json_encode($monthCount) !!}');
 </script>
+
 <script type="text/javascript">
 	var __ydata=JSON.parse('{!! json_encode($bulan) !!}');
 	var __xdata=JSON.parse('{!! json_encode($monthsCount) !!}');
 </script>
+
 <script src="backend2/assets/demo/chart-area-demo.js"></script>
 <script src="backend2/assets/demo/chart-bar-demo.js"></script>
 
 <!-- Page level plugins -->
 <script src="backend2/vendor/chart.js/Chart.min.js"></script>
+
 
 <script type="text/javascript">
     var _plabels={!! json_encode($plabels) !!};
@@ -405,7 +409,7 @@
             },
             scales: {
                 yAxes: [{
-                    ticks: {
+                    ticdata: {
                         display: false //this will remove only the label
                     },
                     gridLines : {
@@ -434,4 +438,7 @@
 </script>
 </body>
 </html>
+
+
+
 

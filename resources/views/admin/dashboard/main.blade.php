@@ -120,9 +120,9 @@
                                 </div>
                             </div>
                         </div>
-                                <div class="row">  
+                                <div class="row">
                                     <div class="col-xl-6">
-                                        <div class="card mb-4">
+                                        <div class="card mb-4" style="background: #c2f3ff">
                                             <div class="card-header">
                                                 <i class="fas fa-chart-bar me-1"></i>
                                                 Jumlah Pendaftar Magang / PKL Diskominfo Per Bulan
@@ -131,8 +131,8 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-6">
-                                        <div class="card mb-4">
-                                            <div class="card-header">
+                                        <div class="card mb-4" style="background: rgba(178, 255, 170, 0.667)">
+                                            <div class="card-header" >
                                                 <i class="fas fa-chart-area me-1"></i>
                                                 Jumlah Pendaftar Magang / PKL Diskominfo Berstatus Aktif Per Bulan
                                             </div>
@@ -142,9 +142,9 @@
                                 </div>
 
                                 <!-- Pie Chart -->
-                                <div class="row">  
+                                <div class="row">
                                     <div class="col-xl-6">
-                                        <div class="card mb-4">
+                                        <div class="card mb-4" style="background: rgba(210, 210, 210, 0.733)">
                                             <div class="card-header">
                                                 <i class="fas fa-chart-pie me-1"></i>
                                                 Status Pendaftaran Peserta Magang / PKL Diskominfo
@@ -165,7 +165,7 @@
                             </div>
                                 </div>
                                 <div class="col-xl-6">
-                                        <div class="card mb-4">
+                                        <div class="card mb-4" style="background: rgba(210, 210, 210, 0.733)">
                                             <div class="card-header">
                                                 <i class="fas fa-chart-pie me-1"></i>
                                                 Status Aktivasi Peserta Magang / PKL Diskominfo
@@ -188,7 +188,7 @@
                         </div>
                 <!-- /.container-fluid -->
 
-                                  
+
 			@include('admin.dashboard.footer')
 
 		</div>
