@@ -78,6 +78,13 @@
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/laporan">
+                        <i class="fas fa-envelope"></i>
+                        <p>Laporan Tugas</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

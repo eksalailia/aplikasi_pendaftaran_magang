@@ -28,11 +28,11 @@ return new class extends Migration
             $table->string('peserta3');
             $table->string('resume');
             $table->string('proposal');
-            $table->int('status')->nullable();;
-            $table->dateTime('tanggal')->nullable();;
-            $table->dateTime('tgl_review')->nullable();;
-            $table->int('status_aktivasi')->nullable();;
-            $table->dateTime('tgl_aktivasi')->nullable();;
+            $table->int('status')->nullable();
+            $table->dateTime('tanggal')->nullable();
+            $table->dateTime('tgl_review')->nullable();
+            $table->int('status_aktivasi')->nullable();
+            $table->dateTime('tgl_aktivasi')->nullable();
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Mentoring;
 use File;
 use Session;
 
@@ -17,6 +18,18 @@ class PembimbingController extends Controller
     public function profile(){
         return view('mentor.profile.index');
     }
+
+    public function index(){
+        $mentoring = mentoring::all();
+        return view('mentor.pemetaan.index', compact('mentoring'));
+    }
+
+    public function show($id)
+    {
+        $mentoring= Mentoring::find($id);
+        return view('mentor.pemetaan.show', compact('mentoring'));
+    }
+
 
     public function profileupdatementor(Request $request) {
 

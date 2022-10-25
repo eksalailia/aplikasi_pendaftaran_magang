@@ -153,6 +153,13 @@
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/mentoring">
+                        <i class="fas fa-bell"></i>
+                        <p>Pendataan Pembimbing</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
 
 
 

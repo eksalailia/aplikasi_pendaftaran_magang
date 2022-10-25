@@ -58,7 +58,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="">
+                    <a href="/datamentoring">
                         <i class="fas fa-file"></i>
                         <p>Daftar Peserta Bimbingan</p>
                         <span class="badge badge-success"></span>

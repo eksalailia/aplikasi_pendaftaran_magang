@@ -94,9 +94,10 @@
                                         <p>{{Session::get('delete')}}</p>
                                     </div>
                                 @endif
-                        {{-- <div class="card-tools">
-                            <a href="{{ route('admin.dashboard.mentoring.create') }}" class="btn btn-success" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
-                        </div> --}}
+                                <div class="card-tools">
+                            <br>
+                            <a href="{{ route('admin.dashboard.mentoring.create') }}" class="btn btn-primary btn-round" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="basic-datatables" class="display table table-striped table-hover" >

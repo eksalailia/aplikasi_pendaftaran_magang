@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Validator;
 class MentoringController extends Controller
 {
     public function index(){
-        $mentoring = mentoring::with('user')->get();
+        $mentoring = mentoring::all();
         return view('admin.dashboard.mentoring.index', compact('mentoring'));
     }
 
