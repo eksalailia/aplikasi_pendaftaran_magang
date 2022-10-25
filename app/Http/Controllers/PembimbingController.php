@@ -66,7 +66,7 @@ class PembimbingController extends Controller
         }
 
         public function laporantugas(){
-            $laporan = laporan::with('user')->get();
+            $laporan = laporan::with('users')->get();
             return view('mentor.laporan.index', compact('laporan'));
         }
 }
