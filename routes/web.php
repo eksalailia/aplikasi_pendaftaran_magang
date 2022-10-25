@@ -36,6 +36,8 @@ Route::group(['middleware'=>['mentor','auth','PreventBackHistory']], function(){
 Route::get('/mentor-dashboard', [\App\Http\Controllers\PembimbingController::class, 'mentor'])->name('mentor.main');
 Route::get('/mentor-profile', [\App\Http\Controllers\PembimbingController::class, 'profile'])->name('mentor.profile.index');
 Route::post('/profilementor-update', [\App\Http\Controllers\PembimbingController::class, 'profileupdatementor'])->name('mentor.profile.update');
+Route::get('/datamentoring', [\App\Http\Controllers\PembimbingController::class, 'index'])->name('mentor.pemetaan.index');
+Route::get('/show-datamentoring/{id}', [\App\Http\Controllers\PembimbingController::class, 'show'])->name('mentor.pemetaan.show');
 });
 
 Route::group(['middleware'=>['pendaftar','auth','PreventBackHistory']], function(){
@@ -48,6 +50,15 @@ Route::group(['middleware'=>['pendaftar','auth','PreventBackHistory']], function
     Route::get('/create-kesanpesan', '\App\Http\Controllers\KesanController@create')->name('applicant.kesan.create');
     Route::post('/create-kesanpesan', '\App\Http\Controllers\KesanController@store')->name('applicant.kesan.create');
     Route::post('/datadiri-update', [\App\Http\Controllers\DataDiriController::class, 'profileupdate'])->name('profileupdate');
+
+    Route::get('/laporan', [\App\Http\Controllers\LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('/create-laporan', '\App\Http\Controllers\LaporanController@create')->name('laporan.create');
+    Route::post('/create-laporan', '\App\Http\Controllers\LaporanController@store')->name('laporan.create');
+    Route::get('/edit-laporan{id}', '\App\Http\Controllers\LaporanController@edit')->name('laporan.edit');
+    Route::post('/edit-laporan{id}', '\App\Http\Controllers\LaporanController@update')->name('laporan.edit');
+    Route::get('/show-laporan{id}', '\App\Http\Controllers\LaporanController@show')->name('laporan.show');
+    Route::delete('/hapus-laporan/{laporan}', '\App\Http\Controllers\LaporanController@destroy')->name('laporan.destroy');
+
 });
 
 Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
