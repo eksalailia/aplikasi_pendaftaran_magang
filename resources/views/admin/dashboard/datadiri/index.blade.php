@@ -116,9 +116,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @php $i=1 @endphp
                                         <tr>
                                         @foreach ($Users as $data)
-                                            <td>{{ $data->id }}</td>
+                                            <td>{{ $i++ }}</td>
                                             <td>{{ $data->name }}</td>
                                             <td>{{ $data->jenis_kelamin }}</td>
                                             <td>{{ $data->tanggal_lahir }}</td>

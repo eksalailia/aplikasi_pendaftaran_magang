@@ -101,6 +101,7 @@
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
                                 <thead>
                                         <tr>
+                                            <th>No.</th>
                                             <th>Nama Mentor</th>
                                             <th>Ketua Kelompok</th>
                                             <th>Anggota Kelompok</th>
@@ -111,8 +112,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @php $i=1 @endphp
                                         <tr>
                                             @foreach ($mentoring as $mt)
+                                            <td>{{ $i++ }}</td>
                                             <td>{{ $mt->users->name }}</td>
                                             <td>{{ $mt->user->name }}</td>
                                             <td>{!! $mt->anggota !!}</td>

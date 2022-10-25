@@ -114,15 +114,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @php $i=1 @endphp
                                         <tr>
                                             @foreach ($laporan as $lprn)
                                             @if ($lprn->user->id == Auth::user()->id)
-                                            <td>#</td>
-                                            <td>{{ $lprn->user->name }}</td>
+                                            <td>{{ $i++ }}</td>
                                             <td>{{ $lprn->users->name }}</td>
-                                            <td>{{ $lprn->anggota }}</td>
+                                            <td>{{ $lprn->user->name }}</td>
+                                            <td>{!! $lprn->anggota !!}</td>
                                             <td>{{ $lprn->judul }}</td>
-                                            <td>{{ $lprn->isi }}</td>
+                                            <td>{!! $lprn->isi !!}</td>
                                             <td>
                                                 <form action="{{ route('laporan.destroy',$lprn->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('laporan.show',$lprn->id) }}"><i class="fa fa-eye"></i></a>

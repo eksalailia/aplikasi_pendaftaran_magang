@@ -113,9 +113,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @php $i=1 @endphp
                                         <tr>
                                             @foreach ($mentor as $mt)
-                                            <td>{{ $mt->id }}</td>
+                                            <td>{{ $i++ }}</td>
                                             <td>{{ $mt->nama }}</td>
                                             <td>{{ $mt->jabatan }}</td>
                                             <td><img alt="img" src="/img/{{ $mt->img }}" width="100px"></td>

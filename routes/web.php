@@ -38,6 +38,7 @@ Route::get('/mentor-profile', [\App\Http\Controllers\PembimbingController::class
 Route::post('/profilementor-update', [\App\Http\Controllers\PembimbingController::class, 'profileupdatementor'])->name('mentor.profile.update');
 Route::get('/datamentoring', [\App\Http\Controllers\PembimbingController::class, 'index'])->name('mentor.pemetaan.index');
 Route::get('/show-datamentoring/{id}', [\App\Http\Controllers\PembimbingController::class, 'show'])->name('mentor.pemetaan.show');
+Route::get('/laporantugas', [\App\Http\Controllers\PembimbingController::class, 'laporantugas'])->name('laporantugas.index');
 });
 
 Route::group(['middleware'=>['pendaftar','auth','PreventBackHistory']], function(){

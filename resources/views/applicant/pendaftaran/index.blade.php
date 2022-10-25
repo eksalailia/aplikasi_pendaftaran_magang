@@ -110,10 +110,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @php $i=1 @endphp
                                         <tr>
                                             @foreach ($pendaftaran as $pd)
                                                 @if ($pd->user->id == Auth::user()->id)
-                                            <td>#</td>
+                                            <td>{{ $i++ }}</td>
                                             <td>{{ $pd->user->name }}</td>
                                             <td>{{ $pd->bidang->nama }}</td>
                                             <td>{{ $pd->durasi }}</td>
