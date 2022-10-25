@@ -63,10 +63,10 @@ class LaporanController extends Controller
             $laporan->save();
             if ($laporan) {
                 Session::flash('update','Update Data Laporan Berhasil');
-                return redirect()->route('applicant.laporan.index');
+                return redirect()->route('laporan.index');
             } else {
                 Session::flash('failed','Update Data Laporan Gagal');
-                return redirect()->route('applicant.laporan.index');
+                return redirect()->route('laporan.index');
             }
         }
 
@@ -79,6 +79,6 @@ class LaporanController extends Controller
         // Alert::success('Profil Berhasi Dihapus','Sukses');
         Laporan::find($id)->delete();
         Session::flash('delete','Data Laporan Berhasil Dihapus');
-        return redirect()->route('applicant.laporan.index');
+        return redirect()->route('laporan.index');
     }
 }

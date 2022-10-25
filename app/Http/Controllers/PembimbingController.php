@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Mentoring;
+use App\Models\Laporan;
 use File;
 use Session;
 
@@ -62,5 +63,10 @@ class PembimbingController extends Controller
                 Session::flash('failed','Failed Update Data Diri');
                 return redirect()->route('mentor.profile.index');
             }
+        }
+
+        public function laporantugas(){
+            $laporan = laporan::with('user')->get();
+            return view('mentor.laporan.index', compact('laporan'));
         }
 }
