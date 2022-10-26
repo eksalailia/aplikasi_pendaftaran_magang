@@ -28,7 +28,6 @@
 
 <body>
 
-@extends('applicant.appnew')
 @extends('applicant.konten')
 @extends('admin.table.appnew')
 @section('content')

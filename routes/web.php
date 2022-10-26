@@ -67,6 +67,9 @@ Route::group(['middleware'=>['pendaftar','auth','PreventBackHistory']], function
     Route::get('/show-laporan{id}', '\App\Http\Controllers\LaporanController@show')->name('laporan.show');
     Route::delete('/hapus-laporan/{laporan}', '\App\Http\Controllers\LaporanController@destroy')->name('laporan.destroy');
 
+    Route::get('/datapembimbing', [\App\Http\Controllers\ApplicantController::class, 'index'])->name('applicant.mentoring.index');
+    Route::get('/show-datapembimbing/{id}', [\App\Http\Controllers\ApplicantController::class, 'show'])->name('applicant.mentoring.show');
+
 });
 
 Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){

@@ -105,7 +105,6 @@
                                             <th>Durasi PKL / Magang</th>
                                             <th>Anggota PKL / Magang</th>
                                             <th>Status</th>
-                                            <th>Aktivasi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -115,6 +115,7 @@
                                     @php $i=1 @endphp
                                         <tr>
                                             @foreach ($mentoring as $mt)
+                                            @if ($mt->users->id == Auth::user()->id)
                                             <td>{{ $i++ }}</td>
                                             <td>{{ $mt->users->name }}</td>
                                             <td>{{ $mt->user->name }}</td>
@@ -128,6 +129,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        @endif
                                         @endforeach
                                     </tbody>
                                 </table>
