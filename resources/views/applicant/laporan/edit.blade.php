@@ -86,8 +86,10 @@
                             <label>Ketua Kelompok</label> 
                                 <select name="user" class="form-control" required="">
                                     @foreach($pendaftar as $pdftr)
+                                    @if(Auth::user() -> id == $pdftr -> id)
                                     <option value="{{$pdftr->id}}">{{$pdftr->name}}</option>
-                                     @endforeach
+                                    @endif
+                                    @endforeach
                                 </select>
                         </div>
                         <div class="form-group col-sm-12">
@@ -115,7 +117,7 @@
                             <button type="submit" class="btn btn-success">
                                 <i class="fas fa-check"></i> Simpan</button>
                         {{-- <input type="submit" value="Simpan" class="btn btn-success">&nbsp; --}}
-                        <a href="/laporan" class="btn btn-secondary">
+                        <a href="/laporantugas" class="btn btn-secondary">
                             <i class="fas fa-times"></i> Cancel</a>
                     </form>
                     </div>

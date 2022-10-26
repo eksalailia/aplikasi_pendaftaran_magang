@@ -106,4 +106,22 @@ class LaporanController extends Controller
         Session::flash('delete','Data Laporan Berhasil Dihapus');
         return redirect()->route('laporan.index');
     }
+
+    public function done($id){
+        Laporan::find($id)->update([
+            'status'=>1,
+            'tgl_check'=> date("Y-m-d H:i:s")
+        ]);
+        Session::flash('update','Update Status Pengecekan Laporan Berhasil');
+        return redirect()->route('laporantugas.index');
+    }
+
+    public function repair($id){
+        Laporan::find($id)->update([
+            'status'=>2,
+            'tgl_review'=> date("Y-m-d H:i:s")
+        ]);
+        Session::flash('update','Update Status Pengecekan Laporan Berhasil');
+        return redirect()->route('laporantugas.index');
+    }
 }

@@ -111,6 +111,7 @@
                                             <th>Progress Laporan</th>
                                             <th>Lampiran</th>
                                             <th>Catatan Pembimbing</th>
+                                            <th>Status Tugas</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -126,6 +127,22 @@
                                             <td>{!! $lprn->isi !!}</td>
                                             <td>{!! $lprn->laporan !!}</td>
                                             <td>{!! $lprn->notes !!}</td>
+                                            @if($lprn->status == null)
+                                            <td>
+                                                <span class="badge badge-pill badge-warning"><b style="font-size:14px;">Proses Review</span>
+                                            </td>
+
+                                            @elseif($lprn->status == 1)
+                                            <td>
+                                                <span class="badge badge-pill badge-success"><b style="font-size:14px;">Selesai</span>
+                                            </td>
+
+                                            @elseif($lprn->status == 2)
+                                            <td>
+                                                <span class="badge badge-pill badge-danger" style="margin-right: 100px"><b style="font-size:14px;">Perbaikan</span>
+                                            </td>
+
+                                            @endif
                                             <td>
                                                 <form action="{{ route('laporan.destroy',$lprn->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('laporan.show',$lprn->id) }}"><i class="fa fa-eye"></i></a>
