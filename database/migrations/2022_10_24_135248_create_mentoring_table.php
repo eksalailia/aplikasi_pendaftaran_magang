@@ -15,6 +15,30 @@ return new class extends Migration
     {
         Schema::create('mentoring', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
+                     $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
+            $table->unsignedBigInteger('mentor_id');         
+            $table->foreign('mentor_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
+                     $table->unsignedBigInteger('mentor_id');
+            $table->foreign('mentor_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
+            $table->string('anggota');
+            $table->string('jurusan');
+            $table->string('universitas');
+            $table->string('semester');
             $table->timestamps();
         });
     }

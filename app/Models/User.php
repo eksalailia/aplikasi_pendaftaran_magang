@@ -33,7 +33,9 @@ class User extends Authenticatable
         'jurusan',
         'semester',
         'nip',
-        'jabatan'
+        'jabatan',
+        'status_aktivasi',
+        'tgl_aktivasi'
     ];
 
     /**

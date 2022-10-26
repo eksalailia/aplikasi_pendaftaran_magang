@@ -46,8 +46,9 @@ class AdminController extends Controller
             $pdata[]=$ps->total_pendaftar;
         }
 
-        $status_aktivasi=Pendaftaran::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        $status_aktivasi=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
         ->groupBy('status_aktivasi')
+        ->where('role', 'pendaftar')
         ->get();
         $pplabels=[];
         $ppdata=[];
@@ -61,7 +62,7 @@ class AdminController extends Controller
             $ppdata[]=$sa->total_aktivasi;
         }
 
-        $datas=Pendaftaran::select('id','tgl_aktivasi')
+        $datas=User::select('id','tgl_aktivasi')
         ->whereNotNull('tgl_aktivasi')
         ->get()->groupBy(function($datas){
             return Carbon::parse($datas->tgl_aktivasi)->format('M');
@@ -139,21 +140,21 @@ class AdminController extends Controller
     }
 
     public function aktivasi($id){
-        Pendaftaran::find($id)->update([
+        User::find($id)->update([
             'status_aktivasi'=>1,
             'tgl_aktivasi'=> date("Y-m-d H:i:s")
         ]);
         Session::flash('update','Update Data Status Aktivasi Pendaftaran Berhasil');
-        return redirect()->route('admin.cetakpdf.daftarpeserta');
+        return redirect()->route('admin.dashboard.datadiri.index');
     }
 
     public function notaktivasi($id){
-        Pendaftaran::find($id)->update([
+        User::find($id)->update([
             'status_aktivasi'=>2,
             'tgl_aktivasi'=> date("Y-m-d H:i:s")
         ]);
         Session::flash('update','Update Data Status Aktivasi Pendaftaran Berhasil');
-        return redirect()->route('admin.cetakpdf.daftarpeserta');
+        return redirect()->route('admin.dashboard.datadiri.index');
     }
 
     public function cetakpeserta()

@@ -83,9 +83,9 @@
                                     </div>
                                 @endif
 
-                                @if(Session::has('update'))
+                                @if(Session::has('udataate'))
                                     <div class="btn btn-info" style="width:100%; height:50px">
-                                        <p>{{Session::get('update')}}</p>
+                                        <p>{{Session::get('udataate')}}</p>
                                     </div>
                                 @endif
 
@@ -112,6 +112,7 @@
                                             <th>Asal Universitas</th>
                                             <th>Jurusan/Prodi</th>
                                             <th>Semester</th>
+                                            <th>Status Aktivasi</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -129,6 +130,25 @@
                                             <td>{{ $data->univ }}</td>
                                             <td>{{ $data->jurusan }}</td>
                                             <td>{{ $data->semester }}</td>
+                                            
+                                            @if($data->status_aktivasi == null)
+                                            <td>
+                                                <a href="{{ route('admin.aktivasi', $data->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Aktivasi
+                                                </a>
+                                            </td>
+
+                                            @elseif($data->status_aktivasi == 1)
+                                            <td>
+                                                <a href="{{ route('admin.notaktivasi', $data->id) }}" class="btn btn-xs btn-danger btn-flat"><i class="fa"></i><b style="font-size: 13px">Aktif
+                                                </a>
+                                            </td>
+
+                                            @elseif($data->status_aktivasi == 2)
+                                            <td>
+                                                <a href="{{ route('admin.aktivasi', $data->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Tidak Aktif
+                                                </a>
+                                            </td>
+                                            @endif
                                             <td>
                                             <form action="{{ route('admin.dashboard.datadiri.destroy',$data->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('admin.dashboard.datadiri.show',$data->id) }}"><i class="fa fa-eye"></i></a>

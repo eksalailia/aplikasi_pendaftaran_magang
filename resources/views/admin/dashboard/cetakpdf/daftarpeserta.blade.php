@@ -125,25 +125,6 @@
                                                 <span class="badge badge-pill badge-success"><b style="font-size:14px;">Lolos</span>
                                             </td>
                                             @endif
-
-                                             @if($pd->status_aktivasi == null)
-                                            <td>
-                                                <a href="{{ route('admin.aktivasi', $pd->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Aktivasi
-                                                </a>
-                                            </td>
-
-                                            @elseif($pd->status_aktivasi == 1)
-                                            <td>
-                                                <a href="{{ route('admin.notaktivasi', $pd->id) }}" class="btn btn-xs btn-danger btn-flat"><i class="fa"></i><b style="font-size: 13px">Aktif
-                                                </a>
-                                            </td>
-
-                                            @elseif($pd->status_aktivasi == 2)
-                                            <td>
-                                                <a href="{{ route('admin.aktivasi', $pd->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Tidak Aktif
-                                                </a>
-                                            </td>
-                                            @endif
                                         </tr>
                                         @endforeach
                                     </tbody>
