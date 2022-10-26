@@ -9,7 +9,21 @@
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
                             {{ Auth::user()->name }}
-                            <span class="user-level">{{ Auth::user()->role }}
+                            <span class="user-level">{{ Auth::user()->role }} -
+                            @if(Auth::user()->status_aktivasi == null) 
+                                <td>
+                                    <span class="badge badge-pill badge-warning"><b style="font-size:10px;">Menunggu Aktivasi</span>
+                                </td>
+                            
+                            @elseif(Auth::user()->status_aktivasi == 1) 
+                                <td>
+                                    <span class="badge badge-pill badge-success"><b style="font-size:10px;">Aktif</span>
+                                </td>
+                            @elseif(Auth::user()->status_aktivasi == 2) 
+                                <td>
+                                    <span class="badge badge-pill badge-danger"><b style="font-size:10px;">Tidak Aktif</span>
+                                </td>
+                            @endif
                         </span>
                             <!-- <span class="caret"></span> -->
                         </span>
