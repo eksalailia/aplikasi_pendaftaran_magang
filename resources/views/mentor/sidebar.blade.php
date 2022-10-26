@@ -3,7 +3,7 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="" alt="..." class="avatar-img rounded-circle">
+                    <img src="{{ asset('backend/assets/uploads/profile/'.Auth::user()->foto) }}" alt="..." class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -50,13 +50,13 @@
                     </span><hr><hr>
                     {{-- <h4 class="text-section">Components</h4> --}}
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{route('mentor.profile.index')}}">
                         <i class="fas fa-id-card"></i>
                         <p>Data Diri</p>
                         <span class="badge badge-success"></span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a href="/datamentoring">
                         <i class="fas fa-file"></i>

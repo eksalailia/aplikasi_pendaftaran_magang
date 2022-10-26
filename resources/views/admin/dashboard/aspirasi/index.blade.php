@@ -111,14 +111,14 @@
                                             <th>Email</th>
                                             <th>Alamat</th>
                                             <th>Asal Universitas</th>
-                                            <th>Jurusan</th>
+                                            <th>Jurusan/Prodi</th>
                                             <th>Semester</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        
+
                                     </tbody>
                                 </table>
                             </div>

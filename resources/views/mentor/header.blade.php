@@ -47,7 +47,7 @@
                             </li>
                             <li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/profilereviewer-index">My Profile</a>
+                                <a class="dropdown-item" href="/mentor-profile">My Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt"></i> Logout</a>
