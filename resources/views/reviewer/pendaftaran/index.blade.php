@@ -106,7 +106,7 @@
                                             <th>Nama Pemohon</th>
                                             <th>Divisi Tujuan</th>
                                             <th>E-Mail</th>
-                                            <th>Jurusan</th>
+                                            <th>Jurusan/Prodi</th>
                                             <th>Tahun Akademik</th>
                                             <th>Durasi PKL / Magang</th>
                                             <th width="300px">Anggota PKL / Magang</th>

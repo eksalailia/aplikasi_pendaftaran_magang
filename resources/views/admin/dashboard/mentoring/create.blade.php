@@ -106,7 +106,7 @@
                                                     </select>
                                         </div>
                                         <div class="form-group col-sm-12">
-                                            <label>Ketua Kelompok</label> 
+                                            <label>Ketua Kelompok</label>
                                                     <select name="user" class="form-control" required="">
                                                             @foreach($pendaftar as $pdftr)
                                                             <option value="{{$pdftr->id}}">{{$pdftr->name}}</option>
@@ -118,7 +118,7 @@
                                             <textarea class="ckeditor form-control valid" rows="4" id="anggota" name="anggota" ></textarea>
                                         </div>
                                         <div class="form-group col-sm-12">
-                                            <label>Jurusan</label>
+                                            <label>Jurusan/Prodi</label>
                                             <input type="text" id="jurusan" name="jurusan" class="form-control" required="" >
                                         </div>
                                         <div class="form-group col-sm-12">

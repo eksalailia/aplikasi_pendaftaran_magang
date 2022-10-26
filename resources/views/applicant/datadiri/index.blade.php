@@ -169,8 +169,8 @@
                          <div class="row">
                          <div class="col-md-6">
                              <div class="form-group">
-                             <label for="">Jurusan</label>
-                                 <input type="text" class="form-control" required="" placeholder="Jurusan" name="jurusan" value="{{ Auth::user()->jurusan }}">
+                             <label for="">Jurusan/Prodi</label>
+                                 <input type="text" class="form-control" required="" placeholder="Jurusan/Prodi" name="jurusan" value="{{ Auth::user()->jurusan }}">
                                  <span class="text-danger">@error('jurusan'){{ $message }}@enderror</span>
                              </div>
                          </div>

@@ -15,8 +15,16 @@ return new class extends Migration
     {
         Schema::create('pendaftaran', function (Blueprint $table) {
             $table->id();
-            $table->user_id();
-            $table->bidang_id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
+            $table->unsignedBigInteger('bidang_id');
+            $table->foreign('bidang_id')
+                    ->references('id')
+                    ->on('bidang')
+                    ->onDelete('cascade');
             $table->string('email');
             $table->string('tahun_akademik');
             $table->string('jurusan');
@@ -28,10 +36,10 @@ return new class extends Migration
             $table->string('peserta3');
             $table->string('resume');
             $table->string('proposal');
-            $table->int('status')->nullable();
+            $table->integer('status')->nullable();
             $table->dateTime('tanggal')->nullable();
             $table->dateTime('tgl_review')->nullable();
-            $table->int('status_aktivasi')->nullable();
+            $table->integer('status_aktivasi')->nullable();
             $table->dateTime('tgl_aktivasi')->nullable();
             $table->timestamps();
         });

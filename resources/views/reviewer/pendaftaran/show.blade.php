@@ -80,7 +80,7 @@
                                             <li class="list-group-item" style="font-size: 16px;"><b>Nama Pemohon : {{$data->user->name}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Divisi Tujuan : {{$data->bidang->nama}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Tahun Akademik : {{$data->tahun_akademik}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan : {{$data->jurusan}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan/Prodi : {{$data->jurusan}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Durasi PKL / Magang : {{$data->durasi}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Anggota PKL / Magang : {{$data->peserta1}}, {{$data->peserta2}}, {{$data->peserta3}}</b></li>
                                         </ul>

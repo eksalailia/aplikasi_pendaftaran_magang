@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('laporan', function (Blueprint $table) {
             $table->id();
-            $table->mentor_id();
+            $table->unsignedBigInteger('mentor_id');
+            $table->foreign('mentor_id')
+                    ->references('id')
+                    ->on('mentor')
+                    ->onDelete('cascade');
+            // $table->mentor_id();
             $table->string('judul');
             $table->text('isi');
             $table->string('anggota');

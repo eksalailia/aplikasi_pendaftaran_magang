@@ -82,7 +82,7 @@
                                             <th>No.</th>
                                             <th>Nama Lengkap</th>
                                             <th>Asal Universitas</th>
-                                            <th>Jurusan</th>
+                                            <th>Jurusan/Prodi</th>
                                             <th>Semester</th>
                                             <th>No. Telepon</th>
                                             <th>Status</th>

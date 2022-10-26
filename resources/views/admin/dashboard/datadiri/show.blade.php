@@ -84,7 +84,7 @@
                                             <li class="list-group-item" style="font-size: 16px;"><b>E-Mail : {{$data->email}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Alamat : {{$data->alamat}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Asal Universitas : {{$data->univ}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan : {{$data->jurusan}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan/Prodi : {{$data->jurusan}}</b></li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Semester : {{$data->semester}}</b></li>
                                         </ul>
                                     </div>

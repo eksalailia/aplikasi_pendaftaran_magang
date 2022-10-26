@@ -81,7 +81,7 @@
                                             <li class="list-group-item" style="font-size: 16px;"><b>Nama Mentor : </b>{{ $mentoring->users->name }}</li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Ketua Kelompok : </b>{{ $mentoring->user->name }}</li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Anggota Kelompok : </b>{!! $mentoring->anggota !!}</li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan : </b>{{ $mentoring->jurusan }}</li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Jurusan/Prodi : </b>{{ $mentoring->jurusan }}</li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Semester : </b>{{ $mentoring->semester }}</li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Universitas : </b>{{ $mentoring->universitas }}</li>
                                         </ul>

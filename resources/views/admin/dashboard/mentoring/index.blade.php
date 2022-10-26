@@ -106,7 +106,7 @@
                                             <th>Nama Mentor</th>
                                             <th>Ketua Kelompok</th>
                                             <th>Anggota Kelompok</th>
-                                            <th>Jurusan</th>
+                                            <th>Jurusan/Prodi</th>
                                             <th>Semester</th>
                                             <th>Universitas</th>
                                             <th width="200px;">Action</th>

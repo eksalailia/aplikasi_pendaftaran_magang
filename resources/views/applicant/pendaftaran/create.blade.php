@@ -93,9 +93,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label text-white">Jurusan</label>
+                                                    <label class="col-sm-2 col-form-label text-white">Jurusan/Prodi</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="Jurusan">
+                                                        <input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="Jurusan/Prodi">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -196,7 +196,7 @@
                                                 <div class="card-body">
                                                         <div class="form-group row">
                                                             <label class="col-sm-2 col-form-label text-white">Proposal</label>
-                                                                <div class="col-sm-10"> 
+                                                                <div class="col-sm-10">
                                                                     <input type="file" class="form-control  @error('proposal') is-invalid @enderror" id="proposal" name="proposal" placeholder="Proposal" required="">
                                                                     @error('proposal')
                                                                     <span class="invalid-feedback" role="alert">
