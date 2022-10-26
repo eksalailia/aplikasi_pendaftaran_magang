@@ -69,7 +69,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-4">
                                         <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Jumlah Pendaftar</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">sdfaw</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$jumlah_pendaftar}}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-solid fa-users fa-2x text-gray-300"></i>
@@ -84,7 +84,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-4">
                                         <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Menunggu Verifikasi</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">feas</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$pendaftar_waiting}}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-solid fa-spinner fa-2x text-gray-300"></i>
@@ -99,7 +99,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-4">
                                         <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Pendaftar Lolos</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">sdf</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$pendaftar_lolos}}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-solid fa-check fa-2x text-gray-300"></i>
@@ -114,7 +114,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-4">
                                         <div class="text-xs font-weight-bold text-uppercase mb-1 text-white">Pendaftar Tidak Lolos</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">weaf</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$pendaftar_tidaklolos}}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-solid fa-times fa-2x text-gray-300"></i>
