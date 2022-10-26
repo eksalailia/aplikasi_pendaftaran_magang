@@ -50,7 +50,8 @@ class ReviewerController extends Controller
             $pdata[]=$ps->total_pendaftar;
         }
 
-        $status_aktivasi=Pendaftaran::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        $status_aktivasi=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        ->where('role', 'pendaftar')
         ->groupBy('status_aktivasi')
         ->get();
         $pplabels=[];
@@ -65,7 +66,7 @@ class ReviewerController extends Controller
             $ppdata[]=$sa->total_aktivasi;
         }
 
-        $datas=Pendaftaran::select('id','tgl_aktivasi')
+        $datas=User::select('id','tgl_aktivasi')
         ->whereNotNull('tgl_aktivasi')
         ->get()->groupBy(function($datas){
             return Carbon::parse($datas->tgl_aktivasi)->format('M');
@@ -143,7 +144,6 @@ class ReviewerController extends Controller
     public function pesertalolos() {
         $pendaftaran = Pendaftaran::orderBy('created_at','ASC')
         ->where('status', '1')
-        ->where('status_aktivasi', '1')
         ->get();
         return view('reviewer.pendaftaran.pesertalolos', compact('pendaftaran'));
     }

@@ -87,7 +87,7 @@
                                             <li class="list-group-item" style="font-size: 16px;"><b>Universitas : </b>{{ $mentoring->universitas }}</li>
                                         </ul>
                                     </div>
-                                    <a class="btn btn-success mt-3" href="/datamentoring" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
+                                    <a class="btn btn-success mt-3" href="/datapembimbing" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
                                 </div>
                             </div>
                         </div>
