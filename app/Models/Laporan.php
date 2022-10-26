@@ -15,7 +15,11 @@ class Laporan extends Model
         'mentor_id',
         'anggota',
         'judul',
-        'isi'
+        'isi',
+        'laporan',
+        'notes',
+        'status',
+        'tgl_check'
     ];
 
     public function user()

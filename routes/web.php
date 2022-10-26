@@ -42,7 +42,10 @@ Route::get('/laporan-tugas', [\App\Http\Controllers\PembimbingController::class,
 Route::get('/edit-laporan-tugas{id}', '\App\Http\Controllers\PembimbingController@edit')->name('laporantugas.edit');
 Route::post('/edit-laporan-tugas{id}', '\App\Http\Controllers\PembimbingController@update')->name('laporantugas.edit');
 Route::get('/showLaporan/{id}', '\App\Http\Controllers\PembimbingController@showLaporan')->name('laporantugas.showResume');
-  
+
+Route::get('/status-done/{id}', '\App\Http\Controllers\LaporanController@done')->name('mentor.laporan.done');
+Route::get('/status-repair/{id}', '\App\Http\Controllers\LaporanController@repair')->name('mentor.laporan.repair');
+
 });
 
 Route::group(['middleware'=>['pendaftar','auth','PreventBackHistory']], function(){

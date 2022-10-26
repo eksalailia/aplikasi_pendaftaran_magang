@@ -98,7 +98,7 @@
                         <div class="card-body">
                             <br>
                             <div class="table-responsive">
-                                <table id="basic-datatables" class="display table table-striped table-hover" >
+                                <table id="basic-lprntables" class="display table table-striped table-hover" >
                                 <thead>
                                         <tr>
                                             <th>No.</th>
@@ -108,6 +108,7 @@
                                             <th>Progress Laporan</th>
                                             <th>Lampiran</th>
                                             <th>Catatan Pembimbing</th>
+                                            <th>Status Tugas</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -123,6 +124,24 @@
                                             <td>{!! $lprn->isi !!}</td>
                                             <td>{!! $lprn->laporan !!}</td>
                                             <td>{!! $lprn->notes !!}</td>
+                                            @if($lprn->status == null)
+                                            <td>
+                                                <a href="{{ route('mentor.laporan.done', $lprn->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Selesai
+                                                </a>
+                                            </td>
+
+                                            @elseif($lprn->status == 1)
+                                            <td>
+                                                <a href="{{ route('mentor.laporan.repair', $lprn->id) }}" class="btn btn-xs btn-danger btn-flat"><i class="fa"></i><b style="font-size: 13px">Perbaikan
+                                                </a>
+                                            </td>
+
+                                            @elseif($lprn->status == 2)
+                                            <td>
+                                                <a href="{{ route('mentor.laporan.done', $lprn->id) }}" class="btn btn-xs btn-primary btn-flat"><i class="fa fa-check"></i><b style="font-size: 13px">Selesai
+                                                </a>
+                                            </td>
+                                            @endif
                                             <td>
                                                 <form action=""  method="POST">
                                                     <a class="btn btn-info" href="{{ route('laporantugas.showResume',$lprn->id) }}"><i class="fa fa-eye"></i></a>
@@ -169,7 +188,7 @@
 <script src="backend2/assets/js/plugin/chart-circle/circles.min.js"></script>
 
 <!-- Datatables -->
-<script src="backend2/assets/js/plugin/datatables/datatables.min.js"></script>
+<script src="backend2/assets/js/plugin/lprntables/lprntables.min.js"></script>
 
 <!-- Bootstrap Notify -->
 <script src="backend2/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
@@ -238,13 +257,13 @@
 
     var mytotalIncomeChart = new Chart(totalIncomeChart, {
         type: 'bar',
-        data: {
+        lprn: {
             labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-            datasets : [{
+            lprnsets : [{
                 label: "Total Income",
                 backgroundColor: '#ff9e27',
                 borderColor: 'rgb(23, 125, 255)',
-                data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
+                lprn: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
             }],
         },
         options: {
