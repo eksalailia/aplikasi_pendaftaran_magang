@@ -94,10 +94,7 @@
                                         <p>{{Session::get('delete')}}</p>
                                     </div>
                                 @endif
-                                <div class="card-tools">
-                            <br>
-                            <a href="{{ route('laporan.create') }}" class="btn btn-primary btn-round" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
-                        </div>
+                              
                         <div class="card-body">
                             <br>
                             <div class="table-responsive">
@@ -109,6 +106,8 @@
                                             <th>AnggotaKelompok</th>
                                             <th>Judul</th>
                                             <th>Progress Laporan</th>
+                                            <th>Lampiran</th>
+                                            <th>Catatan Pembimbing</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -122,13 +121,12 @@
                                             <td>{!! $lprn->anggota !!}</td>
                                             <td>{{ $lprn->judul }}</td>
                                             <td>{!! $lprn->isi !!}</td>
+                                            <td>{!! $lprn->laporan !!}</td>
+                                            <td>{!! $lprn->notes !!}</td>
                                             <td>
-                                                <form action="{{ route('laporan.destroy',$lprn->id) }}"  method="POST">
-                                                    <a class="btn btn-info" href="{{ route('laporan.show',$lprn->id) }}"><i class="fa fa-eye"></i></a>
-                                                    <a href="{{ route('laporan.edit',$lprn->id) }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin untuk menghapus data ini ?')" ><i class="fa fa-trash"></i></button>
+                                                <form action=""  method="POST">
+                                                    <a class="btn btn-info" href="{{ route('laporantugas.showResume',$lprn->id) }}"><i class="fa fa-eye"></i></a>
+                                                    <a href="{{ route('laporantugas.edit',$lprn->id) }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
                                                 </form>
                                             </td>
                                         </tr>
@@ -146,7 +144,7 @@
         </div>
     </div>
 
-    @include('applicant.footer')
+    @include('mentor.footer')
 
 <!--   Core JS Files   -->
 <script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>

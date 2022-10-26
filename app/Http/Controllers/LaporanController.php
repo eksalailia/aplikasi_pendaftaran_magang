@@ -26,12 +26,25 @@ class LaporanController extends Controller
     }
 
     public function store(Request $request) {
+
+        $this->validate($request, [
+            'laporan' => 'required|file|mimes:doc,pdf,docx|max:2000'
+        ]);
+
+        
+        $file = $request->file('laporan');
+        $org = $file->getClientOriginalName();
+        $path = 'laporan';
+        $file->move($path,$org);
+
         $laporan = new laporan;
         $laporan->user_id = $request->user;
         $laporan->mentor_id = $request->users;
         $laporan->anggota = $request->input('anggota');
         $laporan->judul= $request->input('judul');
         $laporan->isi = $request->input('isi');
+        $laporan->notes = $request->input('notes');
+        $laporan->laporan = $org;
         $laporan->save();
         if ($laporan) {
             Session::flash('success','Data Laporan Berhasil Ditambahkan');
@@ -54,12 +67,24 @@ class LaporanController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'laporan' => 'required|file|mimes:doc,pdf,docx|max:2000'
+        ]);
+
+        
+        $file = $request->file('laporan');
+        $org = $file->getClientOriginalName();
+        $path = 'laporan';
+        $file->move($path,$org);
+
             $laporan = Laporan::find($id) ;
             $laporan->user_id = $request->user;
             $laporan->mentor_id = $request->users;
             $laporan->anggota = $request->input('anggota');
             $laporan->judul= $request->input('judul');
             $laporan->isi = $request->input('isi');
+            $laporan->notes = $request->input('notes');
+            $laporan->laporan = $org;
             $laporan->save();
             if ($laporan) {
                 Session::flash('update','Update Data Laporan Berhasil');

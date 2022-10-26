@@ -126,6 +126,15 @@
                                             <label>Progress Laporan</label>
                                             <textarea class="ckeditor form-control valid" rows="4" id="isi" name="isi" ></textarea>
                                         </div>
+                                        <div class="form-group col-sm-12">
+                                            <label>Upload File Laporan</label>
+                                                                <input type="file" class="form-control  @error('laporan') is-invalid @enderror" id="laporan" name="laporan" placeholder="Laporan" required="" multiple>
+                                                                @error('laporan')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                        <strong>{{ $message }}</strong>
+                                                                    </span>
+                                                                @enderror
+                                        </div>
                                         <div class="form-group col-sm-5">
                                             <button type="submit" class="btn btn-success">
                                                 <i class="fas fa-check"></i> Simpan</button>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard - Applicant</title>
+	<title>Dashboard - mentor</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
@@ -24,29 +24,26 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="backend2/assets/css/demo.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
 <body>
 
-@extends('applicant.appnew')
-@extends('applicant.konten')
+@extends('mentor.konten')
 @extends('admin.table.appnew')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('applicant.header')
+			@include('mentor.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('applicant.sidebar')
+		@include('mentor.sidebar')
 
 		<!-- End Sidebar -->
-
         <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -72,11 +69,11 @@
                         <div class="card-header">
                              <h4>Edit Data Laporan Tugas Peserta PKL / Magang</h4>
                         </div>
-                        <form action="{{route('laporan.edit',$laporan->id)}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('laporantugas.edit',$laporan->id)}}" method="post" enctype="multipart/form-data">
                             {{csrf_field()}}
                         <div class="form-group col-sm-12">
                             <label>Nama Mentor</label>
-                                <select name="users" class="form-control" required="">
+                                <select name="users" class="form-control" required="" disabled>
                                     @foreach($mentor as $mt)
                                     <option value="{{$mt->id}}">{{$mt->name}}</option>
                                     @endforeach
@@ -84,7 +81,7 @@
                         </div>
                         <div class="form-group col-sm-12">
                             <label>Ketua Kelompok</label> 
-                                <select name="user" class="form-control" required="">
+                                <select name="user" class="form-control" required="" disabled>
                                     @foreach($pendaftar as $pdftr)
                                     <option value="{{$pdftr->id}}">{{$pdftr->name}}</option>
                                      @endforeach
@@ -92,25 +89,29 @@
                         </div>
                         <div class="form-group col-sm-12">
                             <label>Anggota Kelompok</label>
-                            <textarea class="ckeditor form-control valid" rows="4" id="anggota" name="anggota" >{!! $laporan->anggota !!}</textarea>
+                            <textarea class="ckeditor form-control valid" rows="4" id="anggota" name="anggota" disabled>{!! $laporan->anggota !!}</textarea>
                         </div>
                         <div class="form-group col-sm-12">
                             <label>Judul</label>
-                            <input type="text" id="judul" name="judul" class="form-control" required="" value="{{ $laporan->judul }}" >
+                            <input type="text" id="judul" name="judul" class="form-control" required="" value="{{ $laporan->judul }}" disabled>
                         </div>
                         <div class="form-group col-sm-12">
                             <label>Laporan Progress</label>
-                            <textarea class="ckeditor form-control valid" rows="4" id="isi" name="isi" >{!! $laporan->isi !!}</textarea>
+                            <textarea class="ckeditor form-control valid" rows="4" id="isi" name="isi" disabled>{!! $laporan->isi !!}</textarea>
                         </div>
                         <div class="form-group col-sm-12">
-                            <label>File Lampiran</label>
-                               <input type="file" class="form-control  @error('laporan') is-invalid @enderror" id="laporan" name="laporan" placeholder="Laporan" required="" multiple value="{{ $laporan->laporan }}">
+                            <label>Upload File Laporan</label>
+                               <input type="file" class="form-control  @error('laporan') is-invalid @enderror" id="laporan" name="laporan" placeholder="Laporan" multiple value="{{ $laporan->laporan }}" disabled>
                                     @error('laporan')
                                         <span class="invalid-feedback" role="alert">
                                            <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                        </div>
+                       <div class="form-group col-sm-12">
+                                <label>Catatan</label>
+                                    <textarea class="ckeditor form-control valid" rows="4" id="notes" name="notes" >{{ $laporan->notes }}</textarea>
+                        </div>
                         <div class="form-group col-sm-12">
                             <button type="submit" class="btn btn-success">
                                 <i class="fas fa-check"></i> Simpan</button>
@@ -125,7 +126,7 @@
     </div>
 </div>
 
-    @include('applicant.footer')
+    @include('mentor.footer')
 
 </div>
 </div>

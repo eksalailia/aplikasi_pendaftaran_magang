@@ -83,6 +83,8 @@
                                             <li class="list-group-item" style="font-size: 16px;"><b>Anggota Kelompok : </b>{!! $laporan->anggota !!}</li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Judul : </b>{{ $laporan->judul }}</li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Progress Laporan : </b>{!! $laporan->isi !!}</li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Lampiran : </b>{!! $laporan->laporan !!}</li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Catatan : </b>{!! $laporan->notes !!}</li>
                                         </ul>
                                     </div>
                                     <a class="btn btn-success mt-3" href="/laporan" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>

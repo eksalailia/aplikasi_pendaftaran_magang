@@ -69,4 +69,34 @@ class PembimbingController extends Controller
             $laporan = laporan::with('users')->get();
             return view('mentor.laporan.index', compact('laporan'));
         }
+
+        public function edit($id){
+            $data = Laporan::all();
+            $laporan = Laporan::find($id);
+            $mentor=User::all()
+            ->where('role', 'mentor');
+            $pendaftar=User::all()
+            ->where('role','pendaftar');
+            return view('mentor.laporan.edit',compact('data','laporan', 'mentor', 'pendaftar'));
+        }
+
+        public function update(Request $request, $id)
+        {
+    
+                $laporan = Laporan::find($id);
+                $laporan->notes = $request->input('notes');
+                $laporan->save();
+                if ($laporan) {
+                    Session::flash('update','Update Data Laporan Berhasil');
+                    return redirect()->route('laporantugas.index');
+                } else {
+                    Session::flash('failed','Update Data Laporan Gagal');
+                    return redirect()->route('laporantugas.index');
+                }
+            }
+    
+            public function showLaporan($id){
+                $data= Laporan::find($id);
+                return view('mentor.laporan.showlaporan', compact('data'));
+            }
 }

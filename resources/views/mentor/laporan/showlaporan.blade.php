@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard - Applicant</title>
+	<title>Dashboard - Reviewer</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
@@ -28,31 +28,30 @@
 
 <body>
 
-@extends('applicant.appnew')
-@extends('applicant.konten')
+@extends('reviewer.konten')
 @extends('admin.table.appnew')
 @section('content')
 
 
 	<div class="wrapper">
 
-			@include('applicant.header')
+			@include('reviewer.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('applicant.sidebar')
+		@include('reviewer.sidebar')
 
 		<!-- End Sidebar -->
-        <div class="main-panel">
+<div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-            <h4 class="page-title">Data Laporan PKL / Magang</h4>
+                <h4 class="page-title">Laporan Tugas</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="/admin">
+                        <a href="/reviewer">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -60,7 +59,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/bidang">Data Laporan PKL / Magang</a>
+                        <a href="/datadiri-reviewer">Laporan Tugas</a>
                     </li>
                 </ul>
             </div>
@@ -68,90 +67,31 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Daftar Data Laporan PKL / Magang</h4>
+                             <h4>Show Laporan Tugas</h4>
                         </div>
-                        <br></br>
-                                 @if(Session::has('success'))
-                                    <div class="btn btn-success" style="width:100%; height:50px">
-                                        <p>{{Session::get('success')}}</p>
+                        <div class="container mt-5" >
+                            <div class="row justify-content-center align-items-center" style="margin-right: 170px">
+                                <div class="card" style="width: 50rem; margin-left: 150px">
+                                    <div class="card-header">
+                                        <h5 style="font-size: 18px; font-family: Arial, Helvetica; text-align:center"><b>Detail Laporan Tugas</h5></b>
                                     </div>
-                                @endif
-
-                                @if(Session::has('delete'))
-                                    <div class="btn btn-warning" style="width:100%; height:50px">
-                                        <p>{{Session::get('delete')}}</p>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <iframe src="/laporan/{{$data->laporan}}" style="width: 500px; height:600px"></iframe>
+                                        </ul>
                                     </div>
-                                @endif
-
-                                @if(Session::has('ulprnate'))
-                                    <div class="btn btn-info" style="width:100%; height:50px">
-                                        <p>{{Session::get('ulprnate')}}</p>
-                                    </div>
-                                @endif
-
-                                @if(Session::has('failed'))
-                                    <div class="btn btn-danger" style="width:100%; height:50px">
-                                        <p>{{Session::get('delete')}}</p>
-                                    </div>
-                                @endif
-                                <div class="card-tools">
-                            <br>
-                            <a href="{{ route('laporan.create') }}" class="btn btn-primary btn-round" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <br>
-                            <div class="table-responsive">
-                                <table id="basic-datatables" class="display table table-striped table-hover" >
-                                <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Ketua Kelompok</th>
-                                            <th>AnggotaKelompok</th>
-                                            <th>Judul</th>
-                                            <th>Progress Laporan</th>
-                                            <th>Lampiran</th>
-                                            <th>Catatan Pembimbing</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    @php $i=1 @endphp
-                                        <tr>
-                                            @foreach ($laporan as $lprn)
-                                            @if ($lprn->user->id == Auth::user()->id)
-                                            <td>{{ $i++ }}</td>
-                                            <td>{{ $lprn->user->name }}</td>
-                                            <td>{!! $lprn->anggota !!}</td>
-                                            <td>{{ $lprn->judul }}</td>
-                                            <td>{!! $lprn->isi !!}</td>
-                                            <td>{!! $lprn->laporan !!}</td>
-                                            <td>{!! $lprn->notes !!}</td>
-                                            <td>
-                                                <form action="{{ route('laporan.destroy',$lprn->id) }}"  method="POST">
-                                                    <a class="btn btn-info" href="{{ route('laporan.show',$lprn->id) }}"><i class="fa fa-eye"></i></a>
-                                                    <a href="{{ route('laporan.edit',$lprn->id) }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin untuk menghapus data ini ?')" ><i class="fa fa-trash"></i></button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        @endif
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                    <a class="btn btn-success mt-3" href="/laporan-tugas" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
+                                </div>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
-
-    @include('applicant.footer')
-
+</div>
 <!--   Core JS Files   -->
 <script src="backend2/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="backend2/assets/js/core/popper.min.js"></script>
@@ -261,7 +201,7 @@
             },
             scales: {
                 yAxes: [{
-                    ticmt: {
+                    ticks: {
                         display: false //this will remove only the label
                     },
                     gridLines : {

@@ -79,7 +79,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/laporan">
+                    <a href="/laporantugas">
                         <i class="fas fa-envelope"></i>
                         <p>Laporan Tugas</p>
                         <span class="badge badge-success"></span>

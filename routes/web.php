@@ -38,7 +38,11 @@ Route::get('/mentor-profile', [\App\Http\Controllers\PembimbingController::class
 Route::post('/profilementor-update', [\App\Http\Controllers\PembimbingController::class, 'profileupdatementor'])->name('mentor.profile.update');
 Route::get('/datamentoring', [\App\Http\Controllers\PembimbingController::class, 'index'])->name('mentor.pemetaan.index');
 Route::get('/show-datamentoring/{id}', [\App\Http\Controllers\PembimbingController::class, 'show'])->name('mentor.pemetaan.show');
-Route::get('/laporantugas', [\App\Http\Controllers\PembimbingController::class, 'laporantugas'])->name('laporantugas.index');
+Route::get('/laporan-tugas', [\App\Http\Controllers\PembimbingController::class, 'laporantugas'])->name('laporantugas.index');
+Route::get('/edit-laporan-tugas{id}', '\App\Http\Controllers\PembimbingController@edit')->name('laporantugas.edit');
+Route::post('/edit-laporan-tugas{id}', '\App\Http\Controllers\PembimbingController@update')->name('laporantugas.edit');
+Route::get('/showLaporan/{id}', '\App\Http\Controllers\PembimbingController@showLaporan')->name('laporantugas.showResume');
+  
 });
 
 Route::group(['middleware'=>['pendaftar','auth','PreventBackHistory']], function(){
@@ -52,7 +56,7 @@ Route::group(['middleware'=>['pendaftar','auth','PreventBackHistory']], function
     Route::post('/create-kesanpesan', '\App\Http\Controllers\KesanController@store')->name('applicant.kesan.create');
     Route::post('/datadiri-update', [\App\Http\Controllers\DataDiriController::class, 'profileupdate'])->name('profileupdate');
 
-    Route::get('/laporan', [\App\Http\Controllers\LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('/laporantugas', [\App\Http\Controllers\LaporanController::class, 'index'])->name('laporan.index');
     Route::get('/create-laporan', '\App\Http\Controllers\LaporanController@create')->name('laporan.create');
     Route::post('/create-laporan', '\App\Http\Controllers\LaporanController@store')->name('laporan.create');
     Route::get('/edit-laporan{id}', '\App\Http\Controllers\LaporanController@edit')->name('laporan.edit');
