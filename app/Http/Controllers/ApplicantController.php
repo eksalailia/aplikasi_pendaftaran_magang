@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Pendaftaran;
+use App\Models\Mentoring;
 class ApplicantController extends Controller
 {
     // public function __construct()
@@ -26,5 +27,16 @@ class ApplicantController extends Controller
     }
     public function table(){
         return view('applicant.table');
+    }
+
+    public function index(){
+        $mentoring = Mentoring::all();
+        return view('applicant.mentoring.index', compact('mentoring'));
+    }
+
+    public function show($id)
+    {
+        $mentoring= Mentoring::find($id);
+        return view('applicant.mentoring.show', compact('mentoring'));
     }
 }

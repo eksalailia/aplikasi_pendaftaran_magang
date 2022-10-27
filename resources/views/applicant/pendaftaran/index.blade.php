@@ -28,7 +28,6 @@
 
 <body>
 
-@extends('applicant.appnew')
 @extends('applicant.konten')
 @extends('admin.table.appnew')
 @section('content')
@@ -36,17 +35,17 @@
 
 	<div class="wrapper">
 
-			@include('applicant.header')
+    @include('applicant.header')
 			<!-- End Navbar -->
 
 
 		<!-- Sidebar -->
 
-		@include('applicant.sidebar')
+        @include('applicant.sidebar')
 
-		<!-- End Sidebar -->
+<!-- End Sidebar -->
 
-        <div class="main-panel">
+<div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
@@ -265,7 +264,7 @@
             },
             scales: {
                 yAxes: [{
-                    ticmt: {
+                    ticmsg: {
                         display: false //this will remove only the label
                     },
                     gridLines : {
@@ -292,5 +291,15 @@
         fillColor: 'rgba(255, 165, 52, .14)'
     });
 </script>
+<script src="//cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.ckeditor').ckeditor();
+});
+</script>
 </body>
 </html>
+
+
+

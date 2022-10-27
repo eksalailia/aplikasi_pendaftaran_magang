@@ -101,11 +101,6 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/requirement">
-                                    <span>
-                                        <i class="fas fa-book-open"></i> Peserta Magang / PKL Tidak Lolos</span>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </li>

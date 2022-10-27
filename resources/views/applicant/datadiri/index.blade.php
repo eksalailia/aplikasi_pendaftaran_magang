@@ -119,8 +119,8 @@
                              <div class="form-group">
                                  <label for="">Jenis Kelamin</label>
                                  <select class="form-control" required="" name="jenis_kelamin" value="{{ Auth::user()->jenis_kelamin }}">
-                                     <option value="{{ Auth::user()->jenis_kelamin }}" selected>{{ Auth::user()->jenis_kelamin }}</option>
-                                     <option value="Laki-laki" style="font-size: 14px;">Laki-laki</option>
+                                    <option value="{{ Auth::user()->jenis_kelamin }}" selected>{{ Auth::user()->jenis_kelamin }}</option>
+                                    <option value="Laki-laki" style="font-size: 14px;">Laki-laki</option>
                                     <option value="Perempuan" style="font-size: 14px;">Perempuan</option>
                                  </select>
                                  <span class="text-danger">@error('jenis_kelamin'){{ $message }}@enderror</span>

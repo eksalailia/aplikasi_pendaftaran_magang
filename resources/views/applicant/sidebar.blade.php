@@ -9,7 +9,21 @@
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
                             {{ Auth::user()->name }}
-                            <span class="user-level">{{ Auth::user()->role }}
+                            <span class="user-level">{{ Auth::user()->role }} -
+                            @if(Auth::user()->status_aktivasi == null) 
+                                <td>
+                                    <span class="badge badge-pill badge-warning"><b style="font-size:10px;">Menunggu Aktivasi</b></span>
+                                </td>
+                            
+                            @elseif(Auth::user()->status_aktivasi == 1) 
+                                <td>
+                                    <span class="badge badge-pill badge-success"><b style="font-size:10px;">Aktif</b></span>
+                                </td>
+                            @elseif(Auth::user()->status_aktivasi == 2) 
+                                <td>
+                                    <span class="badge badge-pill badge-danger"><b style="font-size:10px;">Tidak Aktif</b></span>
+                                </td>
+                            @endif
                         </span>
                             <!-- <span class="caret"></span> -->
                         </span>
@@ -83,6 +97,13 @@
                     <a href="/laporantugas">
                         <i class="fas fa-envelope"></i>
                         <p>Laporan Tugas</p>
+                        <span class="badge badge-success"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/datapembimbing">
+                        <i class="fas fa-file"></i>
+                        <p>Data Pembimbing</p>
                         <span class="badge badge-success"></span>
                     </a>
                 </li>

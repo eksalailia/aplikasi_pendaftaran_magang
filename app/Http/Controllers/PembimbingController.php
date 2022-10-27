@@ -14,7 +14,17 @@ use Session;
 class PembimbingController extends Controller
 {
     public function mentor(){
-        return view('mentor.main');
+        $jumlah_pendaftar = DB::table('pendaftaran')->count();
+        $pendaftar_waiting = DB::table('pendaftaran')
+        ->whereNull('status')
+        ->count();
+        $pendaftar_lolos = DB::table('pendaftaran')
+        ->where('status', 1)
+        ->count();
+        $pendaftar_tidaklolos = DB::table('pendaftaran')
+        ->where('status', 2)
+        ->count();
+        return view('mentor.main', compact('jumlah_pendaftar', 'pendaftar_waiting', 'pendaftar_lolos', 'pendaftar_tidaklolos'));
     }
     public function profile(){
         return view('mentor.profile.index');

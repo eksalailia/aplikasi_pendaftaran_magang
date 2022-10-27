@@ -105,7 +105,6 @@
                                             <th>Durasi PKL / Magang</th>
                                             <th>Anggota PKL / Magang</th>
                                             <th>Status</th>
-                                            <th>Aktivasi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -122,7 +121,7 @@
                                             </td>
                                             @if($pd->status == 1)
                                             <td>
-                                                <span class="badge badge-pill badge-success"><b style="font-size:14px;">Lolos</span>
+                                                <span class="badge badge-pill badge-success"><b style="font-size:14px;">Diterima</span>
                                             </td>
                                             @endif
                                         </tr>
