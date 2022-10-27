@@ -20,17 +20,7 @@ return new class extends Migration
                     ->references('id')
                     ->on('users')
                     ->onDelete('cascade');
-                     $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')
-                    ->references('id')
-                    ->on('users')
-                    ->onDelete('cascade');
-            $table->unsignedBigInteger('mentor_id');         
-            $table->foreign('mentor_id')
-                    ->references('id')
-                    ->on('users')
-                    ->onDelete('cascade');
-                     $table->unsignedBigInteger('mentor_id');
+            $table->unsignedBigInteger('mentor_id');
             $table->foreign('mentor_id')
                     ->references('id')
                     ->on('users')
