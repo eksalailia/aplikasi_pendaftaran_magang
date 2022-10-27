@@ -123,7 +123,7 @@
                 <li class="nav-item">
                     <a href="/datadiri-admin">
                         <i class="fas fa-id-card"></i>
-                        <p>Data Diri</p>
+                        <p>Data Diri Pendaftar</p>
                         <span class="badge badge-success"></span>
                     </a>
                 </li>
