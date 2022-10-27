@@ -77,7 +77,7 @@
                                     </div>
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
-                                            <iframe src="/resume/{{$data->resume}}" style="width: 500px; height:600px"></iframe>
+                                            <iframe src="/resume/{{$data->resume}}" style="width: 750px; height:600px"></iframe>
                                         </ul>
                                     </div>
                                     <a class="btn btn-success mt-3" href="/pendaftaran-review" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>
