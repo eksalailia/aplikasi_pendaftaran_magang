@@ -61,7 +61,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/profileadmin-update">Peserta Magang / PKL Non-Aktif</a>
+                        <a href="/profileadmin-update">Peserta Magang / PKL Tidak Diterima</a>
                     </li>
                 </ul>
             </div>
@@ -69,7 +69,7 @@
                 <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                    <div class="card-title">Laporan Peserta Magang / PKL Status Non-Aktif</div>
+                    <div class="card-title">Laporan Peserta Magang / PKL Status Tidak Diterima</div>
                 <div>
                     <hr>
                 <br>
@@ -119,7 +119,7 @@
                         <div class="action-buttons justify-content-between bg-white pt-2 pb-2">
                             <!-- <button type="submit" class="btn btn-success col-md-12">
                                 <i class="fas fa-check"></i> Cetak Laporan</button> -->
-                            <a href="" onclick="this.href='/laporan-nonaktif-pertanggal/'+ document.getElementById('tglAwal').value +
+                            <a href="" onclick="this.href='/laporan-tidakditerima-pertanggal/'+ document.getElementById('tglAwal').value +
                             '/'+ document.getElementById('tglAkhir').value " target="_blank"class="btn btn-success col-md-12">
                                 <i class="fas fa-print"></i> Cetak Laporan</a>
                          </div>

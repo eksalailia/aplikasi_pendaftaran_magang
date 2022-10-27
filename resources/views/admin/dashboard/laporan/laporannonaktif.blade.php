@@ -19,7 +19,7 @@
 	</script>
 </head>
 
-            <h1 style="text-align:center;">PESERTA NON-AKTIF PKL / MAGANG</h1>
+            <h1 style="text-align:center;">PESERTA TIDAK DITERIMA PKL / MAGANG</h1>
                     <h1 style="text-align:center;">DISKOMINFO KOTA MADIUN</h1><br>
                             <table border="1" cellspacing="0" cellpadding="5">
                                     <tr>

@@ -89,15 +89,15 @@
                     <div class="collapse" id="tables">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="/cetak-laporanaktif">
+                                <a href="/cetak-laporanditerima">
                                     <span>
-                                    <i class="fa fa-check-square"></i>Peserta Magang / PKL Aktif</span>
+                                    <i class="fa fa-check-square"></i>Peserta Magang / PKL Diterima</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/cetak-laporannonaktif">
+                                <a href="/cetak-laporantidakditerima">
                                     <span>
-                                        <i class="fa fa-window-close"></i> Peserta Magang / PKL Non-Aktif</span>
+                                        <i class="fa fa-window-close"></i> Peserta Magang / PKL Tidak Diterima</span>
                                 </a>
                             </li>
                             <li>

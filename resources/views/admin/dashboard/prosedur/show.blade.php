@@ -79,7 +79,7 @@
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item" style="font-size: 16px;"><b>Judul : </b>{{$prosedur->judul}}</li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Isi : </b>{{$prosedur->isi}}</li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Isi : </b>{!! $prosedur->isi !!}</li>
                                             <li class="list-group-item" style="font-size: 16px;"><b>Foto : </b><img src="/foto/{{ $prosedur->foto }}" width="100px"></li>
                                         </ul>
                                     </div>

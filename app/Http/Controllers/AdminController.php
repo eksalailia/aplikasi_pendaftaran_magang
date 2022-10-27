@@ -175,13 +175,12 @@ class AdminController extends Controller
 
     public function laporanaktifPertanggal($tglAwal, $tglAkhir){
         $laporanaktif = Pendaftaran::orderBy('created_at','ASC')
-                            ->whereBetween('tgl_aktivasi', [$tglAwal, $tglAkhir])
+                            ->whereBetween('tgl_review', [$tglAwal, $tglAkhir])
                             ->where('status', 1)
-                            ->where('status_aktivasi', 1)
                             ->get();
 
         $pdf = PDF::loadView('admin.dashboard.laporan.laporanaktif', ['laporanaktif' => $laporanaktif]);
-        return $pdf->stream('Laporan-Data-Peserta-Aktif.pdf');
+        return $pdf->stream('Laporan-Data-Peserta-Diterima.pdf');
     }
 
     public function formlaporannonaktif()
@@ -191,13 +190,12 @@ class AdminController extends Controller
 
     public function laporannonaktifPertanggal($tglAwal, $tglAkhir){
         $laporannonaktif = Pendaftaran::orderBy('created_at','ASC')
-                            ->whereBetween('tgl_aktivasi', [$tglAwal, $tglAkhir])
-                            ->where('status', 1)
-                            ->where('status_aktivasi', 2)
+                            ->whereBetween('tgl_review', [$tglAwal, $tglAkhir])
+                            ->where('status', 2)
                             ->get();
 
         $pdf = PDF::loadView('admin.dashboard.laporan.laporannonaktif', ['laporannonaktif' => $laporannonaktif]);
-        return $pdf->stream('Laporan-Data-Peserta-NonAktif.pdf');
+        return $pdf->stream('Laporan-Data-Peserta-TidakDiterima.pdf');
     }
 
 }

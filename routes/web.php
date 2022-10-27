@@ -139,11 +139,11 @@ Route::group(['middleware'=>['admin','auth','PreventBackHistory']], function(){
     Route::get('/status-aktivasi/{id}', '\App\Http\Controllers\AdminController@aktivasi')->name('admin.aktivasi');
     Route::get('/status-notaktivasi/{id}', '\App\Http\Controllers\AdminController@notaktivasi')->name('admin.notaktivasi');
 
-    Route::get('cetak-laporanaktif', '\App\Http\Controllers\AdminController@formlaporanaktif')->name('admin.laporan.formaktif');
+    Route::get('cetak-laporanditerima', '\App\Http\Controllers\AdminController@formlaporanaktif')->name('admin.laporan.formaktif');
     Route::get('/cetak-laporan-pertanggal/{tglAwal}/{tglAkhir}', '\App\Http\Controllers\AdminController@laporanaktifPertanggal')->name('cetaklaporanaktif');
 
-    Route::get('cetak-laporannonaktif', '\App\Http\Controllers\AdminController@formlaporannonaktif')->name('admin.laporan.formnonaktif');
-    Route::get('/laporan-nonaktif-pertanggal/{tglAwal}/{tglAkhir}', '\App\Http\Controllers\AdminController@laporannonaktifPertanggal')->name('cetaklaporannonaktif');
+    Route::get('cetak-laporantidakditerima', '\App\Http\Controllers\AdminController@formlaporannonaktif')->name('admin.laporan.formnonaktif');
+    Route::get('/laporan-tidakditerima-pertanggal/{tglAwal}/{tglAkhir}', '\App\Http\Controllers\AdminController@laporannonaktifPertanggal')->name('cetaklaporannonaktif');
 
     Route::get('/mentoring', '\App\Http\Controllers\MentoringController@index')->name('admin.dashboard.mentoring.index');
     Route::get('/create-mentoring', '\App\Http\Controllers\MentoringController@create')->name('admin.dashboard.mentoring.create');

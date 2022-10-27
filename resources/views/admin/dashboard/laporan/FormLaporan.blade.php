@@ -61,7 +61,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="/profileadmin-update">Peserta Magang / PKL Aktif</a>
+                        <a href="/profileadmin-update">Peserta Magang / PKL DITERIMA</a>
                     </li>
                 </ul>
             </div>
@@ -69,7 +69,7 @@
                 <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                    <div class="card-title">Laporan Peserta Magang / PKL Status Aktif</div>
+                    <div class="card-title">Laporan Peserta Magang / PKL Status DITERIMA</div>
                 <div>
                     <hr>
                 <br>

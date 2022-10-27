@@ -95,10 +95,6 @@
                                         <p>{{Session::get('delete')}}</p>
                                     </div>
                                 @endif
-                        <div class="card-tools">
-                            <br>
-                            <a href="{{ route('admin.dashboard.mentor.create') }}" class="btn btn-primary btn-round" style="margin-left:30px">Tambah Data <i class="fa fa-plus"></i></a>
-                        </div>
                         <div class="card-body">
                             <br>
                             <div class="table-responsive">
@@ -109,7 +105,6 @@
                                             <th>Nama Mentor</th>
                                             <th>Jabatan</th>
                                             <th>Foto</th>
-                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -117,18 +112,9 @@
                                         <tr>
                                             @foreach ($mentor as $mt)
                                             <td>{{ $i++ }}</td>
-                                            <td>{{ $mt->nama }}</td>
+                                            <td>{{ $mt->name }}</td>
                                             <td>{{ $mt->jabatan }}</td>
-                                            <td><img alt="img" src="/img/{{ $mt->img }}" width="100px"></td>
-                                            <td>
-                                                <form action="{{ route('admin.dashboard.mentor.destroy',$mt->id) }}"  method="POST">
-                                                    <a class="btn btn-info" href="{{ route('admin.dashboard.mentor.show',$mt->id) }}"><i class="fa fa-eye"></i></a>
-                                                    <a href="{{ route('admin.dashboard.mentor.edit',$mt->id) }}" class="btn btn-success "><i class="fa fa-edit"></i></a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin untuk menghapus data ini ?')" ><i class="fa fa-trash"></i></button>
-                                                </form>
-                                            </td>
+                                            <td><img alt="img" src="/backend/assets/uploads/profile/{{ $mt->foto }}" width="100px"></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
