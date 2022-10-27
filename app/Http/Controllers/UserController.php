@@ -7,6 +7,7 @@ use App\Models\Mentor;
 use App\Models\Pengumuman;
 use App\Models\Requirement;
 use App\Models\Prosedur;
+use App\Models\User;
 use App\Models\KesanPesan;
 
 class UserController extends Controller
@@ -25,7 +26,8 @@ class UserController extends Controller
         return view('layouts.frontend.contact');
     }
     public function team(){
-        $mentor=Mentor::all();
+        $mentor=User::all()
+        ->where('role', 'mentor');
         return view('layouts.frontend.team', compact('mentor'));
     }
     public function pengumuman(){
