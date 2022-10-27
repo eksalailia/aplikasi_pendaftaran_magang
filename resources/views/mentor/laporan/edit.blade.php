@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard - mentor</title>
+	<title>Dashboard - Pembimbing</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="backend2/assets/img/book.png" type="image/x-icon"/>
 
@@ -80,7 +80,7 @@
                                 </select>
                         </div>
                         <div class="form-group col-sm-12">
-                            <label>Ketua Kelompok</label> 
+                            <label>Ketua Kelompok</label>
                                 <select name="user" class="form-control" required="" disabled>
                                     @foreach($pendaftar as $pdftr)
                                     <option value="{{$pdftr->id}}">{{$pdftr->name}}</option>

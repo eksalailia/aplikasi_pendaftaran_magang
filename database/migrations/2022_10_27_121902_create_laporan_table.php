@@ -18,7 +18,12 @@ return new class extends Migration
             $table->unsignedBigInteger('mentor_id');
             $table->foreign('mentor_id')
                     ->references('id')
-                    ->on('mentor')
+                    ->on('users')
+                    ->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
                     ->onDelete('cascade');
             // $table->mentor_id();
             $table->string('judul');
