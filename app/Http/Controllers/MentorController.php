@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Mentor;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Session;
 
@@ -18,8 +19,12 @@ class MentorController extends Controller
 
     }
     public function create(){
+        $mentor=User::all()
+        ->where('role', 'mentor');
         $data=Mentor::all();
-        return view('admin.dashboard.mentor.create', compact('data'));
+        $jabatan=User::all()
+        ->where('role', 'mentor');
+        return view('admin.dashboard.mentor.create', compact('data','mentor','jabatan'));
     }
     public function store(Request $request)
     {

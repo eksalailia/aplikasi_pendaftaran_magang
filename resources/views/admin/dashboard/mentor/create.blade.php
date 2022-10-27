@@ -75,11 +75,20 @@
             @csrf
                 <div class="form-group col-sm-12">
                     <label>Nama Mentor</label>
-                    <input type="text" id="nama" name="nama" class="form-control" required="" >
+                    <select name="users" class="form-control" required="">
+                            @foreach($mentor as $mt)
+                            <option value="{{$mt->id}}">{{$mt->name}}</option>
+                            @endforeach
+                    </select>
                 </div>
                 <div class="form-group col-sm-12">
                     <label>Jabatan</label>
-                    <input type="text" id="jabatan" name="jabatan" class="form-control" required="" >
+                    <select name="users" class="form-control" required="">
+                        @foreach($jabatan as $jb)
+                        <option value="{{$jb->id}}">{{$jb->jabatan}}</option>
+                        @endforeach
+                </select>
+                    {{-- <input type="text" id="jabatan" name="jabatan" class="form-control" required="" > --}}
                 </div>
                 <div class="form-group col-sm-12">
                     <label>Foto</label>
