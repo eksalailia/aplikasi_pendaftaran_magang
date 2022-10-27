@@ -82,7 +82,7 @@
                 </li>
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#tables">
-                        <i class="fas fa-info-circle"></i>
+                        <i class="fa fa-file"></i>
                         <p>Laporan</p>
                         <span class="caret"></span>
                     </a>
@@ -91,13 +91,13 @@
                             <li>
                                 <a href="/cetak-laporanaktif">
                                     <span>
-                                        <i class="fas fa-bullhorn"></i> Peserta Magang / PKL Aktif</span>
+                                    <i class="fa fa-check-square"></i>Peserta Magang / PKL Aktif</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/cetak-laporannonaktif">
                                     <span>
-                                        <i class="fas fa-file-alt"></i> Peserta Magang / PKL Non-Aktif</span>
+                                        <i class="fa fa-window-close"></i> Peserta Magang / PKL Non-Aktif</span>
                                 </a>
                             </li>
                             <li>
