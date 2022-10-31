@@ -93,8 +93,8 @@
                                             <td>{{ $pd->user->name }}</td>
                                             <td>{{ $pd->bidang->nama }}</td>
                                             <td>{{ $pd->durasi }}</td>
-                                            <td>{{ $pd->peserta1 }}, <br>
-                                                {{ $pd->peserta2 }}, <br>
+                                            <td>{{ $pd->peserta1 }} <br>
+                                                {{ $pd->peserta2 }} <br>
                                                 {{ $pd->peserta3 }}
                                             </td>
                                             <td>{{ $pd->tgl_mulai }}</td>

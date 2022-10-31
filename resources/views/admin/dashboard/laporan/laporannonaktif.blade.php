@@ -36,16 +36,16 @@
                                          @php $i=1 @endphp
                                          <tr>
                                             @foreach ($laporannonaktif as $lpnon)
-                                            <td>{{ $i++ }}</td>
-                                            <td>{{ $lpnon->user->name }}</td>
-                                            <td>{{ $lpnon->peserta1 }}, <br>
-                                                {{ $lpnon->peserta2 }}, <br>
+                                            <td style="text-align:center;">{{ $i++ }}</td>
+                                            <td style="text-align:center;">{{ $lpnon->user->name }}</td>
+                                            <td style="text-align:center; line-height: 1.5;">{{ $lpnon->peserta1 }} <br>
+                                                {{ $lpnon->peserta2 }} <br>
                                                 {{ $lpnon->peserta3 }}
                                             </td>
-                                            <td>{{ $lpnon->bidang->nama }}</td>
-                                            <td>{{ $lpnon->durasi }}</td>
-                                            <td>{{ $lpnon->tgl_mulai }}</td>
-                                            <td>{{ $lpnon->tgl_selesai }}</td>
+                                            <td style="text-align:center;">{{ $lpnon->bidang->nama }}</td>
+                                            <td style="text-align:center;">{{ $lpnon->durasi }}</td>
+                                            <td style="text-align:center;">{{ $lpnon->tgl_mulai }}</td>
+                                            <td style="text-align:center;">{{ $lpnon->tgl_selesai }}</td>
                                            
                                         </tr>
                                         @endforeach
