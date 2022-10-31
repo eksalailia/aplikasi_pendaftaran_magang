@@ -62,21 +62,21 @@ class AdminController extends Controller
             $ppdata[]=$sa->total_aktivasi;
         }
 
-        $datas=User::select('id','tgl_aktivasi')
-        ->whereNotNull('tgl_aktivasi')
+        $datas=Pendaftaran::select('id', 'created_at')
+        ->whereNotNull('created_at')
         ->get()->groupBy(function($datas){
-            return Carbon::parse($datas->tgl_aktivasi)->format('M');
+            return Carbon::parse($datas->created_at)->format('Y');
         });
 
-        $bulan=[];
-        $monthsCount=[];
-        foreach($datas as $bulans => $value){
-            $bulan[]=$bulans;
-            $monthsCount[]=count($value);
+        $year=[];
+        $yearsCount=[];
+        foreach($datas as $years => $value){
+            $year[]=$years;
+            $yearsCount[]=count($value);
         }
 
         return view('admin.dashboard.main', compact('jumlah_mentor', 'jumlah_bidang', 'jumlah_kesanpesan',
-                    'jumlah_aspirasi', 'data', 'months', 'monthCount', 'datas', 'bulan', 'monthsCount', 'plabels', 'pdata',
+                    'jumlah_aspirasi', 'data', 'months', 'monthCount', 'datas', 'year', 'yearsCount', 'plabels', 'pdata',
                     'pplabels', 'ppdata'));
     }
     public function index(){

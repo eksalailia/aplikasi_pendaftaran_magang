@@ -134,7 +134,7 @@
                                         <div class="card mb-4" style="background: rgba(178, 255, 170, 0.667)">
                                             <div class="card-header" >
                                                 <i class="fas fa-chart-area me-1"></i>
-                                                Jumlah Pendaftar Magang / PKL Diskominfo Berstatus Aktif Per Bulan
+                                                Jumlah Pendaftar Magang / PKL Diskominfo Per Tahun
                                             </div>
                                             <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
                                         </div>
@@ -312,8 +312,8 @@
 	var _xdata=JSON.parse('{!! json_encode($monthCount) !!}');
 </script>
 <script type="text/javascript">
-	var __ydata=JSON.parse('{!! json_encode($bulan) !!}');
-	var __xdata=JSON.parse('{!! json_encode($monthsCount) !!}');
+	var __ydata=JSON.parse('{!! json_encode($year) !!}');
+	var __xdata=JSON.parse('{!! json_encode($yearsCount) !!}');
 </script>
 <script src="backend2/assets/demo/chart-area-demo.js"></script>
 <script src="backend2/assets/demo/chart-bar-demo.js"></script>
