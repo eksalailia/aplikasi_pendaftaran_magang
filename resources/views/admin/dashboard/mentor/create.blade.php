@@ -75,24 +75,26 @@
             @csrf
                 <div class="form-group col-sm-12">
                     <label>Nama Mentor</label>
-                    <select name="users" class="form-control" required="">
-                            @foreach($mentor as $mt)
-                            <option value="{{$mt->id}}">{{$mt->name}}</option>
-                            @endforeach
+                    <input type="text" id="name" name="name" class="form-control" required="" >
+                 </div>
+                <div class="form-group col-sm-12">
+                <label>Email</label>
+                    <input type="text" id="email" name="email" class="form-control" required="" >
+                 </div>
+                <div class="form-group col-sm-12">
+                    <label>Role</label>
+                    <select id="role" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus class="form-control" >
+                        <option value="mentor">Mentor</option>
                     </select>
+                    <span class="form-bar"></span>
                 </div>
                 <div class="form-group col-sm-12">
-                    <label>Jabatan</label>
-                    <select name="users" class="form-control" required="">
-                        @foreach($jabatan as $jb)
-                        <option value="{{$jb->id}}">{{$jb->jabatan}}</option>
-                        @endforeach
-                </select>
-                    {{-- <input type="text" id="jabatan" name="jabatan" class="form-control" required="" > --}}
+                    <label>Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required="" >
                 </div>
                 <div class="form-group col-sm-12">
-                    <label>Foto</label>
-                    <input type="file" id="img" name="img" class="form-control" required="" >
+                    <label>Konfirmasi Password</label>
+                        <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" required="" >
                 </div>
                 <div class="form-group col-sm-5">
                     <button type="submit" class="btn btn-success">
