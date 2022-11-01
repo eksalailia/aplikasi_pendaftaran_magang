@@ -47,7 +47,7 @@
                         </div> --}}
                     </div>
                     <div class="text-center p-4">
-                        <h5 class="mb-0">{{ $mt-> name }}</h5>
+                        <h5 class="mb-0"><br>{{ $mt-> name }}</h5>
                         <small>{{ $mt->jabatan }}</small>
                     </div>
                 </div>
