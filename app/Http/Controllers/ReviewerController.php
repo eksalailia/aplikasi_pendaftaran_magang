@@ -50,6 +50,31 @@ class ReviewerController extends Controller
             $pdata[]=$ps->total_pendaftar;
         }
 
+        $verifikasi=Pendaftaran::selectRaw('count(id) as total_pendaftar, status')
+        ->groupBy('status')
+        ->whereNull('status')
+        ->get();
+        foreach($verifikasi as $verifikasi){
+            $verifikasi->total_pendaftar;
+        }
+
+        $diterima=Pendaftaran::selectRaw('count(id) as total_pendaftar, status')
+        ->groupBy('status')
+        ->where('status', '1')
+        ->get();
+        foreach($diterima as $diterima){
+            $diterima->total_pendaftar;
+        }
+
+        $tdkditerima=Pendaftaran::selectRaw('count(id) as total_pendaftar, status')
+        ->groupBy('status')
+        ->where('status', '2')
+        ->get();
+        foreach($tdkditerima as $tdkditerima){
+            $tdkditerima->total_pendaftar;
+        }
+
+
         $status_aktivasi=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
         ->where('role', 'pendaftar')
         ->groupBy('status_aktivasi')
@@ -64,6 +89,34 @@ class ReviewerController extends Controller
             elseif($sa->status_aktivasi == 2)
             $pplabels[]="Tidak Aktif";
             $ppdata[]=$sa->total_aktivasi;
+        }
+
+
+        $waiting=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        ->groupBy('status_aktivasi')
+        ->whereNull('status_aktivasi')
+        ->where('role', 'pendaftar')
+        ->get();
+        foreach($waiting as $wt){
+            $wt->total_aktivasi;
+        }
+
+        $aktif=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        ->groupBy('status_aktivasi')
+        ->where('status_aktivasi', '1')
+        ->where('role', 'pendaftar')
+        ->get();
+        foreach($aktif as $aktif){
+           $aktif->total_aktivasi;
+        }
+
+        $tidakaktif=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        ->groupBy('status_aktivasi')
+        ->where('status_aktivasi', '2')
+        ->where('role', 'pendaftar')
+        ->get();
+        foreach($tidakaktif as $nonaktif){
+           $nonaktif->total_aktivasi;
         }
 
         $datas=User::select('id','tgl_aktivasi')
@@ -81,7 +134,7 @@ class ReviewerController extends Controller
 
         return view('reviewer.main', compact('jumlah_pendaftar', 'pendaftar_waiting', 'pendaftar_lolos', 'pendaftar_tidaklolos', 
                                             'jumlah_review', 'data', 'months', 'monthCount', 'datas', 'bulan', 'monthsCount', 'plabels', 
-                                            'pdata', 'pplabels', 'ppdata'));
+                                            'pdata', 'verifikasi', 'diterima', 'tdkditerima', 'pplabels', 'ppdata', 'wt', 'aktif', 'nonaktif'));
     }
     public function index(){
         $pendaftar = Pendaftaran::orderBy('created_at','ASC')

@@ -159,9 +159,15 @@
                                         <canvas id="myPieChart"></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
-                                        @foreach($plabels as $label)
+                                    @foreach($plabels as $label)
                                         <span class="mr-2">
-                                            <i class="fas fa-circle"></i> {{$label}}
+                                            @if($label == "Menunggu Verifikasi")
+                                            <i class="fa fa-circle text-primary"></i> Menunggu Verifikasi = {{$verifikasi->total_pendaftar}}
+                                            @elseif($label == "Diterima")
+                                            <i class="fa fa-circle text-success"></i> Diterima = {{$diterima->total_pendaftar}}
+                                            @elseif($label == "Tidak Diterima")
+                                            <i class="fa fa-circle text-danger"></i> Tidak Diterima = {{$tdkditerima->total_pendaftar}}
+                                            @endif
                                         </span>
                                         @endforeach
                                         </div>
@@ -180,9 +186,15 @@
                                         <canvas id="myPieCharts"></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
-                                        @foreach($pplabels as $lbl)
+                                    @foreach($pplabels as $label)
                                         <span class="mr-2">
-                                            <i class="fas fa-circle"></i> {{$lbl}}
+                                        @if($label == "Menunggu Aktivasi")
+                                            <i class="fa fa-circle text-primary"></i> Menunggu Aktivasi = {{$wt->total_aktivasi}}
+                                            @elseif($label == "Aktif")
+                                            <i class="fa fa-circle text-success"></i> Aktif = {{$aktif->total_aktivasi}}
+                                            @elseif($label == "Tidak Aktif")
+                                            <i class="fa fa-circle text-danger"></i> Tidak Aktif = {{$nonaktif->total_aktivasi}}
+                                            @endif
                                         </span>
                                         @endforeach
                                     </div>
