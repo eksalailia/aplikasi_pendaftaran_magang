@@ -5,13 +5,13 @@ Chart.defaults.global.defaultFontColor = '#858796';
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
-  type: 'doughnut',
+  type: 'pie',
   data: {
     labels: _plabels,
     datasets: [{
       data: _pdata,
-      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      backgroundColor: ['#31ce36', '#f25961', '#1572e8'],
+      hoverBackgroundColor: ['#31ce36', '#f25961', '#1572e8'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
   },

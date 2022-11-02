@@ -46,6 +46,31 @@ class AdminController extends Controller
             $pdata[]=$ps->total_pendaftar;
         }
 
+        $verifikasi=Pendaftaran::selectRaw('count(id) as total_pendaftar, status')
+        ->groupBy('status')
+        ->whereNull('status')
+        ->get();
+        foreach($verifikasi as $verifikasi){
+            $verifikasi->total_pendaftar;
+        }
+
+        $diterima=Pendaftaran::selectRaw('count(id) as total_pendaftar, status')
+        ->groupBy('status')
+        ->where('status', '1')
+        ->get();
+        foreach($diterima as $diterima){
+            $diterima->total_pendaftar;
+        }
+
+        $tdkditerima=Pendaftaran::selectRaw('count(id) as total_pendaftar, status')
+        ->groupBy('status')
+        ->where('status', '2')
+        ->get();
+        foreach($tdkditerima as $tdkditerima){
+            $tdkditerima->total_pendaftar;
+        }
+
+
         $status_aktivasi=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
         ->groupBy('status_aktivasi')
         ->where('role', 'pendaftar')
@@ -62,6 +87,33 @@ class AdminController extends Controller
             $ppdata[]=$sa->total_aktivasi;
         }
 
+        $waiting=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        ->groupBy('status_aktivasi')
+        ->whereNull('status_aktivasi')
+        ->where('role', 'pendaftar')
+        ->get();
+        foreach($waiting as $wt){
+            $wt->total_aktivasi;
+        }
+
+        $aktif=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        ->groupBy('status_aktivasi')
+        ->where('status_aktivasi', '1')
+        ->where('role', 'pendaftar')
+        ->get();
+        foreach($aktif as $aktif){
+           $aktif->total_aktivasi;
+        }
+
+        $tidakaktif=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        ->groupBy('status_aktivasi')
+        ->where('status_aktivasi', '2')
+        ->where('role', 'pendaftar')
+        ->get();
+        foreach($tidakaktif as $nonaktif){
+           $nonaktif->total_aktivasi;
+        }
+
         $datas=Pendaftaran::select('id', 'created_at')
         ->whereNotNull('created_at')
         ->get()->groupBy(function($datas){
@@ -76,8 +128,8 @@ class AdminController extends Controller
         }
 
         return view('admin.dashboard.main', compact('jumlah_mentor', 'jumlah_bidang', 'jumlah_kesanpesan',
-                    'jumlah_aspirasi', 'data', 'months', 'monthCount', 'datas', 'year', 'yearsCount', 'plabels', 'pdata',
-                    'pplabels', 'ppdata'));
+                    'jumlah_aspirasi', 'data', 'months', 'monthCount', 'datas', 'year', 'yearsCount', 'plabels', 'pdata','verifikasi', 'diterima', 'tdkditerima',
+                    'pplabels', 'ppdata','wt', 'aktif', 'nonaktif'));
     }
     public function index(){
         $Users = User::orderBy('created_at','ASC')
