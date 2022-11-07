@@ -37,8 +37,8 @@
                 <h6 class="section-title bg-white text-start text-primary pe-3">Tentang</h6>
                 <h1 class="mb-4">SIPENMA Diskominfo Kota Madiun</h1>
                 <p class="mb-4">SIPENMA atau Aplikasi Penerimaan Magang adalah sebuah sistem layanan yang dirancang untuk memfasilitasi
-                    masyarakat dalam pelaksanaan program magang di Diskominfo Kota Madiun.</p>
-                <p class="mb-4">Aplikasi ini dimaksudkan untuk membantu masyarakat dalam melaksanakan program magang
+                    masyarakat dalam pelaksanaan program PKL/magang di Diskominfo Kota Madiun.</p>
+                <p class="mb-4">Aplikasi ini dimaksudkan untuk membantu masyarakat dalam melaksanakan program PKL/magang
                     dari proses pendaftaran, seleksi, hingga pemberitahuan hasil seleksi.</p>
                     {{-- <h5 class="mb-3">Berikut adalah bidang yang dapat dipilih sesuai jurusan :</h5>
                 <div class="row gy-2 gx-4 mb-4">
