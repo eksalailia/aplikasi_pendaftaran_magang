@@ -179,7 +179,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label text-white">Resume Peserta</label>
                                                             <div class="col-sm-10">
-                                                                <input type="file" class="form-control  @error('resume') is-invalid @enderror" id="resume" name="resume" placeholder="Resume" required="" multiple>
+                                                                <input type="file" class="form-control  @error('resume') is-invalid @enderror" id="resume" name="resume" placeholder="Resume" multiple>
                                                                 @error('resume')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
@@ -199,6 +199,24 @@
                                                                 <div class="col-sm-10">
                                                                     <input type="file" class="form-control  @error('proposal') is-invalid @enderror" id="proposal" name="proposal" placeholder="Proposal" required="">
                                                                     @error('proposal')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                        <strong>{{ $message }}</strong>
+                                                                    </span>
+                                                                @enderror
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-block">
+                                            <div class="card text-white bg-primary mb-3">
+                                                <h5 class="card-header text-white"><i class="fas fa-upload"></i> <b>Surat Keterangan Kegiatan Magang / PKL</b></h5>
+                                                <div class="card-body">
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label text-white">Surat Keterangan</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="file" class="form-control  @error('surat_keterangan') is-invalid @enderror" id="surat_keterangan" name="surat_keterangan" placeholder="Surat Keterangan" required="">
+                                                                    @error('surat_keterangan')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
                                                                     </span>

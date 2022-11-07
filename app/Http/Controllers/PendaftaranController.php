@@ -29,7 +29,8 @@ class PendaftaranController extends Controller
         
         $this->validate($request, [
             'resume' => 'required|file|mimes:doc,pdf,docx|max:2000',
-            'proposal' => 'required|file|mimes:doc,pdf,docx|max:2000'
+            'proposal' => 'required|file|mimes:doc,pdf,docx|max:2000',
+            'surat_keterangan' => 'required|file|mimes:doc,pdf,docx|max:2000'
         ]);
 
         
@@ -42,6 +43,11 @@ class PendaftaranController extends Controller
         $props = $files->getClientOriginalName();
         $paths = 'proposal';
         $files->move($paths,$props);
+        
+        $dokumen = $request->file('surat_keterangan');
+        $keterangan = $dokumen->getClientOriginalName();
+        $direktori = 'surat_keterangan';
+        $dokumen->move($direktori, $keterangan);
         
         $pendaftaran = new pendaftaran;
         $pendaftaran->user_id = $request->user;
@@ -58,6 +64,7 @@ class PendaftaranController extends Controller
         $pendaftaran->tanggal = date("Y-m-d H:i:s");
         $pendaftaran->resume = $org;
         $pendaftaran->proposal = $props;
+        $pendaftaran->surat_keterangan = $keterangan;
         $pendaftaran->save();
         if ($pendaftaran) {
             Session::flash('success','Pendaftaran Berhasil');

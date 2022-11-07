@@ -36,6 +36,7 @@ return new class extends Migration
             $table->string('peserta3');
             $table->string('resume');
             $table->string('proposal');
+            $table->string('surat_keterangan');
             $table->integer('status')->nullable();
             $table->dateTime('tanggal')->nullable();
             $table->dateTime('tgl_review')->nullable();

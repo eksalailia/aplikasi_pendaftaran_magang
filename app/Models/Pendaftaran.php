@@ -26,6 +26,7 @@ class Pendaftaran extends Model
         'tanggal',
         'tgl_review',
         'proposal',
+        'surat_keterangan',
         'status',
         'status_aktivasi',
         'tgl_aktivasi'
