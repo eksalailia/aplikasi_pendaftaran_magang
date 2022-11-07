@@ -112,6 +112,7 @@
                                             <th width="300px">Anggota PKL / Magang</th>
                                             <th>Resume</th>
                                             <th>Proposal</th>
+                                            <th>Surat Ketarangan Magang / PKL</th>
                                             <th>Verifikasi</th>
                                             <th>Action</th>
                                         </tr>
@@ -125,8 +126,8 @@
                                             <td>{{ $data->jurusan }}</td>
                                             <td>{{ $data->tahun_akademik }}</td>
                                             <td>{{ $data->durasi }}</td>
-                                            <td>{{ $data->peserta1}}, <br>
-                                                {{$data->peserta2}}, <br>
+                                            <td>{{ $data->peserta1}} <br></br>
+                                                {{$data->peserta2}} <br></br>
                                                 {{$data->peserta3 }}</td>
                                             <td>
                                                 <form>
@@ -138,7 +139,11 @@
                                                 <a class="btn btn-warning" href="{{ route('reviewer.pendaftaran.showProposal',$data->id) }}"><i class="fa fa-eye"></i></a>
                                             </form>
                                             </td>
-
+                                            <td>
+                                                <form>
+                                                <a class="btn btn-success" href="{{ route('reviewer.pendaftaran.showKeterangan',$data->id) }}"><i class="fa fa-eye"></i></a>
+                                            </form>
+                                            </td>
 
                                             @if($data->status == null)
                                             <td>

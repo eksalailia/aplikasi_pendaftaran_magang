@@ -161,6 +161,7 @@ Route::group(['middleware'=>['reviewer','auth','PreventBackHistory']], function(
     Route::get('/showReview/{id}', '\App\Http\Controllers\ReviewerController@show')->name('reviewer.pendaftaran.show');
     Route::get('/showResume/{id}', '\App\Http\Controllers\ReviewerController@showResume')->name('reviewer.pendaftaran.showResume');
     Route::get('/showProposal/{id}', '\App\Http\Controllers\ReviewerController@showProposal')->name('reviewer.pendaftaran.showProposal');
+    Route::get('/showKeterangan/{id}', '\App\Http\Controllers\ReviewerController@showKeterangan')->name('reviewer.pendaftaran.showKeterangan');
     Route::delete('/hapus-pendaftaran-review/{id}', '\App\Http\Controllers\ReviewerController@destroy')->name('reviewer.pendaftaran.destroy');
     Route::get('pesertalolos', '\App\Http\Controllers\ReviewerController@pesertalolos')->name('reviewer.pendaftaran.pesertalolos');
 

@@ -158,6 +158,11 @@ class ReviewerController extends Controller
         return view('reviewer.pendaftaran.showProposal', compact('data'));
     }
 
+    public function showKeterangan($id){
+        $data= Pendaftaran::find($id);
+        return view('reviewer.pendaftaran.showKeterangan', compact('data'));
+    }
+
     // public function status($id){
     //     $data = Pendaftaran::find($id);
 
