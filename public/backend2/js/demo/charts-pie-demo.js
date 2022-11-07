@@ -10,8 +10,8 @@ var myPieCharts = new Chart(ctx, {
     labels: _pplabels,
     datasets: [{
       data: _ppdata,
-      backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
-      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      backgroundColor: ['#31ce36', '#f25961', '#1572e8'],
+      hoverBackgroundColor: ['#31ce36', '#f25961', '#1572e8'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
   },
