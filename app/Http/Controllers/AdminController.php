@@ -105,12 +105,12 @@ class AdminController extends Controller
            $aktif->total_aktivasi;
         }
 
-        $tidakaktif=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
+        $nonaktif=User::selectRaw('count(id) as total_aktivasi, status_aktivasi')
         ->groupBy('status_aktivasi')
         ->where('status_aktivasi', '2')
         ->where('role', 'pendaftar')
         ->get();
-        foreach($tidakaktif as $nonaktif){
+        foreach($nonaktif as $nonaktif){
            $nonaktif->total_aktivasi;
         }
 
