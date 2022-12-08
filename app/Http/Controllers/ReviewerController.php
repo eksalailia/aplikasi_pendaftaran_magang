@@ -115,8 +115,8 @@ class ReviewerController extends Controller
         ->where('status_aktivasi', '2')
         ->where('role', 'pendaftar')
         ->get();
-        foreach($tidakaktif as $nonaktif){
-           $nonaktif->total_aktivasi;
+        foreach($tidakaktif as $tidakaktif){
+           $tidakaktif->total_aktivasi;
         }
 
         $datas=User::select('id','tgl_aktivasi')
@@ -134,7 +134,7 @@ class ReviewerController extends Controller
 
         return view('reviewer.main', compact('jumlah_pendaftar', 'pendaftar_waiting', 'pendaftar_lolos', 'pendaftar_tidaklolos', 
                                             'jumlah_review', 'data', 'months', 'monthCount', 'datas', 'bulan', 'monthsCount', 'plabels', 
-                                            'pdata', 'verifikasi', 'diterima', 'tdkditerima', 'pplabels', 'ppdata', 'wt', 'aktif', 'nonaktif'));
+                                            'pdata', 'verifikasi', 'diterima', 'tdkditerima', 'pplabels', 'ppdata', 'wt', 'aktif', 'tidakaktif'));
     }
     public function index(){
         $pendaftar = Pendaftaran::orderBy('created_at','ASC')

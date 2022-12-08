@@ -193,7 +193,7 @@
                                             @elseif($label == "Aktif")
                                             <i class="fa fa-circle text-success"></i> Aktif = {{$aktif->total_aktivasi}}
                                             @elseif($label == "Tidak Aktif")
-                                            <i class="fa fa-circle text-danger"></i> Tidak Aktif = {{$nonaktif->total_aktivasi}}
+                                            <i class="fa fa-circle text-danger"></i> Tidak Aktif = {{$tidakaktif->total_aktivasi}}
                                             @endif
                                         </span>
                                         @endforeach
