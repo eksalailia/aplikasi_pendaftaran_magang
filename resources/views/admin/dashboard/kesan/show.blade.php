@@ -78,9 +78,10 @@
                                     </div>
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Nama : </b>{{$data->nama}}</li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Instansi : </b>{{$data->instansi}}</li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Kesan & Pesan : </b>{{$data->isi}}</li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b style="width:60px;">Nama : </b> <p style="font-size: 14px;">{{$data->nama}}</p></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b style="width:70px;">Instansi : </b><p style="font-size: 14px;">{{$data->instansi}}</p></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b style="width:350px; font-size: 16px; text-laign: justify;">Kesan & Pesan : </b>
+                                            <p style="font-size: 16px;">{!!$data->isi!!}</p></li>
                                         </ul>
                                     </div>
                                     <a class="btn btn-success mt-3" href="/admin-kesanpesan" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>

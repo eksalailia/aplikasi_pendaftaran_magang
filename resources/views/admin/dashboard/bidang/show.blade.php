@@ -83,7 +83,7 @@
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item" style="font-size: 16px;"><b>Nama Bidang : {{$data->nama}}</b></li>
-                                            <li class="list-group-item" style="font-size: 16px;"><b>Keterangan : {{$data->keterangan}}</b></li>
+                                            <li class="list-group-item" style="font-size: 16px;"><b>Keterangan : {!!$data->keterangan!!}</b></li>
                                         </ul>
                                     </div>
                                     <a class="btn btn-success mt-3" href="/bidang" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>

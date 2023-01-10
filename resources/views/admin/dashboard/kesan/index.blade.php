@@ -113,7 +113,7 @@
                                             @foreach ($kesanpesan as $ks)
                                             <td>{{ $ks->nama }}</td>
                                             <td>{{ $ks->instansi }}</td>
-                                            <td>{{ $ks->isi }}</td>
+                                            <td>{!!$ks->isi!!}</td>
                                             <td>
                                                 <form action="{{ route('admin.dashboard.kesan.destroy',$ks->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('admin.dashboard.kesan.show',$ks->id) }}"><i class="fa fa-eye"></i></a>

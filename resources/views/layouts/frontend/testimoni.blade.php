@@ -11,7 +11,7 @@
                 <h5 class="mb-0">{{ $kp->nama }}</h5>
                 <p>{{ $kp->instansi }}</p>
                 <div class="testimonial-text bg-light text-center p-4">
-                <p class="mb-0" style="height:73px">{{ $kp->isi }}</p>
+                <p class="mb-0" style="height:50px; text-align:justify;">{!! $kp->isi !!}</p>
                 </div>
             </div>
             @endforeach

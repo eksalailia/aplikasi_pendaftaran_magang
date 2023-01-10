@@ -82,9 +82,9 @@
                                     </div>
                                 @endif
 
-                                @if(Session::has('ulprnate'))
+                                @if(Session::has('update'))
                                     <div class="btn btn-info" style="width:100%; height:50px">
-                                        <p>{{Session::get('ulprnate')}}</p>
+                                        <p>{{Session::get('update')}}</p>
                                     </div>
                                 @endif
 

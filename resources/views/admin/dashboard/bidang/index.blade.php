@@ -114,7 +114,7 @@
                                         <tr>
                                             @foreach ($Bidang as $bidang)
                                             <td>{{ $bidang->nama }}</td>
-                                            <td>{{ $bidang->keterangan }}</td>
+                                            <td>{!! $bidang->keterangan !!}</td>
                                             <td>
                                             <form action="{{ route('admin.dashboard.bidang.destroy',$bidang->id) }}"  method="POST">
                                                     <a class="btn btn-info" href="{{ route('admin.dashboard.bidang.show', $bidang->id) }}"><i class="fa fa-eye"></i></a>

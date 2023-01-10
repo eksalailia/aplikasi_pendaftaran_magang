@@ -77,7 +77,7 @@
                                     </div>
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
-                                            <iframe src="/surat_keterangan/{{$data->surat_keterangan}}" style="width: 750px; height:600px"></iframe>
+                                            <iframe src="/surat_keterangan/{{$data->surat_keterangan}}" style="width: 660px; height:600px"></iframe>
                                         </ul>
                                     </div>
                                     <a class="btn btn-success mt-3" href="/pendaftaran-review" style="font-size: 16px;"><i class="fas fa-reply"></i> Kembali</a>

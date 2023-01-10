@@ -36,10 +36,10 @@ class MentoringController extends Controller
         $mentoring->save();
         if ($mentoring) {
             Session::flash('success','Data Mentoring Berhasil Ditambahkan');
-            return redirect()->route('admin.dashboard.mentoring.create');
+            return redirect()->route('admin.dashboard.mentoring.index');
         } else {
             Session::flash('failed','Data Mentoring Gagal Ditambahkan');
-            return redirect()->route('admin.dashboard.mentoring.create');
+            return redirect()->route('admin.dashboard.mentoring.index');
         }
     }
 

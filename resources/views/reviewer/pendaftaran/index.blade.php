@@ -131,17 +131,17 @@
                                                 {{$data->peserta3 }}</td>
                                             <td>
                                                 <form>
-                                                <a class="btn btn-info" href="{{ route('reviewer.pendaftaran.showResume',$data->id) }}"><i class="fa fa-eye"></i></a>
+                                                <a class="btn btn-info" href="{{ route('reviewer.pendaftaran.showResume',$data->id) }}"  target="_blank" ><i class="fa fa-eye"></i></a>
                                             </form>
                                             </td>
                                             <td>
                                                 <form>
-                                                <a class="btn btn-warning" href="{{ route('reviewer.pendaftaran.showProposal',$data->id) }}"><i class="fa fa-eye"></i></a>
+                                                <a class="btn btn-warning" href="{{ route('reviewer.pendaftaran.showProposal',$data->id) }}"  target="_blank" ><i class="fa fa-eye"></i></a>
                                             </form>
                                             </td>
                                             <td>
                                                 <form>
-                                                <a class="btn btn-success" href="{{ route('reviewer.pendaftaran.showKeterangan',$data->id) }}"><i class="fa fa-eye"></i></a>
+                                                <a class="btn btn-success" href="{{ route('reviewer.pendaftaran.showKeterangan',$data->id) }}"  target="_blank" ><i class="fa fa-eye"></i></a>
                                             </form>
                                             </td>
 

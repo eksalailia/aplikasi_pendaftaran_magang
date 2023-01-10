@@ -14,7 +14,7 @@ class MessageController extends Controller
             $message = Message::where('nama', 'like', "%" . $request->search . "%")->paginate(5);
         } else { // Jika tidak melakukan pencarian judul
             //fungsi eloquent menampilkan data menggunakan pagination
-            $message = Message::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
+            $message = Message::orderBy('id', 'DESC')->paginate(5); // Pagination menampilkan 5 data
         }
         return view('admin.dashboard.message.index', compact('message'));
     }

@@ -83,7 +83,7 @@
                         </div>
                         <div class="form-group col-sm-12">
                             <label>Keterangan</label>
-                            <textarea class="ckeditor form-control valid" placeholder="Keterangan" id="keterangan" name="keterangan" required="" style="height: 150px">{{$bidang->keterangan}}</textarea>
+                            <textarea class="ckeditor form-control valid" placeholder="Keterangan" id="keterangan" name="keterangan" required="" style="height: 150px">{!!$bidang->keterangan!!}</textarea>
                         </div>
                         <div class="form-group col-sm-12">
                             <button type="submit" class="btn btn-success">
